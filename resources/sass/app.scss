@@ -1,0 +1,24 @@
+
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+@import "base/_typography";
+@import "base/_utilities.scss";
+
+@import "components/navbar.scss";
+@import "components/footer.scss";
+@import "components/buttons.scss";
+@import "components/select.scss";
+@import "components/infotab.scss";
+@import "components/newstab.scss";
+@import "components/form.scss";
+@import "components/msg.scss";
+
+@import "layout/grid";
+
+@import "pages/home";
+@import "pages/gallery";
+

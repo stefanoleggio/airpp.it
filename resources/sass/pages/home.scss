@@ -1,0 +1,49 @@
+.presentation{
+    background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url(/media/img/home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    &__text{
+        color: $color-white;
+        padding-top: 10rem;
+    }
+    &__p{
+        width: 50rem;
+        display: inline-block;
+        @include respond(phone) {
+            width: 70%;
+        }
+    }
+}
+
+.team{
+    padding: 4rem;
+    &__profile{
+        height: 30rem;
+
+    }
+}
+
+#team{
+    height: 20rem;
+    &__cd{
+        background-color: red;
+        height: 20rem;
+        display:black;
+    }
+    &__cs{
+        background-color: blue;
+        height: 20rem;
+        display: none;
+    }
+    &__ss{
+        background-color: green;
+        height: 20rem;
+        display: none;
+    }
+    &__sa{
+        background-color: yellow;
+        height: 20rem;
+        display: none;
+    }
+}

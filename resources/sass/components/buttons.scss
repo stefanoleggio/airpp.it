@@ -1,0 +1,65 @@
+.btn{
+    &{
+        width: 14rem;
+        border-radius: 100px;
+        color: $color-white;
+        font-weight: 600;
+        font-size: 2rem;
+        padding: 2rem;
+        text-align: center;
+        display: block;
+    }
+    &:hover{
+        cursor: pointer;
+    }
+    &__blue{
+        background-color: $color-primary;
+    }
+    &__pink{
+        background-color: $color-secondary;
+    }
+    &__go{
+        z-index: 1;
+        display: block;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 100px;
+        margin-left: 50%;
+        margin-right: 50%;
+        margin-bottom: .5rem;
+        font-size: 3rem;
+        line-height: 1;
+        color: $color-white;
+        &>i{
+            padding-top: 1.5rem;
+        }
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    &__link{
+        text-transform: lowercase;
+        &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+
+    &__burger{
+        position: absolute;
+        color: $color-black;
+        font-size: 5rem;
+        right: 10rem;
+        top: 5rem;
+        display:none;
+        &>i:hover{
+            cursor: pointer;
+            color: $color-secondary;
+            transition: all .4s;
+        }
+        @include respond(tab-land) {
+            display: block;
+        }
+    }
+}

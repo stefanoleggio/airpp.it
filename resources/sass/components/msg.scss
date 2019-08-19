@@ -1,0 +1,39 @@
+.msg{
+    width: 90%;
+    padding: 2rem;
+    border-radius: .3rem;
+    text-align: left;
+    position: relative;
+
+    &__error{
+        color: $color-error;
+        background-color: $color-error-bg;
+    }
+
+    &__success{
+        color: $color-success;
+        background-color: $color-success-bg;
+    }
+
+    &__warning{
+        color: $color-warning;
+        background-color: $color-warning-bg;
+    }
+
+    &__info{
+        color: $color-info;
+        background-color: $color-info-bg;
+    }
+
+    &__close{
+        cursor: pointer;
+        font-size: 2rem;
+        position: absolute;
+        right: 2rem;
+        top: .5rem;
+    }
+
+    i{
+        padding-right: 0.5rem;
+    }
+}

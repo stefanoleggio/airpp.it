@@ -1,0 +1,73 @@
+.u-center-text { text-align: center !important; }
+.u-left-text { text-align: left !important; }
+.u-right-text { text-align: right !important; }
+
+.u-margin-bottom-small { margin-bottom: 1.5rem !important; }
+.u-margin-bottom-medium { margin-bottom: 4rem !important; }
+.u-margin-bottom-big { margin-bottom: 8rem !important; }
+
+.u-margin-top-small { margin-top: 1.5rem !important; }
+.u-margin-top-medium { margin-top: 4rem !important; }
+.u-margin-top-big { margin-top: 8rem !important; }
+.u-margin-top-huge { margin-top: 10rem !important; }
+
+.u-anchor-bottom{
+    position: absolute;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+}
+
+.u-container-fullwidth{
+    width: 100%;
+    position: block;
+}
+
+.u-color-primary{
+    color: $color-primary;
+}
+
+.u-color-secondary{
+    color: $color-secondary;
+}
+
+.u-color-black{
+    color: $color-black;
+}
+
+.u-color-white{
+    color: $color-white;
+}
+
+.u-bgcolor-primary{
+    background-color: $color-primary;
+}
+
+.u-bgcolor-secondary{
+    background-color: $color-secondary;
+}
+
+.u-bgcolor-color-grey{
+    background-color: $color-grey;
+}
+
+.u-text-lowercase{
+    text-transform: lowercase !important;
+}
+
+.u-display-inline-block{
+    display: inline-block !important;
+}
+
+.u-padding-normal{
+    padding: 4rem;
+}
+
+.u-padding-normal-unique{
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.u-font-weight-bold{
+    font-weight: bold; 
+}

@@ -1,0 +1,18 @@
+.footer{
+    background-color: $color-primary;
+    color: $color-white;
+    min-height: 15rem;
+    padding: 4rem;
+    font-size: $default-font-size;
+    &__fonts{
+        font-size: 2.5rem;
+        i{
+            padding: 0.6rem;
+        }
+    }
+    &__links{
+        a{
+            padding: 0.6rem;
+        }
+    }
+}

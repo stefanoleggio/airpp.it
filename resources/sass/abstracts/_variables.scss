@@ -1,0 +1,31 @@
+/*colors*/
+$color-primary: #4ebaba;
+$color-secondary: #ed9090;
+$color-grey: rgb(251, 251, 251);
+$color-grey-light: rgb(230, 230, 230);
+$color-grey-dark: rgb(63, 63, 63);
+$color-white: rgb(255, 255, 255);
+$color-black: rgb(120, 120, 120);
+
+/*msg colors*/
+$color-error: #971c1c;
+$color-error-bg: #efa9a9;
+$color-success: #270;
+$color-success-bg: #DFF2BF;
+$color-warning: #9F6000;
+$color-warning-bg: #FEEFB3;
+$color-info: #059;
+$color-info-bg: #BEF;
+
+/*font size*/
+$default-font-size: 1.6rem;
+
+/*grid*/
+$grid-width: 100%;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem;
+
+/*custom*/
+$fa-font-path: "../fontawesome/webfonts";
+$box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);

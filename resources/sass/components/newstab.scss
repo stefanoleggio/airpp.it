@@ -1,0 +1,16 @@
+.newstab{
+    background-color: $color-grey-light;
+    max-width: 70rem;  
+    padding: 4rem;
+    position: relative;
+    border-radius: .5rem;
+    box-shadow: $box-shadow;
+    &__state{
+        font-size: 2.5rem;
+        position: absolute;
+        display: inline-block;
+        right: 4rem;
+        top: 3rem;
+        color: $color-primary;
+    }
+}
