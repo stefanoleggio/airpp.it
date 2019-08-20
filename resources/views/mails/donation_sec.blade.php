@@ -43,9 +43,7 @@
                 Data e ora
             </div>
             <div class="col-1-of-2">
-                <?php
-                    echo $date;
-                ?>
+                {{ $request->date }}
             </div>
         </div>
     </div>

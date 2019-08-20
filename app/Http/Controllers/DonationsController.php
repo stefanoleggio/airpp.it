@@ -103,8 +103,7 @@
                         'email' => $request->email,
                         'amount' => $request->amount,
                         'success' => false,
-                        'created_at' => Carbon::now(),
-                        'updated_at' => Carbon::now()
+                        'date' => Carbon::now(),
                     ]
                 );
                 return Redirect::away($redirect_url);

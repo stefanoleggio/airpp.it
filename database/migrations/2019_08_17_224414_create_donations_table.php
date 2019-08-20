@@ -21,7 +21,7 @@ class CreateDonationsTable extends Migration
             $table->string('email');
             $table->integer('amount');
             $table->boolean('success');
-            $table->timestamps();
+            $table->dateTime('date');
         });
     }
 

@@ -12,7 +12,6 @@ class DonationSecEmail extends Mailable
 {
     use Queueable, SerializesModels;
     public $request;
-    public $date;
     /**
      * Create a new message instance.
      *
@@ -21,7 +20,6 @@ class DonationSecEmail extends Mailable
     public function __construct(Object $request)
     {
         $this->request = $request;
-        $this->date = date('m/d/Y h:i:s a', time());
     }
 
     /**

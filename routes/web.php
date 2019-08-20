@@ -57,3 +57,31 @@ Route::get('status', 'DonationsController@getPaymentStatus');
     JoinusController
 */
 
+
+/* 
+    AdminController
+*/
+
+Auth::routes();
+
+Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/donazioni', 'AdminController@donazioni');
+
+Route::get('/admin/iscrizioni', 'AdminController@iscrizioni');
+
+Route::get('/admin/premi', 'AdminController@premi');
+
+Route::get('/admin/iniziative', 'AdminController@iniziative');
+
+Route::get('/admin/convegni', 'AdminController@convegni');
+
+Route::get('/admin/pagine', 'AdminController@pagine');
+
+Route::get('/admin/componenti', 'AdminController@componenti');
+
+Route::post('/admin/edit_news', 'AdminController@edit_news');
+
+Route::post('/admin/add_news', 'AdminController@add_news');
+
+Route::post('/admin/delete_news', 'AdminController@delete_news');
