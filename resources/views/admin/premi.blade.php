@@ -40,13 +40,6 @@
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $data->id }}">
                         Modifica
                     </button>
-                    <form action="POST" action="/admin/delete_news">
-                        <input type="hidden" name="id" value="{{ $data->id }}">
-                        <input type="hidden" name="db" value="premi">
-                        <button class="btn btn-danger d-inline-block ml-1" type="submit">
-                            Elimina
-                        </button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -64,8 +57,8 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="/admin/edit_news">
-                {{ csrf_field() }}
+                <form method="POST" action="/admin/edit_news" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="title">Titolo</label>
                         <input type="input" class="form-control" id="title" name="title" value="{{ $data->title }}">
@@ -85,7 +78,12 @@
                     <div class="form-group mt-2">
                         <div class="form-group">
                             <label for="file">Locandina</label>
-                            <input type="file" class="form-control-file" id="file"/>
+                            <input type="file" class="form-control-file" name="file" id="file"/>
+                            <?php
+                                if($data->link != "0"){
+                                    echo'<a href="'.$data->link.'" class="stretched-link">Locandina</a>';
+                                }
+                            ?>
                         </div>
                     </div>
                     <div class="form-group mt-2">
@@ -96,11 +94,16 @@
                     </div>
                     <input type="hidden" name="id" value="{{ $data->id }}">
                     <input type="hidden" name="db" value="premi">
-                    <button type="submit" class="btn btn-primary">Salva</button>
-                </form>
+                    <button type="submit" class="btn btn-primary w_classic">Salva</button>
+                    </form>
+                    <form method="POST" action="/admin/delete_news" class="pt-3">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $data->id }}">
+                        <input type="hidden" name="db" value="premi">
+                        <button class="btn btn-danger w_classic" type="submit">Elimina</button>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger">Elimina</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
                 </div>
             </div>
@@ -120,7 +123,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="/admin/add_news">
+                <form method="POST" action="/admin/add_news" enctype="multipart/form-data">
                 {{ csrf_field() }}
                     <div class="form-group">
                         <label for="title">Titolo</label>
@@ -141,7 +144,7 @@
                     <div class="form-group mt-2">
                         <div class="form-group">
                             <label for="file">Locandina</label>
-                            <input type="file" class="form-control-file" id="file"/>
+                            <input type="file" class="form-control-file" name="file" id="file"/>
                         </div>
                     </div>
                     <div class="form-group mt-2">

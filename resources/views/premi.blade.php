@@ -18,6 +18,7 @@
                     'newstab__place' => $post->place,
                     'newstab__date' => $post->date,
                     'newstab__state' => $post->active,
+                    'newstab__link' => $post->link,
                 ])
             @endforeach
         </div>

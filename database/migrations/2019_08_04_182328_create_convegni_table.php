@@ -20,7 +20,7 @@ class CreateConvegniTable extends Migration
             $table->string('place');
             $table->date('date');
             $table->boolean('active');
-            $table->timestamps();
+            $table->string('link');
         });
     }
 

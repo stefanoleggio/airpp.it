@@ -11,9 +11,11 @@
         {{$newstab__text}}
     </div>
     <div class="newstab__links u-left-text">
-        <a href="#" class="btn__link normal u-color-secondary">
+        @if($newstab__link != "0")
+        <a href="{{$newstab__link}}" class="btn__link normal u-color-secondary">
             Locandina
         </a>
+        @endif
     </div>
     <div class="newstab__info heading-tertiary u-right-text">
             {{$newstab__place}}

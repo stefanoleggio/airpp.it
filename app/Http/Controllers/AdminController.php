@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PayPal\Api\RedirectUrls;
 use Redirect;
+use Illuminate\Support\Facades\Input;
 
 
 class AdminController extends Controller
@@ -50,7 +51,7 @@ class AdminController extends Controller
         return view('admin.premi',
             [
         
-                'datas' => DB::table('premi')->get()
+                'datas' => DB::table('premi')->orderBy('id', 'DESC')->get()
             ]
         );
     }
@@ -60,7 +61,7 @@ class AdminController extends Controller
         return view('admin.convegni',
             [
         
-                'datas' => DB::table('convegni')->get()
+                'datas' => DB::table('convegni')->orderBy('id', 'DESC')->get()
             ]
         );
     }
@@ -70,7 +71,7 @@ class AdminController extends Controller
         return view('admin.iniziative',
             [
         
-                'datas' => DB::table('iniziative')->get()
+                'datas' => DB::table('iniziative')->orderBy('id', 'DESC')->get()
             ]
         );
     }
@@ -92,6 +93,12 @@ class AdminController extends Controller
         }else{
             $request->active = 1;
         }
+        if(!isset($request->file)){
+            $request->file = "0";
+        }else{
+            $request->file->storeAs('locandine', request()->file->getClientOriginalName());
+            $request->file = '/storage/locandine/'.request()->file->getClientOriginalName();
+        }
         DB::table($request->db)
             ->where('id', $request->id)
             ->update(
@@ -100,7 +107,8 @@ class AdminController extends Controller
                     'description' => $request->description,
                     'place' => $request->place,
                     'date' => $request->date,
-                    'active'=> $request->active
+                    'active'=> $request->active,
+                    'link' => $request->file
                 ]
             );
             \Session::put('success', 'Modifica effettuata con successo');
@@ -113,19 +121,27 @@ class AdminController extends Controller
         }else{
             $request->active = 1;
         }
+        if (isset($request->file) && Input::file('file')->isValid())
+        {
+            $request->file->storeAs('locandine', request()->file->getClientOriginalName());
+            $request->file = '/storage/locandine/'.request()->file->getClientOriginalName();
+        }else{
+            $request->file = "0";
+        }
         DB::table($request->db)->insert([
             'title' => $request->title,
             'description' => $request->description,
             'place' => $request->place,
             'date' => $request->date,
-            'active' => $request->active
+            'active' => $request->active,
+            'link' => $request->file
         ]);
         \Session::put('success', 'Elemento aggiunto con successo');
         return Redirect::to('admin/'.$request->db);
     }
 
     public function delete_news(Request $request){
-        DB::table($request->db)::where('id', $request->id)->delete();
+        DB::table($request->db)->where('id', $request->id)->delete();
         \Session::put('success', 'Elemento eliminato con successo');
         return Redirect::to('admin/'.$request->db);
     }

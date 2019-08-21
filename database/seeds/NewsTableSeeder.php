@@ -26,15 +26,6 @@ class NewsTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ]);
-            DB::table('premi')->insert([
-	            'title' => $faker->name,
-	            'description' => $faker->paragraph,
-                'place' => $faker->city,
-                'date' => $faker->date('Y-m-d'),
-                'active' => false,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
             DB::table('iniziative')->insert([
 	            'title' => $faker->name,
 	            'description' => $faker->paragraph,
