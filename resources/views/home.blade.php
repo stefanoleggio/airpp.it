@@ -2,9 +2,9 @@
 @section('content')
         <section class="presentation">
             <div class="presentation__text u-center-text">
-                <p class="heading-primary--main">Associazione italiana ricerca patologie polmonari</p>
+                <p class="heading-primary--main">{{ $views[0]->title }}</p>
                 <div class="presentation__p paragraph">
-                    L’ A.I.R.P.P. nasce a Padova grazie ad un gruppo di ricercatori, affermati a livello internazionale, impegnati da anni nello studio delle patologie polmonari, neoplastiche e non, con disfunzioni anche severe destinate a trapianto d’organo.
+                    {{ $views[0]->description }}
                     <a class="btn btn__blue u-margin-top-medium" href="#">diventa socio</a>
                 </div>
             </div>

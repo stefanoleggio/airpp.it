@@ -17,7 +17,7 @@ class CreateViewsTable extends Migration
             $table->bigIncrements('id');
             $table->string('page_id');
             $table->string('title');
-            $table->longText('content');
+            $table->longText('description');
         });
     }
 

@@ -23,12 +23,25 @@
       <a href="/admin" class="list-group-item list-group-item-action bg-light">Dashboard</a>
         <a href="/admin/donazioni" class="list-group-item list-group-item-action bg-light">Donazioni</a>
         <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light">Iscrizioni</a>
-        <a href="/admin/convegni" class="list-group-item list-group-item-action bg-light">Galleria</a>
-        <a href="/admin/premi" class="list-group-item list-group-item-action bg-light">Premi</a>
-        <a href="/admin/iniziative" class="list-group-item list-group-item-action bg-light">Iniziative</a>
-        <a href="/admin/convegni" class="list-group-item list-group-item-action bg-light">Convegni</a>
-        <a href="/admin/pagine" class="list-group-item list-group-item-action bg-light dropdown">Pagine</a>
-        <a href="/admin/componenti" class="list-group-item list-group-item-action bg-light dropdown">Componenti</a>
+        <a href="/admin/galleria" class="list-group-item list-group-item-action bg-light">Galleria</a>
+        <a href="#drop__nw" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Notizie</a>
+        <div id="drop__nw" class="collapse">
+          <a href="/admin/premi" class="list-group-item list-group-item-action bg-secondary text-white">Premi</a>
+          <a href="/admin/iniziative" class="list-group-item list-group-item-action bg-secondary text-white">Iniziative</a>
+          <a href="/admin/convegni" class="list-group-item list-group-item-action bg-secondary text-white">Convegni</a>
+        </div>
+        <a href="#drop__pg" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Pagine</a>
+        <div id="drop__pg" class="collapse">
+          <a href="/admin/pg_home" class="list-group-item list-group-item-action bg-secondary text-white">Home</a>
+          <a href="/admin/pg_donazioni" class="list-group-item list-group-item-action bg-secondary text-white">Donazioni</a>
+          <a href="/admin/pg_associarsi" class="list-group-item list-group-item-action bg-secondary text-white">Associarsi</a>
+          <a href="/admin/pg_notizie" class="list-group-item list-group-item-action bg-secondary text-white">Notizie</a>
+          <a href="/admin/pg_galleria" class="list-group-item list-group-item-action bg-secondary text-white">Galleria</a>
+          <a href="/admin/pg_contatti" class="list-group-item list-group-item-action bg-secondary text-white">Contatti</a>
+          <a href="/admin/pg_statuto" class="list-group-item list-group-item-action bg-secondary text-white">Statuto</a>
+          <a href="/admin/pg_segnalazioni" class="list-group-item list-group-item-action bg-secondary text-white">Segnalazioni</a>
+          <a href="/admin/pg_cookies" class="list-group-item list-group-item-action bg-secondary text-white">Cookies</a>
+        </div>
       </div>
     </div>
     <div id="page-content-wrapper">
@@ -41,7 +54,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="/">airpp.it <span class="sr-only">(current)</span></a>
+              <a class="nav-link" target="_blank" href="/">airpp.it <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown">

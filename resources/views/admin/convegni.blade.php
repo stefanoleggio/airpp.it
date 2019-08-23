@@ -3,7 +3,10 @@
 @section('content')
 @if ($message = Session::get('success'))
 <div class="alert alert-success" role="alert">
-  <h4 class="alert-heading">{{ $message }}</h4>
+    <h4 class="alert-heading">{{ $message }}</h4>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 <?php Session::forget('success');?>
 @endif
@@ -46,7 +49,7 @@
     </div>
 
     <div class="modal fade" id="modal-for-card-{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
@@ -112,7 +115,7 @@
     @endforeach
 </div>
 <div class="modal fade" id="modal-for-new-card" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">

@@ -12,7 +12,8 @@ class PageController extends Controller
         return view('home',
             [
                 'title' => 'Home',
-                'banners' => DB::table('banners')->where('page_id', 'home')->get()
+                'banners' => DB::table('banners')->where('page_id', 'home')->get(),
+                'views' => DB::table('views')->where('page_id', 'home')->get()
             ]
         );
     }

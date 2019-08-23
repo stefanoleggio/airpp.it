@@ -93,7 +93,7 @@
                 {{ $data->title }}
             </div>
             <div class="paragraph">
-                {{ $data->content }}
+                {{ $data->description }}
             </div>
         </div>
     @endforeach

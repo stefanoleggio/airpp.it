@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use PayPal\Api\RedirectUrls;
 use Redirect;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 
 class AdminController extends Controller
@@ -46,6 +46,11 @@ class AdminController extends Controller
         return view('admin.iscrizioni');
     }
 
+    public function galleria()
+    {
+        return view('admin.galleria');
+    }
+
     public function premi()
     {
         return view('admin.premi',
@@ -76,16 +81,6 @@ class AdminController extends Controller
         );
     }
 
-    public function pagine()
-    {
-        return view('admin.pagine');
-    }
-
-    public function componenti()
-    {
-        return view('admin.componenti');
-    }
-
     public function edit_news(Request $request)
     {
         if(!isset($request->active)){
@@ -96,6 +91,9 @@ class AdminController extends Controller
         if(!isset($request->file)){
             $request->file = "0";
         }else{
+            $data = DB::table($request->db)->where('id', $request->id)->get('link');
+            $trimmed = str_replace('/storage', '', $data[0]->link) ;
+            Storage::delete($trimmed);
             $request->file->storeAs('locandine', request()->file->getClientOriginalName());
             $request->file = '/storage/locandine/'.request()->file->getClientOriginalName();
         }

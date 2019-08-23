@@ -14,14 +14,19 @@ class ViewsTableSeeder extends Seeder
         DB::table('views')->insert(
             [
                 [
-                    'page_id' => "donations",
+                    'page_id' => "donazioni",
                     'title' => "Bonifico bancario",
-                    'content' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
                 ],
                 [
-                    'page_id' => "donations",
+                    'page_id' => "donazioni",
                     'title' => "5XMille",
-                    'content' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
+                ],
+                [
+                    'page_id' => "home",
+                    'title' => "Associazione italiana ricerca patologie polmonari",
+                    'description' => "L’ A.I.R.P.P. nasce a Padova grazie ad un gruppo di ricercatori, affermati a livello internazionale, impegnati da anni nello studio delle patologie polmonari, neoplastiche e non, con disfunzioni anche severe destinate a trapianto d’organo."
                 ]
             ]
         );
