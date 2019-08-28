@@ -67,63 +67,136 @@
                     </li>
                 </ul>
             </div>
-            <div class="row team-inner u-margin-top-medium">
-                <div class="col-1-of-4 u-margin-bottom-small">
-                    <div class="team__profile u-center-text">
-                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
-                        </div>
-                        <div class="team__profile-name normal">
-                            Fiorella Calabrese
-                        </div>
-                        <div class="team__profile-role small u-text-bold">
-                            Presidente
-                        </div>
-                        <div class="team__profile-description small">
-                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
-                    </div>
+            <div id="team_cd">
+            <div class="row team-inner u-margin-top-huge">
+                <?php
+                    $i = 0;
+                ?>
+                @foreach($users_cd as $user_cd)
+                <?php
+                $i++;
+                if($i == 4)
+                {
+                    $i = 1;
+                    echo '</div> <div class="row">';
+                }
+                ?>
+                <div class="col-1-of-3 team-inner u-margin-bottom-small u-center-text">
+                    @include('includes.card', 
+                    [
+                        'name' => $user_cd->name,
+                        'surname' => $user_cd->surname,
+                        'img' => $user_cd->img,
+                        'role' => $user_cd->role,
+                        'description' => $user_cd->description
+                    ])
                 </div>
-                <div class="col-1-of-4 u-margin-bottom-small">
-                    <div class="team__profile u-center-text">
-                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
-                        </div>
-                        <div class="team__profile-name normal">
-                            Fiorella Calabrese
-                        </div>
-                        <div class="team__profile-role small u-text-bold">
-                            Presidente
-                        </div>
-                        <div class="team__profile-description small">
-                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
-                    </div>
+                @endforeach
+            </div>
+            </div>
+            <div id="team_cs">
+            <div class="row team-inner u-margin-top-huge">
+                <?php
+                    $i = 0;
+                ?>
+                @foreach($users_cs as $user_cs)
+                <?php
+                $i++;
+                if($i == 4)
+                {
+                    $i = 1;
+                    echo '</div> <div class="row">';
+                }
+                ?>
+                <div class="col-1-of-3 team-inner u-margin-bottom-small u-center-text">
+                    @include('includes.card', 
+                    [
+                        'name' => $user_cs->name,
+                        'surname' => $user_cs->surname,
+                        'img' => $user_cs->img,
+                        'role' => $user_cs->role,
+                        'description' => $user_cs->description
+                    ])
                 </div>
-                <div class="col-1-of-4 u-margin-bottom-small">
-                    <div class="team__profile u-center-text">
-                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
-                        </div>
-                        <div class="team__profile-name normal">
-                            Fiorella Calabrese
-                        </div>
-                        <div class="team__profile-role small u-text-bold">
-                            Presidente
-                        </div>
-                        <div class="team__profile-description small">
-                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
-                    </div>
+                @endforeach
+            </div>
+            </div>
+            <div id="team_sa">
+            <div class="row team-inner u-margin-top-huge">
+                <?php
+                    $i = 0;
+                ?>
+                @foreach($users_sa as $user_sa)
+                <?php
+                $i++;
+                if($i == 4)
+                {
+                    $i = 1;
+                    echo '</div> <div class="row">';
+                }
+                ?>
+                <div class="col-1-of-3 team-inner u-margin-bottom-small u-center-text">
+                    @include('includes.card', 
+                    [
+                        'name' => $user_sa->name,
+                        'surname' => $user_sa->surname,
+                        'img' => $user_sa->img,
+                        'role' => $user_sa->role,
+                        'description' => $user_sa->description
+                    ])
                 </div>
-                <div class="col-1-of-4 u-margin-bottom-small">
-                    <div class="team__profile u-center-text">
-                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
-                        </div>
-                        <div class="team__profile-name normal">
-                            Fiorella Calabrese
-                        </div>
-                        <div class="team__profile-role small u-text-bold">
-                            Presidente
-                        </div>
-                        <div class="team__profile-description small">
-                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
-                    </div>
+                @endforeach
+            </div>
+            </div>
+            <div id="team_ss">
+            <div class="row team-inner u-margin-top-huge">
+                <?php
+                    $i = 0;
+                ?>
+                @foreach($users_ss as $user_ss)
+                <?php
+                $i++;
+                if($i == 4)
+                {
+                    $i = 1;
+                    echo '</div> <div class="row">';
+                }
+                ?>
+                <div class="col-1-of-3 team-inner u-margin-bottom-small u-center-text">
+                    @include('includes.card', 
+                    [
+                        'name' => $user_ss->name,
+                        'surname' => $user_ss->surname,
+                        'img' => $user_ss->img,
+                        'role' => $user_ss->role,
+                        'description' => $user_ss->description
+                    ])
                 </div>
+                @endforeach
+            </div>
+            </div>
             </div>
         </section>
+        <script>
+            window.onload = function() {
+                teamView();
+            };
+        function teamView() {
+            var cd = document.getElementById('team_cd');
+            var cs = document.getElementById('team_cs');
+            var ss = document.getElementById('team_ss');
+            var sa = document.getElementById('team_sa');
+            cd.style.display = "none";
+            cs.style.display = "none";
+            ss.style.display = "none";
+            sa.style.display = "none";
+            var team = [cd, cs, ss, sa];
+
+            for (i = 0; i < 4; i++) {
+                if (document.getElementById(i.toString()).checked) {
+                team[i].style.display = "block";
+                }
+            }
+        }
+            </script>
 @endsection

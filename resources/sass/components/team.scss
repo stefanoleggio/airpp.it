@@ -6,25 +6,27 @@
         }
     }
     &__profile{
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        width: 25rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        min-height: 30rem;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
         background-color: $color-grey;
         @include respond(tab-port) {
             display: inline-block;
+        }
+        @include respond(phone) {
+            width: 40rem;
         }
         &-photo{
             border-radius: 100%;
             height: 9rem;
             width: 9rem;
             display: inline-block;
-            margin-top: 1.5rem;
             font-size: 6rem;
             padding: 1rem;
-            background: azure;
+            background: $color-white;
             background-position: center;
             background-size: 100%;
         }
@@ -33,11 +35,12 @@
             margin-bottom: .5rem;
             font-size: 1.5rem;
             font-weight: bold;
+            text-transform: capitalize;
         }
         &-description{
             margin-top: 1.5rem;
             text-align: left;
-            height: 9rem;
+            height: 15rem;
             overflow-y: scroll;
         }
     }

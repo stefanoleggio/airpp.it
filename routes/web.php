@@ -78,6 +78,8 @@ Route::get('/admin/iniziative', 'AdminController@iniziative');
 
 Route::get('/admin/convegni', 'AdminController@convegni');
 
+Route::get('/admin/team', 'AdminController@team');
+
 /* 
     AdminController pages
 */

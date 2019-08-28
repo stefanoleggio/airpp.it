@@ -51,6 +51,16 @@ class AdminController extends Controller
         return view('admin.galleria');
     }
 
+    public function team()
+    {
+        return view('admin.team',
+            [
+
+                'datas' => DB::table('team')->get()
+            ]
+        );
+    }
+
     public function premi()
     {
         return view('admin.premi',

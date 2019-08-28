@@ -13,7 +13,11 @@ class PageController extends Controller
             [
                 'title' => 'Home',
                 'banners' => DB::table('banners')->where('page_id', 'home')->get(),
-                'views' => DB::table('views')->where('page_id', 'home')->get()
+                'views' => DB::table('views')->where('page_id', 'home')->get(),
+                'users_cd' => DB::table('team')->where('team_id', 'consiglio direttivo')->get(),
+                'users_cs' => DB::table('team')->where('team_id', 'comitato scientifico')->get(),
+                'users_ss' => DB::table('team')->where('team_id', 'segreteria scientifica')->get(),
+                'users_sa' => DB::table('team')->where('team_id', 'segreteria amministrativa')->get()
             ]
         );
     }
@@ -23,7 +27,7 @@ class PageController extends Controller
             [
                 'title' => 'Donazioni',
                 'banners' => DB::table('banners')->where('page_id', 'donazioni')->get(),
-                'datas' => DB::table('views')->where('page_id', 'donations')->get(),
+                'datas' => DB::table('views')->where('page_id', 'donazioni')->get(),
                 'msgs' => DB::table('msgs')->where('scope_id', 'donation__info')->get()
             ]
         );

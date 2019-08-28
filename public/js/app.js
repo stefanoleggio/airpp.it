@@ -131,8 +131,8 @@ function teamView() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\stefa\Documents\coding\airpp\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\stefa\Documents\coding\airpp\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\Users\stefano\Documents\Coding\airpp\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\Users\stefano\Documents\Coding\airpp\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

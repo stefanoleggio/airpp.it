@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ config('app.name', 'Laravel') }}</title>
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('jquery/jquery.min.js') }}"></script>
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css" rel="stylesheet">
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <title>{{ config('app.name', 'Laravel') }}</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css" rel="stylesheet">
+  <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+  <script src="{{ asset('jquery/jquery.js') }}"></script>
+  <script src="{{ asset('js/bootstrap.js') }}"></script>
 </head>
 <body>
 <body>
@@ -42,6 +40,7 @@
           <a href="/admin/pg_segnalazioni" class="list-group-item list-group-item-action bg-secondary text-white">Segnalazioni</a>
           <a href="/admin/pg_cookies" class="list-group-item list-group-item-action bg-secondary text-white">Cookies</a>
         </div>
+        <a href="/admin/team" class="list-group-item list-group-item-action bg-light">Team</a>
       </div>
     </div>
     <div id="page-content-wrapper">
