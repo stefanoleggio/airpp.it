@@ -805,6 +805,59 @@ a {
   padding-right: 0.5rem;
 }
 
+.team {
+  padding: 4rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .team-inner {
+    text-align: center;
+  }
+}
+
+.team__profile {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  min-height: 30rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: #fbfbfb;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .team__profile {
+    display: inline-block;
+  }
+}
+
+.team__profile-photo {
+  border-radius: 100%;
+  height: 9rem;
+  width: 9rem;
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 6rem;
+  padding: 1rem;
+  background: azure;
+  background-position: center;
+  background-size: 100%;
+}
+
+.team__profile-name {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.team__profile-description {
+  margin-top: 1.5rem;
+  text-align: left;
+  height: 9rem;
+  overflow-y: scroll;
+}
+
 .row {
   max-width: 100%;
   margin: 0 auto;
@@ -899,14 +952,6 @@ a {
   .presentation__p {
     width: 70%;
   }
-}
-
-.team {
-  padding: 4rem;
-}
-
-.team__profile {
-  height: 30rem;
 }
 
 #team {

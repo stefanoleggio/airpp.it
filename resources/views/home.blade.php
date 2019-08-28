@@ -67,60 +67,63 @@
                     </li>
                 </ul>
             </div>
-            <div class="team u-margin-top-medium">
-                <div class="col-1-of-4">
-                    <div class="team__profile">
-                        <div class="team__profile-photo" style="background-image: url(storage/team/fiorella_calabrese.jpg);">                       
+            <div class="row team-inner u-margin-top-medium">
+                <div class="col-1-of-4 u-margin-bottom-small">
+                    <div class="team__profile u-center-text">
+                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
                         </div>
-                        <div class="team__profile-name">
+                        <div class="team__profile-name normal">
+                            Fiorella Calabrese
                         </div>
-                        <div class="team__profile-description">
+                        <div class="team__profile-role small u-text-bold">
+                            Presidente
                         </div>
+                        <div class="team__profile-description small">
+                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
                     </div>
                 </div>
-                <div class="col-1-of-4">
-                    <div class="team__profile">
-                        <div class="team__profile-photo">
+                <div class="col-1-of-4 u-margin-bottom-small">
+                    <div class="team__profile u-center-text">
+                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
                         </div>
-                        <div class="team__profile-name">
+                        <div class="team__profile-name normal">
+                            Fiorella Calabrese
                         </div>
-                        <div class="team__profile-description">
+                        <div class="team__profile-role small u-text-bold">
+                            Presidente
                         </div>
+                        <div class="team__profile-description small">
+                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
                     </div>
                 </div>
-                <div class="col-1-of-4">
-                    <div class="team__profile">
-                        <div class="team__profile-photo">
+                <div class="col-1-of-4 u-margin-bottom-small">
+                    <div class="team__profile u-center-text">
+                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
                         </div>
-                        <div class="team__profile-name">
+                        <div class="team__profile-name normal">
+                            Fiorella Calabrese
                         </div>
-                        <div class="team__profile-description">
+                        <div class="team__profile-role small u-text-bold">
+                            Presidente
                         </div>
+                        <div class="team__profile-description small">
+                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
                     </div>
                 </div>
-                <div class="col-1-of-4">
-                    <div class="team__profile">
-                        <div class="team__profile-photo">
+                <div class="col-1-of-4 u-margin-bottom-small">
+                    <div class="team__profile u-center-text">
+                        <div class="team__profile-photo" style="background-image: url(/media/img/team/calabrese_fiorella.jpg);">  
                         </div>
-                        <div class="team__profile-name">
+                        <div class="team__profile-name normal">
+                            Fiorella Calabrese
                         </div>
-                        <div class="team__profile-description">
+                        <div class="team__profile-role small u-text-bold">
+                            Presidente
                         </div>
+                        <div class="team__profile-description small">
+                        Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.                        </div>
                     </div>
                 </div>
-                <!--
-                <div id="team__cd">
-
-                </div>
-                <div id="team__cs">
-
-                </div>
-                <div id="team__ss">
-
-                </div>
-                <div id="team__sa">
-                </div>
-                -->
             </div>
         </section>
 @endsection
