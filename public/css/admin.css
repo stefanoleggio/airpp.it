@@ -56,3 +56,14 @@
     width: 5rem;
   }
   
+  .team_img{
+    border-radius: 100%;
+    height: 9rem;
+    width: 9rem;
+    display: inline-block;
+    font-size: 6rem;
+    padding: 1rem;
+    background: white;
+    background-position: center;
+    background-size: 100%;
+  }

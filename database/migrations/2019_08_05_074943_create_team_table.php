@@ -20,7 +20,7 @@ class CreateTeamTable extends Migration
             $table->string('surname');
             $table->string('role');
             $table->longText('description');
-            $table->string('img');
+            $table->integer('img');
         });
     }
 

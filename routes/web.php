@@ -113,3 +113,5 @@ Route::post('/admin/add_news', 'AdminController@add_news');
 Route::post('/admin/delete_news', 'AdminController@delete_news');
 
 Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
+
+Route::post('/admin/edit_team', 'AdminController@edit_team');

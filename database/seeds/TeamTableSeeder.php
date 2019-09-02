@@ -19,7 +19,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'calabrese',
                     'role' => 'presidente',
                     'description' => 'Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova',
-                    'img' => '/media/img/team/fiorella_calabrese.jpg'
+                    'img' => 1
                 ],
                 [
                     'team_id' => 'consiglio direttivo',
@@ -27,7 +27,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'rea',
                     'role' => 'vice presidente',
                     'description' => 'Professore Ordinario in Chirurgia Toracica presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'consiglio direttivo',
@@ -35,7 +35,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Tambuscio',
                     'role' => 'segretario',
                     'description' => 'Specialista in Medicina Legale e delle Assicurazioni.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'consiglio direttivo',
@@ -43,7 +43,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'saetta',
                     'role' => 'consigliere',
                     'description' => ' Professore Ordinario in Pneumologia presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'consiglio direttivo',
@@ -51,7 +51,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'leggio',
                     'role' => 'consigliere',
                     'description' => 'Direttore Generale di Arcelor Mittal CLN Distribuzione Italia.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -59,7 +59,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Balestro',
                     'role' => '0',
                     'description' => 'Dirigente medico presso l’Unità Operativa di Pneumologia.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -67,7 +67,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Baraldo',
                     'role' => '0',
                     'description' => 'Ricercatore Universitario presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari dell’Università degli Studi di Padova.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -75,7 +75,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Favaretto',
                     'role' => '0',
                     'description' => '0',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -83,7 +83,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Lodovichetti',
                     'role' => '0',
                     'description' => 'Responsabile del Laboratorio Pennelli Snc, specializzato in istopatologia e citologia diagnostica.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -91,7 +91,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Marulli',
                     'role' => '0',
                     'description' => 'Ricercatore Universitario presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari dell’Università degli Studi di Padova.',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -99,7 +99,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Cozzi',
                     'role' => '0',
                     'description' => 'Responsabile della S.S.D. di Immunologia dei Trapianti dell\'Azienda Ospedaliera di Padova',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -107,7 +107,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Paolucci',
                     'role' => '0',
                     'description' => 'Lavora nel settore R&D Product Development dell\'Azienda Ompi S.r.l., Piombino Dese (PD).',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'segreteria scientifica',
@@ -115,7 +115,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'De Iacovo',
                     'role' => '0',
                     'description' => 'Lavora presso il dipartimento di Scienze Cardiologiche, Toraciche e Vascolari (UOC di Chirurgia Toracica). lavora presso il dipartimento di Scienze Cardiologiche, Toraciche e Vascolari (UOC di Chirurgia Toracica).',
-                    'img' => '0'
+                    'img' => 0
                 ],
                 [
                     'team_id' => 'segreteria amministrativa',
@@ -123,7 +123,7 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'Piovan',
                     'role' => '0',
                     'description' => '0',
-                    'img' => '0'
+                    'img' => 0
                 ],
 
             ]

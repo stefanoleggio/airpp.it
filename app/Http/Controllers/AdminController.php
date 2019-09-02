@@ -61,6 +61,29 @@ class AdminController extends Controller
         );
     }
 
+    public function edit_team(Request $request)
+    {
+        if(!isset($request->file)){
+            $request->file = 0;
+        }else{
+            $request->file->storeAs('team', $request->surname."_".$request->name.".".request()->file->getClientOriginalExtension());
+            $request->file = 1;
+        }
+        DB::table($request->db)
+            ->where('id', $request->id)
+            ->update(
+                [
+                    'name' => $request->name,
+                    'surname' => $request->surname,
+                    'description' => $request->description,
+                    'role' => $request->role,
+                    'img'=> $request->file
+                ]
+            );
+            \Session::put('success', 'Modifica effettuata con successo');
+            return Redirect::to('admin/'.$request->db);
+    }
+
     public function premi()
     {
         return view('admin.premi',

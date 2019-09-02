@@ -16,13 +16,35 @@
             <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 Che cosa facciamo?
             </div>
+            <?php
+                $c = 0
+            ?>
             @foreach($banners as $banner)
-                @include('includes.banner', 
-                [
-                    'title' => $banner->title,
-                    'description' => $banner->description,
-                    'img' => $banner->img
-                ])
+                <?php
+                    if($c == 1){
+                ?>
+                        <div class="u-bgcolor-color-grey">
+                            @include('includes.banner', 
+                            [
+                                'title' => $banner->title,
+                                'description' => $banner->description,
+                                'img' => $banner->img
+                            ])
+                        </div>
+                <?php
+                    }else{
+                ?>
+                        @include('includes.banner', 
+                        [
+                            'title' => $banner->title,
+                            'description' => $banner->description,
+                            'img' => $banner->img
+                        ])
+                <?php
+                    }
+                    $c++;
+                ?>
+
             @endforeach
             <!--<div class="row info__tab info__grey">-->
         <div class="u-padding-normal-unique">
@@ -39,15 +61,15 @@
                         <p class="select-box__input-text">Consiglio direttivo</p>
                     </div>
                     <div class="select-box__value">
-                        <input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked" onchange="teamView()"/>
+                        <input class="select-box__input" type="radio" id="1" value="2" name="Ben" onchange="teamView()"/>
                         <p class="select-box__input-text">Comitato scientifico</p>
                     </div>
                     <div class="select-box__value">
-                        <input class="select-box__input" type="radio" id="2" value="3" name="Ben" checked="checked" onchange="teamView()"/>
+                        <input class="select-box__input" type="radio" id="2" value="3" name="Ben" onchange="teamView()"/>
                         <p class="select-box__input-text">Segreteria scientifica</p>
                     </div>
                     <div class="select-box__value">
-                        <input class="select-box__input" type="radio" id="3" value="4" name="Ben" checked="checked" onchange="teamView()"/>
+                        <input class="select-box__input" type="radio" id="3" value="4" name="Ben" onchange="teamView()"/>
                         <p class="select-box__input-text">Segreteria amministrativa</p>
                     </div>
                     <img class="select-box__icon" src="{{ asset('/media/svg/select_arrow.svg') }}" alt="Arrow Icon" aria-hidden="true"/>
