@@ -2,6 +2,16 @@
     display: inline-block;
     &__group:not(:last-child) {
         margin-bottom: 2.5rem;
+        .row{
+            @include respond(tab-port) {
+                padding: 0;
+            }
+            .col-1-of-3{
+                @include respond(tab-port) {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
     }
 
     &__input {
@@ -115,5 +125,13 @@
 
     &__radio-input:checked ~ &__radio-label &__radio-button::after {
         opacity: 1;
+    }
+
+    &__select{
+        padding: .5rem;   
+        width: 7rem;
+        @include respond(tab-port) {
+            width: 90%;
+        }
     }
 }

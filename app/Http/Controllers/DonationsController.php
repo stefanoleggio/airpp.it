@@ -49,7 +49,12 @@
                 'name' => 'required',
                 'surname' => 'required',
                 'email' => 'required|email',
-                'amount' => 'required|integer'
+                'amount' => 'required|integer',
+                'regione' => 'required',
+                'provincia' => 'required',
+                'comune' => 'required',
+                'via' => 'required',
+                'cf' => 'required'
             ],
             [
                 'name.required' => 'Devi inserire il nome',
@@ -57,7 +62,12 @@
                 'email.required' => 'Devi inserire l\'email',
                 'amount.required' => 'Devi inserire l\'importo',
                 'email.email' => 'Devi inserire una email valida',
-                'amount.integer' => 'L\'importo deve essere una cifra tonda'
+                'amount.integer' => 'L\'importo deve essere una cifra tonda',
+                'regione.required' => 'Devi inserire la regione',
+                'provincia.required' => 'Devi inserire la provincia',
+                'comune.required' => 'Devi inserire il comune',
+                'via.required' => 'Devi inserire la tua via',
+                'cf.required' => 'Devi inserire il codice fiscale'
             ]);
 
             $payer = new Payer();
@@ -102,6 +112,11 @@
                         'surname' => $request->surname,
                         'email' => $request->email,
                         'amount' => $request->amount,
+                        'cf' => $request->cf,
+                        'regione' => $request->regione,
+                        'provincia' => $request->provincia,
+                        'comune' => $request->comune,
+                        'via' => $request->via,
                         'success' => false,
                         'date' => Carbon::now(),
                     ]

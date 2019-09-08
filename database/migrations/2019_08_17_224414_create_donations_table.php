@@ -18,6 +18,11 @@ class CreateDonationsTable extends Migration
             $table->string('paymentID');
             $table->string('name');
             $table->string('surname');
+            $table->string('cf');
+            $table->string('regione');
+            $table->string('provincia');
+            $table->string('comune');
+            $table->string('via');
             $table->string('email');
             $table->integer('amount');
             $table->boolean('success');

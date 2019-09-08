@@ -57,6 +57,26 @@
             <div class="col-sm">{{ $data->surname }}</div>
         </div>
         <div class="row">
+            <div class="col-sm">Codice fiscale</div>
+            <div class="col-sm">{{ $data->cf }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Regione</div>
+            <div class="col-sm">{{ $data->regione }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Provincia</div>
+            <div class="col-sm">{{ $data->provincia }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Comune</div>
+            <div class="col-sm">{{ $data->comune }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Via</div>
+            <div class="col-sm">{{ $data->via }}</div>
+        </div>
+        <div class="row">
             <div class="col-sm">Email</div>
             <div class="col-sm">{{ $data->email }}</div>
         </div>
