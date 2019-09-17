@@ -15,27 +15,3 @@
         }
     }
 }
-
-#team{
-    height: 20rem;
-    &__cd{
-        background-color: red;
-        height: 20rem;
-        display:black;
-    }
-    &__cs{
-        background-color: blue;
-        height: 20rem;
-        display: none;
-    }
-    &__ss{
-        background-color: green;
-        height: 20rem;
-        display: none;
-    }
-    &__sa{
-        background-color: yellow;
-        height: 20rem;
-        display: none;
-    }
-}

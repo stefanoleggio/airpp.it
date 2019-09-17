@@ -1,29 +1,11 @@
 <!-- Responsive sidebar -->
-<nav class="responsive-nav" id="sidebar">
-    <ul class="responsive-nav__links">
-        <li class="responsive-nav__item">
-            <a href="/" class="responsive-nav__link">Home</a>
-        </li>
-        <li class="responsive-nav__item">
-                <a href="/notizie" class="responsive-nav__link">Notizie</a>
-        </li>
-        <li class="responsive-nav__item">
-            <a href="#" class="responsive-nav__link">Sostienici</a>
-        </li>
-        <li class="responsive-nav__item">
-            <a href="#" class="responsive-nav__link">Galleria</a>
-        </li>
-        <li class="responsive-nav__item">
-            <a href="#" class="responsive-nav__link">Associazione</a>
-        </li>
-        <li class="responsive-nav__item">
-            <a href="#" class="responsive-nav__link">Contatti</a>
-        </li>
-    </ul>
-</nav>
+
 <script>
     function show_responsive_nav(){
-        document.getElementsByClassName("responsive-nav").style.display = "block";
+        document.getElementById("sidebar").style.display = "block";
+    }
+    function hide_responsive_nav(){
+        document.getElementById("sidebar").style.display = "none";
     }
 </script>
 <!-- / -->
@@ -70,11 +52,62 @@
             </a>
             <!-- / -->
         </div>
+        <nav class="responsive-nav u-padding-top-big" id="sidebar">
+                <a onclick="hide_responsive_nav()" class="responsive-nav__close">
+                    <i class="fas fa-times"></i>    
+                </a>
+                <ul class="responsive-nav__links u-center-text u-padding-top-big">
+                    <li class="responsive-nav__item">
+                        <a href="/" class="responsive-nav__link">Home</a>
+                    </li>
+                    <li class="responsive-nav__item">
+                            <a href="#" id="news_btn" class="responsive-nav__link">Notizie</a>
+                    </li>
+                    <ul id="news" style="display:none;">
+                        <li class="responsive-nav__subitem">
+                                <a href="/convegni" class="responsive-nav__link">Convegni</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/premi" class="responsive-nav__link">Premi</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/iniziative" class="responsive-nav__link">Iniziative</a>
+                        </li>
+                    </ul>
+                    <li class="responsive-nav__item">
+                        <a href="#" id="sostienici_btn" class="responsive-nav__link">Associazione</a>
+                    </li>
+                    <ul id="sostienici" style="display:none;">
+                        <li class="responsive-nav__subitem">
+                                <a href="/donazioni" class="responsive-nav__link">Donazioni</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/associarsi" class="responsive-nav__link">Associarsi</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/statuto" class="responsive-nav__link">Statuto</a>
+                        </li>
+                    </ul>
+                    <li class="responsive-nav__item">
+                        <a href="/galleria" class="responsive-nav__link">Galleria</a>
+                    </li>
+                    <li class="responsive-nav__item">
+                        <a href="/contatti" class="responsive-nav__link">Contatti</a>
+                    </li>
+                </ul>
+            </nav>
 </header>
 <script>
+    $( "#news_btn" ).click(function() {
+        $( "#news" ).slideToggle();
+    });
+    $( "#sostienici_btn" ).click(function() {
+        $( "#sostienici" ).slideToggle();
+    });
     @if (Request::path() == '/')
         var prevScrollpos = window.pageYOffset;
         window.onload = function() {
+            teamView();
             document.getElementById("topbar").style.top = "-15rem"; 
         }
         window.onscroll = function() {

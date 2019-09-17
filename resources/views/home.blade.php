@@ -200,9 +200,6 @@
             </div>
         </section>
         <script>
-            window.onload = function() {
-                teamView();
-            };
         function teamView() {
             var cd = document.getElementById('team_cd');
             var cs = document.getElementById('team_cs');
