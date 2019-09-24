@@ -37,7 +37,9 @@ class PageController extends Controller
         return view('associarsi',
             [
                 'title' => 'Associarsi',
-                'banners' => DB::table('banners')->where('page_id', 'associarsi')->get()
+                'banners' => DB::table('banners')->where('page_id', 'associarsi')->get(),
+                'datas' => DB::table('views')->where('page_id', 'associarsi')->get(),
+                'msgs' => DB::table('msgs')->where('scope_id', 'iscrizione__info')->get()
             ]
         );
     }

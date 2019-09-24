@@ -15,12 +15,27 @@ class ViewsTableSeeder extends Seeder
             [
                 [
                     'page_id' => "donazioni",
+                    'title' => "donazioni online",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
+                ],
+                [
+                    'page_id' => "donazioni",
                     'title' => "Bonifico bancario",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
                 ],
                 [
                     'page_id' => "donazioni",
                     'title' => "5XMille",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
+                ],
+                [
+                    'page_id' => "associarsi",
+                    'title' => "iscrizione online",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
+                ],
+                [
+                    'page_id' => "associarsi",
+                    'title' => "procedura alternativa",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus suscipit nihil veniam dolorem numquam dignissimos exercitationem, omnis quia, quod asperiores nostrum reiciendis eaque, maiores distinctio ipsam laborum beatae ipsum nam."
                 ],
                 [

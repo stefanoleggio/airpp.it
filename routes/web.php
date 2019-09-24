@@ -49,14 +49,17 @@ Route::get('/galleria', 'GalleryController@index');
     DonationsController
 */
 
-Route::post('paypal', 'DonationsController@payWithpaypal');
+Route::post('donationspaypal', 'DonationsController@payWithpaypal');
 
-Route::get('status', 'DonationsController@getPaymentStatus');
+Route::get('donationsstatus', 'DonationsController@getPaymentStatus');
 
 /*
     JoinusController
 */
 
+Route::post('joinuspaypal', 'JoinUsController@payWithpaypal');
+
+Route::get('joinusstatus', 'JoinUsController@getPaymentStatus');
 
 /* 
     AdminController general

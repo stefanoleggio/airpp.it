@@ -28,10 +28,10 @@
         <div class="row u-padding-normal ">
             <div class="col-1-of-2 u-center-text">
                 <div class="heading-secondary u-margin-bottom-medium u-color-secondary">
-                    Donazioni online
+                {{ $datas[0]->title }}
                 </div>
                 <div class="paragraph">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam atque rem excepturi, est veritatis esse vel, velit nostrum magni voluptatum et! Inventore molestias aspernatur repellat aut eos id vel laborum.
+                {{ $datas[0]->description }}
                 </div>
                 @include('includes.msg', 
                 [
@@ -41,31 +41,37 @@
                 ])
             </div>
             <div class="col-1-of-2 u-center-text">
-                <form method="POST" class="form u-padding-normal u-display-inline-block" action="{!! URL::to('paypal') !!}">
+                <form method="POST" class="form u-padding-normal u-display-inline-block" action="{!! URL::to('donationspaypal') !!}">
                     {{ csrf_field() }}
                     <div class="form__group">
                         <div class="form__label">
-                            Nome
+                            Nome*
                         </div>
                         <input type="text" value="{{ old('name') }}" class="form__input @error('name') form__input-invalid @enderror" name="name" placeholder="inserisci il tuo nome">
                     </div>
                     <div class="form__group">
                         <div class="form__label">
-                            Cognome
+                            Cognome*
                         </div>
                         <input type="text" value="{{ old('surname') }}" class="form__input @error('surname') form__input-invalid @enderror" name="surname" placeholder="inserisci il tuo cognome">
                     </div>
                     <div class="form__group">
                         <div class="form__label">
-                            Codice fiscale
+                            Codice fiscale*
                         </div>
                         <input type="text" value="{{ old('cf') }}" class="form__input @error('cf') form__input-invalid @enderror" name="cf" placeholder="inserisci il tuo codice fiscale">
+                    </div>
+                    <div class="form__group">
+                        <div class="form__label">
+                            Via e civico di residenza*
+                        </div>
+                        <input type="text" value="{{ old('via') }}" class="form__input @error('via') form__input-invalid @enderror" name="via" placeholder="Inserisci la tua via e civico">
                     </div>
                     <div class="form__group">
                         <div class="row">
                             <div class="col-1-of-3">
                                 <div class="form__label">
-                                    Regione
+                                    Regione*
                                 </div>
                                 <select class="form__select u-margin-top-small" name="regione" id="regione" onchange="province()">
                                     <option selected disabled id="0">Seleziona</option>
@@ -73,7 +79,7 @@
                             </div>
                             <div class="col-1-of-3">
                                 <div class="form__label">
-                                    Provincia
+                                    Provincia*
                                 </div>
                                 <select class="form__select u-margin-top-small" name="provincia" id="provincia" onchange="comuni()">
                                     <option selected disabled id="0">Seleziona</option>
@@ -81,7 +87,7 @@
                             </div>
                             <div class="col-1-of-3">
                                 <div class="form__label">
-                                    Comune
+                                    Comune*
                                 </div>
                                 <select class="form__select u-margin-top-small" name="comune" id="comune">
                                     <option selected disabled id="0">Seleziona</option>
@@ -91,19 +97,13 @@
                     </div>
                     <div class="form__group">
                         <div class="form__label">
-                            Via e civico
-                        </div>
-                        <input type="text" value="{{ old('via') }}" class="form__input @error('via') form__input-invalid @enderror" name="via" placeholder="Inserisci la tua via e civico">
-                    </div>
-                    <div class="form__group">
-                        <div class="form__label">
-                            Email
+                            Email*
                         </div>
                         <input type="text" value="{{ old('email') }}" class="form__input @error('email') form__input-invalid @enderror" name="email" placeholder="Inserisci la tua email">
                     </div>
                     <div class="form__group">
                         <div class="form__label">
-                            Importo 
+                            Importo*
                             <i class="fas fa-euro-sign"></i>
                         </div>
                         <input type="number" value="{{ old('amount') }}" class="form__input @error('amount') form__input-invalid @enderror" name="amount" placeholder="Quanto vuoi donare?">
@@ -118,7 +118,7 @@
                         </div>
                     @endif
                     <div class="form__group u-center-text u-margin-top-medium">
-                        <button class="btn btn__blue u-display-inline-block">
+                        <button class="btn btn__blue btn__big u-display-inline-block">
                             Dona
                         </button>
                     </div>
@@ -127,16 +127,22 @@
         </div>
     </section>
     <div class="row u-padding-normal">
-    @foreach($datas as $data)
         <div class="col-1-of-2 u-center-text">
             <div class="heading-secondary u-margin-bottom-medium u-color-secondary">
-                {{ $data->title }}
+                {{ $datas[1]->title }}
             </div>
             <div class="paragraph">
-                {{ $data->description }}
+                {{ $datas[1]->description }}
             </div>
         </div>
-    @endforeach
+        <div class="col-1-of-2 u-center-text">
+            <div class="heading-secondary u-margin-bottom-medium u-color-secondary">
+                {{ $datas[2]->title }}
+            </div>
+            <div class="paragraph">
+                {{ $datas[2]->description }}
+            </div>
+        </div>
     </div>
     <script>
         jQuery.getJSON('json/regioni.json', function(data){

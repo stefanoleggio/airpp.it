@@ -3,8 +3,9 @@
 namespace App\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use App\Http\Controllers\CodiceFiscaleController;
 
-class CodiceFiscale implements Rule
+class codicefiscale implements Rule
 {
     /**
      * Create a new rule instance.
@@ -25,7 +26,11 @@ class CodiceFiscale implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        $cf = new CodiceFiscaleController();
+        if(!$cf->ValidaCodiceFiscale($value)){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -35,6 +40,6 @@ class CodiceFiscale implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'Il codice fiscale non è valido';
     }
 }

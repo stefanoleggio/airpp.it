@@ -79,8 +79,8 @@
             $transaction->setAmount($amount)
                 ->setDescription('Donazione');
             $redirect_urls = new RedirectUrls();
-            $redirect_urls->setReturnUrl(URL::to('status'))
-                ->setCancelUrl(URL::to('status'));
+            $redirect_urls->setReturnUrl(URL::to('donationsstatus'))
+                ->setCancelUrl(URL::to('donationsstatus'));
             $payment = new Payment();
             $payment->setIntent('Sale')
                 ->setPayer($payer)

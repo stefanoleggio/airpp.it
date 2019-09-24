@@ -1,13 +1,12 @@
 .btn{
     &{
-        width: 14rem;
-        border-radius: 100px;
-        color: $color-white;
-        font-weight: 600;
-        font-size: 2rem;
-        padding: 2rem;
+        border-radius: 6px;
+        color: white;
+        font-weight: 700;
         text-align: center;
         display: block;
+        transition: 0.5s;
+        text-transform: capitalize;
     }
     &:hover{
         cursor: pointer;
@@ -15,10 +14,27 @@
     &__blue{
         background-color: $color-primary;
     }
+    &__blue:hover{
+        background-color: $color-primary-light;
+    }
     &__pink{
         background-color: $color-secondary;
     }
+    &__pink:hover{
+        background-color: $color-secondary-light;
+    }
+    &__medium{
+        width: 12rem;
+        padding: 1.4rem;
+        font-size: 1.5rem;
+    }
+    &__big{
+        padding: 2.3rem;
+        width: 17rem;
+        font-size: 1.8rem;
+    }
     &__go{
+        transition: 0.5s;
         z-index: 1;
         display: block;
         width: 6rem;

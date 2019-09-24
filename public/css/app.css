@@ -347,7 +347,7 @@ a {
   background: white;
   padding-top: 5.4rem;
   font-size: 1.5rem;
-  text-transform: lowercase;
+  text-transform: capitalize;
 }
 
 .user-nav__drop li {
@@ -357,7 +357,7 @@ a {
 
 @media only screen and (min-width: 112.5em) {
   .user-nav__drop {
-    padding-top: 4.2rem;
+    padding-top: 4rem;
   }
 }
 
@@ -385,7 +385,7 @@ a {
 
 .responsive-nav__subitem {
   font-size: 1.5rem !important;
-  text-transform: lowercase !important;
+  text-transform: capitalize !important;
   padding-left: 3rem;
 }
 
@@ -435,14 +435,13 @@ a {
 }
 
 .btn {
-  width: 14rem;
-  border-radius: 100px;
+  border-radius: 6px;
   color: white;
-  font-weight: 600;
-  font-size: 2rem;
-  padding: 2rem;
+  font-weight: 700;
   text-align: center;
   display: block;
+  transition: 0.5s;
+  text-transform: capitalize;
 }
 
 .btn:hover {
@@ -453,11 +452,32 @@ a {
   background-color: #4ebaba;
 }
 
+.btn__blue:hover {
+  background-color: #6cc6c6;
+}
+
 .btn__pink {
   background-color: #ed9090;
 }
 
+.btn__pink:hover {
+  background-color: #f1a7a7;
+}
+
+.btn__medium {
+  width: 12rem;
+  padding: 1.4rem;
+  font-size: 1.5rem;
+}
+
+.btn__big {
+  padding: 2.3rem;
+  width: 17rem;
+  font-size: 1.8rem;
+}
+
 .btn__go {
+  transition: 0.5s;
   z-index: 1;
   display: block;
   width: 6rem;
@@ -678,11 +698,18 @@ a {
 
 .newstab {
   background-color: #e6e6e6;
-  max-width: 70rem;
+  display: inline-block;
+  width: 70rem;
   padding: 4rem;
   position: relative;
   border-radius: 0.5rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+@media only screen and (max-width: 56.25em) {
+  .newstab {
+    width: 40rem;
+  }
 }
 
 .newstab__state {

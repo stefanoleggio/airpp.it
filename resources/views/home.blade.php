@@ -5,7 +5,14 @@
                 <p class="heading-primary--main">{{ $views[0]->title }}</p>
                 <div class="presentation__p paragraph">
                     {{ $views[0]->description }}
-                    <a class="btn btn__blue u-margin-top-medium" href="#">diventa socio</a>
+                    <div class="row u-margin-top-medium">
+                        <div class="col-1-of-2 u-center-text">
+                            <a class="btn btn__medium btn__blue u-display-inline-block" href="/associarsi">diventa socio</a>
+                        </div>
+                        <div class="col-1-of-2 u-center-text">
+                            <a class="btn btn__medium btn__pink u-display-inline-block" href="/donazioni">dona ora</a>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="u-anchor-bottom">

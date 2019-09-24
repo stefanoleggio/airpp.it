@@ -16,6 +16,7 @@
     <div class="container">
     @include('includes.adminpages', 
         [
+            'views' => $views,
             'banners' => $banners
         ]
     )

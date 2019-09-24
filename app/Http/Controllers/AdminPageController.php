@@ -34,7 +34,8 @@ class AdminPageController extends Controller
     public function pg_associarsi(){
         return view('admin.pg_associarsi',
             [
-                'banners' => DB::table('banners')->where('page_id', 'associarsi')->get()
+                'banners' => DB::table('banners')->where('page_id', 'associarsi')->get(),
+                'views' => DB::table('views')->where('page_id', 'associarsi')->get()
             ]
         );
     }
