@@ -83,6 +83,21 @@ Route::get('/admin/convegni', 'AdminController@convegni');
 
 Route::get('/admin/team', 'AdminController@team');
 
+Route::get('/admin/email', 'AdminController@email');
+
+/*
+    MasterController
+*/
+
+Route::get('/admin/users', 'MasterController@users');
+
+Route::post('/admin/edit_users', 'MasterController@edit_users');
+
+Route::post('/admin/add_users', 'MasterController@add_users');
+
+Route::post('/admin/delete_users', 'MasterController@delete_users');
+
+
 /* 
     AdminController pages
 */

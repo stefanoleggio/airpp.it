@@ -161,7 +161,6 @@
                 </form>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger">Elimina</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
                 </div>
             </div>

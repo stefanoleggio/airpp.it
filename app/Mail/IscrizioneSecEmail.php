@@ -6,22 +6,19 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Support\Facades\DB;
 
-class DonationEmail extends Mailable
+class IscrizioneSecEmail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $request;
-    public $email;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Object $request)
+    public function __construct()
     {
-        $this->request = $request;
-        $this->email = DB::table('views')->where('page_id', 'email_donazioni')->get();
+        //
     }
 
     /**
@@ -31,6 +28,6 @@ class DonationEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.donation');
+        return $this->view('view.name');
     }
 }

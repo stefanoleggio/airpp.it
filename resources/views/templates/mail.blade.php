@@ -15,6 +15,10 @@
                 color: rgb(63, 63, 63);
             }
 
+            .main_container{
+                margin-top: 10rem;
+            }
+
             .mail__banner{
                 width: 100%;
                 text-align: center;
@@ -73,8 +77,21 @@
                 font-weight: bold;
             }
 
+            .table__data{
+                text-transform: capitalize;
+            }
+
+            .table__cf{
+                text-transform: uppercase;
+            }
+
+            .table__amount{
+                color: #ed9090;
+            }
+
             .mail{
                 padding: 4rem;
+                text-align: center;
             }
 
             .mail__title{
@@ -87,6 +104,23 @@
                 display: inline-block;
                 letter-spacing: .2rem;
                 transition: all .2s;
+            }
+
+            .table{
+                text-align: left !important;
+            }
+
+            @media screen and (max-width: 600px) {
+                .row .col-1-of-2 {
+                    width: 100%;
+                }
+                .row [class^=col-] {
+                    float: none;
+                }
+                .row [class^=col-]:not(:last-child) {
+                    margin-top: 2rem;
+                    margin-right: none;
+                }
             }
         </style>
         <div class="mail">

@@ -19,6 +19,9 @@
       <div class="sidebar-heading list-group-item list-group-item-action active">{{ config('app.name', 'Laravel') }}</div>
       <div class="list-group list-group-flush">
       <a href="/admin" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+      @if (Auth::user()->role == "master")
+        <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Utenti</a>
+      @endif
         <a href="/admin/donazioni" class="list-group-item list-group-item-action bg-light">Donazioni</a>
         <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light">Iscrizioni</a>
         <a href="/admin/galleria" class="list-group-item list-group-item-action bg-light">Galleria</a>
@@ -41,6 +44,7 @@
           <a href="/admin/pg_cookies" class="list-group-item list-group-item-action bg-secondary text-white">Cookies</a>
         </div>
         <a href="/admin/team" class="list-group-item list-group-item-action bg-light">Team</a>
+        <a href="/admin/email" class="list-group-item list-group-item-action bg-light">Email</a>
       </div>
     </div>
     <div id="page-content-wrapper">

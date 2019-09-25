@@ -1,14 +1,10 @@
 @extends('templates.admin')
 
 @section('content')
-<div class="card">
-  <div class="card-header">
-    <h3>
-    Dashboard
-    </h3>
-  </div>
-  <div class="card-body">
-    Benvenuto nel pannello amministrativo di airpp.it
-  </div>
-</div>
+@include('includes.admincard', 
+        [
+            'title' => 'Dashboard',
+            'description' => 'Benvenuto nel pannello amministrativo di airpp.it'
+        ]
+    )
 @endsection

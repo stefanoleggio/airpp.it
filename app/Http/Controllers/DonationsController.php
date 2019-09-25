@@ -147,7 +147,7 @@
                 /*
                     Invio email
                 */
-                Mail::to('stefanoleggio28@gmail.com')->send(new DonationSecEmail($data[0]));
+                Mail::to('segreteria@airpp.it')->send(new DonationSecEmail($data[0]));
                 Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
                 \Session::put('success', 'Donazione effettuata con successo');
                 return Redirect::to('/donazioni');

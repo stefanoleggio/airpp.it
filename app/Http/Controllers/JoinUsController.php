@@ -78,7 +78,7 @@
                 ->setTotal($request->get('amount'));
             $transaction = new Transaction();
             $transaction->setAmount($amount)
-                ->setDescription('Donazione');
+                ->setDescription('Iscrizione');
             $redirect_urls = new RedirectUrls();
             $redirect_urls->setReturnUrl(URL::to('joinusstatus'))
                 ->setCancelUrl(URL::to('joinusstatus'));
@@ -92,10 +92,10 @@
             } catch (\PayPal\Exception\PPConnectionException $ex) {
                 if (\Config::get('app.debug')) {
                     \Session::put('error', 'Connessione scaduta');
-                    return Redirect::to('/donazioni');
+                    return Redirect::to('/associarsi');
                 } else {
                     \Session::put('error', 'Si è verificato un errore, ci scusiamo');
-                    return Redirect::to('/donazioni');
+                    return Redirect::to('/associarsi');
                 }
             }
             foreach ($payment->getLinks() as $link) {
@@ -125,7 +125,7 @@
                 return Redirect::away($redirect_url);
             }
             \Session::put('error', 'Si è verificato un errore, ci scusiamo');
-            return Redirect::to('/donazioni');
+            return Redirect::to('/associarsi');
         }
 
         public function getPaymentStatus()
@@ -134,26 +134,26 @@
             Session::forget('paypal_payment_id');
             if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
                 \Session::put('error', 'Donazione fallita, riprovare');
-                return Redirect::to('/donazioni');
+                return Redirect::to('/associarsi');
             }
             $payment = Payment::get($payment_id, $this->_api_context);
             $execution = new PaymentExecution();
             $execution->setPayerId(Input::get('PayerID'));
             $result = $payment->execute($execution, $this->_api_context);
             if ($result->getState() == 'approved') {
-                DB::table('donations')
+                DB::table('iscrizioni')
                     ->where('paymentID', $payment->getId())
                     ->update(['success' => true]);
-                $data = DB::table('donations')->where('paymentID', $payment->getId())->get();
+                $data = DB::table('iscrizioni')->where('paymentID', $payment->getId())->get();
                 /*
                     Invio email
                 */
                 Mail::to('stefanoleggio28@gmail.com')->send(new DonationSecEmail($data[0]));
                 Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
                 \Session::put('success', 'Donazione effettuata con successo');
-                return Redirect::to('/donazioni');
+                return Redirect::to('/associarsi');
             }
             \Session::put('error', 'Donazione fallita, riprovare');
-            return Redirect::to('/donazioni');
+            return Redirect::to('/associarsi');
         }
     }

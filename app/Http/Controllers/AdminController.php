@@ -61,6 +61,16 @@ class AdminController extends Controller
         );
     }
 
+    public function email()
+    {
+        return view('admin.email',
+            [
+
+                'datas' => DB::table('views')->where('page_id', 'email_iscrizioni')->orWhere('page_id', 'email_donazioni')->get()
+            ]
+        );
+    }
+
     public function edit_team(Request $request)
     {
         if(!isset($request->file)){
