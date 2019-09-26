@@ -1,5 +1,5 @@
 @extends('templates.mail',[
-    'object' => $email->title,
+    'object' => $email[0]->title,
 ])
 @section('content')
     <div>
@@ -7,7 +7,7 @@
             Grazie mille {{ $request->name }}
         </div>
         <div class="">
-            {{ $email->description }}
+            {{ $email[0]->description }}
         </div>
     </div>
 @endsection

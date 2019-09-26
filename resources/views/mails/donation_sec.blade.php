@@ -41,18 +41,10 @@
             </div>
             <div class="row">
                 <div class="col-1-of-2 table__desc">
-                    Regione
+                    Cap
                 </div>
                 <div class="col-1-of-2 table__data">
-                    {{ $request->regione }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2 table__desc">
-                    Provincia
-                </div>
-                <div class="col-1-of-2 table__data">
-                    {{ $request->provincia }}
+                    {{ $request->cap }}
                 </div>
             </div>
             <div class="row">
@@ -75,7 +67,7 @@
                 <div class="col-1-of-2 table__desc">
                     Importo
                 </div>
-                <div class="col-1-of-2 table__data">
+                <div class="col-1-of-2 table__data table__amount">
                     {{ $request->amount }}
                     &euro;
                 </div>
@@ -84,7 +76,7 @@
                 <div class="col-1-of-2 table__desc">
                     Data e ora
                 </div>
-                <div class="col-1-of-2 table__data table__amount">
+                <div class="col-1-of-2 table__data">
                     {{ $request->date }}
                 </div>
             </div>

@@ -49,12 +49,12 @@
                 'name' => 'required',
                 'surname' => 'required',
                 'email' => 'required|email',
-                'amount' => 'required|integer',
-                'regione' => 'required',
-                'provincia' => 'required',
-                'comune' => 'required',
+                'amount' => 'required|integer|min:5',
                 'via' => 'required',
-                'cf' => 'required'
+                'cap' => 'required',
+                'comune' => 'required',
+                'cf' => 'required',
+                'privacy' => 'accepted'
             ],
             [
                 'name.required' => 'Devi inserire il nome',
@@ -63,11 +63,12 @@
                 'amount.required' => 'Devi inserire l\'importo',
                 'email.email' => 'Devi inserire una email valida',
                 'amount.integer' => 'L\'importo deve essere una cifra tonda',
-                'regione.required' => 'Devi inserire la regione',
-                'provincia.required' => 'Devi inserire la provincia',
-                'comune.required' => 'Devi inserire il comune',
                 'via.required' => 'Devi inserire la tua via',
-                'cf.required' => 'Devi inserire il codice fiscale'
+                'cap.required' => 'Devi inserire il cap',
+                'comune.required' => 'Devi inserire il comune',
+                'cf.required' => 'Devi inserire il codice fiscale',
+                'privacy.accepted' => 'Devi accettare la privacy policy',
+                'amount.min' => 'La donazione minima è di 5 Euro'
             ]);
 
             $payer = new Payer();
@@ -113,8 +114,7 @@
                         'email' => $request->email,
                         'amount' => $request->amount,
                         'cf' => $request->cf,
-                        'regione' => $request->regione,
-                        'provincia' => $request->provincia,
+                        'cap' => $request->cap,
                         'comune' => $request->comune,
                         'via' => $request->via,
                         'success' => false,
