@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\DB;
 use Redirect;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\User;
 
 class AdminController extends Controller
 {
@@ -29,6 +31,47 @@ class AdminController extends Controller
     public function index()
     {
         return view('admin.dashboard');
+    }
+
+    public function profilo()
+    {
+        return view('admin.profilo',
+            [
+
+                'user' => Auth::user()
+            ]
+        );
+    }
+
+    public function edit_profilo(Request $request){
+        DB::table('users')
+            ->where('id', $request->id)
+            ->update(
+                [
+                    'name' => $request->name,
+                    'email' => $request->email
+                ]
+            );
+            \Session::put('success', 'Modifica effettuata con successo');
+            return Redirect::to('admin/profilo');
+    }
+
+    public function edit_pssw(Request $request){
+        $request->validate(
+            [
+                'password' => 'required|min:6|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/'
+            ],
+            [
+                'password.required' => 'Devi inserire la password',
+                'password.confirmed' => 'Le due password non corrispondono',
+                'password.min' => 'La password deve essere di almeno 6 caratteri',
+                'password.regex' => 'Devi rispettare i criteri della password'
+            ]);
+        $user = User::find(Auth::id());
+        $user->password = Hash::make($request->password);
+        $user->save();
+        \Session::put('success', 'Modifica effettuata con successo');
+        return Redirect::to('admin/profilo');
     }
 
     public function donazioni()

@@ -43,7 +43,7 @@ Route::get('/iniziative', 'NewsController@iniziative');
     GalleryController
 */
 
-Route::get('/galleria', 'GalleryController@index');
+//Route::get('/galleria', 'GalleryController@index');
 
 /*
     DonationsController
@@ -65,9 +65,15 @@ Route::get('joinusstatus', 'JoinUsController@getPaymentStatus');
     AdminController general
 */
 
-Auth::routes();
+Auth::routes([
+    'register' => false,
+    'reset' => false,
+    'verify' => false
+]);
 
 Route::get('/admin', 'AdminController@index');
+
+Route::get('/admin/profilo', 'AdminController@profilo');
 
 Route::get('/admin/donazioni', 'AdminController@donazioni');
 
@@ -133,3 +139,7 @@ Route::post('/admin/delete_news', 'AdminController@delete_news');
 Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
 
 Route::post('/admin/edit_team', 'AdminController@edit_team');
+
+Route::post('/admin/edit_profilo', 'AdminController@edit_profilo');
+
+Route::post('/admin/edit_pssw', 'AdminController@edit_pssw');

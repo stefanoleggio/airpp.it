@@ -20,6 +20,8 @@ class ForgotPasswordController extends Controller
 
     use SendsPasswordResetEmails;
 
+    protected $redirectTo = '/admin/profilo';
+
     /**
      * Create a new controller instance.
      *
