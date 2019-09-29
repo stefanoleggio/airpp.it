@@ -54,12 +54,19 @@ Route::post('donationspaypal', 'DonationsController@payWithpaypal');
 Route::get('donationsstatus', 'DonationsController@getPaymentStatus');
 
 /*
-    JoinusController
+    JoinUsController
 */
 
 Route::post('joinuspaypal', 'JoinUsController@payWithpaypal');
 
 Route::get('joinusstatus', 'JoinUsController@getPaymentStatus');
+
+/*
+    TextUsController
+*/
+
+Route::post('textus', 'TextUsController@send');
+
 
 /* 
     AdminController general
@@ -90,6 +97,8 @@ Route::get('/admin/convegni', 'AdminController@convegni');
 Route::get('/admin/team', 'AdminController@team');
 
 Route::get('/admin/email', 'AdminController@email');
+
+Route::get('/admin/messaggi', 'AdminController@messaggi');
 
 /*
     MasterController

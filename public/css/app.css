@@ -242,6 +242,10 @@ a {
   padding: 4rem;
 }
 
+.u-padding-top-medium {
+  padding-top: 5rem;
+}
+
 .u-padding-top-big {
   padding-top: 10rem;
 }
@@ -765,6 +769,10 @@ a {
   border-bottom: 3px solid #efa9a9;
 }
 
+.form textarea {
+  resize: vertical;
+}
+
 .form__invalid {
   background-color: #efa9a9;
   color: #971c1c;
@@ -1043,27 +1051,55 @@ a {
   width: calc(3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem);
 }
 
-.presentation {
-  background: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/media/img/home.jpg);
+#presentation {
+  background: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/media/img/home/home_1.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
 
+.presentation {
+  position: relative;
+}
+
 .presentation__text {
   color: white;
-  padding-top: 10rem;
+  padding-top: 15rem;
 }
 
 .presentation__p {
   width: 50rem;
-  display: inline-block;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @media only screen and (max-width: 37.5em) {
   .presentation__p {
     width: 70%;
   }
+}
+
+.presentation__p .btn {
+  display: inline-block;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .presentation__p .btn {
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+
+.presentation .col-1-of-2 {
+  margin-bottom: 0;
+}
+
+.presentation .row [class^=col-]:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 3rem;
 }
 
 .gallery__commands i {

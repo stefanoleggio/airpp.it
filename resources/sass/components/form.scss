@@ -50,6 +50,10 @@
         }
     }
 
+    textarea{
+        resize: vertical;
+    }
+
     &__invalid{
         background-color: $color-error-bg;
         color: $color-error;

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<section class="footer u-margin-top-big">
+<section class="footer">
     <div>
         <div class="row">
             <div class="col-1-of-2 u-center-text footer__fonts">

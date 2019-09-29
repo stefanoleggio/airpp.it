@@ -1,17 +1,40 @@
-.presentation{
-    background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url(/media/img/home.jpg);
+#presentation{
+    background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url(/media/img/home/home_1.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
+}
+
+.presentation{
+    position: relative;
     &__text{
         color: $color-white;
-        padding-top: 10rem;
+        padding-top: 15rem;
     }
     &__p{
         width: 50rem;
-        display: inline-block;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         @include respond(phone) {
             width: 70%;
         }
+        .btn{
+            display: inline-block;
+            @include respond(phone) {
+                width: 100%;
+                font-size: 2rem;
+            }
+        }
+    }
+    .col-1-of-2{
+        margin-bottom: 0;
+    }
+    .row [class^="col-"]:not(:last-child) {
+        margin-right: 0;
+        margin-bottom: 3rem; 
     }
 }

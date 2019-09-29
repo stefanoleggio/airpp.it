@@ -4,11 +4,11 @@
 <div class="card">
     <div class="card-header">
         <h3>
-            Donazioni
+            Messaggi
         </h3>
     </div>
     <div class="card-body">
-        Elenco delle donazioni effettuate con successo
+        Elenco dei messaggi ricevuti
     </div>
 </div>
 <div class="container">
@@ -21,7 +21,7 @@
                     {{ $data->surname }}
                 </div>
                 <div class="col-sm text-center pt-2">
-                    {{ $data->amount }}
+                    {{ $data->email }}
                     &euro;
                 </div>
                 <div class="col-sm text-center pt-2">
@@ -57,28 +57,12 @@
             <div class="col-sm">{{ $data->surname }}</div>
         </div>
         <div class="row">
-            <div class="col-sm">Codice fiscale</div>
-            <div class="col-sm">{{ $data->cf }}</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Via e civico</div>
-            <div class="col-sm">{{ $data->via }}</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Cap</div>
-            <div class="col-sm">{{ $data->cap }}</div>
-        </div>
-        <div class="row">
-            <div class="col-sm">Comune</div>
-            <div class="col-sm">{{ $data->comune }}</div>
-        </div>
-        <div class="row">
             <div class="col-sm">Email</div>
             <div class="col-sm">{{ $data->email }}</div>
         </div>
         <div class="row">
-            <div class="col-sm">Importo</div>
-            <div class="col-sm">{{ $data->amount }} &euro;</div>
+            <div class="col-sm">Messaggio</div>
+            <div class="col-sm">{{ $data->msg }}</div>
         </div>
         <div class="row">
             <div class="col-sm">Data e ora</div>

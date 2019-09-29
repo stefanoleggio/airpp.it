@@ -125,7 +125,7 @@
         </style>
         <div class="mail">
             <div class="mail__banner heading-secondary">
-                {{ $object }}
+                <img src="{{ asset('/media/logo/logo.png') }}" alt="">
             </div>
             <hr>
             @yield('content')

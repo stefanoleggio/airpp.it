@@ -89,6 +89,16 @@ class AdminController extends Controller
         return view('admin.iscrizioni');
     }
 
+    public function messaggi()
+    {
+        return view('admin.messaggi',
+        [
+
+            'datas' => DB::table('emails')->get()
+        ]
+    );
+    }
+
     public function galleria()
     {
         return view('admin.galleria');

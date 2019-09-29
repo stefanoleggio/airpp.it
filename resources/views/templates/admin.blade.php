@@ -24,6 +24,7 @@
       @endif
         <a href="/admin/donazioni" class="list-group-item list-group-item-action bg-light">Donazioni</a>
         <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light">Iscrizioni</a>
+        <a href="/admin/messaggi" class="list-group-item list-group-item-action bg-light">Messaggi</a>
         <a href="/admin/galleria" class="list-group-item list-group-item-action bg-light">Galleria</a>
         <a href="#drop__nw" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Notizie</a>
         <div id="drop__nw" class="collapse">
@@ -43,8 +44,11 @@
           <a href="/admin/pg_segnalazioni" class="list-group-item list-group-item-action bg-secondary text-white">Segnalazioni</a>
           <a href="/admin/pg_cookies" class="list-group-item list-group-item-action bg-secondary text-white">Cookies</a>
         </div>
-        <a href="/admin/team" class="list-group-item list-group-item-action bg-light">Team</a>
-        <a href="/admin/email" class="list-group-item list-group-item-action bg-light">Email</a>
+        <a href="#drop__cmp" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Componenti</a>
+        <div id="drop__cmp" class="collapse">
+          <a href="/admin/team" class="list-group-item list-group-item-action bg-secondary text-white">Team</a>
+          <a href="/admin/email" class="list-group-item list-group-item-action bg-secondary text-white">Email</a>
+        </div>
       </div>
     </div>
     <div id="page-content-wrapper">
@@ -84,7 +88,7 @@
           </ul>
         </div>
       </nav>
-      <div class="container">
+      <div class="container mb-sm-5">
         @yield('content')
     </div>
 

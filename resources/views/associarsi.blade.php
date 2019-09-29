@@ -1,5 +1,6 @@
 @extends('templates.page')
 @section('content')
+@include('includes.sessionmsg')
     @foreach($banners as $banner)
         @include('includes.banner', 
         [
