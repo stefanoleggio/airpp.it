@@ -8,7 +8,7 @@
             'img' => $banner->img
         ])
     @endforeach
-    <div class="u-center-text">
+    <div class="u-center-text u-margin-bottom-medium">
         <div class="u-display-inline-block">
             @foreach($posts as $post)
                 @include('includes.newstab', 

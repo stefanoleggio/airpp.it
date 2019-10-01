@@ -2,10 +2,10 @@
 
 <script>
     function show_responsive_nav(){
-        document.getElementById("sidebar").style.display = "block";
+        document.getElementById("sidebar").style.width = "100%";
     }
     function hide_responsive_nav(){
-        document.getElementById("sidebar").style.display = "none";
+        document.getElementById("sidebar").style.width = "0%";
     }
 </script>
 <!-- / -->
@@ -14,7 +14,7 @@
     <div class="topbar__inner">
         <div class="logo-container">
             <a href="/">
-                <img src="{{ asset('/media/logo/logo.png') }}" alt="" class="topbar__logo">
+                <img src="{{ asset('/media/logo/logo.svg') }}" alt="" class="topbar__logo">
             </a>
         </div>
             <nav class="user-nav">
@@ -52,11 +52,12 @@
             </a>
             <!-- / -->
         </div>
-        <nav class="responsive-nav u-padding-top-big" id="sidebar">
-                <a onclick="hide_responsive_nav()" class="responsive-nav__close">
+        <nav class="overlay" id="sidebar">
+            <a onclick="hide_responsive_nav()" class="responsive-nav__close">
                     <i class="fas fa-times"></i>    
                 </a>
-                <ul class="responsive-nav__links u-center-text u-padding-top-big">
+            <div class="overlay-content">
+                <ul class=" u-center-text responsive-nav">
                     <li class="responsive-nav__item">
                         <a href="/" class="responsive-nav__link">Home</a>
                     </li>
@@ -95,7 +96,8 @@
                         <a href="/contatti" class="responsive-nav__link">Contatti</a>
                     </li>
                 </ul>
-            </nav>
+            </div>
+        </nav>
 </header>
 <script>
     $( "#news_btn" ).click(function() {

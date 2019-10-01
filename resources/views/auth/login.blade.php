@@ -18,7 +18,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">
-    <img src="{{ asset('/media/logo/logo.png') }}">
+    <img src="{{ asset('/media/logo/logo.svg') }}">
     </a>
     <h2 class="pt-3 pl-5 text-muted">
         Pannello amministrativo

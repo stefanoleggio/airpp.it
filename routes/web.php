@@ -43,7 +43,7 @@ Route::get('/iniziative', 'NewsController@iniziative');
     GalleryController
 */
 
-//Route::get('/galleria', 'GalleryController@index');
+Route::get('/galleria', 'GalleryController@index');
 
 /*
     DonationsController

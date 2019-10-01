@@ -12,7 +12,8 @@ class GalleryController extends Controller
         return view('galleria',
             [
                 'title' => 'Galleria',
-                'banners' => DB::table('banners')->where('page_id', 'galleria')->get()
+                'banners' => DB::table('banners')->where('page_id', 'galleria')->get(),
+                'albums' => DB::table('albums')->get()
             ]
         );
     }

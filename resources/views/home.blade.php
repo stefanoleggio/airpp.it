@@ -2,9 +2,14 @@
 @section('content')
 <section class="presentation" id="presentation">
             <div class="presentation__text u-center-text">
-                <div class="presentation__p paragraph">
-                    {{ $views[0]->description }}
-                    <div class="row u-margin-top-huge">
+                <div class="presentation__block">
+                <div class="presentation__logo">
+                    <img src="/media/logo/logo_white.svg" alt="">
+                </div>
+                    <div class="presentation__p paragraph u-padding-bottom-medium">
+                        {{ $views[0]->description }}
+                    </div>
+                    <div class="row">
                         <div class="col-1-of-2 u-center-text">
                             <a class="btn btn__medium btn__blue u-display-inline-block" href="/associarsi">diventa socio</a>
                         </div>

@@ -246,6 +246,10 @@ a {
   padding-top: 5rem;
 }
 
+.u-padding-bottom-medium {
+  padding-bottom: 5rem;
+}
+
 .u-padding-top-big {
   padding-top: 10rem;
 }
@@ -264,6 +268,10 @@ a {
 }
 
 .logo img {
+  width: 25rem;
+}
+
+.topbar__logo {
   width: 25rem;
 }
 
@@ -349,13 +357,13 @@ a {
   min-width: 100%;
   z-index: 1;
   background: white;
-  padding-top: 5.4rem;
+  padding-top: 4.1rem;
   font-size: 1.5rem;
   text-transform: capitalize;
 }
 
 .user-nav__drop li {
-  background: #fbfbfb;
+  background: white;
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.16), 0 9px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -371,20 +379,31 @@ a {
   }
 }
 
-.responsive-nav {
-  color: #787878;
+.overlay {
+  height: 100%;
+  width: 0;
   position: fixed;
-  background: white;
+  z-index: 1;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 3;
+  background: white;
+  overflow-x: hidden;
   transition: 0.5s;
-  transition-delay: 0.5s;
-  overflow: hidden;
-  display: none;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
   text-align: center;
+  margin-top: 30px;
+}
+
+.responsive-nav {
+  color: #787878;
+  width: 20rem;
+  text-align: left !important;
+  display: inline-block;
 }
 
 .responsive-nav__subitem {
@@ -401,9 +420,10 @@ a {
   cursor: pointer;
 }
 
-.responsive-nav ul {
-  display: inline-block;
-  text-align: left !important;
+.responsive-nav__close:hover {
+  cursor: pointer;
+  color: #ed9090;
+  transition: all 0.4s;
 }
 
 .responsive-nav li {
@@ -701,19 +721,17 @@ a {
 }
 
 .newstab {
-  background-color: #e6e6e6;
+  background-color: #fbfbfb;
   display: inline-block;
-  width: 70rem;
+  max-width: 70rem;
   padding: 4rem;
   position: relative;
   border-radius: 0.5rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-@media only screen and (max-width: 56.25em) {
-  .newstab {
-    width: 40rem;
-  }
+.newstab__info {
+  text-transform: capitalize;
 }
 
 .newstab__state {
@@ -1058,8 +1076,19 @@ a {
   height: 100vh;
 }
 
+@media screen and (max-height: 540px) {
+  #presentation {
+    height: 70rem;
+  }
+}
+
 .presentation {
   position: relative;
+}
+
+.presentation__logo img {
+  width: 25rem;
+  padding-bottom: 5rem;
 }
 
 .presentation__text {
@@ -1067,7 +1096,7 @@ a {
   padding-top: 15rem;
 }
 
-.presentation__p {
+.presentation__block {
   width: 50rem;
   margin: 0;
   position: absolute;
@@ -1077,20 +1106,24 @@ a {
 }
 
 @media only screen and (max-width: 37.5em) {
-  .presentation__p {
+  .presentation__block {
     width: 70%;
   }
 }
 
-.presentation__p .btn {
+.presentation__block .btn {
   display: inline-block;
 }
 
-@media only screen and (max-width: 37.5em) {
-  .presentation__p .btn {
+@media only screen and (max-width: 56.25em) {
+  .presentation__block .btn {
     width: 100%;
     font-size: 2rem;
   }
+}
+
+.presentation__p {
+  margin-bottom: 0 !important;
 }
 
 .presentation .col-1-of-2 {
@@ -1100,25 +1133,5 @@ a {
 .presentation .row [class^=col-]:not(:last-child) {
   margin-right: 0;
   margin-bottom: 3rem;
-}
-
-.gallery__commands i {
-  padding-right: 5rem;
-  opacity: 0.5;
-}
-
-.gallery__commands i:hover {
-  cursor: pointer;
-}
-
-.gallery__view-folders div:hover {
-  cursor: pointer;
-}
-
-.gallery__view-folders div:hover > i,
-.gallery__view-folders i:hover {
-  cursor: pointer;
-  color: #4ebaba;
-  transition: all 500ms ease;
 }
 

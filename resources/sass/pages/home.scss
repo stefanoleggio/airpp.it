@@ -3,15 +3,22 @@
     background-size: cover;
     background-position: center;
     height: 100vh;
+    @media screen and (max-height: 540px) {
+        height: 70rem;
+    }
 }
 
 .presentation{
     position: relative;
+    &__logo img{
+        width: 25rem;
+        padding-bottom: 5rem;
+    }
     &__text{
         color: $color-white;
         padding-top: 15rem;
     }
-    &__p{
+    &__block{
         width: 50rem;
         margin: 0;
         position: absolute;
@@ -24,11 +31,14 @@
         }
         .btn{
             display: inline-block;
-            @include respond(phone) {
+            @include respond(tab-port) {
                 width: 100%;
                 font-size: 2rem;
             }
         }
+    }
+    &__p{
+        margin-bottom: 0 !important;
     }
     .col-1-of-2{
         margin-bottom: 0;
