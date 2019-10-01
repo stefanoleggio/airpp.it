@@ -14,7 +14,7 @@
     </div>
     <div class="row u-margin-top-huge u-margin-bottom-big u-padding-normal u-center-text">
         <div class="col-1-of-3">
-            <div class="heading-secondary u-color-secondary">
+            <div class="heading-secondary">
                 Email <i class="fas fa-envelope"></i>
             </div>
             <div class="u-color-black normal">
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="col-1-of-3">
-            <div class="heading-secondary u-color-secondary">
+            <div class="heading-secondary">
                 Telefono <i class="fas fa-phone"></i>
             </div>
             <div class="u-color-black normal">
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="col-1-of-3">
-            <div class="heading-secondary u-color-secondary">
+            <div class="heading-secondary">
                 Indirizzo <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="u-color-black normal">

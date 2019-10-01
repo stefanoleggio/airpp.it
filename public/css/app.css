@@ -1,4 +1,4 @@
-/*
+@import url(https://fonts.googleapis.com/css?family=Open+Sans&display=swap);/*
 
     Responsive manager
 
@@ -73,10 +73,10 @@ hr {
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   line-height: 1.7;
-  color: #3f3f3f;
+  color: #787878;
 }
 
 a {
@@ -203,11 +203,11 @@ a {
 }
 
 .u-color-primary {
-  color: #4ebaba;
+  color: #00a5c8;
 }
 
 .u-color-secondary {
-  color: #ed9090;
+  color: #153d8a;
 }
 
 .u-color-black {
@@ -219,11 +219,11 @@ a {
 }
 
 .u-bgcolor-primary {
-  background-color: #4ebaba;
+  background-color: #00a5c8;
 }
 
 .u-bgcolor-secondary {
-  background-color: #ed9090;
+  background-color: #153d8a;
 }
 
 .u-bgcolor-color-grey {
@@ -324,7 +324,7 @@ a {
 }
 
 .user-nav__link:hover {
-  color: #ed9090;
+  color: #153d8a;
 }
 
 .user-nav__item {
@@ -339,7 +339,7 @@ a {
 }
 
 .user-nav__item-drop:hover .user-nav__link-main {
-  color: #ed9090;
+  color: #153d8a;
 }
 
 .user-nav__item-drop:hover i {
@@ -422,7 +422,7 @@ a {
 
 .responsive-nav__close:hover {
   cursor: pointer;
-  color: #ed9090;
+  color: #153d8a;
   transition: all 0.4s;
 }
 
@@ -435,11 +435,11 @@ a {
 }
 
 .responsive-nav a:hover {
-  color: #ed9090;
+  color: #153d8a;
 }
 
 .footer {
-  background-color: #4ebaba;
+  background-color: #00a5c8;
   color: white;
   min-height: 15rem;
   padding: 4rem;
@@ -472,20 +472,20 @@ a {
   cursor: pointer;
 }
 
-.btn__blue {
-  background-color: #4ebaba;
+.btn__primary {
+  background-color: #00a5c8;
 }
 
-.btn__blue:hover {
-  background-color: #6cc6c6;
+.btn__primary:hover {
+  background-color: #153d8a;
 }
 
-.btn__pink {
-  background-color: #ed9090;
+.btn__secondary {
+  background-color: #153d8a;
 }
 
-.btn__pink:hover {
-  background-color: #f1a7a7;
+.btn__secondary:hover {
+  background-color: #00a5c8;
 }
 
 .btn__medium {
@@ -545,7 +545,7 @@ a {
 
 .btn__burger > i:hover {
   cursor: pointer;
-  color: #ed9090;
+  color: #153d8a;
   transition: all 0.4s;
 }
 
@@ -740,7 +740,7 @@ a {
   display: inline-block;
   right: 4rem;
   top: 3rem;
-  color: #4ebaba;
+  color: #00a5c8;
 }
 
 .form {
@@ -844,7 +844,7 @@ a {
 .form__radio-button {
   height: 3rem;
   width: 3rem;
-  border: 5px solid #4ebaba;
+  border: 5px solid #00a5c8;
   border-radius: 50%;
   display: inline-block;
   position: absolute;
@@ -862,7 +862,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #4ebaba;
+  background-color: #00a5c8;
   opacity: 0;
   transition: opacity 0.2s;
 }
@@ -1124,6 +1124,7 @@ a {
 
 .presentation__p {
   margin-bottom: 0 !important;
+  text-transform: initial !important;
 }
 
 .presentation .col-1-of-2 {

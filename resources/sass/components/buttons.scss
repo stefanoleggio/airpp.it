@@ -11,17 +11,17 @@
     &:hover{
         cursor: pointer;
     }
-    &__blue{
+    &__primary{
         background-color: $color-primary;
     }
-    &__blue:hover{
-        background-color: $color-primary-light;
-    }
-    &__pink{
+    &__primary:hover{
         background-color: $color-secondary;
     }
-    &__pink:hover{
-        background-color: $color-secondary-light;
+    &__secondary{
+        background-color: $color-secondary;
+    }
+    &__secondary:hover{
+        background-color: $color-primary;
     }
     &__medium{
         width: 12rem;

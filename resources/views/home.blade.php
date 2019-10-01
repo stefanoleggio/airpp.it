@@ -11,10 +11,10 @@
                     </div>
                     <div class="row">
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__blue u-display-inline-block" href="/associarsi">diventa socio</a>
+                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/associarsi">diventa socio</a>
                         </div>
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__pink u-display-inline-block" href="/donazioni">dona ora</a>
+                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/donazioni">dona ora</a>
                         </div>
                     </div>
                 </div>
@@ -23,20 +23,6 @@
                 <a class="btn__go btn__pink" href="#"><i class="fas fa-chevron-down"></i></a>
             </div>
         </section>
-        <script>
-            var i = 1;
-            var c = 2;
-            setInterval(function(){
-                if(c >= i-1){
-                    c = 1;
-                }
-                console.log(c);
-                document.getElementById('presentation').style.background = 'linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url(/media/img/home/home_'+ c +'.jpg)';
-                document.getElementById('presentation').style.backgroundSize = 'cover';
-                document.getElementById('presentation').style.backgroundPosition = 'center';
-                c++;
-            }, 5000);
-        </script>
         <section class="info">
             <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 Che cosa facciamo?

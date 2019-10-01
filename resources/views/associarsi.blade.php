@@ -12,7 +12,7 @@
     <section class="u-bgcolor-color-grey u-container-fullwidth">
         <div class="row u-padding-normal ">
             <div class="col-1-of-2 u-center-text">
-                <div class="heading-secondary u-margin-bottom-medium u-color-secondary">
+                <div class="heading-secondary u-margin-bottom-medium u-color-black">
                 {{ $datas[0]->title }}
                 </div>
                 <div class="paragraph">
@@ -31,7 +31,7 @@
         </div>
     </section>
     <div class="u-center-text u-padding-normal">
-    <div class="heading-secondary u-margin-bottom-medium u-color-secondary">
+    <div class="heading-secondary u-margin-bottom-medium u-color-black">
             {{ $datas[1]->title }}
         </div>
         <div class="paragraph">

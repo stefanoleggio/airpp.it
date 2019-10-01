@@ -138,7 +138,7 @@
         cursor: pointer;
         &:hover{
             cursor: pointer;
-            color: #ed9090;
+            color: $color-secondary;
             transition: all 0.4s;
         }
     }
