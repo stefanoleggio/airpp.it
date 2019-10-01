@@ -513,6 +513,7 @@ a {
   font-size: 3rem;
   line-height: 1;
   color: white;
+  cursor: pointer;
 }
 
 .btn__go > i {

@@ -25,10 +25,6 @@ Route::get('/contatti', 'PageController@contatti');
 
 Route::get('/statuto', 'PageController@statuto');
 
-Route::get('/cookies', 'PageController@cookies');
-
-Route::get('/segnalazioni', 'PageController@segnalazioni');
-
 /*
     NewsController
 */

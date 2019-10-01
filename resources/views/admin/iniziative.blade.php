@@ -84,7 +84,7 @@
                             <input type="file" class="form-control-file" name="file" id="file"/>
                             <?php
                                 if($data->link != "0"){
-                                    echo'<a href="'.$data->link.'" class="stretched-link">Locandina</a>';
+                                    echo'<a href="'.$data->link.'">Locandina</a>';
                                 }
                             ?>
                         </div>

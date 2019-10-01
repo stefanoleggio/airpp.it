@@ -61,20 +61,4 @@ class PageController extends Controller
             ]
         );
     }
-
-    public function cookies(){
-        return view('cookies',
-            [
-                'title' => 'Cookies',
-            ]
-        );
-    }
-
-    public function segnalazioni(){
-        return view('segnalazioni',
-            [
-                'title' => 'Segnalazioni',
-            ]
-        );
-    }
 }

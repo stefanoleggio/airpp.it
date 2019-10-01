@@ -20,9 +20,16 @@
                 </div>
             </div>
             <div class="u-anchor-bottom">
-                <a class="btn__go btn__pink" href="#"><i class="fas fa-chevron-down"></i></a>
+                <a class="btn__go"><i class="fas fa-chevron-down"></i></a>
             </div>
         </section>
+        <script>
+            $('.btn__go').click(function (){
+                $('html, body').animate({
+                scrollTop: $(".info").offset().top
+                }, 1000)
+            });
+        </script>
         <section class="info">
             <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 Che cosa facciamo?

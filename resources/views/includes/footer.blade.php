@@ -3,16 +3,16 @@
     <div>
         <div class="row">
             <div class="col-1-of-2 u-center-text footer__fonts">
-                <i class="fab fa-facebook-square"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fas fa-envelope"></i>
+                <a href="https://www.facebook.com/AIRPPonlus/"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/airpp.onlus/"><i class="fab fa-instagram"></i></a>
+                <a href="/contatti#textus"><i class="fas fa-envelope"></i></a>
             </div>
             <div class="col-1-of-2 u-center-text footer__links">
-                <a href="/segnalazioni">segnalazioni</a>
+                <a href="/contatti#textus">segnalazioni</a>
                 <a>&#124;</a>
                 <a href="/statuto">statuto</a>
                 <a>&#124;</a>
-                <a href="/cookies">cookies</a>
+                <a href="#!">cookies</a>
             </div>
         </div>
     </div>
