@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\User;
+use App\Album;
+use App\Photo;
 
 class AdminController extends Controller
 {
@@ -92,18 +94,101 @@ class AdminController extends Controller
     public function messaggi()
     {
         return view('admin.messaggi',
-        [
+            [
 
-            'datas' => DB::table('emails')->get()
-        ]
-    );
+                'datas' => DB::table('emails')->get()
+            ]
+        );
     }
+
+    /* Admin galleria controller */
 
     public function galleria()
     {
-        return view('admin.galleria');
+        return view('admin.galleria',
+            [
+
+                'albums' => DB::table('albums')->get()
+            ]
+        );
     }
 
+    public function foto($id)
+    {
+        return view('admin.photos',
+            [
+                'album' => DB::table('albums')->where('id', $id)->get(),
+                'photos' => DB::table('photos')->where('album_id', $id)->get()
+            ]
+        );
+    }
+
+    public function edit_album(Request $request)
+    {
+        $album = Album::find($request->id);
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+            if(!$this->load_album($file, $album)){
+                \Session::put('error', 'Errore, riprovare');
+                return Redirect::to('admin/galleria');
+            }
+        }
+        $album->title = $request->title;
+        $album->save();
+        \Session::put('success', 'Modifica effettuata con successo');
+        return Redirect::to('admin/galleria');
+    }
+
+    public function load_album($file, &$album){
+        if($file->isValid()){
+            false;
+        }
+        $fileName = $file->storeAs(env('THB_DIR'),'thb_'.$album->id.'.'.$file->extension());
+        $trimmed = str_replace('/storage', '', $album->thb_path);
+        Storage::delete($trimmed);
+        $album->thb_path = env('STORAGE_DIR').$fileName;
+        return true;
+    }
+
+    public function add_album(Request $request){
+        $album = new Album;
+        $album->title = $request->title;
+        $album->save();
+
+        if(!$request->hasFile('file')){
+            \Session::put('error', 'Errore, riprovare');
+            return Redirect::to('admin/galleria');
+        }
+        $file = $request->file('file');
+        if(!$this->load_album($file, $album)){
+            \Session::put('error', 'Errore, riprovare');
+            return Redirect::to('admin/galleria');
+        }
+        $album->save();
+        \Session::put('success', 'Album aggiunto con successo');
+        return Redirect::to('admin/galleria');
+    }
+
+    public function delete_album(Request $request){
+        $album = Album::find($request->id);
+        $album->delete();
+        \Session::put('success', 'Modifica effettuata con successo');
+        return Redirect::to('admin/galleria');
+    }
+
+    public function delete_photo(Request $request){
+        $photo = Photo::find($request->id);
+        $photo->delete();
+        \Session::put('success', 'Modifica effettuata con successo');
+        return Redirect::to('admin/galleria/'.$request->album_id);
+    }
+
+    public function add_photo(Request $request){
+
+    }
+
+    /**/
+    
     public function team()
     {
         return view('admin.team',

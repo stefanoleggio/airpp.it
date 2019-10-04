@@ -1,3 +1,37 @@
-.gallery{
+.albums{
+    &__card{
+        background-color: #fbfbfb;
+        display: inline-block;
+        position: relative;
+        border-radius: 0.5rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        width: 30rem;
+        height: 40rem;
+        &:hover{
+            cursor: pointer;
+            .albums__thb{
+                opacity: .5;
+            }
+        }
+    }
+    &__thb{
+        -webkit-transition: opacity .5s ease-in-out;
+        -moz-transition: opacity .5s ease-in-out;
+        -ms-transition: opacity .5s ease-in-out;
+        -o-transition: opacity .5s ease-in-out;
+        transition: opacity .5s ease-in-out;
+        height: 20rem;
+    }
+    &__title{
+        padding: 5rem;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}
 
+.photo{
+    img{
+        width: 25rem;
+    }
 }

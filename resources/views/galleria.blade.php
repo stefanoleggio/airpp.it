@@ -8,14 +8,28 @@
             'img' => $banner->img
         ])
     @endforeach
-    <div class="gallery">
-        @foreach($albums as $album)
-        <div class="albums__card">
-            <div class="albums__thumbnail">
-                <img src="/media/albums/thb__{{ $album->id }}" alt="">
+    <div class="gallery u-padding-normal">
+        <div class="row">
+            <?php
+                $i = 0;
+            ?>
+            @foreach($albums as $album)
+            <?php
+            $i++;
+            if($i == 4)
+            {
+                $i = 1;
+                echo '</div> <div class="row">';
+            }
+            ?>
+            <div class="col-1-of-3 u-center-text">
+                @include('includes.albumscard',[
+                    'title' => $album->title,
+                    'id' => $album->id,
+                    'thb_path' => $album->thb_path
+                ])
             </div>
-            <div class="albums__title">{{ $album->title }}</div>
-        </div>
         @endforeach
+                </div>
     </div>
 @endsection

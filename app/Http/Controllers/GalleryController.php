@@ -17,4 +17,14 @@ class GalleryController extends Controller
             ]
         );
     }
+
+    public function getPhotos($id){
+        return view('photos',
+        [
+            'title' => 'Galleria',
+            'album' => DB::table('albums')->where('id', $id)->get(),
+            'photos' => DB::table('photos')->where('album_id', $id)->get()
+        ]
+    );
+    }
 }

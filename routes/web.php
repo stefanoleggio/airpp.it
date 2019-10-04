@@ -41,6 +41,8 @@ Route::get('/iniziative', 'NewsController@iniziative');
 
 Route::get('/galleria', 'GalleryController@index');
 
+Route::get('galleria/{id}', 'GalleryController@getPhotos');
+
 /*
     DonationsController
 */
@@ -83,6 +85,8 @@ Route::get('/admin/donazioni', 'AdminController@donazioni');
 Route::get('/admin/iscrizioni', 'AdminController@iscrizioni');
 
 Route::get('/admin/galleria', 'AdminController@galleria');
+
+Route::get('/admin/galleria/{id}', 'AdminController@foto');
 
 Route::get('/admin/premi', 'AdminController@premi');
 
@@ -148,3 +152,11 @@ Route::post('/admin/edit_team', 'AdminController@edit_team');
 Route::post('/admin/edit_profilo', 'AdminController@edit_profilo');
 
 Route::post('/admin/edit_pssw', 'AdminController@edit_pssw');
+
+Route::post('/admin/edit_album', 'AdminController@edit_album');
+
+Route::post('/admin/add_album', 'AdminController@add_album');
+
+Route::post('/admin/delete_album', 'AdminController@delete_album');
+
+Route::post('/admin/delete_photo', 'AdminController@delete_photo');

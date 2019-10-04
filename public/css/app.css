@@ -466,6 +466,7 @@ a {
   display: block;
   transition: 0.5s;
   text-transform: capitalize;
+  border: none !important;
 }
 
 .btn:hover {
@@ -891,6 +892,7 @@ a {
 
 .form__privacy {
   text-align: left;
+  line-height: 3rem;
 }
 
 .form__privacy a {
@@ -1135,5 +1137,39 @@ a {
 .presentation .row [class^=col-]:not(:last-child) {
   margin-right: 0;
   margin-bottom: 3rem;
+}
+
+.albums__card {
+  background-color: #fbfbfb;
+  display: inline-block;
+  position: relative;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 30rem;
+  height: 40rem;
+}
+
+.albums__card:hover {
+  cursor: pointer;
+}
+
+.albums__card:hover .albums__thb {
+  opacity: 0.5;
+}
+
+.albums__thb {
+  transition: opacity 0.5s ease-in-out;
+  height: 20rem;
+}
+
+.albums__title {
+  padding: 5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.photo img {
+  width: 25rem;
 }
 
