@@ -178,13 +178,31 @@ class AdminController extends Controller
 
     public function delete_photo(Request $request){
         $photo = Photo::find($request->id);
+        $trimmed = str_replace('/storage', '', $photo->img_path);
+        Storage::delete($trimmed);
         $photo->delete();
         \Session::put('success', 'Modifica effettuata con successo');
         return Redirect::to('admin/galleria/'.$request->album_id);
     }
 
     public function add_photo(Request $request){
-
+        if(!$request->hasFile('file')){
+            \Session::put('error', 'Errore, riprovare');
+            return Redirect::to('admin/galleria/'.$request->album_id);
+        }
+        $files = $request->file('file');
+        foreach($files as $file){
+            if($file->isValid()){
+                $photo = new Photo;
+                $photo->album_id = $request->album_id;
+                $photo->save();
+                $fileName = $file->storeAs(env('PHOTOS_DIR'),$request->album_id.'_'.$photo->id.'.'.$file->extension());
+                $photo->img_path = env('STORAGE_DIR').$fileName;
+                $photo->save();
+            }
+        }
+        \Session::put('success', 'Foto aggiunte con successo');
+        return Redirect::to('admin/galleria/'.$request->album_id);
     }
 
     /**/

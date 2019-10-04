@@ -160,3 +160,5 @@ Route::post('/admin/add_album', 'AdminController@add_album');
 Route::post('/admin/delete_album', 'AdminController@delete_album');
 
 Route::post('/admin/delete_photo', 'AdminController@delete_photo');
+
+Route::post('/admin/add_photo', 'AdminController@add_photo');
