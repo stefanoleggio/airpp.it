@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 use App\User;
 use App\Album;
 use App\Photo;
+use App\Team;
 
 class AdminController extends Controller
 {
@@ -229,25 +230,22 @@ class AdminController extends Controller
 
     public function edit_team(Request $request)
     {
-        if(!isset($request->file)){
-            $request->file = 0;
-        }else{
-            $request->file->storeAs('team', $request->surname."_".$request->name.".".request()->file->getClientOriginalExtension());
-            $request->file = 1;
+        $person = Team::find($request->id);
+        $person->name = strtolower($request->name);
+        $person->surname = strtolower($request->surname);
+        $person->description = $request->description;
+        $person->role = strtolower($request->role);
+        $person->save();
+        if($request->hasFile('file')){
+            $file = $request->file('file');
+            if($file->isValid()){
+                $fileName = $file->storeAs(env('TEAM_DIR'), $request->surname."_".$request->name.".".request()->file->getClientOriginalExtension());
+                $person->img_path = env('STORAGE_DIR').$fileName;
+                $person->save();
+            }
         }
-        DB::table($request->db)
-            ->where('id', $request->id)
-            ->update(
-                [
-                    'name' => $request->name,
-                    'surname' => $request->surname,
-                    'description' => $request->description,
-                    'role' => $request->role,
-                    'img'=> $request->file
-                ]
-            );
-            \Session::put('success', 'Modifica effettuata con successo');
-            return Redirect::to('admin/'.$request->db);
+        \Session::put('success', 'Modifica effettuata con successo');
+        return Redirect::to('admin/'.$request->db);
     }
 
     public function premi()

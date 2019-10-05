@@ -18,7 +18,7 @@
     <div class="card mb-2">
         <div class="card-body">
             <div class="row">
-                <div class="col-sm text-center pt-2">
+                <div class="col-sm text-center pt-2 text-capitalize">
                     {{ $data->name." ".$data->surname }} 
                 </div>
                 <div class="col-sm text-center">
@@ -43,11 +43,11 @@
                 <div class="modal-body">
                 <form method="POST" action="/admin/edit_team" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    <div class="form-group text-capitalize">
                         <label for="name">Nome</label>
                         <input type="input" class="form-control" id="name" name="name" value="{{ $data->name}}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group text-capitalize">
                         <label for="surname">Cognome</label>
                         <input type="input" class="form-control" id="surname" name="surname" value="{{ $data->surname }}">
                     </div>
@@ -55,20 +55,14 @@
                         <label for="title">Ruolo</label>
                         <input type="input" class="form-control" id="role" name="role" value="{{ $data->role }}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group text-capitalize">
                         <label for="description">Descrizione</label>
                         <textarea class="form-control" id="description" name="description">{{ $data->description }}</textarea>
                     </div>
-                    <div class="form-group mt-2">
+                    <div class="form-group mt-2 text-capitalize">
                         <div class="form-group">
                             <div>Immagine</div>
-                            <div class="team_img mt-3 mb-3"
-                                @if($data->img != "0")
-                                style="background-image: url(/storage/team/{{ $data->surname."_".$data->name }}.jpg);"
-                                @else
-                                style="background-image: url(/storage/team/default.svg);"
-                                @endif
-                                >  
+                            <div class="team_img mt-3 mb-3" style="background-image: url({{ $data->img_path}});">  
                             </div>
                             <input type="file" class="form-control-file" name="file" id="file"/>
                         </div>

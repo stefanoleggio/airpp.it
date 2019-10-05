@@ -126,7 +126,7 @@
                     [
                         'name' => $user_cd->name,
                         'surname' => $user_cd->surname,
-                        'img' => $user_cd->img,
+                        'img' => $user_cd->img_path,
                         'role' => $user_cd->role,
                         'description' => $user_cd->description
                     ])
@@ -153,7 +153,7 @@
                     [
                         'name' => $user_cs->name,
                         'surname' => $user_cs->surname,
-                        'img' => $user_cs->img,
+                        'img' => $user_cs->img_path,
                         'role' => $user_cs->role,
                         'description' => $user_cs->description
                     ])
@@ -180,7 +180,7 @@
                     [
                         'name' => $user_sa->name,
                         'surname' => $user_sa->surname,
-                        'img' => $user_sa->img,
+                        'img' => $user_sa->img_path,
                         'role' => $user_sa->role,
                         'description' => $user_sa->description
                     ])
@@ -207,7 +207,7 @@
                     [
                         'name' => $user_ss->name,
                         'surname' => $user_ss->surname,
-                        'img' => $user_ss->img,
+                        'img' => $user_ss->img_path,
                         'role' => $user_ss->role,
                         'description' => $user_ss->description
                     ])
