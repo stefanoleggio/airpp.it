@@ -6,7 +6,7 @@
                 <div class="form__label">
                     Nome
                 </div>
-                <input type="text" value="{{ old('name') }}" class="form__input @error('name') form__input-invalid @enderror" name="name" placeholder="Inserisci il tuo nome">
+                <input type="text" value="{{ old('name') }}" class="form__input @if ($errors->has('name')) form__input-invalid @endif" name="name" placeholder="Inserisci il tuo nome">
             </div>
             <div class="col-1-of-2">
                 <div class="form__label">
