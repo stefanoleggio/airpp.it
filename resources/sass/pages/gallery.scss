@@ -10,16 +10,15 @@
         &:hover{
             cursor: pointer;
             .albums__thb{
-                opacity: .5;
+                transform: scale(1.3);
             }
         }
     }
+    &__container{
+        overflow: hidden;
+    }
     &__thb{
-        -webkit-transition: opacity .5s ease-in-out;
-        -moz-transition: opacity .5s ease-in-out;
-        -ms-transition: opacity .5s ease-in-out;
-        -o-transition: opacity .5s ease-in-out;
-        transition: opacity .5s ease-in-out;
+        transition: all 0.7s ease;
         height: 20rem;
     }
     &__title{

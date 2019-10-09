@@ -1,11 +1,11 @@
-<div class="newstab__container u-container-full-width">
-    <div class="newstab u-margin-top-big">
+<div class="newstab__container u-container-fullwidth">
+    <div class="newstab u-margin-top-big u-display-inline-block">
         @if($newstab__state == '1')
         <div class="newstab__state" title="in corso">
             <i class="fas fa-thumbtack"></i>
         </div>
         @endif
-        <div class="newstab__title heading-secondary u-text-lowercase u-container-fullwidth u-left-text">
+        <div class="newstab__title heading-secondary u-container-fullwidth u-left-text">
             {{$newstab__title}}
         </div>
         <div class="newstab__text paragraph paragraph--smaller u-margin-top-small">

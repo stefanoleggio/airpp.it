@@ -1,11 +1,17 @@
 .newstab{
     background-color: $color-grey;
-    display: inline-block;
-    max-width: 70rem;  
     padding: 4rem;
     position: relative;
     border-radius: .5rem;
     border: 1px solid rgba(0,0,0,.125);
+    width: 70rem;
+    @include respond(tab-port){
+        width: 60rem;
+    }
+    @include respond(phone){
+        width: -moz-available;
+        width: -webkit-fill-available;
+    }
     &__info{
         text-transform: capitalize;
     }
@@ -16,5 +22,10 @@
         right: 4rem;
         top: 3rem;
         color: $color-primary;
+    }
+    &__text {
+        max-height: 20rem;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 }

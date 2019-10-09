@@ -8,19 +8,17 @@
             'img' => $banner->img
         ])
     @endforeach
-    <div class="u-center-text u-margin-bottom-medium">
-        <div class="u-display-inline-block">
-            @foreach($posts as $post)
-                @include('includes.newstab', 
-                [
-                    'newstab__title' => $post->title,
-                    'newstab__text' => $post->description,
-                    'newstab__place' => $post->place,
-                    'newstab__date' => $post->date,
-                    'newstab__state' => $post->active,
-                    'newstab__link' => $post->link,
-                ])
-            @endforeach
-        </div>
+    <div class="u-center-text u-margin-bottom-big">
+        @foreach($posts as $post)
+            @include('includes.newstab', 
+            [
+                'newstab__title' => $post->title,
+                'newstab__text' => $post->description,
+                'newstab__place' => $post->place,
+                'newstab__date' => $post->date,
+                'newstab__state' => $post->active,
+                'newstab__link' => $post->link,
+            ])
+        @endforeach
     </div>
 @endsection

@@ -2,6 +2,7 @@
     background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url(/media/img/home/home_1.jpg);
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     height: 100vh;
     @media screen and (max-height: 540px) {
         height: 70rem;
@@ -17,6 +18,8 @@
     &__text{
         color: $color-white;
         padding-top: 15rem;
+        -webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+        animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
     &__block{
         width: 50rem;

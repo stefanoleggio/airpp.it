@@ -68,6 +68,10 @@
                         <input type="input" class="form-control" id="title" name="title" value="{{ $album->title }}">
                     </div>
                     <div class="form-group">
+                        <label for="title">Descrizione</label>
+                        <input type="input" class="form-control" id="description" name="description" value="{{ $album->description }}">
+                    </div>
+                    <div class="form-group">
                         <label for="file">Copertina</label>
                         <img src="{{ $album->thb_path }}" class="img-thumbnail w-25" alt="">
                         <input type="file" class="form-control-file" name="file" id="file"/>

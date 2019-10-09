@@ -3,6 +3,9 @@
         <div class="heading-secondary u-margin-bottom-medium u-color-black">
             {{$title}}
         </div>
+        <div class="paragraph">
+            {{$description}}
+        </div>
         <div>
             <button class="btn btn__primary btn__medium u-display-inline-block" onclick="window.location='/galleria';">
                 Torna indietro

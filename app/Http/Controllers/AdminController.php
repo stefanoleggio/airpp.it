@@ -135,6 +135,7 @@ class AdminController extends Controller
             }
         }
         $album->title = $request->title;
+        $album->description = $request->description;
         $album->save();
         \Session::put('success', 'Modifica effettuata con successo');
         return Redirect::to('admin/galleria');
