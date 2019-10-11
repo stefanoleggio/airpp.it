@@ -1312,3 +1312,13 @@ img {
   width: 25rem;
 }
 
+.img_svg {
+  width: 30rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .img_svg {
+    width: 200px;
+  }
+}
+

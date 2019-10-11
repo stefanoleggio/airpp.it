@@ -9,7 +9,7 @@
         </div>
         <div class="col-1-of-2">
             <div class="info__img__container">
-                <img class="info__img" src={{asset($img)}}>
+                <img class="info__img img_svg" src={{asset($img)}}>
             </div>
         </div>
     </div>

@@ -34,3 +34,10 @@
         width: 25rem;
     }
 }
+
+.img_svg{
+    width: 30rem;
+    @include respond(phone) {
+        width: 200px;
+    }
+}

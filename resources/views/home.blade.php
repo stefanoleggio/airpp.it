@@ -168,7 +168,7 @@
             $(window).on("load",function(){
                 setTimeout(function(){ 
                     $(".loader-wrapper").hide();
-                }, 9500);
+                }, 100);
             });
         </script>
         <section class="info">
