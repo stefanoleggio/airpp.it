@@ -1,13 +1,6 @@
 @extends('templates.admin')
 
 @section('content')
-@if ($message = Session::get('success'))
-        @include('includes.adminalert', 
-            [
-                'message' => $message
-            ]
-        )
-    @endif
 <div class="card">
     <div class="card-header">
         <h3>

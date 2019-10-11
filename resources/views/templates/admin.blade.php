@@ -89,6 +89,7 @@
         </div>
       </nav>
       <div class="container mb-sm-5">
+        @include('includes.adminalert')
         @yield('content')
     </div>
 

@@ -19,8 +19,8 @@ class CreatePremiTable extends Migration
             $table->longText('description');
             $table->string('place');
             $table->date('date');
-            $table->boolean('active');
-            $table->string('link');
+            $table->boolean('active')->default(0);
+            $table->string('link')->nullable();
         });
     }
 

@@ -84,21 +84,17 @@ Route::get('/admin/donazioni', 'AdminController@donazioni');
 
 Route::get('/admin/iscrizioni', 'AdminController@iscrizioni');
 
-Route::get('/admin/galleria', 'AdminController@galleria');
-
-Route::get('/admin/galleria/{id}', 'AdminController@foto');
-
-Route::get('/admin/premi', 'AdminController@premi');
-
-Route::get('/admin/iniziative', 'AdminController@iniziative');
-
-Route::get('/admin/convegni', 'AdminController@convegni');
-
 Route::get('/admin/team', 'AdminController@team');
 
 Route::get('/admin/email', 'AdminController@email');
 
 Route::get('/admin/messaggi', 'AdminController@messaggi');
+
+Route::post('/admin/edit_team', 'AdminController@edit_team');
+
+Route::post('/admin/edit_profilo', 'AdminController@edit_profilo');
+
+Route::post('/admin/edit_pssw', 'AdminController@edit_pssw');
 
 /*
     MasterController
@@ -114,7 +110,7 @@ Route::post('/admin/delete_users', 'MasterController@delete_users');
 
 
 /* 
-    AdminController pages
+    AdminPagesController
 */
 
 Route::get('/admin/pg_home', 'AdminPageController@pg_home');
@@ -122,10 +118,6 @@ Route::get('/admin/pg_home', 'AdminPageController@pg_home');
 Route::get('/admin/pg_donazioni', 'AdminPageController@pg_donazioni');
 
 Route::get('/admin/pg_associarsi', 'AdminPageController@pg_associarsi');
-
-Route::get('/admin/pg_notizie', 'AdminPageController@pg_notizie');
-
-Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');
 
 Route::get('/admin/pg_contatti', 'AdminPageController@pg_contatti');
 
@@ -135,30 +127,42 @@ Route::get('/admin/pg_cookies', 'AdminPageController@pg_cookies');
 
 Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');
 
-/*
-    AdminController edit
-*/
-
-Route::post('/admin/edit_news', 'AdminController@edit_news');
-
-Route::post('/admin/add_news', 'AdminController@add_news');
-
-Route::post('/admin/delete_news', 'AdminController@delete_news');
+Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');
 
 Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
 
-Route::post('/admin/edit_team', 'AdminController@edit_team');
+/* 
+    AdminNewsController
+*/
 
-Route::post('/admin/edit_profilo', 'AdminController@edit_profilo');
+Route::get('/admin/premi', 'AdminNewsController@premi');
 
-Route::post('/admin/edit_pssw', 'AdminController@edit_pssw');
+Route::get('/admin/iniziative', 'AdminNewsController@iniziative');
 
-Route::post('/admin/edit_album', 'AdminController@edit_album');
+Route::get('/admin/convegni', 'AdminNewsController@convegni');
 
-Route::post('/admin/add_album', 'AdminController@add_album');
+Route::get('/admin/pg_notizie', 'AdminNewsController@pg_notizie');
 
-Route::post('/admin/delete_album', 'AdminController@delete_album');
+Route::post('/admin/edit_news', 'AdminNewsController@edit_news');
 
-Route::post('/admin/delete_photo', 'AdminController@delete_photo');
+Route::post('/admin/add_news', 'AdminNewsController@add_news');
 
-Route::post('/admin/add_photo', 'AdminController@add_photo');
+Route::post('/admin/delete_news', 'AdminNewsController@delete_news');
+
+/*
+    AdminGalleryController
+*/
+
+Route::get('/admin/galleria', 'AdminGalleryController@galleria');
+
+Route::get('/admin/galleria/{id}', 'AdminGalleryController@foto');
+
+Route::post('/admin/edit_album', 'AdminGalleryController@edit_album');
+
+Route::post('/admin/add_album', 'AdminGalleryController@add_album');
+
+Route::post('/admin/delete_album', 'AdminGalleryController@delete_album');
+
+Route::post('/admin/delete_photo', 'AdminGalleryController@delete_photo');
+
+Route::post('/admin/add_photo', 'AdminGalleryController@add_photo');

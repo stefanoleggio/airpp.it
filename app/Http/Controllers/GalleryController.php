@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
 use Illuminate\Http\Request;
+use App\Album;
+use App\Photo;
 
 class GalleryController extends Controller
 {
@@ -13,7 +14,7 @@ class GalleryController extends Controller
             [
                 'title' => 'Galleria',
                 'banners' => DB::table('banners')->where('page_id', 'galleria')->get(),
-                'albums' => DB::table('albums')->get()
+                'albums' => Album::all()
             ]
         );
     }
@@ -22,8 +23,8 @@ class GalleryController extends Controller
         return view('photos',
         [
             'title' => 'Galleria',
-            'album' => DB::table('albums')->where('id', $id)->get(),
-            'photos' => DB::table('photos')->where('album_id', $id)->get()
+            'album' => Album::where('id', $id)->get(),
+            'photos' => Photo::where('album_id', $id)->get()
         ]
     );
     }

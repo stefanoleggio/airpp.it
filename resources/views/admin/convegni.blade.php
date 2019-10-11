@@ -1,15 +1,5 @@
 @extends('templates.admin')
-
 @section('content')
-@if ($message = Session::get('success'))
-<div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">{{ $message }}</h4>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-<?php Session::forget('success');?>
-@endif
 <div class="card">
     <div class="card-header">
         <h3>
@@ -82,11 +72,9 @@
                         <div class="form-group">
                             <label for="file">Locandina</label>
                             <input type="file" class="form-control-file" name="file" id="file"/>
-                            <?php
-                                if($data->link != "0"){
-                                    echo'<a href="'.$data->link.'">Locandina</a>';
-                                }
-                            ?>
+                            @if(isset($data->link))
+                            <a href="{{ $data->link }}">Locandina</a>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group mt-2">

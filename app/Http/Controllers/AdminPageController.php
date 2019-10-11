@@ -40,19 +40,6 @@ class AdminPageController extends Controller
         );
     }
 
-    public function pg_notizie(){
-        $in = DB::table('banners')->where('page_id', 'iniziative')->get();
-        $co = DB::table('banners')->where('page_id', 'convegni')->get();
-        $pr = DB::table('banners')->where('page_id', 'premi')->get();
-        return view('admin.pg_notizie',
-            [
-                'in' => $in,
-                'co' => $co,
-                'pr' => $pr
-            ]
-        );
-    }
-
     public function pg_galleria(){
         return view('admin.pg_galleria',
             [
@@ -94,6 +81,15 @@ class AdminPageController extends Controller
     }
 
     public function edit_pages(Request $request){
+    $request->validate(
+        [
+            'title' => 'required',
+            'description' => 'required',
+        ],
+        [
+            'title.required' => 'Il titolo è richiesto',
+            'description.required' => 'La descrizione è richiesta'
+        ]);
         DB::table($request->db)
             ->where('id', $request->id)
             ->update(

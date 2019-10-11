@@ -1,12 +1,5 @@
 @extends('templates.admin')
 @section('content')
-    @if ($message = Session::get('success'))
-        @include('includes.adminalert', 
-            [
-                'message' => $message
-            ]
-        )
-    @endif
     @include('includes.admincard', 
         [
             'title' => 'Pagina Galleria',

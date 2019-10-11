@@ -1,13 +1,5 @@
 @extends('templates.admin')
-
 @section('content')
-@if ($message = Session::get('success'))
-        @include('includes.adminalert', 
-            [
-                'message' => $message
-            ]
-        )
-    @endif
 <div class="card">
     <div class="card-header">
         <h3>
@@ -109,6 +101,10 @@
                     <div class="form-group">
                         <label for="title">Titolo</label>
                         <input type="input" class="form-control" id="title" name="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Descrizione</label>
+                        <pre><textarea class="form-control" id="description" name="description"></textarea></pre>
                     </div>
                     <div class="form-group">
                         <label for="file">Copertina</label>
