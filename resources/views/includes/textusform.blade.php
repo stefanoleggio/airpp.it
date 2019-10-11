@@ -25,7 +25,7 @@
         <div class="form__label">
             Messaggio
         </div>
-        <textarea value="{{ old('msg') }}" class="form__input @error('msg') form__input-invalid @enderror" name="msg" placeholder="Inserisci il tuo messaggio"></textarea>
+        <pre><textarea class="form__input @error('msg') form__input-invalid @enderror" name="msg" placeholder="Inserisci il tuo messaggio">{{ old('msg') }}</textarea></pre>
     </div>
     <div class="form__group">
         <div class="form__label u-margin-bottom-small">

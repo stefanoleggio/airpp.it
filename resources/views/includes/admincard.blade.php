@@ -5,6 +5,6 @@
         </h3>
     </div>
     <div class="card-body">
-        {{ $description }}
+        <pre>{{$description}}</pre>
     </div>
 </div>

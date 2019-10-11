@@ -105,6 +105,11 @@ hr {
   margin: 2.2rem 0;
 }
 
+pre {
+  white-space: pre-wrap;
+  font-family: inherit;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;

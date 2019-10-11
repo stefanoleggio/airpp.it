@@ -4,7 +4,7 @@
                 {{$infotab__name}}
             </div>
             <div class="paragraph">
-            {{$infotab__text}}
+            <pre>{{$infotab__text}}</pre>
         </div>
         </div>
         <div class="col-1-of-2">

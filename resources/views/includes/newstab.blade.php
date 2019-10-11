@@ -9,7 +9,7 @@
             {{$newstab__title}}
         </div>
         <div class="newstab__text paragraph paragraph--smaller u-margin-top-small">
-            {{$newstab__text}}
+            <pre>{{$newstab__text}}</pre>
         </div>
         <div class="newstab__links u-left-text">
             @if($newstab__link != "0")

@@ -69,7 +69,7 @@
                     </div>
                     <div class="form-group">
                         <label for="title">Descrizione</label>
-                        <input type="input" class="form-control" id="description" name="description" value="{{ $album->description }}">
+                        <pre><textarea class="form-control" id="description" name="description">{{$album->description}}</textarea></pre>
                     </div>
                     <div class="form-group">
                         <label for="file">Copertina</label>

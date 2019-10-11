@@ -4,7 +4,7 @@
             {{$title}}
         </div>
         <div class="paragraph">
-            {{$description}}
+            <pre>{{$description}}</pre>
         </div>
         </div>
         <div class="col-1-of-2">

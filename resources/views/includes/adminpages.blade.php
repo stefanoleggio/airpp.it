@@ -41,7 +41,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description">{{ $view->description }}</textarea>
+                        <pre><textarea class="form-control" id="description" name="description">{{$view->description}}</textarea></pre>
                     </div>
                     <input type="hidden" name="id" value="{{ $view->id }}">
                     <input type="hidden" name="db" value="views">
@@ -92,7 +92,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description">{{ $banner->description }}</textarea>
+                        <pre><textarea class="form-control" id="description" name="description">{{$banner->description}}</textarea></pre>
                     </div>
                     <input type="hidden" name="id" value="{{ $banner->id }}">
                     <input type="hidden" name="db" value="banners">

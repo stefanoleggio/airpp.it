@@ -21,8 +21,7 @@
                     {{ $data->surname }}
                 </div>
                 <div class="col-sm text-center pt-2">
-                    {{ $data->email }}
-                    &euro;
+                    {{$data->email}}
                 </div>
                 <div class="col-sm text-center pt-2">
                     {{ $data->date }}
@@ -62,7 +61,7 @@
         </div>
         <div class="row">
             <div class="col-sm">Messaggio</div>
-            <div class="col-sm">{{ $data->msg }}</div>
+            <div class="col-sm"><pre>{{$data->msg}}</pre></div>
         </div>
         <div class="row">
             <div class="col-sm">Data e ora</div>

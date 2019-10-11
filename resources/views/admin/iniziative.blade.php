@@ -68,7 +68,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description">{{ $data->description }}</textarea>
+                        <pre><textarea class="form-control" id="description" name="description">{{$data->description}}</textarea></pre>
                     </div>
                     <div class="form-group">
                         <label for="place">Luogo</label>
@@ -134,7 +134,7 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description"></textarea>
+                        <pre><textarea class="form-control" id="description" name="description"></textarea></pre>
                     </div>
                     <div class="form-group">
                         <label for="place">Luogo</label>

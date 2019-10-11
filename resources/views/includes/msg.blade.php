@@ -18,7 +18,7 @@
         </div>
         @if($type == 'info')
             <div class="msg__description small margin-top-small u-text-align-left">
-                {{ $desc }}
+            <pre>{{ $desc }}</pre>
             </div>
         @endif
     </div>

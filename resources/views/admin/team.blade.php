@@ -57,7 +57,7 @@
                     </div>
                     <div class="form-group text-capitalize">
                         <label for="description">Descrizione</label>
-                        <textarea class="form-control" id="description" name="description">{{ $data->description }}</textarea>
+                        <textarea class="form-control" id="description" name="description"><pre>{{$data->description}}</pre></textarea>
                     </div>
                     <div class="form-group mt-2 text-capitalize">
                         <div class="form-group">

@@ -12,6 +12,6 @@
     </div>
     @endif
     <div class="team__profile-description small">
-        {{ $description }}
+        <pre>{{ $description }}</pre>
     </div>
 </div>

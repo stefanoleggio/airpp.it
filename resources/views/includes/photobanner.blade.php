@@ -4,7 +4,7 @@
             {{$title}}
         </div>
         <div class="paragraph">
-            {{$description}}
+            <pre>{{$description}}</pre>
         </div>
         <div>
             <button class="btn btn__primary btn__medium u-display-inline-block" onclick="window.location='/galleria';">
