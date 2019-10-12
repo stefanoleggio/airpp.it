@@ -1,5 +1,9 @@
 @extends('templates.page')
 @section('content')
+<!--
+
+    Loader
+
 <div class="loader-wrapper">
         <div class="loader-part"></div>
         <img src="/media/logo/logo_white.svg" class="loader" alt="">
@@ -134,8 +138,15 @@
             animation-timing-function: ease-out;
   }
 }
-
 </style>
+<script>
+    $(window).on("load",function(){
+        setTimeout(function(){ 
+            $(".loader-wrapper").hide();
+        }, 100);
+    });
+</script>
+-->
 <section class="presentation" id="presentation">
             <div class="presentation__text u-center-text">
                 <div class="presentation__block">
@@ -164,11 +175,6 @@
                 $('html, body').animate({
                 scrollTop: $(".info").offset().top
                 }, 1000)
-            });
-            $(window).on("load",function(){
-                setTimeout(function(){ 
-                    $(".loader-wrapper").hide();
-                }, 100);
             });
         </script>
         <section class="info">
@@ -205,7 +211,6 @@
                 ?>
 
             @endforeach
-            <!--<div class="row info__tab info__grey">-->
         <div class="u-padding-normal-unique">
             <hr>
         </div>
