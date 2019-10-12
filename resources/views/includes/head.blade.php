@@ -7,7 +7,7 @@
 <meta name="robots" content="index"/>
 <meta http-equiv="cache-control" content="no-cache"/>
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}"/>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
 <script src="{{ asset('/jquery/jquery.js') }}"></script>
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('js/modal.min.js') }}"></script>
