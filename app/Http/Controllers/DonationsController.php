@@ -22,6 +22,8 @@
     use Redirect;
     use Session;
     use URL;
+    use App\Rules\codicefiscale;
+    use CodiceFiscaleController;
 
     class DonationsController extends Controller
     {
@@ -53,8 +55,8 @@
                 'via' => 'required',
                 'cap' => 'required',
                 'comune' => 'required',
-                'cf' => 'required',
-                'privacy' => 'accepted'
+                'privacy' => 'accepted',
+                'cf' => ['required', new codicefiscale]
             ],
             [
                 'name.required' => 'Devi inserire il nome',
