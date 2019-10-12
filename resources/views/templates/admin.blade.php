@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ config('app.name', 'Laravel') }}</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ asset('/css/modal.min.css') }}"/>
   <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
   <script src="{{ asset('jquery/jquery.js') }}"></script>
   <script src="{{ asset('js/bootstrap.js') }}"></script>
+  <link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
 </head>
 <body>
 <body>
