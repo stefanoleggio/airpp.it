@@ -53,7 +53,7 @@
                 'email' => 'required|email',
                 'amount' => 'required|integer|min:15',
                 'regione' => 'required',
-                'provincia' => 'required',
+                'cap' => 'required',
                 'comune' => 'required',
                 'via' => 'required',
                 'cf' => ['required', new codicefiscale]
@@ -66,7 +66,7 @@
                 'email.email' => 'Devi inserire una email valida',
                 'amount.integer' => 'L\'importo deve essere una cifra tonda',
                 'regione.required' => 'Devi inserire la regione',
-                'provincia.required' => 'Devi inserire la provincia',
+                'cap.required' => 'Devi inserire il cap',
                 'comune.required' => 'Devi inserire il comune',
                 'via.required' => 'Devi inserire la tua via',
                 'cf.required' => 'Devi inserire il codice fiscale'

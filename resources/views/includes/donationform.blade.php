@@ -34,13 +34,13 @@
                 <div class="form__label">
                     Cap
                 </div>
-                <input type="text" disabled="true" value="{{ old('cap') }}" id="postal_code" class="form__input @if ($errors->has('cap')) form__input-invalid @endif" name="cap" placeholder="Inserisci il tuo cap">
+                <input type="text" value="{{ old('cap') }}" id="postal_code" class="form__input @if ($errors->has('cap')) form__input-invalid @endif" name="cap" placeholder="Inserisci il tuo cap">
             </div>
             <div class="col-1-of-2">
                 <div class="form__label">
                     Comune
                 </div>
-                <input type="text" disabled="true" value="{{ old('comune') }}" class="form__input @if ($errors->has('comune')) form__input-invalid @endif" id="locality" name="comune" placeholder="Inserisci il tuo comune">
+                <input type="text" value="{{ old('comune') }}" class="form__input @if ($errors->has('comune')) form__input-invalid @endif" id="locality" name="comune" placeholder="Inserisci il tuo comune">
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@
         </div>
         <div class="newstab__links u-left-text">
             @if(isset($newstab__link))
-            <a href="{{$newstab__link}}" class="btn__link normal u-color-secondary">
+            <a href="{{$newstab__link}}" class="btn__link normal u-color-secondary" target="blank">
                 Locandina
             </a>
             @endif

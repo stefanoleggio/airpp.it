@@ -37,7 +37,9 @@
 }
 </style>
 <div class="logo_container">
-    <img src="{{ asset('/media/logo/logo.svg') }}">
+    <a href="/" target="blank">
+        <img src="{{ asset('/media/logo/logo.svg') }}">
+    </a>
 </div>
 <div class="container mt-5">
     <div class="row justify-content-center">
