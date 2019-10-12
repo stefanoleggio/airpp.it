@@ -11,7 +11,7 @@
                 <div class="form__label">
                     Cognome
                 </div>
-                <input type="text" value="{{ old('surname') }}" class="form__input @error('surname') form__input-invalid @enderror" name="surname" placeholder="Inserisci il tuo cognome">
+                <input type="text" value="{{ old('surname') }}" class="form__input @if ($errors->has('surname')) form__input-invalid @endif" name="surname" placeholder="Inserisci il tuo cognome">
             </div>
         </div>
     </div>
@@ -19,13 +19,13 @@
         <div class="form__label">
             Email
         </div>
-        <input type="text" value="{{ old('email') }}" class="form__input @error('email') form__input-invalid @enderror" name="email" placeholder="Inserisci la tua email">
+        <input type="text" value="{{ old('email') }}" class="form__input @if ($errors->has('email')) form__input-invalid @endif" name="email" placeholder="Inserisci la tua email">
     </div>
     <div class="form__group">
         <div class="form__label">
             Messaggio
         </div>
-        <pre><textarea class="form__input @error('msg') form__input-invalid @enderror" name="msg" placeholder="Inserisci il tuo messaggio">{{ old('msg') }}</textarea></pre>
+        <pre><textarea class="form__input @if ($errors->has('msg')) form__input-invalid @endif" name="msg" placeholder="Inserisci il tuo messaggio">{{ old('msg') }}</textarea></pre>
     </div>
     <div class="form__group">
         <div class="form__label u-margin-bottom-small">
