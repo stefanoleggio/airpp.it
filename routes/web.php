@@ -166,3 +166,5 @@ Route::post('/admin/delete_album', 'AdminGalleryController@delete_album');
 Route::post('/admin/delete_photo', 'AdminGalleryController@delete_photo');
 
 Route::post('/admin/add_photo', 'AdminGalleryController@add_photo');
+
+Route::view('/email', 'mails.textus_sec');

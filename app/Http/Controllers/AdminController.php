@@ -85,7 +85,7 @@ class AdminController extends Controller
         return view('admin.donazioni',
             [
 
-                'datas' => DB::table('donations')->where('success', '1')->get()
+                'datas' => DB::table('donazioni')->where('success', '1')->get()
             ]
         );
     }
@@ -127,6 +127,15 @@ class AdminController extends Controller
 
     public function edit_team(Request $request)
     {
+        $request->validate(
+            [
+                'name' => 'required',
+                'surname' => 'required'
+            ],
+            [
+                'name.required' => 'Il nome è richiesto',
+                'surname.required' => 'Il cognome è richiesto'
+            ]);
         $person = Team::find($request->id);
         $person->name = strtolower($request->name);
         $person->surname = strtolower($request->surname);

@@ -26,7 +26,7 @@
         <div class="form__label">
             Via e civico
         </div>
-        <input type="text" value="{{ old('via') }}" class="form__input @if ($errors->has('via')) form__input-invalid @endif" id="autocomplete" onFocus="geolocate()" name="via" onFocus="geolocate()" type="text" placeholder="Inserisci la tua via">
+        <input type="text" value="{{ old('via') }}" class="form__input @if ($errors->has('via')) form__input-invalid @endif" id="autocomplete" onFocus="geolocate()" name="via" onFocus="geolocate()" type="text" placeholder="Inserisci la tua via e civico">
     </div>
     <div class="form__group">
         <div class="row">

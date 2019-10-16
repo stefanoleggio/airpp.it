@@ -1,136 +1,72 @@
+<!DOCTYPE html>
 <html>
     <head>
-        <title>{{ $object }}</title>
-    </head>
-    <body>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=2">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
         <style>
-            html {
-                font-size: 62.5%;
+            body{
+                font-family: 'Open Sans', sans-serif;
             }
-
-            body {
-                font-family: "Lato", sans-serif;
-                font-weight: 400;
-                line-height: 1.7;
-                color: rgb(63, 63, 63);
-            }
-
-            .main_container{
-                margin-top: 10rem;
-            }
-
-            .mail__banner{
-                width: 100%;
-                text-align: center;
-                color: #ed9090; 
-            }
-
-            .heading-secondary {
-                font-size: 3rem;
-                text-transform: uppercase;
-                font-weight: 700;
-                display: inline-block;
-                letter-spacing: .2rem;
-                transition: all .2s;
-            }
-
-            hr{
-                border: none;
-                border-top: 2px solid #eee;
-                margin: 2.2rem 0;
-            }
-
-            table{
+            .main{
                 padding: 2rem;
-                width: 100%;
+                text-align: center !important;
             }
-
-            .row {
-                width: 45%;
-                margin: 0 auto;
+            .title{
+                background: #153d8a;
+                color: white;
+                font-weight: bold;
+                letter-spacing: 0.2rem;
+                font-size: 2rem;
+                text-align: center;
             }
-
-            .row:not(:last-child) {
-                margin-bottom: 1rem;
+            .int{
+                padding: 2rem;
+                font-size: 1.5rem;
+                padding-left: 5rem;
+                padding-right: 5rem;
             }
-
-            .row::after {
-                content: "";
-                display: table;
-                clear: both;
+            table{
+                text-align: left;
             }
-
-            .row [class^=col-] {
-                float: left;
+            .form_group{
+                padding-left: 5rem;
+                padding-right: 5rem;
+                padding-top: 0.5rem;
+                font-size: 1rem;
             }
-
-            .row [class^=col-]:not(:last-child) {
-                margin-right: 6rem;
-            }
-
-            .row .col-1-of-2 {
-                width: calc((100% - 6rem) / 2);
+            .form_main{
+                font-weight: bold;
                 font-size: 1.5rem;
             }
-
-            .table__desc{
-                font-weight: bold;
-            }
-
-            .table__data{
-                text-transform: capitalize;
-            }
-
-            .table__cf{
-                text-transform: uppercase;
-            }
-
-            .table__amount{
-                color: #ed9090;
-            }
-
-            .mail{
-                padding: 4rem;
-                text-align: center;
-            }
-
-            .mail__title{
-                width: 100%;
-                text-align: center;
-                font-size: 2rem;
-                margin-bottom: 3.5rem;
-                text-transform: uppercase;
-                font-weight: 700;
-                display: inline-block;
-                letter-spacing: .2rem;
-                transition: all .2s;
-            }
-
-            .table{
-                text-align: left !important;
-            }
-
-            @media screen and (max-width: 600px) {
-                .row .col-1-of-2 {
-                    width: 100%;
-                }
-                .row [class^=col-] {
-                    float: none;
-                }
-                .row [class^=col-]:not(:last-child) {
-                    margin-top: 2rem;
-                    margin-right: none;
-                }
+            .close{
+                height: 5rem;
             }
         </style>
-        <div class="mail">
-            <div class="mail__banner heading-secondary">
-                <img src="{{ asset('/media/logo/logo.png') }}" alt="">
-            </div>
-            <hr>
+    </head>
+    <body style="background: #d6d6d5; text-align:center">
+        <table width="600" style="background: white; display: inline-block; border-collapse: collapse;">
+            <tr>
+                <td width="600" class="main">
+                    <img src="http://phplaravel-332151-1020027.cloudwaysapps.com/media/logo/logo.svg" width="200"alt="">
+                </td>
+            </tr>
+            <tr>
+                <td width="600" class="title main">
+                    {{ $title }}
+                </td>
+            </tr>
+            <tr>
+                <td width="600" class="int">
+                    {{ $intro }}
+                </td>
+            </tr>
             @yield('content')
-            <div class="mail__footer u-container-fullwidth">
-            </div>
-        </div>
+            <tr>
+                <td class="close">
+                </td>
+            </tr>
+        </table>
     </body>
 </html>

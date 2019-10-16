@@ -20,6 +20,7 @@ class DonationSecEmail extends Mailable
     public function __construct(Object $request)
     {
         $this->request = $request;
+        $request->date = Carbon::now();
     }
 
     /**
@@ -29,6 +30,6 @@ class DonationSecEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.donation_sec');
+        return $this->subject('Nuova donazione')->view('mails.donation_sec');
     }
 }

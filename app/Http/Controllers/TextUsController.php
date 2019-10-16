@@ -38,7 +38,7 @@ class TextUsController extends Controller
                     'date' => Carbon::now()
                 ]
             );
-            Mail::to('segreteria@airpp.it')->send(new TextUsSecEmail($request));
+            Mail::to(env('MAIL_SEC'))->send(new TextUsSecEmail($request));
             Mail::to($request->email)->send(new TextUsEmail($request));
             \Session::put('success', 'Messaggio inviato con successo');
             return Redirect::to('/contatti');

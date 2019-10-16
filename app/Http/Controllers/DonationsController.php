@@ -53,7 +53,7 @@
                 'email' => 'required|email',
                 'amount' => 'required|integer|min:5',
                 'via' => 'required',
-                'cap' => 'required',
+                'cap' => 'required|integer',
                 'comune' => 'required',
                 'privacy' => 'accepted',
                 'cf' => ['required', new codicefiscale]
@@ -67,6 +67,7 @@
                 'amount.integer' => 'L\'importo deve essere una cifra tonda',
                 'via.required' => 'Devi inserire la tua via',
                 'cap.required' => 'Devi inserire il cap',
+                'cap.integer' => 'Il cap non è valido',
                 'comune.required' => 'Devi inserire il comune',
                 'cf.required' => 'Devi inserire il codice fiscale',
                 'privacy.accepted' => 'Devi accettare la privacy policy',
@@ -108,7 +109,7 @@
             }
             Session::put('paypal_payment_id', $payment->getId());
             if (isset($redirect_url)) {
-                DB::table('donations')->insert(
+                DB::table('donazioni')->insert(
                     [
                         'paymentID' => $payment->getId(),
                         'name' => $request->name, 
@@ -142,15 +143,15 @@
             $execution->setPayerId(Input::get('PayerID'));
             $result = $payment->execute($execution, $this->_api_context);
             if ($result->getState() == 'approved') {
-                DB::table('donations')
+                DB::table('donazioni')
                     ->where('paymentID', $payment->getId())
                     ->update(['success' => true]);
-                $data = DB::table('donations')->where('paymentID', $payment->getId())->get();
+                $data = DB::table('donazioni')->where('paymentID', $payment->getId())->get();
                 /*
                     Invio email
                 */
-                Mail::to('segreteria@airpp.it')->send(new DonationSecEmail($data[0]));
-                Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
+                Mail::to(env('MAIL_SEC'))->send(new DonationSecEmail($data[0]));
+                //Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
                 \Session::put('success', 'Donazione effettuata con successo');
                 return Redirect::to('/donazioni');
             }

@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Carbon\Carbon;
 
 class TextUsSecEmail extends Mailable
 {
@@ -19,6 +20,7 @@ class TextUsSecEmail extends Mailable
     public function __construct(Object $request)
     {
         $this->request = $request;
+        $request->date = Carbon::now();
     }
 
     /**
@@ -28,6 +30,6 @@ class TextUsSecEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.textus_sec');
+        return $this->subject('Nuovo messaggio')->view('mails.textus_sec');
     }
 }

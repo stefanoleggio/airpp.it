@@ -1,52 +1,56 @@
-@extends('templates.mail',[
-    'object' => 'Nuovo messaggio'
+@extends('templates.mail', [
+    'title' => "Messaggio",
+    'intro' => "C'è un nuovo messaggio!"
 ])
 @section('content')
-    <div class="main_container">
-        <div class="mail__title heading-secondary">
-            Dati del messaggio
-        </div>
-        <div class="table">
-            <div class="row">
-                <div class="col-1-of-2 table__desc">
-                    Nome
-                </div>
-                <div class="col-1-of-2 table__data">
-                    {{ $request->name }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2 table__desc">
-                    Cognome
-                </div>
-                <div class="col-1-of-2 table__data">
-                    {{ $request->surname }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2 table__desc">
-                    Email
-                </div>
-                <div class="col-1-of-2 table__data">
-                    {{ $request->email }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2 table__desc">
-                    Data e ora
-                </div>
-                <div class="col-1-of-2 table__data">
-                    {{ $request->date }}
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-1-of-2 table__desc">
-                    Messaggio
-                </div>
-                <div class="col-1-of-2 table__data">
-                    {{ $request->msg }}
-                </div>
-            </div>
-        </div>
-    </div>
+<tr>
+    <td class="form_group form_main">
+        Nome
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->name}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Cognome
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->surname}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Email
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->email}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Messaggio
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->msg}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Data e ora
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->date}}
+    </td>
+</tr>
 @endsection

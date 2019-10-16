@@ -3,8 +3,8 @@
 
     use Illuminate\Support\Facades\DB;
     use Carbon\Carbon;
-    use App\Mail\DonationSecEmail;
-    use App\Mail\DonationEmail;
+    use App\Mail\IscrizioneSecEmail;
+    use App\Mail\IscrizioneEmail;
     use Illuminate\Support\Facades\Mail;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Input;
@@ -52,8 +52,7 @@
                 'surname' => 'required',
                 'email' => 'required|email',
                 'amount' => 'required|integer|min:15',
-                'regione' => 'required',
-                'cap' => 'required',
+                'cap' => 'required|integer',
                 'comune' => 'required',
                 'via' => 'required',
                 'cf' => ['required', new codicefiscale]
@@ -65,8 +64,8 @@
                 'amount.required' => 'Devi inserire l\'importo',
                 'email.email' => 'Devi inserire una email valida',
                 'amount.integer' => 'L\'importo deve essere una cifra tonda',
-                'regione.required' => 'Devi inserire la regione',
                 'cap.required' => 'Devi inserire il cap',
+                'cap.integer' => 'Il cap non è valido',
                 'comune.required' => 'Devi inserire il comune',
                 'via.required' => 'Devi inserire la tua via',
                 'cf.required' => 'Devi inserire il codice fiscale'
@@ -106,7 +105,7 @@
             }
             Session::put('paypal_payment_id', $payment->getId());
             if (isset($redirect_url)) {
-                DB::table('donations')->insert(
+                DB::table('iscrizioni')->insert(
                     [
                         'paymentID' => $payment->getId(),
                         'name' => $request->name, 
@@ -114,9 +113,8 @@
                         'email' => $request->email,
                         'amount' => $request->amount,
                         'cf' => $request->cf,
-                        'regione' => $request->regione,
-                        'provincia' => $request->provincia,
                         'comune' => $request->comune,
+                        'cap' => $request->cap,
                         'via' => $request->via,
                         'success' => false,
                         'date' => Carbon::now(),
@@ -148,9 +146,9 @@
                 /*
                     Invio email
                 */
-                Mail::to('stefanoleggio28@gmail.com')->send(new DonationSecEmail($data[0]));
-                Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
-                \Session::put('success', 'Donazione effettuata con successo');
+                Mail::to(env('MAIL_SEC'))->send(new IscrizioneSecEmail($data[0]));
+                //Mail::to($data->email)->send(new DonationEmail($data));
+                \Session::put('success', 'Iscrizione effettuata con successo');
                 return Redirect::to('/associarsi');
             }
             \Session::put('error', 'Donazione fallita, riprovare');
