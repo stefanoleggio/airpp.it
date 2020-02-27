@@ -23,19 +23,19 @@
                         <a href="/" class="user-nav__link">Home</a>
                     </li>
                     <li class="user-nav__item user-nav__item-drop">
-                        <a href="#!" class="user-nav__link user-nav__link-main">Notizie<i class="fas fa-chevron-down"></i></a>
-                        <ul class="user-nav__drop">
-                            <li><a href="/convegni" class="user-nav__link">Convegni</a></li>
-                            <li><a href="/premi" class="user-nav__link">Premi</a></li>
-                            <li><a href="/iniziative" class="user-nav__link">Iniziative</a></li>
-                        </ul>
-                    </li>
-                    <li class="user-nav__item user-nav__item-drop">
                         <a href="#!" class="user-nav__link user-nav__link-main">Associazione<i class="fas fa-chevron-down"></i></a>
                         <ul class="user-nav__drop">
                             <li><a href="/donazioni" class="user-nav__link">Donazioni</a></li>
                             <li><a href="/associarsi" class="user-nav__link">Associarsi</a></li>
                             <li><a href="/statuto" class="user-nav__link">Statuto</a></li>
+                        </ul>
+                    </li>
+                    <li class="user-nav__item user-nav__item-drop">
+                        <a href="#!" class="user-nav__link user-nav__link-main">Attivit&agrave;<i class="fas fa-chevron-down"></i></a>
+                        <ul class="user-nav__drop">
+                            <li><a href="/convegni" class="user-nav__link">Convegni</a></li>
+                            <li><a href="/premi" class="user-nav__link">Premi</a></li>
+                            <li><a href="/iniziative" class="user-nav__link">Iniziative</a></li>
                         </ul>
                     </li>
                     <li class="user-nav__item">
