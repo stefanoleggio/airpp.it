@@ -1,11 +1,21 @@
 @extends('templates.page')
 @section('content')
 @foreach($banners as $banner)
-    @include('includes.banner', 
-    [
-        'title' => $banner->title,
-        'description' => $banner->description,
-        'img' => $banner->img
-    ])
+<div class="row info__tab">
+    <div class="col-1-of-2 u-center-text">
+        <div class="heading-secondary u-margin-bottom-medium u-color-black">
+            {{$banner->title}}
+        </div>
+        <div class="paragraph">
+            <pre>{{$banner->description}}</pre>
+        </div>
+        </div>
+        <div class="col-1-of-2">
+            <div class="info__img__container">
+                <img class="info__img img_svg" src={{asset($banner->img)}}>
+            </div>
+        </div>
+    </div>
+</div>
 @endforeach
 @endsection

@@ -23,6 +23,7 @@ class CreateIscrizioniTable extends Migration
             $table->string('comune');
             $table->string('via');
             $table->string('email');
+            $table->string('telefono');
             $table->integer('amount');
             $table->boolean('success');
             $table->dateTime('date');

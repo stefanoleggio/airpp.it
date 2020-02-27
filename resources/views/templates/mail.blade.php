@@ -6,6 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=2">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> 
         <style>
+            *,
+            *::after,
+            *::before {
+                margin: 0;
+                padding: 0;
+                box-sizing: inherit;
+            }
             body{
                 font-family: 'Open Sans', sans-serif;
             }
@@ -14,8 +21,7 @@
                 text-align: center !important;
             }
             .title{
-                background: #153d8a;
-                color: white;
+                color: #153d8a;
                 font-weight: bold;
                 letter-spacing: 0.2rem;
                 font-size: 2rem;
@@ -31,9 +37,7 @@
                 text-align: left;
             }
             .form_group{
-                padding-left: 5rem;
-                padding-right: 5rem;
-                padding-top: 0.5rem;
+                padding-left: 1rem;
                 font-size: 1rem;
             }
             .form_main{
@@ -46,20 +50,10 @@
         </style>
     </head>
     <body style="background: #d6d6d5; text-align:center">
-        <table width="600" style="background: white; display: inline-block; border-collapse: collapse;">
+        <table style="background: white; display: inline-block; border-collapse: collapse;">
             <tr>
-                <td width="600" class="main">
-                    <img src="http://phplaravel-332151-1020027.cloudwaysapps.com/media/logo/logo.svg" width="200"alt="">
-                </td>
-            </tr>
-            <tr>
-                <td width="600" class="title main">
+                <td class="title main">
                     {{ $title }}
-                </td>
-            </tr>
-            <tr>
-                <td width="600" class="int">
-                    {{ $intro }}
                 </td>
             </tr>
             @yield('content')

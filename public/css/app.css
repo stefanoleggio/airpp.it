@@ -329,6 +329,15 @@ a {
   padding: 3rem;
 }
 
+#home_topbar {
+  top: 0;
+  display: block;
+  transition: top 0.3s;
+  z-index: 20;
+  padding: 3rem;
+  position: relative;
+}
+
 .topbar-offset {
   height: 18rem;
 }
@@ -348,6 +357,28 @@ a {
 }
 
 .user-nav__link {
+  color: #787878;
+}
+
+.user-nav__link-home {
+  color: white;
+}
+
+.user-nav__link-home:link,
+.user-nav__link-home:visited {
+  display: inline-block;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  transition: all 0.4s;
+  border: none;
+}
+
+.user-nav__link-home i {
+  margin-left: 1rem;
+  transition: 0.2s ease;
+}
+
+.user-nav__link-home:hover {
   color: #787878;
 }
 
@@ -373,6 +404,23 @@ a {
   float: left;
   padding-top: 1.5rem;
   padding-right: 1rem;
+}
+
+.user-nav__item-drop-home {
+  position: relative;
+  display: inline-block;
+}
+
+.user-nav__item-drop-home:hover .user-nav__link-main {
+  color: #787878;
+}
+
+.user-nav__item-drop-home:hover i {
+  transform: rotateZ(-180deg);
+}
+
+.user-nav__item-drop-home:hover .user-nav__drop-home {
+  display: block;
 }
 
 .user-nav__item-drop {
@@ -402,6 +450,21 @@ a {
   padding-top: 4.1rem;
   font-size: 1.5rem;
   text-transform: capitalize;
+}
+
+.user-nav__drop-home {
+  display: none;
+  position: absolute;
+  right: 0;
+  min-width: 100%;
+  z-index: 1;
+  background: none;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.user-nav__drop-home li {
+  background: none;
 }
 
 .user-nav__drop li {
@@ -581,8 +644,28 @@ a {
   position: absolute;
   color: #787878;
   font-size: 5rem;
-  right: 10rem;
+  right: 5rem;
   display: none;
+}
+
+.btn__burger-home {
+  position: absolute;
+  color: white;
+  font-size: 5rem;
+  right: 5rem;
+  display: none;
+}
+
+.btn__burger-home > i:hover {
+  cursor: pointer;
+  color: #787878;
+  transition: all 0.4s;
+}
+
+@media only screen and (max-width: 75em) {
+  .btn__burger-home {
+    display: block;
+  }
 }
 
 .btn__burger > i:hover {
@@ -1268,7 +1351,6 @@ img {
 
 .presentation__text {
   color: white;
-  padding-top: 15rem;
   -webkit-animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-in-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -1277,7 +1359,7 @@ img {
   width: 50rem;
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }

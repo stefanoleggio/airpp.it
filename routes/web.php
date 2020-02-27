@@ -25,6 +25,8 @@ Route::get('/contatti', 'PageController@contatti');
 
 Route::get('/statuto', 'PageController@statuto');
 
+Route::get('/bilanci', 'PageController@bilanci');
+
 /*
     NewsController
 */

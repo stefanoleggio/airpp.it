@@ -64,10 +64,25 @@
     }
 
     &__burger{
+        &-home{
+            position: absolute;
+            color: $color-white;
+            font-size: 5rem;
+            right: 5rem;
+            display:none;
+            &>i:hover{
+                cursor: pointer;
+                color: $color-black;
+                transition: all .4s;
+            }
+            @include respond(tab-land) {
+                display: block;
+            }  
+        }
         position: absolute;
         color: $color-black;
         font-size: 5rem;
-        right: 10rem;
+        right: 5rem;
         display:none;
         &>i:hover{
             cursor: pointer;

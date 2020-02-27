@@ -52,6 +52,12 @@
     </div>
     <div class="form__group">
         <div class="form__label">
+            Telefono
+        </div>
+        <input type="text" value="{{ old('telefono') }}" class="form__input @if ($errors->has('telefono')) form__input-invalid @endif" name="telefono" placeholder="Inserisci il tuo telefono">
+    </div>
+    <div class="form__group">
+        <div class="form__label">
             Importo
             <i class="fas fa-euro-sign"></i>
         </div>

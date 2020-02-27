@@ -1,6 +1,5 @@
 @extends('templates.mail', [
-    'title' => "Donazione",
-    'intro' => "C'è una nuova donazione"
+    'title' => "Donazione"
 ])
 @section('content')
 <tr>

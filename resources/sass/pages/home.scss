@@ -17,7 +17,6 @@
     }
     &__text{
         color: $color-white;
-        padding-top: 15rem;
         -webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
@@ -25,7 +24,7 @@
         width: 50rem;
         margin: 0;
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
