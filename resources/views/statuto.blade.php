@@ -8,7 +8,7 @@
         </div>
         <div class="paragraph">
             <pre>{{$banner->description}}</pre>
-            <a href="storage/{{ env('STATUTO_DIR') }}statuto.pdf" class="btn__link normal u-color-secondary" target="blank">
+            <a href="{{$datas[0]->link}}" class="btn__link normal u-color-secondary" target="blank">
                 Scarica lo statuto
             </a>
         </div>

@@ -154,7 +154,7 @@ class AdminNewsController extends Controller
     public function delete_news(Request $request){
         $data  = $this->findNews($request->db, $request->id);
         if(isset($data->link)){
-            $trimmed = str_replace('/storage', '', $data->link);
+            $trimmed = str_replace(env("STORAGE_DIR"), '', $data->link);
             Storage::delete($trimmed);
         }
         $data->delete();

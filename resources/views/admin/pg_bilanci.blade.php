@@ -1,21 +1,13 @@
 @extends('templates.admin')
-
 @section('content')
-@if ($message = Session::get('success'))
-    @include('includes.adminalert', 
-        [
-            'message' => $message
-        ]
-    )
-@endif
-<div class="card">
+    <div class="card">
     <div class="card-header">
         <h3>
-            Premi
+            Bilanci
         </h3>
     </div>
     <div class="card-body">
-        Elenco dei premi, è possibile modificarli ed aggiungerne di nuovi
+        Elenco dei Bilanci, è possibile modificarli ed aggiungerne di nuovi
         <div>
             <button type="submit" class="btn-primary btn mt-3" data-toggle="modal" data-target="#modal-for-new-card">
                 Aggiungi
@@ -29,13 +21,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-sm text-center pt-2">
-                    {{ $data->title }} 
-                </div>
-                <div class="col-sm text-center pt-2">
-                    {{ $data->place }}
-                </div>
-                <div class="col-sm text-center pt-2">
-                    {{ $data->date }}
+                    {{ $data->date }} 
                 </div>
                 <div class="col-sm text-center">
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $data->id }}">
@@ -58,49 +44,33 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="/admin/edit_news" enctype="multipart/form-data">
+                <form method="POST" action="/admin/edit_bilanci" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="title">Titolo</label>
-                        <input type="input" class="form-control" id="title" name="title" value="{{ $data->title }}">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Descrizione</label>
-                        <pre>
-                        <textarea class="form-control" id="description" name="description">{{ $data->description }}</textarea>
-                        </pre>
-                    </div>
-                    <div class="form-group">
-                        <label for="place">Luogo</label>
-                        <input type="input" class="form-control" id="place" name="place" value="{{ $data->place }}">
-                    </div>
-                    <div class="form-group">
                         <label for="date">Data</label>
-                        <input class="form-control" type="date" name="date" value="{{ $data->date }}" id="date">
+                        <input class="form-control" type="text" name="date" value="{{ $data->date }}" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Descrizione</label>
+                        <pre>
+                            <textarea class="form-control" type="text" name="description" id="description">{{ $data->description }}</textarea>
+                        </pre>
                     </div>
                     <div class="form-group mt-2">
                         <div class="form-group">
-                            <label for="file">Locandina</label>
+                            <label for="file">File</label>
                             <input type="file" class="form-control-file" name="file" id="file"/>
-                            @if(isset($data->link))
-                            <a href="{{ $data->link }}">Locandina</a>
-                            @endif
+                            <a href="{{ $data->link }}" class="mt-5">Bilancio</a>
                         </div>
                     </div>
-                    <div class="form-group mt-2">
-                        <input class="check" type="checkbox" name="active" id="check" @if($data->active == 1) {{"checked"}} @endif>
-                        <label class="form-check-label" for="check">
-                            In corso
-                        </label>
-                    </div>
                     <input type="hidden" name="id" value="{{ $data->id }}">
-                    <input type="hidden" name="db" value="premi">
+                    <input type="hidden" name="db" value="bilanci">
                     <button type="submit" class="btn btn-primary w_classic">Salva</button>
                     </form>
-                    <form method="POST" action="/admin/delete_news" class="pt-3">
+                    <form method="POST" action="/admin/delete_bilanci" class="pt-3">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $data->id }}">
-                        <input type="hidden" name="db" value="premi">
+                        <input type="hidden" name="db" value="bilanci">
                         <button class="btn btn-danger w_classic" type="submit">Elimina</button>
                     </form>
                 </div>
@@ -124,39 +94,25 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="/admin/add_news" enctype="multipart/form-data">
-                {{ csrf_field() }}
-                    <div class="form-group">
-                        <label for="title">Titolo</label>
-                        <input type="input" class="form-control" id="title" name="title">
-                    </div>
-                    <div class="form-group">
-                        <label for="description">Descrizione</label>
-                        <pre>
-                            <textarea class="form-control" id="description" name="description"></textarea>
-                        </pre>
-                    </div>
-                    <div class="form-group">
-                        <label for="place">Luogo</label>
-                        <input type="input" class="form-control" id="place" name="place">
-                    </div>
+                <form method="POST" action="/admin/add_bilanci" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                     <div class="form-group">
                         <label for="date">Data</label>
-                        <input class="form-control" type="date" name="date" id="date">
+                        <input class="form-control" type="text" name="date" id="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Descrizione</label>
+                        <pre>
+                            <textarea class="form-control" type="text" name="description" id="description"></textarea>
+                        </pre>
                     </div>
                     <div class="form-group mt-2">
                         <div class="form-group">
-                            <label for="file">Locandina</label>
+                            <label for="file">File</label>
                             <input type="file" class="form-control-file" name="file" id="file"/>
                         </div>
                     </div>
-                    <div class="form-group mt-2">
-                        <input class="check" type="checkbox" name="active" id="check">
-                        <label class="form-check-label" for="check">
-                            In corso
-                        </label>
-                    </div>
-                    <input type="hidden" name="db" value="premi">
+                    <input type="hidden" name="db" value="bilanci">
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>
                 </div>

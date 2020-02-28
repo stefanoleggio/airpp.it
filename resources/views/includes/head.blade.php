@@ -6,6 +6,10 @@
 <meta name ="copyright" content="airpp onlus" />
 <meta name="robots" content="index"/>
 <meta http-equiv="cache-control" content="no-cache"/>
+<link rel="apple-touch-icon" sizes="180x180" href="{{asset('/media/logo/favicon/apple-touch-icon.png')}}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{asset('/media/logo/favicon/favicon-32x32.png')}}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{asset('/media/logo/favicon/favicon-16x16.png')}}">
+<link rel="manifest" href="{{asset('/site.webmanifest')}}">
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}"/>
 <link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
 <script src="{{ asset('/jquery/jquery.js') }}"></script>

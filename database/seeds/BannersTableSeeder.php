@@ -92,6 +92,13 @@ class BannersTableSeeder extends Seeder
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/gallery_camera.svg"
                 ],
+                [
+                    'id' => 10,
+                    'page_id' => "bilanci",
+                    'title' => "Bilanci",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
+                    'img' => "/media/svg/bilanci.svg"
+                ],
             ]
         );
     }

@@ -644,7 +644,7 @@ a {
   position: absolute;
   color: #787878;
   font-size: 5rem;
-  right: 5rem;
+  right: 10rem;
   display: none;
 }
 
@@ -1327,16 +1327,12 @@ img {
 }
 
 #presentation {
-  background: linear-gradient(rgba(20, 20, 20, 0.6), rgba(20, 20, 20, 0.6)), url(/media/img/home/home_1.jpg);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   height: 100vh;
 }
 
-@media screen and (max-height: 540px) {
+@media screen and (max-height: 750px) {
   #presentation {
-    height: 70rem;
+    height: 75rem;
   }
 }
 

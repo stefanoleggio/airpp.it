@@ -1,11 +1,8 @@
 #presentation{
-    background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url(/media/img/home/home_1.jpg);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+
     height: 100vh;
-    @media screen and (max-height: 540px) {
-        height: 70rem;
+    @media screen and (max-height: 750px) {
+        height: 75rem;
     }
 }
 

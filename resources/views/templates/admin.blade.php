@@ -41,6 +41,7 @@
           <a href="/admin/pg_galleria" class="list-group-item list-group-item-action bg-secondary text-white">Galleria</a>
           <a href="/admin/pg_contatti" class="list-group-item list-group-item-action bg-secondary text-white">Contatti</a>
           <a href="/admin/pg_statuto" class="list-group-item list-group-item-action bg-secondary text-white">Statuto</a>
+          <a href="/admin/pg_bilanci" class="list-group-item list-group-item-action bg-secondary text-white">Bilanci</a>
           <a href="/admin/pg_segnalazioni" class="list-group-item list-group-item-action bg-secondary text-white">Segnalazioni</a>
           <a href="/admin/pg_cookies" class="list-group-item list-group-item-action bg-secondary text-white">Cookies</a>
         </div>

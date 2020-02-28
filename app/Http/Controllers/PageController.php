@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
+use App\Bilanci;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -14,6 +14,7 @@ class PageController extends Controller
                 'title' => 'Home',
                 'banners' => DB::table('banners')->where('page_id', 'home')->get(),
                 'views' => DB::table('views')->where('page_id', 'home')->get(),
+                'data' => DB::table('documents')->where('page_id', 'home')->get(),
                 'users_cd' => DB::table('team')->where('team_id', 'consiglio direttivo')->get(),
                 'users_cs' => DB::table('team')->where('team_id', 'comitato scientifico')->get(),
                 'users_ss' => DB::table('team')->where('team_id', 'segreteria scientifica')->get(),
@@ -57,7 +58,18 @@ class PageController extends Controller
         return view('statuto',
             [
                 'title' => 'Statuto',
-                'banners' => DB::table('banners')->where('page_id', 'statuto')->get()
+                'banners' => DB::table('banners')->where('page_id', 'statuto')->get(),
+                'datas' => DB::table('documents')->where('page_id', 'statuto')->get()
+            ]
+        );
+    }
+
+    public function bilanci(){
+        return view('bilanci',
+            [
+                'title' => 'Bilanci',
+                'banners' => DB::table('banners')->where('page_id', 'bilanci')->get(),
+                'posts' => Bilanci::orderBy('id', 'desc')->get()
             ]
         );
     }

@@ -36,11 +36,9 @@ class AdminGalleryController extends Controller
         $request->validate(
             [
                 'title' => 'required',
-                'description' => 'required',
             ],
             [
                 'title.required' => 'Il titolo è richiesto',
-                'description.required' => 'La descrizione è richiesta'
             ]);
         $album = Album::find($request->id);
         if($request->hasFile('file')){
@@ -72,12 +70,10 @@ class AdminGalleryController extends Controller
         $request->validate(
             [
                 'title' => 'required',
-                'description' => 'required',
                 'file' => 'required'
             ],
             [
                 'title.required' => 'Il titolo è richiesto',
-                'description.required' => 'La descrizione è richiesta',
                 'file.required' => 'Devi inserire l\'immagine di copertina'
             ]);
         $album = new Album;
@@ -85,7 +81,7 @@ class AdminGalleryController extends Controller
         $album->save();
 
         if(!$request->hasFile('file')){
-            \Session::put('error', 'Errore, il file ');
+            \Session::put('error', 'Errore, è richiesta l\' immagine di copertina ');
             return Redirect::to('admin/galleria');
         }
         $file = $request->file('file');
@@ -100,6 +96,14 @@ class AdminGalleryController extends Controller
 
     public function delete_album(Request $request){
         $album = Album::find($request->id);
+        $trimmed = str_replace('/storage', '', $album->thb_path);
+        Storage::delete($trimmed);
+        $photos = Photo::where('album_id', $album->id)->get();
+        foreach($photos as $photo){
+            $trim = str_replace('/storage', '', $photo->img_path);
+            Storage::delete($trim);
+            $photo->delete();
+        }
         $album->delete();
         \Session::put('success', 'Modifica effettuata con successo');
         return Redirect::to('admin/galleria');

@@ -147,7 +147,7 @@
     });
 </script>
 -->
-<section class="presentation" id="presentation">
+<section class="presentation" id="presentation" style="background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url({{$data[0]->link}}); background-size: cover; background-position: center; background-attachment: fixed;">
     <header id="home_topbar">
         <div class="topbar__inner">
             <div class="logo-container">

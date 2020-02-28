@@ -125,6 +125,8 @@ Route::get('/admin/pg_contatti', 'AdminPageController@pg_contatti');
 
 Route::get('/admin/pg_statuto', 'AdminPageController@pg_statuto');
 
+Route::get('/admin/pg_bilanci', 'AdminPageController@pg_bilanci');
+
 Route::get('/admin/pg_cookies', 'AdminPageController@pg_cookies');
 
 Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');
@@ -132,6 +134,14 @@ Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');
 Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');
 
 Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
+
+Route::post('/admin/edit_docs', 'AdminPageController@edit_docs');
+
+Route::post('/admin/add_bilanci', 'AdminPageController@add_bilanci');
+
+Route::post('/admin/edit_bilanci', 'AdminPageController@edit_bilanci');
+
+Route::post('/admin/delete_bilanci', 'AdminPageController@delete_bilanci');
 
 /* 
     AdminNewsController
