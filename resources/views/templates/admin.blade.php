@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>{{ config('app.name', 'Laravel') }}</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/media/logo/favicon/apple-touch-icon.png')}}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/media/logo/favicon/favicon-32x32.png')}}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/media/logo/favicon/favicon-16x16.png')}}">
+  <link rel="manifest" href="{{asset('/site.webmanifest')}}">
   <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
   <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
   <script src="{{ asset('jquery/jquery.js') }}"></script>
@@ -27,7 +31,7 @@
         <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light">Iscrizioni</a>
         <a href="/admin/messaggi" class="list-group-item list-group-item-action bg-light">Messaggi</a>
         <a href="/admin/galleria" class="list-group-item list-group-item-action bg-light">Galleria</a>
-        <a href="#drop__nw" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Notizie</a>
+        <a href="#drop__nw" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Attivit&agrave;</a>
         <div id="drop__nw" class="collapse">
           <a href="/admin/premi" class="list-group-item list-group-item-action bg-secondary text-white">Premi</a>
           <a href="/admin/iniziative" class="list-group-item list-group-item-action bg-secondary text-white">Iniziative</a>
@@ -38,7 +42,7 @@
           <a href="/admin/pg_home" class="list-group-item list-group-item-action bg-secondary text-white">Home</a>
           <a href="/admin/pg_donazioni" class="list-group-item list-group-item-action bg-secondary text-white">Donazioni</a>
           <a href="/admin/pg_associarsi" class="list-group-item list-group-item-action bg-secondary text-white">Associarsi</a>
-          <a href="/admin/pg_notizie" class="list-group-item list-group-item-action bg-secondary text-white">Notizie</a>
+          <a href="/admin/pg_attivita" class="list-group-item list-group-item-action bg-secondary text-white">Attivit&agrave;</a>
           <a href="/admin/pg_galleria" class="list-group-item list-group-item-action bg-secondary text-white">Galleria</a>
           <a href="/admin/pg_contatti" class="list-group-item list-group-item-action bg-secondary text-white">Contatti</a>
           <a href="/admin/pg_statuto" class="list-group-item list-group-item-action bg-secondary text-white">Statuto</a>

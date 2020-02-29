@@ -13,12 +13,12 @@ html {
         font-size: 30%;
     }
 
-    @include respond(tab-land) { // width < 1200?
-        font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
-    }
-
     @include respond(tab-port) { // width < 900?
         font-size: 50%; //1 rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(tab-land) { // width < 1200?
+        font-size: 55%; //1 rem = 9px, 9/16 = 50%
     }
     
     @include respond(big-desktop) {

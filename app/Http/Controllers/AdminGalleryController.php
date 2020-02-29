@@ -36,6 +36,7 @@ class AdminGalleryController extends Controller
         $request->validate(
             [
                 'title' => 'required',
+                'file' => 'image|mimes:jpeg,png,jpg,gif,svg'
             ],
             [
                 'title.required' => 'Il titolo è richiesto',
@@ -44,12 +45,11 @@ class AdminGalleryController extends Controller
         if($request->hasFile('file')){
             $file = $request->file('file');
             if(!$this->load_album($file, $album)){
-                \Session::put('error', 'Errore');
+                \Session::put('error', 'Errore generico');
                 return Redirect::to('admin/galleria');
             }
         }
         $album->title = $request->title;
-        $album->description = $request->description;
         $album->save();
         \Session::put('success', 'Modifica effettuata con successo');
         return Redirect::to('admin/galleria');
@@ -70,11 +70,11 @@ class AdminGalleryController extends Controller
         $request->validate(
             [
                 'title' => 'required',
-                'file' => 'required'
+                'file' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
             ],
             [
                 'title.required' => 'Il titolo è richiesto',
-                'file.required' => 'Devi inserire l\'immagine di copertina'
+                'file.required' => 'Devi inserire l\'immagine di copertina',
             ]);
         $album = new Album;
         $album->title = $request->title;

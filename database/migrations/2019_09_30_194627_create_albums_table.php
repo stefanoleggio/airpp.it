@@ -16,7 +16,6 @@ class CreateAlbumsTable extends Migration
         Schema::create('albums', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->longText('description')->nullable();
             $table->string('thb_path')->nullable();
             $table->timestamps();
         });

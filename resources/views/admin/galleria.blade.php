@@ -60,10 +60,6 @@
                         <input type="input" class="form-control" id="title" name="title" value="{{ $album->title }}">
                     </div>
                     <div class="form-group">
-                        <label for="title">Descrizione</label>
-                        <pre><textarea class="form-control" id="description" name="description">{{$album->description}}</textarea></pre>
-                    </div>
-                    <div class="form-group">
                         <label for="file">Copertina</label>
                         <img src="{{ $album->thb_path }}" class="img-thumbnail w-25" alt="">
                         <input type="file" class="form-control-file" name="file" id="file"/>
@@ -101,10 +97,6 @@
                     <div class="form-group">
                         <label for="title">Titolo</label>
                         <input type="input" class="form-control" id="title" name="title">
-                    </div>
-                    <div class="form-group">
-                        <label for="title">Descrizione</label>
-                        <pre><textarea class="form-control" id="description" name="description"></textarea></pre>
                     </div>
                     <div class="form-group">
                         <label for="file">Copertina</label>

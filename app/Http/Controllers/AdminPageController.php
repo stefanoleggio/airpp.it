@@ -78,6 +78,16 @@ class AdminPageController extends Controller
         );
     }
 
+    public function pg_attivita(){
+        return view('admin.pg_attivita',
+            [
+                'in' => DB::table('banners')->where('page_id', 'iniziative')->get(),
+                'pr' => DB::table('banners')->where('page_id', 'premi')->get(),
+                'co' => DB::table('banners')->where('page_id', 'convegni')->get()
+            ]
+        );
+    }
+
     public function pg_segnalazioni(){
         return view('admin.pg_segnalazioni',
             [

@@ -126,6 +126,14 @@ Route::get('/admin/pg_contatti', 'AdminPageController@pg_contatti');
 
 Route::get('/admin/pg_statuto', 'AdminPageController@pg_statuto');
 
+Route::get('/admin/pg_attivita', 'AdminPageController@pg_attivita');
+
+Route::get('/admin/pg_premi', 'AdminPageController@pg_attivita');
+
+Route::get('/admin/pg_iniziative', 'AdminPageController@pg_attivita');
+
+Route::get('/admin/pg_convegni', 'AdminPageController@pg_attivita');
+
 Route::get('/admin/pg_bilanci', 'AdminPageController@pg_bilanci');
 
 Route::get('/admin/pg_cookies', 'AdminPageController@pg_cookies');
@@ -153,8 +161,6 @@ Route::get('/admin/premi', 'AdminNewsController@premi');
 Route::get('/admin/iniziative', 'AdminNewsController@iniziative');
 
 Route::get('/admin/convegni', 'AdminNewsController@convegni');
-
-Route::get('/admin/pg_notizie', 'AdminNewsController@pg_notizie');
 
 Route::post('/admin/edit_news', 'AdminNewsController@edit_news');
 

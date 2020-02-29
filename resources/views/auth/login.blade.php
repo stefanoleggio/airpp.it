@@ -8,24 +8,16 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('jquery/jquery.min.js') }}"></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/media/logo/favicon/apple-touch-icon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/media/logo/favicon/favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('/media/logo/favicon/favicon-16x16.png')}}">
+    <link rel="manifest" href="{{asset('/site.webmanifest')}}">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" type="text/css" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
 </head>
 <body>
-<!--
-      <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">
-    <img src="{{ asset('/media/logo/logo.svg') }}">
-    </a>
-    <h2 class="pt-3 pl-5 text-muted">
-        Pannello amministrativo
-    </h2>
-    </div>
-      </nav>
--->
 <style>
 .logo_container{
     text-align: center;
