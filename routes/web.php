@@ -110,6 +110,7 @@ Route::post('/admin/add_users', 'MasterController@add_users');
 
 Route::post('/admin/delete_users', 'MasterController@delete_users');
 
+Route::get('/admin/logs', 'MasterController@logs');
 
 /* 
     AdminPagesController

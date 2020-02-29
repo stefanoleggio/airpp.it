@@ -44,16 +44,16 @@
                 <form method="POST" action="/admin/edit_pssw" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
-                    <div>
-                        La password deve avere almeno:
-                        <ul>
-                            <li>8 caratteri</li>
-                            <li>1 carattere maiuscolo</li>
-                            <li>1 carattere minuscolo</li>
-                            <li>1 numero</li>
-                            <li>1 carattere speciale (@ # ] / $)</li>
-                        </ul>
-                    </div>
+                        <div>
+                            La password deve avere almeno:
+                            <ul>
+                                <li>8 caratteri</li>
+                                <li>1 carattere maiuscolo</li>
+                                <li>1 carattere minuscolo</li>
+                                <li>1 numero</li>
+                                <li>1 carattere speciale (# ? ! @ $ % ^ & * -)</li>
+                            </ul>
+                        </div>
                         <label for="title">Nuova Password</label>
                         <input type="password" class="form-control" id="password" name="password">
                     </div>

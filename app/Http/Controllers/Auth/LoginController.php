@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Carbon\Carbon;
+use Auth;
+use App\Log;
 
 class LoginController extends Controller
 {
@@ -39,6 +41,38 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+  
+
+    public function attemptLogin(Request $request)
+    {
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['password'],
+            'code' => $request['code']
+        ];
+
+
+        if (Auth::attempt($credentials)) {
+            $data = new Log;
+            $data->user = $request->email;
+            $data->ip = $request->getClientIp();
+            $data->login_at = Carbon::now()->toDateTimeString();
+            $data->save();
+            return redirect('/admin');
+        }
+
+        return false;
+    }
+
+    protected function validateLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required', 
+            'password' => 'required',
+            'code' => 'required'
+        ]);
     }
 
     function authenticated(Request $request, $user)

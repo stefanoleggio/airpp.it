@@ -16,13 +16,15 @@ class UsersTableSeeder extends Seeder
             [
                 'name' => 'stefano',
                 'email' => 'stefano@airpp.it',
-                'password' => bcrypt('Comunismo99'),
+                'password' => bcrypt('a'),
+                'code' => '1',
                 'role' => 'master'
             ],
             [
                 'name' => 'veronica',
                 'email' => 'veronica@airpp.it',
                 'password' => bcrypt('1234'),
+                'code' => '1234',
                 'role' => 'user'
             ]
         ]);

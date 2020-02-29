@@ -58,6 +58,10 @@
                             <input type="input" class="form-control" id="email" name="email" value="{{ $user->email }}">
                         </div>
                         <div class="form-group">
+                            <label for="title">Code</label>
+                            <input type="input" class="form-control" id="code" name="code" value="{{ $user->code }}">
+                        </div>
+                        <div class="form-group">
                             <label for="title">Ultimo accesso</label>
                             <div>{{ $user->last_login_at }}</div>
                         </div>
@@ -88,7 +92,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">
-                        Modifica
+                        Aggiungi
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
@@ -106,8 +110,22 @@
                         <input type="input" class="form-control" id="email" name="email">
                     </div>
                     <div class="form-group">
+                        <div>
+                            La password deve avere almeno:
+                            <ul>
+                                <li>8 caratteri</li>
+                                <li>1 carattere maiuscolo</li>
+                                <li>1 carattere minuscolo</li>
+                                <li>1 numero</li>
+                                <li>1 carattere speciale (# ? ! @ $ % ^ & * -)</li>
+                            </ul>
+                        </div>
                         <label for="title">Password</label>
                         <input type="password" class="form-control" id="password" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="title">Code</label>
+                        <input type="password" class="form-control" id="code" name="code">
                     </div>
                     <div class="form-group">
                         <label for="title">Conferma password</label>
