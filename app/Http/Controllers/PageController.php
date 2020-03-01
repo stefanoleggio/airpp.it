@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-use App\Bilanci;
+
 use Illuminate\Http\Request;
+
+use App\Bilanci;
 
 class PageController extends Controller
 {

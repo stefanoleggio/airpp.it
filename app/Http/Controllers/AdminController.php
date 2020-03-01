@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
-use Redirect;
+
 use Illuminate\Support\Facades\Input;
+
 use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Hash;
+
+use Redirect;
+
 use App\User;
+
 use App\Team;
 
 class AdminController extends Controller
@@ -104,16 +112,6 @@ class AdminController extends Controller
             ]
         );
     }
-    
-    public function team()
-    {
-        return view('admin.team',
-            [
-
-                'datas' => DB::table('team')->get()
-            ]
-        );
-    }
 
     public function email()
     {
@@ -123,34 +121,5 @@ class AdminController extends Controller
                 'datas' => DB::table('views')->where('page_id', 'email_iscrizioni')->orWhere('page_id', 'email_donazioni')->get()
             ]
         );
-    }
-
-    public function edit_team(Request $request)
-    {
-        $request->validate(
-            [
-                'name' => 'required',
-                'surname' => 'required'
-            ],
-            [
-                'name.required' => 'Il nome è richiesto',
-                'surname.required' => 'Il cognome è richiesto'
-            ]);
-        $person = Team::find($request->id);
-        $person->name = strtolower($request->name);
-        $person->surname = strtolower($request->surname);
-        $person->description = $request->description;
-        $person->role = strtolower($request->role);
-        $person->save();
-        if($request->hasFile('file')){
-            $file = $request->file('file');
-            if($file->isValid()){
-                $fileName = $file->storeAs(env('TEAM_DIR'), $request->surname."_".$request->name.".".request()->file->getClientOriginalExtension());
-                $person->img_path = env('STORAGE_DIR').$fileName;
-                $person->save();
-            }
-        }
-        \Session::put('success', 'Modifica effettuata con successo');
-        return Redirect::to('admin/'.$request->db);
     }
 }

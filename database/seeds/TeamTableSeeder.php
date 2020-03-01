@@ -18,7 +18,6 @@ class TeamTableSeeder extends Seeder
                     'name' => 'fiorella',
                     'surname' => 'calabrese',
                     'role' => 'presidente',
-                    'img_path' => '/storage/team/calabrese_fiorella.jpg',
                     'description' => 'Professore Associato in Anatomia Patologica, presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova',
                 ],
                 [
@@ -26,7 +25,6 @@ class TeamTableSeeder extends Seeder
                     'name' => 'silvia',
                     'surname' => 'tambuscio',
                     'role' => 'segretario',
-                    'img_path' => '/storage/team/tambuscio_silvia.jpg',
                     'description' => 'Specialista in Medicina Legale e delle Assicurazioni.',
                 ],
                 [
@@ -34,7 +32,6 @@ class TeamTableSeeder extends Seeder
                     'name' => 'marina',
                     'surname' => 'saetta',
                     'role' => 'consigliere',
-                    'img_path' => '/storage/team/saetta_marina.jpg',
                     'description' => ' Professore Ordinario in Pneumologia presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.',
                 ],
                 [
@@ -42,14 +39,12 @@ class TeamTableSeeder extends Seeder
                     'name' => 'federico',
                     'surname' => 'rea',
                     'role' => 'vice presidente',
-                    'img_path' => '/storage/team/rea_federico.jpg',
                     'description' => 'Professore Ordinario in Chirurgia Toracica presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.',
                 ],
                 [
                     'team_id' => 'comitato scientifico',
                     'name' => '	elisabetta',
                     'surname' => 'balestro',
-                    'img_path' => '/storage/team/balestro_elisabetta.jpg',
                     'description' => 'Dirigente medico presso l’Unità Operativa di Pneumologia.',
                     'role' => null
                 ],
@@ -57,7 +52,6 @@ class TeamTableSeeder extends Seeder
                     'team_id' => 'comitato scientifico',
                     'name' => 'simonetta',
                     'surname' => 'baraldo',
-                    'img_path' => '/storage/team/baraldo_simonetta.jpg',
                     'description' => 'Ricercatore Universitario presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari dell’Università degli Studi di Padova.',
                     'role' => null
                 ],

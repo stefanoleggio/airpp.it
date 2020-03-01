@@ -20,7 +20,7 @@ class CreateTeamTable extends Migration
             $table->string('surname');
             $table->string('role')->nullable();
             $table->longText('description')->nullable();
-            $table->string('img_path')->default(env('STORAGE_DIR').env('TEAM_DIR').'default.svg');
+            $table->string('img_path')->default(env('STORAGE_DIR').env('TEAM_DIR').'/default.svg');
         });
     }
 

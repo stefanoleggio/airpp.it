@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
+
 use Redirect;
-use App\Document;
-use App\Bilanci;
+
 use Illuminate\Support\Facades\Storage;
+
+use App\Document;
+
+use App\Bilanci;
 
 class AdminPageController extends Controller
 {
@@ -130,6 +135,13 @@ class AdminPageController extends Controller
     }
 
     public function edit_docs(Request $request){
+        $request->validate(
+            [
+                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
+            ],
+            [
+                'file.required' => 'Il file è richiesto'
+            ]);
         if(!$request->hasFile('file')){
             \Session::put('error', 'Errore, è richiesto il caricamento del file ');
             return Redirect::to('admin/pg_'.$db);
@@ -146,9 +158,11 @@ class AdminPageController extends Controller
         $request->validate(
             [
                 'date' => 'required',
+                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
             ],
             [
                 'date.required' => 'la data è richiesta',
+                'file.required' => 'Il file è richiesto'
             ]);
         $data  = Bilanci::find($request->id);
         $data->date = $request->date;
@@ -165,10 +179,12 @@ class AdminPageController extends Controller
     public function add_bilanci(Request $request){
         $request->validate(
             [
-                'date' => 'required'
+                'date' => 'required',
+                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
             ],
             [
-                'date.required' => 'la data è richiesta'
+                'date.required' => 'la data è richiesta',
+                'file.required' => 'Il file è richiesto'
             ]);
         $data  = new Bilanci;
         $data->date = $request->date;
@@ -198,11 +214,9 @@ class AdminPageController extends Controller
         if(!$file->isValid()){
             return redirect('admin/pg_'.$db)->with('errore', 'Errore, riprovare');
         }
-        Storage::delete($data->link);
+        $filename = str_replace('storage/','', $data->link);
+        Storage::delete($filename);
         $fileName = $file->storeAs(env($dir),$db.'_'.$data->id.'.'.$file->extension());
-        /*
-        $trimmed = str_replace('/storage', '', $data->link);
-        Storage::delete($trimmed);*/
         $data->link = env('STORAGE_DIR').$fileName;
     }
 }

@@ -3,12 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
-use App\Convegni;
-use App\Premi;
-use App\Iniziative;
+
 use Redirect;
+
 use Illuminate\Support\Facades\Storage;
+
+use App\Convegni;
+
+use App\Premi;
+
+use App\Iniziative;
 
 class AdminNewsController extends Controller
 {
@@ -82,9 +88,9 @@ class AdminNewsController extends Controller
         if(!$file->isValid()){
             return redirect('admin/'.$db)->with('errore', 'Errore, riprovare');
         }
+        $filename = str_replace('storage/','', $data->link);
+        Storage::delete($filename);
         $fileName = $file->storeAs(env('LOCANDINE_DIR'),$db.'_'.$data->id.'.'.$file->extension());
-        $trimmed = str_replace('/storage', '', $data->link);
-        Storage::delete($trimmed);
         $data->link = env('STORAGE_DIR').$fileName;
     }
 
@@ -95,7 +101,8 @@ class AdminNewsController extends Controller
                 'title' => 'required',
                 'description' => 'required',
                 'place' => 'required',
-                'date' => 'required'
+                'date' => 'required',
+                'file' => 'mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
             ],
             [
                 'title.required' => 'Il titolo è richiesto',
@@ -113,7 +120,6 @@ class AdminNewsController extends Controller
         }else{
             $data->active = 0;
         }
-        $data->link = $request->link;
         if($request->hasFile('file')){
             $file = $request->file('file');
             $this->load_file($file, $data, $request->db);
@@ -128,7 +134,8 @@ class AdminNewsController extends Controller
                 'title' => 'required',
                 'description' => 'required',
                 'place' => 'required',
-                'date' => 'required'
+                'date' => 'required',
+                'file' => 'mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
             ],
             [
                 'title.required' => 'Il titolo è richiesto',

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
+
 use App\Album;
+
 use App\Photo;
 
 class GalleryController extends Controller

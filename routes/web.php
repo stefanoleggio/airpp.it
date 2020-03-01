@@ -86,13 +86,9 @@ Route::get('/admin/donazioni', 'AdminController@donazioni');
 
 Route::get('/admin/iscrizioni', 'AdminController@iscrizioni');
 
-Route::get('/admin/team', 'AdminController@team');
-
 Route::get('/admin/email', 'AdminController@email');
 
 Route::get('/admin/messaggi', 'AdminController@messaggi');
-
-Route::post('/admin/edit_team', 'AdminController@edit_team');
 
 Route::post('/admin/edit_profilo', 'AdminController@edit_profilo');
 
@@ -151,6 +147,14 @@ Route::post('/admin/add_bilanci', 'AdminPageController@add_bilanci');
 Route::post('/admin/edit_bilanci', 'AdminPageController@edit_bilanci');
 
 Route::post('/admin/delete_bilanci', 'AdminPageController@delete_bilanci');
+
+/*
+    AdminTeamController
+*/
+
+Route::get('/admin/team', 'AdminTeamController@index');
+
+Route::post('/admin/edit_team', 'AdminTeamController@edit');
 
 /* 
     AdminNewsController

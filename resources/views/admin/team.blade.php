@@ -60,6 +60,9 @@
                             <input type="file" class="form-control-file" name="file" id="file"/>
                         </div>
                     </div>
+                    <div class="form-group mt-2">
+                            <label for="checkbox"><input type="checkbox" class="form-control-file" name="checkbox" id="checkbox"/>Immagine di default</label>
+                    </div>
                     <input type="hidden" name="id" value="{{ $data->id }}">
                     <input type="hidden" name="db" value="team">
                     <input type="hidden" name="pg_name" value="{{ $data->team_id }}">

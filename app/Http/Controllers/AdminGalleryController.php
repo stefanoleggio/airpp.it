@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
-use App\Album;
-use App\Photo;
-use Redirect;
+
 use Illuminate\Support\Facades\Storage;
+
+use Redirect;
+
+use App\Album;
+
+use App\Photo;
 
 class AdminGalleryController extends Controller
 {
@@ -42,28 +47,22 @@ class AdminGalleryController extends Controller
                 'title.required' => 'Il titolo è richiesto',
             ]);
         $album = Album::find($request->id);
+        $album->title = $request->title;
+        $album->save();
         if($request->hasFile('file')){
             $file = $request->file('file');
-            if(!$this->load_album($file, $album)){
+            if(!$file->isValid()){
                 \Session::put('error', 'Errore generico');
                 return Redirect::to('admin/galleria');
             }
+            $trimmed = str_replace('/storage', '', $album->thb_path);
+            Storage::delete($trimmed);
+            $fileName = $file->storeAs(env('THB_DIR'),'thb_'.$album->id.'.'.$file->extension());
+            $album->thb_path = env('STORAGE_DIR').$fileName;
+            $album->save();
         }
-        $album->title = $request->title;
-        $album->save();
         \Session::put('success', 'Modifica effettuata con successo');
         return Redirect::to('admin/galleria');
-    }
-
-    public function load_album($file, &$album){
-        if($file->isValid()){
-            false;
-        }
-        $fileName = $file->storeAs(env('THB_DIR'),'thb_'.$album->id.'.'.$file->extension());
-        $trimmed = str_replace('/storage', '', $album->thb_path);
-        Storage::delete($trimmed);
-        $album->thb_path = env('STORAGE_DIR').$fileName;
-        return true;
     }
 
     public function add_album(Request $request){
@@ -79,16 +78,13 @@ class AdminGalleryController extends Controller
         $album = new Album;
         $album->title = $request->title;
         $album->save();
-
-        if(!$request->hasFile('file')){
-            \Session::put('error', 'Errore, è richiesta l\' immagine di copertina ');
-            return Redirect::to('admin/galleria');
-        }
         $file = $request->file('file');
-        if(!$this->load_album($file, $album)){
-            \Session::put('error', 'Errore, riprovare');
+        if(!$file->isValid()){
+            \Session::put('error', 'Errore generico');
             return Redirect::to('admin/galleria');
         }
+        $fileName = $file->storeAs(env('THB_DIR'),'thb_'.$album->id.'.'.$file->extension());
+        $album->thb_path = env('STORAGE_DIR').$fileName;
         $album->save();
         \Session::put('success', 'Album aggiunto con successo');
         return Redirect::to('admin/galleria');

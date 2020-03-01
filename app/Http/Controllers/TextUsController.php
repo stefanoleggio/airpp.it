@@ -3,11 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Mail\TextUsSecEmail;
+
 use App\Mail\TextUsEmail;
+
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
+
 use Illuminate\Support\Facades\Mail;
+
 use Illuminate\Http\Request;
+
+use Carbon\Carbon;
+
 use Redirect;
 
 class TextUsController extends Controller

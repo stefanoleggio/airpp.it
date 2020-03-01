@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Redirect;
 use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\DB;
+
+use Redirect;
+
 use App\Log;
 
 class MasterController extends Controller

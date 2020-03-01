@@ -8,7 +8,7 @@
 
 html {
     // This defines what 1rem is
-    font-size: 60%;
+    font-size: 55%;
     @include respond(phone) {
         font-size: 30%;
     }
