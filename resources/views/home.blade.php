@@ -177,6 +177,14 @@
                                 <li><a href="/bilanci" class="user-nav__link-home">Bilanci</a></li>
                             </ul>
                         </li>
+                        <li class="user-nav__item user-nav__item-drop-home">
+                            <a href="#!" class="user-nav__link-home user-nav__link-main">Ricerca<i class="fas fa-chevron-down"></i></a>
+                            <ul class="user-nav__drop-home">
+                                <li><a href="/biobanca" class="user-nav__link-home">Biobanca</a></li>
+                                <li><a href="/parlanodinoi" class="user-nav__link-home">Parlano di noi</a></li>
+                                <li><a href="/articoli" class="user-nav__link-home">Articoli</a></li>
+                            </ul>
+                        </li>
                         <li class="user-nav__item">
                             <a href="/galleria" class="user-nav__link-home">Galleria</a>
                         </li>

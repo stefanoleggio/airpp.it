@@ -27,6 +27,12 @@ Route::get('/statuto', 'PageController@statuto');
 
 Route::get('/bilanci', 'PageController@bilanci');
 
+Route::get('/biobanca', 'PageController@biobanca');
+
+Route::get('/parlanodinoi', 'PageController@parlanodinoi');
+
+Route::get('/articoli', 'PageController@articoli');
+
 /*
     NewsController
 */

@@ -99,6 +99,27 @@ class BannersTableSeeder extends Seeder
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/bilanci.svg"
                 ],
+                [
+                    'id' => 11,
+                    'page_id' => "biobanca",
+                    'title' => "Biobanca",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
+                    'img' => "/media/svg/biobanca.svg"
+                ],
+                [
+                    'id' => 12,
+                    'page_id' => "parlanodinoi",
+                    'title' => "Parlano di noi",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
+                    'img' => "/media/svg/parlanodinoi.svg"
+                ],
+                [
+                    'id' => 13,
+                    'page_id' => "articoli",
+                    'title' => "Articoli",
+                    'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
+                    'img' => "/media/svg/articoli.svg"
+                ],
             ]
         );
     }

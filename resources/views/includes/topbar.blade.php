@@ -39,6 +39,14 @@
                             <li><a href="/bilanci" class="user-nav__link">Bilanci</a></li>
                         </ul>
                     </li>
+                    <li class="user-nav__item user-nav__item-drop">
+                            <a href="#!" class="user-nav__link user-nav__link-main">Ricerca<i class="fas fa-chevron-down"></i></a>
+                            <ul class="user-nav__drop">
+                                <li><a href="/biobanca" class="user-nav__link">Biobanca</a></li>
+                                <li><a href="/parlanodinoi" class="user-nav__link">Parlano di noi</a></li>
+                                <li><a href="/articoli" class="user-nav__link">Articoli</a></li>
+                            </ul>
+                        </li>
                     <li class="user-nav__item">
                         <a href="/galleria" class="user-nav__link">Galleria</a>
                     </li>
@@ -94,6 +102,20 @@
                         </li>
                     </ul>
                     <li class="responsive-nav__item">
+                        <a href="#" id="ricerca_btn" class="responsive-nav__link">Ricerca</a>
+                    </li>
+                    <ul id="ricerca" style="display:none;">
+                        <li class="responsive-nav__subitem">
+                                <a href="/biobanca" class="responsive-nav__link">Biobanca</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/parlanodinoi" class="responsive-nav__link">Parlano di noi</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/articoli" class="responsive-nav__link">Articoli</a>
+                        </li>
+                    </ul>
+                    <li class="responsive-nav__item">
                         <a href="/galleria" class="responsive-nav__link">Galleria</a>
                     </li>
                     <li class="responsive-nav__item">
@@ -109,6 +131,9 @@
     });
     $( "#sostienici_btn" ).click(function() {
         $( "#sostienici" ).slideToggle();
+    });
+    $( "#ricerca_btn" ).click(function() {
+        $( "#ricerca" ).slideToggle();
     });
     @if (Request::path() == '/')
         var prevScrollpos = window.pageYOffset;

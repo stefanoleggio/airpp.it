@@ -47,6 +47,33 @@ class PageController extends Controller
         );
     }
 
+    public function biobanca(){
+        return view('biobanca',
+            [
+                'title' => 'Biobanca',
+                'banners' => DB::table('banners')->where('page_id', 'biobanca')->get()
+            ]
+        );
+    }
+
+    public function parlanodinoi(){
+        return view('biobanca',
+            [
+                'title' => 'Parlano di noi',
+                'banners' => DB::table('banners')->where('page_id', 'parlanodinoi')->get()
+            ]
+        );
+    }
+
+    public function articoli(){
+        return view('biobanca',
+            [
+                'title' => 'Articoli',
+                'banners' => DB::table('banners')->where('page_id', 'articoli')->get()
+            ]
+        );
+    }
+
     public function contatti(){
         return view('contatti',
             [

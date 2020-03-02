@@ -127,8 +127,8 @@
             min-width: 100%;
             z-index: 1;
             background: none;
-            font-size: 1.5rem;
-            text-transform: capitalize;
+            font-size: 1.3rem;
+            text-transform: none;
             li{
                 background: none;
             }
@@ -140,8 +140,8 @@
         z-index: 1;
         background: $color-white;
         padding-top: 4.1rem;
-        font-size: 1.5rem;
-        text-transform: capitalize;
+        font-size: 1.3rem;
+        text-transform: none;
         li{
             background: $color-white;
             box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.16), 0 9px 8px 0 rgba(0, 0, 0, 0.12);
@@ -181,7 +181,7 @@
     display: inline-block;
     &__subitem{
         font-size: 1.5rem !important;
-        text-transform: capitalize !important;
+        text-transform: none !important;
         padding-left: 3rem;
     }
     &__close{
