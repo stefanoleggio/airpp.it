@@ -18,7 +18,7 @@
 
             <div class="u-center-text">
                 <div class="paragraph">
-                    <ul style="list-style-type: disclosure-closed;">
+                    <ul style="list-style-type: disc;">
                     @foreach($links as $link)
                         <li style="padding: 1rem;">
                         @include('includes.link',[

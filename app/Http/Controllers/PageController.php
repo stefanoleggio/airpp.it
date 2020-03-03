@@ -52,7 +52,8 @@ class PageController extends Controller
                 'title' => 'Associarsi',
                 'banners' => Banner::where('page_id', 'associarsi')->get(),
                 'datas' => View::where('page_id', 'associarsi')->get(),
-                'msgs' => DB::table('msgs')->where('scope_id', 'iscrizione__info')->get()
+                'msgs' => DB::table('msgs')->where('scope_id', 'iscrizione__info')->get(),
+                'docs' => Document::where('page_id', 'associarsi')->get()
             ]
         );
     }

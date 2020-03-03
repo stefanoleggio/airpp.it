@@ -26,6 +26,12 @@ class DocumentsTableSeeder extends Seeder
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now()
             ],
+            [
+                'page_id' => 'associarsi',
+                'link' => env("STORAGE_DIR").env("DOC_DIR").'/associarsi_3.pdf',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
+            ],
         ]);
     }
 }

@@ -38,6 +38,12 @@
             <div class="u-center-text">
                 <div class="paragraph">
                     <pre>{{ $datas[1]->description }}</pre>
+                    @foreach($docs as $doc)
+                    @include('includes.link',[
+                            'text' => 'Scarica il modulo',
+                            'link' => $doc->link
+                        ])
+                    @endforeach
                 </div>
             </div>
             </div>

@@ -50,7 +50,8 @@ class AdminPageController extends Controller
         return view('admin.pg_associarsi',
             [
                 'banners' => Banner::where('page_id', 'associarsi')->get(),
-                'views' => View::where('page_id', 'associarsi')->get()
+                'views' => View::where('page_id', 'associarsi')->get(),
+                'datas' => Document::where('page_id', 'associarsi')->get()
             ]
         );
     }
