@@ -30,6 +30,7 @@
     transition: top 0.3s;
     z-index: 20;
     padding: 3rem;
+    padding-right: 0rem !important;
     position: relative;
 }
 
@@ -153,6 +154,10 @@
     @include respond(tab-land){
         display:none;
     }
+}
+
+.user-nav-home{
+    padding-right: 0rem !important;
 }
 
 .overlay {

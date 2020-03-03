@@ -8,11 +8,15 @@
         </div>
         <div class="paragraph">
             <pre>{{$banner->description}}</pre>
-            <a href="{{$datas[0]->link}}" class="btn__link normal u-color-secondary" target="blank">
-                Scarica lo statuto
-            </a>
+            @foreach($datas as $data)
+                @include('includes.link',
+                [
+                    'link' => $data->link,
+                    'text' => 'Scarica lo statuto'
+                ])
+            @endforeach
         </div>
-        </div>
+    </div>
         <div class="col-1-of-2">
             <div class="info__img__container">
                 <img class="info__img img_svg" src={{asset($banner->img)}}>

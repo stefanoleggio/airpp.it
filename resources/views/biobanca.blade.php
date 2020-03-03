@@ -9,5 +9,9 @@
         ])
     @endforeach
     <div class="u-center-text u-margin-bottom-big">
+        @include('includes.textcontainer',
+        [
+            'text' => $text[0]->description        
+        ])
     </div>
 @endsection

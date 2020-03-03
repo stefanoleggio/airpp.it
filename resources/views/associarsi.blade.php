@@ -30,12 +30,17 @@
             </div>
         </div>
     </section>
-    <div class="u-center-text u-padding-normal">
-    <div class="heading-secondary u-margin-bottom-medium u-color-black">
-            {{ $datas[1]->title }}
-        </div>
-        <div class="paragraph">
-        {{ $datas[1]->description }}
+    <div class="u-center-text">
+        <div class="textcontainer">
+            <div class="heading-secondary u-margin-bottom-medium u-color-black">
+                {{ $datas[1]->title }}
+            </div>
+            <div class="u-center-text">
+                <div class="paragraph">
+                    <pre>{{ $datas[1]->description }}</pre>
+                </div>
+            </div>
+            </div>
         </div>
     </div>
     @include('includes.privacymodal')

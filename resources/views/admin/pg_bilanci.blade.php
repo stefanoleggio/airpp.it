@@ -16,6 +16,10 @@
     </div>
 </div>
 <div class="container">
+    @include('includes.adminpages', 
+        [
+            'banners' => $banners
+        ])
     @foreach($datas as $data)
     <div class="card mb-2">
         <div class="card-body">

@@ -138,6 +138,12 @@ Route::get('/admin/pg_convegni', 'AdminPageController@pg_attivita');
 
 Route::get('/admin/pg_bilanci', 'AdminPageController@pg_bilanci');
 
+Route::get('/admin/pg_biobanca', 'AdminPageController@pg_biobanca');
+
+Route::get('/admin/pg_parlanodinoi', 'AdminPageController@pg_parlanodinoi');
+
+Route::get('/admin/pg_articoli', 'AdminPageController@pg_articoli');
+
 Route::get('/admin/pg_cookies', 'AdminPageController@pg_cookies');
 
 Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');

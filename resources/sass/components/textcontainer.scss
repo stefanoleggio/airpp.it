@@ -1,0 +1,8 @@
+.textcontainer{
+    margin: 15rem;
+    margin-right: 20rem;
+    margin-left: 20rem;
+    @include respond(tab-port) { // width < 900?
+        margin: 10rem !important;
+    }
+}

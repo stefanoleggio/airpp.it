@@ -75,6 +75,33 @@ class AdminPageController extends Controller
         );
     }
 
+    public function pg_biobanca(){
+        return view('admin.pg_biobanca',
+            [
+                'banners' => DB::table('banners')->where('page_id', 'biobanca')->get(),
+                'views' => DB::table('views')->where('page_id', 'biobanca')->get()
+            ]
+        );
+    }
+
+    public function pg_parlanodinoi(){
+        return view('admin.pg_parlanodinoi',
+            [
+                'banners' => DB::table('banners')->where('page_id', 'parlanodinoi')->get(),
+                'views' => DB::table('views')->where('page_id', 'parlanodinoi')->get()
+            ]
+        );
+    }
+
+    public function pg_articoli(){
+        return view('admin.pg_articoli',
+            [
+                'banners' => DB::table('banners')->where('page_id', 'articoli')->get(),
+                'views' => DB::table('views')->where('page_id', 'articoli')->get()
+            ]
+        );
+    }
+
     public function pg_cookies(){
         return view('admin.pg_cookies',
             [

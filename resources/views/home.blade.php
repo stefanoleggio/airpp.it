@@ -155,7 +155,7 @@
                     <img src="{{ asset('/media/logo/logo_white.svg') }}" alt="" class="topbar__logo">
                 </a>
             </div>
-                <nav class="user-nav">
+                <nav class="user-nav user-nav-home">
                     <ul class="user-nav__links">
                         <li class="user-nav__item">
                             <a href="/" class="user-nav__link-home">Home</a>

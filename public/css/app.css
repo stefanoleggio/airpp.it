@@ -335,6 +335,7 @@ a {
   transition: top 0.3s;
   z-index: 20;
   padding: 3rem;
+  padding-right: 0rem !important;
   position: relative;
 }
 
@@ -482,6 +483,10 @@ a {
   .user-nav {
     display: none;
   }
+}
+
+.user-nav-home {
+  padding-right: 0rem !important;
 }
 
 .overlay {
@@ -1250,6 +1255,18 @@ img {
 .js-cookie-consent-agree:hover {
   cursor: pointer;
   background-color: #153d8a;
+}
+
+.textcontainer {
+  margin: 15rem;
+  margin-right: 20rem;
+  margin-left: 20rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .textcontainer {
+    margin: 10rem !important;
+  }
 }
 
 .row {

@@ -51,25 +51,28 @@ class PageController extends Controller
         return view('biobanca',
             [
                 'title' => 'Biobanca',
-                'banners' => DB::table('banners')->where('page_id', 'biobanca')->get()
+                'banners' => DB::table('banners')->where('page_id', 'biobanca')->get(),
+                'text' => DB::table('views')->where('page_id', 'biobanca')->get()
             ]
         );
     }
 
     public function parlanodinoi(){
-        return view('biobanca',
+        return view('parlanodinoi',
             [
                 'title' => 'Parlano di noi',
-                'banners' => DB::table('banners')->where('page_id', 'parlanodinoi')->get()
+                'banners' => DB::table('banners')->where('page_id', 'parlanodinoi')->get(),
+                'text' => DB::table('views')->where('page_id', 'parlanodinoi')->get()
             ]
         );
     }
 
     public function articoli(){
-        return view('biobanca',
+        return view('articoli',
             [
                 'title' => 'Articoli',
-                'banners' => DB::table('banners')->where('page_id', 'articoli')->get()
+                'banners' => DB::table('banners')->where('page_id', 'articoli')->get(),
+                'text' => DB::table('views')->where('page_id', 'articoli')->get()
             ]
         );
     }

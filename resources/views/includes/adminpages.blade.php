@@ -62,7 +62,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-sm text-center pt-2">
-                    {{ $banner->title }} 
+                    {{ $banner->title }} - Introduzione
                 </div>
                 <div class="col-sm text-center">
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $banner->id }}">
