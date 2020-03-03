@@ -154,6 +154,12 @@ Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
 
 Route::post('/admin/edit_docs', 'AdminPageController@edit_docs');
 
+Route::post('/admin/edit_links', 'AdminPageController@edit_links');
+
+Route::post('/admin/add_links', 'AdminPageController@add_links');
+
+Route::post('/admin/delete_links', 'AdminPageController@delete_links');
+
 Route::post('/admin/add_bilanci', 'AdminPageController@add_bilanci');
 
 Route::post('/admin/edit_bilanci', 'AdminPageController@edit_bilanci');

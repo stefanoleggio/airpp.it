@@ -6,6 +6,14 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Banner;
+
+use App\Convegni;
+
+use App\iniziative;
+
+use App\Premi;
+
 class NewsController extends Controller
 {
 
@@ -13,8 +21,8 @@ class NewsController extends Controller
         return view('convegni',
             [
                 'title' => 'Convegni',
-                'banners' => DB::table('banners')->where('page_id', 'convegni')->get(),
-                'posts' => DB::table('convegni')->orderBy('id', 'DESC')->get()
+                'banners' => Banner::where('page_id', 'convegni')->get(),
+                'posts' => Convegni::orderby('id', 'DESC')->get()
             ]
         );
     }
@@ -23,8 +31,8 @@ class NewsController extends Controller
         return view('premi',
             [
                 'title' => 'Premi',
-                'banners' => DB::table('banners')->where('page_id', 'premi')->get(),
-                'posts' => DB::table('premi')->orderBy('id', 'DESC')->get()
+                'banners' => Banner::where('page_id', 'premi')->get(),
+                'posts' => Premi::orderBy('id', 'DESC')->get()
             ]
         );
     }
@@ -33,8 +41,8 @@ class NewsController extends Controller
         return view('iniziative',
             [
                 'title' => 'Iniziative',
-                'banners' => DB::table('banners')->where('page_id', 'iniziative')->get(),
-                'posts' => DB::table('iniziative')->orderBy('id', 'DESC')->get()
+                'banners' => Banner::where('page_id', 'iniziative')->get(),
+                'posts' => Iniziative::orderBy('id', 'DESC')->get()
             ]
         );
     }

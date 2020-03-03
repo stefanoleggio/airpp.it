@@ -6,6 +6,16 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Banner;
+
+use App\Team;
+
+use App\Document;
+
+use App\View;
+
+use App\Link;
+
 use App\Bilanci;
 
 class PageController extends Controller
@@ -14,13 +24,13 @@ class PageController extends Controller
         return view('home',
             [
                 'title' => 'Home',
-                'banners' => DB::table('banners')->where('page_id', 'home')->get(),
-                'views' => DB::table('views')->where('page_id', 'home')->get(),
-                'data' => DB::table('documents')->where('page_id', 'home')->get(),
-                'users_cd' => DB::table('team')->where('team_id', 'consiglio direttivo')->get(),
-                'users_cs' => DB::table('team')->where('team_id', 'comitato scientifico')->get(),
-                'users_ss' => DB::table('team')->where('team_id', 'segreteria scientifica')->get(),
-                'users_sa' => DB::table('team')->where('team_id', 'segreteria amministrativa')->get()
+                'banners' => Banner::where('page_id', 'home')->get(),
+                'views' => View::where('page_id', 'home')->get(),
+                'data' => Document::where('page_id', 'home')->get(),
+                'users_cd' => Team::where('team_id', 'consiglio direttivo')->get(),
+                'users_cs' => Team::where('team_id', 'comitato scientifico')->get(),
+                'users_ss' => Team::where('team_id', 'segreteria scientifica')->get(),
+                'users_sa' => Team::where('team_id', 'segreteria amministrativa')->get()
             ]
         );
     }
@@ -29,8 +39,8 @@ class PageController extends Controller
         return view('donazioni',
             [
                 'title' => 'Donazioni',
-                'banners' => DB::table('banners')->where('page_id', 'donazioni')->get(),
-                'datas' => DB::table('views')->where('page_id', 'donazioni')->get(),
+                'banners' => Banner::where('page_id', 'donazioni')->get(),
+                'datas' => View::where('page_id', 'donazioni')->get(),
                 'msgs' => DB::table('msgs')->where('scope_id', 'donation__info')->get()
             ]
         );
@@ -40,8 +50,8 @@ class PageController extends Controller
         return view('associarsi',
             [
                 'title' => 'Associarsi',
-                'banners' => DB::table('banners')->where('page_id', 'associarsi')->get(),
-                'datas' => DB::table('views')->where('page_id', 'associarsi')->get(),
+                'banners' => Banner::where('page_id', 'associarsi')->get(),
+                'datas' => View::where('page_id', 'associarsi')->get(),
                 'msgs' => DB::table('msgs')->where('scope_id', 'iscrizione__info')->get()
             ]
         );
@@ -51,8 +61,8 @@ class PageController extends Controller
         return view('biobanca',
             [
                 'title' => 'Biobanca',
-                'banners' => DB::table('banners')->where('page_id', 'biobanca')->get(),
-                'text' => DB::table('views')->where('page_id', 'biobanca')->get()
+                'banners' => Banner::where('page_id', 'biobanca')->get(),
+                'text' => View::where('page_id', 'biobanca')->get()
             ]
         );
     }
@@ -61,8 +71,8 @@ class PageController extends Controller
         return view('parlanodinoi',
             [
                 'title' => 'Parlano di noi',
-                'banners' => DB::table('banners')->where('page_id', 'parlanodinoi')->get(),
-                'text' => DB::table('views')->where('page_id', 'parlanodinoi')->get()
+                'banners' => Banner::where('page_id', 'parlanodinoi')->get(),
+                'links' => Link::where('page_id', 'parlanodinoi')->get()
             ]
         );
     }
@@ -71,8 +81,8 @@ class PageController extends Controller
         return view('articoli',
             [
                 'title' => 'Articoli',
-                'banners' => DB::table('banners')->where('page_id', 'articoli')->get(),
-                'text' => DB::table('views')->where('page_id', 'articoli')->get()
+                'banners' => Banner::where('page_id', 'articoli')->get(),
+                'text' => View::where('page_id', 'articoli')->get()
             ]
         );
     }
@@ -81,7 +91,7 @@ class PageController extends Controller
         return view('contatti',
             [
                 'title' => 'Contatti',
-                'banners' => DB::table('banners')->where('page_id', 'contatti')->get()
+                'banners' => Banner::where('page_id', 'contatti')->get()
             ]
         );
     }
@@ -90,8 +100,8 @@ class PageController extends Controller
         return view('statuto',
             [
                 'title' => 'Statuto',
-                'banners' => DB::table('banners')->where('page_id', 'statuto')->get(),
-                'datas' => DB::table('documents')->where('page_id', 'statuto')->get()
+                'banners' => Banner::where('page_id', 'statuto')->get(),
+                'datas' => Document::where('page_id', 'statuto')->get()
             ]
         );
     }
@@ -100,7 +110,7 @@ class PageController extends Controller
         return view('bilanci',
             [
                 'title' => 'Bilanci',
-                'banners' => DB::table('banners')->where('page_id', 'bilanci')->get(),
+                'banners' => Banner::where('page_id', 'bilanci')->get(),
                 'posts' => Bilanci::orderBy('id', 'desc')->get()
             ]
         );

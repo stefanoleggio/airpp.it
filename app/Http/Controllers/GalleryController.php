@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
+use App\Banner;
+
 use App\Album;
 
 use App\Photo;
@@ -16,7 +18,7 @@ class GalleryController extends Controller
         return view('galleria',
             [
                 'title' => 'Galleria',
-                'banners' => DB::table('banners')->where('page_id', 'galleria')->get(),
+                'banners' => Banner::where('page_id', 'galleria')->get(),
                 'albums' => Album::all()
             ]
         );

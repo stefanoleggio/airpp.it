@@ -10,7 +10,13 @@ use Redirect;
 
 use Illuminate\Support\Facades\Storage;
 
+use App\Banner;
+
+use App\View;
+
 use App\Document;
+
+use App\Link;
 
 use App\Bilanci;
 
@@ -24,8 +30,8 @@ class AdminPageController extends Controller
     public function pg_home(){
         return view('admin.pg_home',
             [
-                'banners' => DB::table('banners')->where('page_id', 'home')->get(),
-                'views' => DB::table('views')->where('page_id', 'home')->get(),
+                'banners' => Banner::where('page_id', 'home')->get(),
+                'views' => View::where('page_id', 'home')->get(),
                 'datas' => Document::where('page_id', 'home')->get()
             ]
         );
@@ -34,8 +40,8 @@ class AdminPageController extends Controller
     public function pg_donazioni(){
         return view('admin.pg_donazioni',
             [
-                'banners' => DB::table('banners')->where('page_id', 'donazioni')->get(),
-                'views' => DB::table('views')->where('page_id', 'donazioni')->get()
+                'banners' => Banner::where('page_id', 'donazioni')->get(),
+                'views' => View::where('page_id', 'donazioni')->get()
             ]
         );
     }
@@ -43,8 +49,8 @@ class AdminPageController extends Controller
     public function pg_associarsi(){
         return view('admin.pg_associarsi',
             [
-                'banners' => DB::table('banners')->where('page_id', 'associarsi')->get(),
-                'views' => DB::table('views')->where('page_id', 'associarsi')->get()
+                'banners' => Banner::where('page_id', 'associarsi')->get(),
+                'views' => View::where('page_id', 'associarsi')->get()
             ]
         );
     }
@@ -52,7 +58,7 @@ class AdminPageController extends Controller
     public function pg_galleria(){
         return view('admin.pg_galleria',
             [
-                'banners' => DB::table('banners')->where('page_id', 'galleria')->get()
+                'banners' => Banner::where('page_id', 'galleria')->get()
             ]
         );
     }
@@ -60,7 +66,7 @@ class AdminPageController extends Controller
     public function pg_statuto(){
         return view('admin.pg_statuto',
             [
-                'banners' => DB::table('banners')->where('page_id', 'statuto')->get(),
+                'banners' => Banner::where('page_id', 'statuto')->get(),
                 'datas' => Document::where('page_id', 'statuto')->get()
             ]
         );
@@ -69,7 +75,7 @@ class AdminPageController extends Controller
     public function pg_bilanci(){
         return view('admin.pg_bilanci',
             [
-                'banners' => DB::table('banners')->where('page_id', 'bilanci')->get(),
+                'banners' => Banner::where('page_id', 'bilanci')->get(),
                 'datas' => Bilanci::orderBy('id', 'desc')->get()
             ]
         );
@@ -78,8 +84,8 @@ class AdminPageController extends Controller
     public function pg_biobanca(){
         return view('admin.pg_biobanca',
             [
-                'banners' => DB::table('banners')->where('page_id', 'biobanca')->get(),
-                'views' => DB::table('views')->where('page_id', 'biobanca')->get()
+                'banners' => Banner::where('page_id', 'biobanca')->get(),
+                'views' => View::where('page_id', 'biobanca')->get()
             ]
         );
     }
@@ -87,8 +93,8 @@ class AdminPageController extends Controller
     public function pg_parlanodinoi(){
         return view('admin.pg_parlanodinoi',
             [
-                'banners' => DB::table('banners')->where('page_id', 'parlanodinoi')->get(),
-                'views' => DB::table('views')->where('page_id', 'parlanodinoi')->get()
+                'banners' => Banner::where('page_id', 'parlanodinoi')->get(),
+                'links' => Link::where('page_id', 'parlanodinoi')->get()
             ]
         );
     }
@@ -96,8 +102,8 @@ class AdminPageController extends Controller
     public function pg_articoli(){
         return view('admin.pg_articoli',
             [
-                'banners' => DB::table('banners')->where('page_id', 'articoli')->get(),
-                'views' => DB::table('views')->where('page_id', 'articoli')->get()
+                'banners' => Banner::where('page_id', 'articoli')->get(),
+                'views' => View::where('page_id', 'articoli')->get()
             ]
         );
     }
@@ -105,7 +111,7 @@ class AdminPageController extends Controller
     public function pg_cookies(){
         return view('admin.pg_cookies',
             [
-                'banners' => DB::table('banners')->where('page_id', 'cookies')->get()
+                'banners' => Banner::where('page_id', 'cookies')->get()
             ]
         );
     }
@@ -113,9 +119,9 @@ class AdminPageController extends Controller
     public function pg_attivita(){
         return view('admin.pg_attivita',
             [
-                'in' => DB::table('banners')->where('page_id', 'iniziative')->get(),
-                'pr' => DB::table('banners')->where('page_id', 'premi')->get(),
-                'co' => DB::table('banners')->where('page_id', 'convegni')->get()
+                'in' => Banner::where('page_id', 'iniziative')->get(),
+                'pr' => Banner::where('page_id', 'premi')->get(),
+                'co' => Banner::where('page_id', 'convegni')->get()
             ]
         );
     }
@@ -123,7 +129,7 @@ class AdminPageController extends Controller
     public function pg_segnalazioni(){
         return view('admin.pg_segnalazioni',
             [
-                'banners' => DB::table('banners')->where('page_id', 'segnalazioni')->get()
+                'banners' => Banner::where('page_id', 'segnalazioni')->get()
             ]
         );
     }
@@ -131,7 +137,7 @@ class AdminPageController extends Controller
     public function pg_contatti(){
         return view('admin.pg_contatti',
             [
-                'banners' => DB::table('banners')->where('page_id', 'contatti')->get()
+                'banners' => Banner::where('page_id', 'contatti')->get()
             ]
         );
     }
@@ -178,6 +184,51 @@ class AdminPageController extends Controller
         $this->load_file($file, $data, $request->db, "DOC_DIR");
         $data->save();
         return redirect('admin/pg_'.$request->db)->with('success', 'Elemento aggiunto con successo');
+    }
+
+    public function edit_links(Request $request){
+        $request->validate(
+            [
+                'text' => 'required',
+                'link' => 'required'
+            ],
+            [
+                'text.required' => 'Il testo è richiesto',
+                'link.required' => 'Il link è richiesto'
+            ]);
+        DB::table('links')
+        ->where('id', $request->id)
+        ->update(
+            [
+                'text' => $request->text,
+                'link' => $request->link
+            ]
+        );
+        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento modificato con successo');
+    }
+
+    public function add_links(Request $request){
+        $request->validate(
+            [
+                'text' => 'required',
+                'link' => 'required'
+            ],
+            [
+                'text.required' => 'Il testo è richiesto',
+                'link.required' => 'Il link è richiesto'
+            ]);
+        $link = new Link;
+        $link->text = $request->text;
+        $link->link = $request->link;
+        $link->page_id = $request->page_id;
+        $link->save();
+        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento modificato con successo');
+    }
+
+    public function delete_links(Request $request){
+        $link  = Link::find($request->id);
+        $link->delete();
+        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento eliminato con successo');
     }
 
     public function edit_bilanci(Request $request)

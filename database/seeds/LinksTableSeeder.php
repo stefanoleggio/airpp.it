@@ -21,6 +21,11 @@ class LinksTableSeeder extends Seeder
                 'page_id' => 'parlanodinoi',
                 'text' => 'Fibrosi polmonare idiopatica, una settimana open-day in Veneto',
                 'link' => 'http://www.nordestsanita.it/home/attualita/3648-fibrosi-polmonare-idiopatica-una-settimana-open-day-in-veneto.html'
+            ],
+            [
+                'page_id' => 'parlanodinoi',
+                'text' => 'Giornata mondiale delle malattie rare',
+                'link' => 'https://www.italia-news.it/salute-c13/giornata-mondiale-delle-malattie-rare-28-febbraio-2013-79786.html'
             ]
         ]);
     }
