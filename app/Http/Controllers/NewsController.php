@@ -10,7 +10,7 @@ use App\Banner;
 
 use App\Convegni;
 
-use App\iniziative;
+use App\Iniziative;
 
 use App\Premi;
 
