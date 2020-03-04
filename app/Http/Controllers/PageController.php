@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 use App\Banner;
 
+use App\Articolo;
+
 use App\Team;
 
 use App\Document;
@@ -83,7 +85,7 @@ class PageController extends Controller
             [
                 'title' => 'Articoli',
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'text' => View::where('page_id', 'articoli')->get()
+                'posts' => Articolo::all()
             ]
         );
     }

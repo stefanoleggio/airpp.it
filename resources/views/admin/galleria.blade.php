@@ -24,7 +24,7 @@
                     {{ $album->title }} 
                 </div>
                 <div class="col-sm text-center pt-2">
-                    <img src="{{ $album->thb_path }}" class="img-thumbnail w-50" alt="">
+                    <img src="{{ $album->link }}" class="img-thumbnail w-50" alt="">
                 </div>
                 <div class="col-sm text-center">
                     <div>
@@ -61,15 +61,17 @@
                     </div>
                     <div class="form-group">
                         <label for="file">Copertina</label>
-                        <img src="{{ $album->thb_path }}" class="img-thumbnail w-25" alt="">
+                        <img src="{{ $album->link }}" class="img-thumbnail w-25" alt="">
                         <input type="file" class="form-control-file" name="file" id="file"/>
                     </div>
                     <input type="hidden" name="id" value="{{ $album->id }}">
+                    <input type="hidden" name="db" value="album">
                     <button type="submit" class="btn btn-primary w_classic">Salva</button>
                     </form>
                     <form method="POST" action="/admin/delete_album" class="pt-3">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $album->id }}">
+                        <input type="hidden" name="db" value="album">
                         <button class="btn btn-danger w_classic" type="submit">Elimina</button>
                     </form>
                 </div>
@@ -102,6 +104,7 @@
                         <label for="file">Copertina</label>
                         <input type="file" class="form-control-file" name="file" id="file"/>
                     </div>
+                    <input type="hidden" name="db" value="album">
                     <button type="submit" class="btn btn-primary w_classic">Salva</button>
                     </form>
                 </div>

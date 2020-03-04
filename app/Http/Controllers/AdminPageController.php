@@ -20,6 +20,8 @@ use App\Link;
 
 use App\Bilanci;
 
+use App\Articolo;
+
 class AdminPageController extends Controller
 {
     public function __construct()
@@ -104,7 +106,7 @@ class AdminPageController extends Controller
         return view('admin.pg_articoli',
             [
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'views' => View::where('page_id', 'articoli')->get()
+                'datas' => Articolo::orderBy('id', 'desc')->get()
             ]
         );
     }
@@ -167,135 +169,5 @@ class AdminPageController extends Controller
             }
             return Redirect::to('admin/pg_'.$request->pg_name);
     }
-
-    public function edit_docs(Request $request){
-        $request->validate(
-            [
-                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
-            ],
-            [
-                'file.required' => 'Il file è richiesto'
-            ]);
-        if(!$request->hasFile('file')){
-            \Session::put('error', 'Errore, è richiesto il caricamento del file ');
-            return Redirect::to('admin/pg_'.$db);
-        }
-        $data = Document::find($request->id);
-        $file = $request->file('file');
-        $this->load_file($file, $data, $request->db, "DOC_DIR");
-        $data->save();
-        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento aggiunto con successo');
-    }
-
-    public function edit_links(Request $request){
-        $request->validate(
-            [
-                'text' => 'required',
-                'link' => 'required'
-            ],
-            [
-                'text.required' => 'Il testo è richiesto',
-                'link.required' => 'Il link è richiesto'
-            ]);
-        DB::table('links')
-        ->where('id', $request->id)
-        ->update(
-            [
-                'text' => $request->text,
-                'link' => $request->link
-            ]
-        );
-        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento modificato con successo');
-    }
-
-    public function add_links(Request $request){
-        $request->validate(
-            [
-                'text' => 'required',
-                'link' => 'required'
-            ],
-            [
-                'text.required' => 'Il testo è richiesto',
-                'link.required' => 'Il link è richiesto'
-            ]);
-        $link = new Link;
-        $link->text = $request->text;
-        $link->link = $request->link;
-        $link->page_id = $request->page_id;
-        $link->save();
-        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento modificato con successo');
-    }
-
-    public function delete_links(Request $request){
-        $link  = Link::find($request->id);
-        $link->delete();
-        return redirect('admin/pg_'.$request->db)->with('success', 'Elemento eliminato con successo');
-    }
-
-    public function edit_bilanci(Request $request)
-    {
-        $request->validate(
-            [
-                'date' => 'required',
-                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
-            ],
-            [
-                'date.required' => 'la data è richiesta',
-                'file.required' => 'Il file è richiesto'
-            ]);
-        $data  = Bilanci::find($request->id);
-        $data->date = $request->date;
-        $data->description = $request->description;
-        $data->save();
-        if($request->hasFile('file')){
-            $file = $request->file('file');
-            $this->load_file($file, $data, $request->db, "BILANCI_DIR");
-        }
-        $data->save();
-        return redirect('admin/pg_bilanci')->with('success', 'Modifica effettuata con successo');
-    }
     
-    public function add_bilanci(Request $request){
-        $request->validate(
-            [
-                'date' => 'required',
-                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
-            ],
-            [
-                'date.required' => 'la data è richiesta',
-                'file.required' => 'Il file è richiesto'
-            ]);
-        $data  = new Bilanci;
-        $data->date = $request->date;
-        $data->description = $request->description;
-        if(!$request->hasFile('file')){
-            \Session::put('error', 'Errore, è richiesto il caricamento del file ');
-            return Redirect::to('admin/pg_bilanci');
-        }
-        $data->save();
-        $file = $request->file('file');
-        $this->load_file($file, $data, $request->db, "BILANCI_DIR");
-        $data->save();
-        return redirect('admin/pg_bilanci')->with('success', 'Elemento aggiunto con successo');
-    }
-    
-    public function delete_bilanci(Request $request){
-        $data  = Bilanci::find($request->id);
-        if(isset($data->link)){
-            $trimmed = str_replace(env("STORAGE_DIR"), '', $data->link);
-            Storage::delete($trimmed);
-        }
-        $data->delete();
-        return redirect('admin/pg_bilanci')->with('success', 'Elemento rimosso con successo');
-    }
-
-    public function load_file($file, &$data, $db, $dir){
-        if(!$file->isValid()){
-            return redirect('admin/pg_'.$db)->with('errore', 'Errore, riprovare');
-        }
-        $filename = str_replace('storage/','', $data->link);
-        Storage::delete($filename);
-        $fileName = $file->storeAs(env($dir),$db.'_'.$data->id.'.'.$file->extension());
-        $data->link = env('STORAGE_DIR').$fileName;
-    }
 }

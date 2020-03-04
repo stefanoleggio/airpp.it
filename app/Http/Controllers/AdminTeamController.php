@@ -43,7 +43,7 @@ class AdminTeamController extends Controller
         $person->save();
         if($request->hasFile('file') && $request->checkbox == null){
             $file = $request->file('file');
-            $this->load_file($file, $person, "team", "TEAM_DIR");
+            $this->load_thb($file, $person, "team", "TEAM_DIR");
             $person->save();
         }
         if($request->checkbox != null){
@@ -58,7 +58,7 @@ class AdminTeamController extends Controller
         return Redirect::to('admin/'.$request->db);
     }
 
-    public function load_file($file, &$data, $db, $dir){
+    public function load_thb($file, &$data, $db, $dir){
         if(!$file->isValid()){
             return redirect('admin/team')->with('errore', 'Errore, riprovare');
         }

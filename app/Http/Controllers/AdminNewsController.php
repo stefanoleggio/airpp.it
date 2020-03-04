@@ -84,16 +84,6 @@ class AdminNewsController extends Controller
         return $data;
     }
 
-    public function load_file($file, &$data, $db){
-        if(!$file->isValid()){
-            return redirect('admin/'.$db)->with('errore', 'Errore, riprovare');
-        }
-        $filename = str_replace('storage/','', $data->link);
-        Storage::delete($filename);
-        $fileName = $file->storeAs(env('LOCANDINE_DIR'),$db.'_'.$data->id.'.'.$file->extension());
-        $data->link = env('STORAGE_DIR').$fileName;
-    }
-
     public function edit_news(Request $request)
     {
         $request->validate(
@@ -122,7 +112,7 @@ class AdminNewsController extends Controller
         }
         if($request->hasFile('file')){
             $file = $request->file('file');
-            $this->load_file($file, $data, $request->db);
+            $this->load_file($file, $data, $request->db, "LOCANDINE_DIR");
         }
         $data->save();
         return redirect('admin/'.$request->db)->with('success', 'Modifica effettuata con successo');
@@ -152,7 +142,7 @@ class AdminNewsController extends Controller
         $data->save();
         if($request->hasFile('file')){
             $file = $request->file('file');
-            $this->load_file($file, $data, $request->db);
+            $this->load_file($file, $data, $request->db, "LOCANDINE_DIR");
         }
         $data->save();
         return redirect('admin/'.$request->db)->with('success', 'Elemento aggiunto con successo');

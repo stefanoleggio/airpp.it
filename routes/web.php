@@ -152,19 +152,41 @@ Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');
 
 Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
 
-Route::post('/admin/edit_docs', 'AdminPageController@edit_docs');
+/* 
+    AdminArticoliController
+*/
 
-Route::post('/admin/edit_links', 'AdminPageController@edit_links');
+Route::post('/admin/edit_articoli', 'AdminArticoliController@edit_articoli');
 
-Route::post('/admin/add_links', 'AdminPageController@add_links');
+Route::post('/admin/add_articoli', 'AdminArticoliController@add_articoli');
 
-Route::post('/admin/delete_links', 'AdminPageController@delete_links');
+Route::post('/admin/delete_articoli', 'AdminArticoliController@delete_articoli');
 
-Route::post('/admin/add_bilanci', 'AdminPageController@add_bilanci');
+/* 
+    AdminBilanciController
+*/
 
-Route::post('/admin/edit_bilanci', 'AdminPageController@edit_bilanci');
+Route::post('/admin/edit_bilanci', 'AdminBilanciController@edit_bilanci');
 
-Route::post('/admin/delete_bilanci', 'AdminPageController@delete_bilanci');
+Route::post('/admin/add_bilanci', 'AdminBilanciController@add_bilanci');
+
+Route::post('/admin/delete_bilanci', 'AdminBilanciController@delete_bilanci');
+
+/* 
+    AdminDocsController
+*/
+
+Route::post('/admin/edit_docs', 'AdminDocsController@edit_docs');
+
+/* 
+    AdminLinksController
+*/
+
+Route::post('/admin/edit_links', 'AdminLinksController@edit_links');
+
+Route::post('/admin/add_links', 'AdminLinksController@add_links');
+
+Route::post('/admin/delete_links', 'AdminLinksController@delete_links');
 
 /*
     AdminTeamController

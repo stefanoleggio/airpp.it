@@ -51,14 +51,7 @@ class AdminGalleryController extends Controller
         $album->save();
         if($request->hasFile('file')){
             $file = $request->file('file');
-            if(!$file->isValid()){
-                \Session::put('error', 'Errore generico');
-                return Redirect::to('admin/galleria');
-            }
-            $trimmed = str_replace('/storage', '', $album->thb_path);
-            Storage::delete($trimmed);
-            $fileName = $file->storeAs(env('THB_DIR'),'thb_'.$album->id.'.'.$file->extension());
-            $album->thb_path = env('STORAGE_DIR').$fileName;
+            $this->load_file($file, $album, $request->db, "THB_DIR");
             $album->save();
         }
         \Session::put('success', 'Modifica effettuata con successo');
@@ -79,12 +72,7 @@ class AdminGalleryController extends Controller
         $album->title = $request->title;
         $album->save();
         $file = $request->file('file');
-        if(!$file->isValid()){
-            \Session::put('error', 'Errore generico');
-            return Redirect::to('admin/galleria');
-        }
-        $fileName = $file->storeAs(env('THB_DIR'),'thb_'.$album->id.'.'.$file->extension());
-        $album->thb_path = env('STORAGE_DIR').$fileName;
+        $this->load_file($file, $album, $request->db, "THB_DIR");
         $album->save();
         \Session::put('success', 'Album aggiunto con successo');
         return Redirect::to('admin/galleria');
@@ -92,11 +80,11 @@ class AdminGalleryController extends Controller
 
     public function delete_album(Request $request){
         $album = Album::find($request->id);
-        $trimmed = str_replace('/storage', '', $album->thb_path);
+        $trimmed = str_replace('/storage', '', $album->link);
         Storage::delete($trimmed);
         $photos = Photo::where('album_id', $album->id)->get();
         foreach($photos as $photo){
-            $trim = str_replace('/storage', '', $photo->img_path);
+            $trim = str_replace('/storage', '', $photo->link);
             Storage::delete($trim);
             $photo->delete();
         }
@@ -107,7 +95,7 @@ class AdminGalleryController extends Controller
 
     public function delete_photo(Request $request){
         $photo = Photo::find($request->id);
-        $trimmed = str_replace('/storage', '', $photo->img_path);
+        $trimmed = str_replace('/storage', '', $photo->link);
         Storage::delete($trimmed);
         $photo->delete();
         \Session::put('success', 'Modifica effettuata con successo');
@@ -121,14 +109,11 @@ class AdminGalleryController extends Controller
         }
         $files = $request->file('file');
         foreach($files as $file){
-            if($file->isValid()){
-                $photo = new Photo;
-                $photo->album_id = $request->album_id;
-                $photo->save();
-                $fileName = $file->storeAs(env('PHOTOS_DIR'),$request->album_id.'_'.$photo->id.'.'.$file->extension());
-                $photo->img_path = env('STORAGE_DIR').$fileName;
-                $photo->save();
-            }
+            $photo = new Photo;
+            $photo->album_id = $request->album_id;
+            $photo->save();
+            $this->load_file($file, $photo, $request->db, "PHOTOS_DIR");
+            $photo->save();
         }
         \Session::put('success', 'Foto aggiunte con successo');
         return Redirect::to('admin/galleria/'.$request->album_id);

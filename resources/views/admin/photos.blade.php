@@ -23,7 +23,7 @@
     ?>
     @foreach($photos as $photo)
     <div class="col-lg-4">
-        <img src="{{ $photo->img_path }}" class="img-thumbnail w-50" data-toggle="modal" data-target="#modal-for-card-{{ $photo->id }}">
+        <img src="{{ $photo->link }}" class="img-thumbnail w-50" data-toggle="modal" data-target="#modal-for-card-{{ $photo->id }}">
         <div class="modal fade" id="modal-for-card-{{ $photo->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -39,10 +39,11 @@
                 <form method="POST" action="/admin/delete_photo" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <img src="{{ $photo->img_path }}" class="img-thumbnail w-100" alt="">
+                        <img src="{{ $photo->link }}" class="img-thumbnail w-100" alt="">
                     </div>
                     <input type="hidden" name="album_id" value="{{ $album[0]->id }}">
                     <input type="hidden" name="id" value="{{ $photo->id }}">
+                    <input type="hidden" name="db" value="photo">
                     <button type="submit" class="btn btn-primary w_classic">Elimina</button>
                     </form>
                 </div>
@@ -80,6 +81,7 @@
                     <input type="file" class="form-control-file" name="file[]" id="file" multiple/>
                     </div>
                     <input type="hidden" name="album_id" value="{{ $album[0]->id }}">
+                    <input type="hidden" name="db" value="photo">
                     <button type="submit" class="btn btn-primary w_classic">Salva</button>
                     </form>
                 </div>

@@ -83,7 +83,7 @@
                             <label for="file">Locandina</label>
                             <input type="file" class="form-control-file" name="file" id="file"/>
                             @if(isset($data->link))
-                            <a href="{{ $data->link }}">Locandina</a>
+                            <a href="{{ $data->link }}" target="blank">Locandina</a>
                             @endif
                         </div>
                     </div>

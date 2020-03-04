@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <label for="file">File</label>
                             <input type="file" class="form-control-file" name="file" id="file"/>
-                            <a href="{{ $data->link }}">Statuto</a>
+                            <a href="{{ $data->link }}" target="blank">Statuto</a>
                         </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $data->id }}">
