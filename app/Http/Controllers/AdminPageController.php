@@ -111,10 +111,10 @@ class AdminPageController extends Controller
         );
     }
 
-    public function pg_cookies(){
-        return view('admin.pg_cookies',
+    public function pg_cookie(){
+        return view('admin.pg_cookie',
             [
-                'banners' => Banner::where('page_id', 'cookies')->get()
+                'banners' => Banner::where('page_id', 'cookie')->get()
             ]
         );
     }

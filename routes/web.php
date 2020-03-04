@@ -33,6 +33,8 @@ Route::get('/parlanodinoi', 'PageController@parlanodinoi');
 
 Route::get('/articoli', 'PageController@articoli');
 
+Route::get('/cookie', 'PageController@cookie');
+
 /*
     NewsController
 */
@@ -144,7 +146,7 @@ Route::get('/admin/pg_parlanodinoi', 'AdminPageController@pg_parlanodinoi');
 
 Route::get('/admin/pg_articoli', 'AdminPageController@pg_articoli');
 
-Route::get('/admin/pg_cookies', 'AdminPageController@pg_cookies');
+Route::get('/admin/pg_cookie', 'AdminPageController@pg_cookie');
 
 Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');
 
@@ -195,6 +197,10 @@ Route::post('/admin/delete_links', 'AdminLinksController@delete_links');
 Route::get('/admin/team', 'AdminTeamController@index');
 
 Route::post('/admin/edit_team', 'AdminTeamController@edit');
+
+Route::post('/admin/add_team', 'AdminTeamController@add');
+
+Route::post('/admin/delete_team', 'AdminTeamController@delete');
 
 /* 
     AdminNewsController

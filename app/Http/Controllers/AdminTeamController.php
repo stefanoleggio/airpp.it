@@ -58,6 +58,66 @@ class AdminTeamController extends Controller
         return Redirect::to('admin/'.$request->db);
     }
 
+    public function add(Request $request)
+    {
+        $request->validate(
+            [
+                'name' => 'required',
+                'surname' => 'required',
+                'team_id' => 'required'
+            ],
+            [
+                'name.required' => 'Il nome è richiesto',
+                'surname.required' => 'Il cognome è richiesto'
+            ]);
+        
+        switch($request->team_id){
+            case "consiglio direttivo":
+                $team_id = "consiglio direttivo";
+                break;
+            case "segreteria amministrativa":
+                $team_id = "segreteria amministrativa";
+                break;
+            case "segreteria scientifica":
+                $team_id = "segreteria scientifica";
+                break;
+            case "comitato scientifico":
+                $team_id = "comitato scientifico";
+                break;
+            default:
+                \Session::put('error', 'Devi inserire un identificativo valido');
+                return Redirect::to('admin/team');
+        }
+        $person = new Team;
+        $person->team_id = $team_id;
+        $person->name = strtolower($request->name);
+        $person->surname = strtolower($request->surname);
+        $person->description = $request->description;
+        $person->role = strtolower($request->role);
+        $person->save();
+        if($request->hasFile('file') && $request->checkbox == null){
+            $file = $request->file('file');
+            $this->load_thb($file, $person, "team", "TEAM_DIR");
+        }else{
+            $person->img_path = env('STORAGE_DIR').'team/default.svg';
+        }
+        $person->save();
+        \Session::put('success', 'Modifica effettuata con successo');
+        return Redirect::to('admin/team');
+    }
+
+    public function delete(Request $request)
+    {   
+        $person = Team::find($request->id);
+        $filename = str_replace('storage/','', $person->img_path);
+        if($filename != '/team/default.svg'){
+            Storage::delete($filename);
+        }
+        $person->delete();
+        \Session::put('success', 'Elemento eliminato con successo');
+        return Redirect::to('admin/team');
+    }
+
     public function load_thb($file, &$data, $db, $dir){
         if(!$file->isValid()){
             return redirect('admin/team')->with('errore', 'Errore, riprovare');

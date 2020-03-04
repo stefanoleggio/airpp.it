@@ -12,7 +12,7 @@
                 <a>&#124;</a>
                 <a href="/statuto">statuto</a>
                 <a>&#124;</a>
-                <a href="#!">cookies</a>
+                <a href="/cookie">cookie</a>
             </div>
         </div>
     </div>

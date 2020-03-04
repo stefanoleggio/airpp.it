@@ -118,4 +118,13 @@ class PageController extends Controller
             ]
         );
     }
+
+    public function cookie(){
+        return view('cookie',
+            [
+                'title' => 'Cookie',
+                'banners' => Banner::where('page_id', 'cookie')->get()
+            ]
+        );
+    }
 }

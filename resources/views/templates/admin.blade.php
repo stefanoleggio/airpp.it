@@ -51,7 +51,7 @@
           <a href="/admin/pg_parlanodinoi" class="list-group-item list-group-item-action bg-secondary text-white">Parlano di noi</a>
           <a href="/admin/pg_articoli" class="list-group-item list-group-item-action bg-secondary text-white">Articoli</a>
           <a href="/admin/pg_segnalazioni" class="list-group-item list-group-item-action bg-secondary text-white">Segnalazioni</a>
-          <a href="/admin/pg_cookies" class="list-group-item list-group-item-action bg-secondary text-white">Cookies</a>
+          <a href="/admin/pg_cookie" class="list-group-item list-group-item-action bg-secondary text-white">Cookie</a>
         </div>
         <a href="#drop__cmp" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Componenti</a>
         <div id="drop__cmp" class="collapse">
