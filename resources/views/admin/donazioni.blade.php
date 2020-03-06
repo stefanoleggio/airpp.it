@@ -60,8 +60,12 @@
             <div class="col-sm">{{ $data->cf }}</div>
         </div>
         <div class="row">
-            <div class="col-sm">Via e civico</div>
+            <div class="col-sm">Via</div>
             <div class="col-sm">{{ $data->via }}</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Civico</div>
+            <div class="col-sm">{{ $data->civico }}</div>
         </div>
         <div class="row">
             <div class="col-sm">Cap</div>
@@ -72,9 +76,28 @@
             <div class="col-sm">{{ $data->comune }}</div>
         </div>
         <div class="row">
+            <div class="col-sm">Provincia</div>
+            <div class="col-sm">{{ $data->provincia }}</div>
+        </div>
+        <div class="row">
             <div class="col-sm">Email</div>
             <div class="col-sm">{{ $data->email }}</div>
         </div>
+        <div class="row">
+            <div class="col-sm">Tipo</div>
+            
+            <div class="col-sm">@if($data->dim)  {{'Donazione in memoria'}}@else {{'Donazione standard'}}@endif</div>
+        </div>
+        @if($data->dim)
+        <div class="row">
+            <div class="col-sm">Nome defunto</div>
+            <div class="col-sm">{{ $data->dname }} &euro;</div>
+        </div>
+        <div class="row">
+            <div class="col-sm">Cognome defunto</div>
+            <div class="col-sm">{{ $data->dsurname }} &euro;</div>
+        </div>
+        @endif
         <div class="row">
             <div class="col-sm">Importo</div>
             <div class="col-sm">{{ $data->amount }} &euro;</div>

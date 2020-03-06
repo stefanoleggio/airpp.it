@@ -23,20 +23,20 @@
                         <a href="/" class="user-nav__link">Home</a>
                     </li>
                     <li class="user-nav__item user-nav__item-drop">
-                        <a href="#!" class="user-nav__link user-nav__link-main">Attivit&agrave;<i class="fas fa-chevron-down"></i></a>
-                        <ul class="user-nav__drop">
-                            <li><a href="/convegni" class="user-nav__link">Convegni</a></li>
-                            <li><a href="/premi" class="user-nav__link">Premi</a></li>
-                            <li><a href="/iniziative" class="user-nav__link">Iniziative</a></li>
-                        </ul>
-                    </li>
-                    <li class="user-nav__item user-nav__item-drop">
                         <a href="#!" class="user-nav__link user-nav__link-main">Associazione<i class="fas fa-chevron-down"></i></a>
                         <ul class="user-nav__drop">
                             <li><a href="/donazioni" class="user-nav__link">Donazioni</a></li>
                             <li><a href="/associarsi" class="user-nav__link">Associarsi</a></li>
                             <li><a href="/statuto" class="user-nav__link">Statuto</a></li>
                             <li><a href="/bilanci" class="user-nav__link">Bilanci</a></li>
+                        </ul>
+                    </li>
+                    <li class="user-nav__item user-nav__item-drop">
+                        <a href="#!" class="user-nav__link user-nav__link-main">Attivit&agrave;<i class="fas fa-chevron-down"></i></a>
+                        <ul class="user-nav__drop">
+                            <li><a href="/convegni" class="user-nav__link">Convegni</a></li>
+                            <li><a href="/premi" class="user-nav__link">Premi</a></li>
+                            <li><a href="/iniziative" class="user-nav__link">Iniziative</a></li>
                         </ul>
                     </li>
                     <li class="user-nav__item user-nav__item-drop">
@@ -71,20 +71,6 @@
                         <a href="/" class="responsive-nav__link">Home</a>
                     </li>
                     <li class="responsive-nav__item">
-                            <a href="#" id="news_btn" class="responsive-nav__link">Attivit&agrave;</a>
-                    </li>
-                    <ul id="news" style="display:none;">
-                        <li class="responsive-nav__subitem">
-                                <a href="/convegni" class="responsive-nav__link">Convegni</a>
-                        </li>
-                        <li class="responsive-nav__subitem">
-                                <a href="/premi" class="responsive-nav__link">Premi</a>
-                        </li>
-                        <li class="responsive-nav__subitem">
-                                <a href="/iniziative" class="responsive-nav__link">Iniziative</a>
-                        </li>
-                    </ul>
-                    <li class="responsive-nav__item">
                         <a href="#" id="sostienici_btn" class="responsive-nav__link">Associazione</a>
                     </li>
                     <ul id="sostienici" style="display:none;">
@@ -99,6 +85,20 @@
                         </li>
                         <li class="responsive-nav__subitem">
                                 <a href="/bilanci" class="responsive-nav__link">Bilanci</a>
+                        </li>
+                    </ul>
+                    <li class="responsive-nav__item">
+                            <a href="#" id="news_btn" class="responsive-nav__link">Attivit&agrave;</a>
+                    </li>
+                    <ul id="news" style="display:none;">
+                        <li class="responsive-nav__subitem">
+                                <a href="/convegni" class="responsive-nav__link">Convegni</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/premi" class="responsive-nav__link">Premi</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/iniziative" class="responsive-nav__link">Iniziative</a>
                         </li>
                     </ul>
                     <li class="responsive-nav__item">

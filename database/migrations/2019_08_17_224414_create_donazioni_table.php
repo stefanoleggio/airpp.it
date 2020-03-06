@@ -19,10 +19,15 @@ class CreateDonazioniTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('cf');
-            $table->integer('cap');
+            $table->string('cap');
             $table->string('comune');
             $table->string('via');
+            $table->string('civico');
+            $table->string('provincia');
             $table->string('email');
+            $table->boolean('dim');
+            $table->string('dname')->nullable();
+            $table->string('dsurname')->nullable();
             $table->integer('amount');
             $table->boolean('success');
             $table->dateTime('date');

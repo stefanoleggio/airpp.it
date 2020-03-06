@@ -80,6 +80,17 @@
         display: block;
         transition: all .3s;
         text-align: left;
+        p{
+            padding-left: 1rem;
+            font-size: 1.4rem;
+            padding-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+    }
+
+    #dim{
+        display: none;
     }
 
     &__input:placeholder-shown + &__label {

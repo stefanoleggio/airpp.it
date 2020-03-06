@@ -93,14 +93,19 @@ class AdminController extends Controller
         return view('admin.donazioni',
             [
 
-                'datas' => DB::table('donazioni')->where('success', '1')->get()
+                'datas' => DB::table('donazioni')->where('success', '1')->orderby('id', 'DESC')->get()
             ]
         );
     }
 
     public function iscrizioni()
     {
-        return view('admin.iscrizioni');
+        return view('admin.iscrizioni',
+
+            [
+                'datas' => DB::table('iscrizioni')->where('success', '1')->orderby('id', 'DESC')->get()
+            ]
+        );
     }
 
     public function messaggi()

@@ -22,6 +22,8 @@ class CreateIscrizioniTable extends Migration
             $table->integer('cap');
             $table->string('comune');
             $table->string('via');
+            $table->string('civico');
+            $table->string('provincia');
             $table->string('email');
             $table->string('telefono');
             $table->integer('amount');

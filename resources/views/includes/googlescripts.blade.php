@@ -2,8 +2,11 @@
     var placeSearch, autocomplete;
 
     var componentForm = {
-    locality: 'long_name',
-    postal_code: 'short_name'
+        locality: 'long_name',
+        postal_code: 'short_name',
+        street_number: 'short_name',
+        route: 'long_name',
+        administrative_area_level_2: 'long_name'
     };
 
     function initAutocomplete() {

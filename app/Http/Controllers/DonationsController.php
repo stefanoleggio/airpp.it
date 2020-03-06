@@ -75,7 +75,9 @@
                 'email' => 'required|email',
                 'amount' => 'required|integer|min:5',
                 'via' => 'required',
-                'cap' => 'required|integer',
+                'civico' => 'required',
+                'cap' => 'required',
+                'provincia' => 'required',
                 'comune' => 'required',
                 'privacy' => 'accepted',
                 'cf' => ['required', new codicefiscale]
@@ -86,32 +88,87 @@
                 'email.required' => 'Devi inserire l\'email',
                 'amount.required' => 'Devi inserire l\'importo',
                 'email.email' => 'Devi inserire una email valida',
-                'amount.integer' => 'L\'importo deve essere una cifra tonda',
+                'amount.integer' => 'L\'importo deve essere un numero intero',
                 'via.required' => 'Devi inserire la tua via',
+                'civico.required' => 'Devi inserire il tuo civico',
                 'cap.required' => 'Devi inserire il cap',
-                'cap.integer' => 'Il cap non è valido',
                 'comune.required' => 'Devi inserire il comune',
+                'provincia.required' => 'Devi inserire la provincia',
                 'cf.required' => 'Devi inserire il codice fiscale',
                 'privacy.accepted' => 'Devi accettare la privacy policy',
                 'amount.min' => 'La donazione minima è di 5 Euro'
             ]);
 
-            $payer = new Payer();
-            $payer->setPaymentMethod('paypal');
-            $amount = new Amount();
-            $amount->setCurrency('EUR')
-                ->setTotal($request->get('amount'));
+            if($request->dcheck == "on"){
+                $request->validate(
+                    [
+                        'dname' => 'required',
+                        'dsurname' => 'required',
+                    ],
+                    [
+                        'dname.required' => 'Devi inserire il nome del defunto',
+                        'dsurname.required' => 'Devi inserire il cognome cognome del defunto',
+                    ]);
+            }
+
+        $payer = new Payer();
+        $payer->setPaymentMethod("paypal");$item1 = new Item();
+        $item1->setName('Donazione')
+            ->setCurrency('EUR')
+            ->setQuantity(1)
+            ->setPrice($request->amount);
+
+        $itemList = new ItemList();
+        $itemList->setItems(array($item1));
+
+        $amount = new Amount();
+        $amount->setCurrency("EUR")
+            ->setTotal($request->amount);
             $transaction = new Transaction();
-            $transaction->setAmount($amount)
-                ->setDescription('Donazione');
+
+        $transaction->setAmount($amount)
+            ->setItemList($itemList)
+            ->setDescription("Donazione")
+            ->setInvoiceNumber(uniqid());
+
             $redirect_urls = new RedirectUrls();
             $redirect_urls->setReturnUrl(URL::to('donationsstatus'))
                 ->setCancelUrl(URL::to('donationsstatus'));
+       
+            $presentation = new \PayPal\Api\Presentation();
+            $presentation->setLogoImage("https://phplaravel-368924-1151569.cloudwaysapps.com/media/logo/logo_paypal.svg")
+                ->setBrandName("airpp")
+                ->setLocaleCode("IT")
+                ->setReturnUrlLabel("Torna indietro")
+                ->setNoteToSellerLabel("Grazie");
+
+            $flowConfig = new \PayPal\Api\FlowConfig();
+            $flowConfig->setLandingPageType("Billing");
+            $flowConfig->setBankTxnPendingUrl("http://www.airpp.it/");
+            $flowConfig->setUserAction("commit");
+            $flowConfig->setReturnUriHttpMethod("GET");
+
+            $inputFields = new \PayPal\Api\InputFields();
+            $inputFields->setAllowNote(true)
+                ->setNoShipping(1)
+                ->setAddressOverride(0);
+
+            $webProfile = new \PayPal\Api\WebProfile();
+            $webProfile->setName("Airpp - Donazioni" . uniqid())
+                ->setFlowConfig($flowConfig)
+                ->setPresentation($presentation)
+                ->setInputFields($inputFields)
+                ->setTemporary(true);
+
+            $webProfileId = $webProfile->create($this->_api_context)->getId();
+
             $payment = new Payment();
-            $payment->setIntent('Sale')
+            $payment->setIntent("sale")
                 ->setPayer($payer)
                 ->setRedirectUrls($redirect_urls)
-                ->setTransactions(array($transaction));
+                ->setTransactions(array($transaction))
+                ->setExperienceProfileId($webProfileId);
+
             try {
                 $payment->create($this->_api_context);
             } catch (\PayPal\Exception\PPConnectionException $ex) {
@@ -129,6 +186,7 @@
                     break;
                 }
             }
+            
             Session::put('paypal_payment_id', $payment->getId());
             if (isset($redirect_url)) {
                 DB::table('donazioni')->insert(
@@ -139,10 +197,15 @@
                         'email' => $request->email,
                         'amount' => $request->amount,
                         'cf' => $request->cf,
+                        'civico' => $request->civico,
                         'cap' => $request->cap,
                         'comune' => $request->comune,
                         'via' => $request->via,
+                        'provincia' => $request->provincia,
                         'success' => false,
+                        'dim' => $request->dcheck == "on",
+                        'dname' => $request->dname,
+                        'dsurname' => $request->dsurname,
                         'date' => Carbon::now(),
                     ]
                 );

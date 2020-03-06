@@ -73,9 +73,11 @@
                 'name' => 'required',
                 'surname' => 'required',
                 'email' => 'required|email',
-                'telefono' => 'required|phone',
+                'telefono' => 'required',
                 'amount' => 'required|integer|min:15',
-                'cap' => 'required|integer',
+                'cap' => 'required',
+                'civico' => 'required',
+                'provincia' => 'required',
                 'comune' => 'required',
                 'via' => 'required',
                 'cf' => ['required', new codicefiscale]
@@ -87,29 +89,74 @@
                 'telefono.required' => 'Devi inserire il telefono',
                 'amount.required' => 'Devi inserire l\'importo',
                 'email.email' => 'Devi inserire una email valida',
-                'amount.integer' => 'L\'importo deve essere una cifra tonda',
+                'civico.required' => 'Devi inserire il tuo civico',
+                'provincia.required' => 'Devi inserire la provincia',
+                'amount.integer' => 'L\'importo deve essere un numero intero',
                 'cap.required' => 'Devi inserire il cap',
-                'cap.integer' => 'Il cap non è valido',
                 'comune.required' => 'Devi inserire il comune',
                 'via.required' => 'Devi inserire la tua via',
-                'cf.required' => 'Devi inserire il codice fiscale'
+                'cf.required' => 'Devi inserire il codice fiscale',
+                'amount.min' => 'La quota di iscrizione minima è di 15 Euro'
             ]);
+
             $payer = new Payer();
-            $payer->setPaymentMethod('paypal');
+            $payer->setPaymentMethod("paypal");$item1 = new Item();
+            $item1->setName('Donazione')
+                ->setCurrency('EUR')
+                ->setQuantity(1)
+                ->setPrice($request->amount);
+    
+            $itemList = new ItemList();
+            $itemList->setItems(array($item1));
+    
             $amount = new Amount();
-            $amount->setCurrency('EUR')
-                ->setTotal($request->get('amount'));
-            $transaction = new Transaction();
+            $amount->setCurrency("EUR")
+                ->setTotal($request->amount);
+                $transaction = new Transaction();
+    
             $transaction->setAmount($amount)
-                ->setDescription('Iscrizione');
+                ->setItemList($itemList)
+                ->setDescription("Donazione")
+                ->setInvoiceNumber(uniqid());
+    
             $redirect_urls = new RedirectUrls();
             $redirect_urls->setReturnUrl(URL::to('joinusstatus'))
                 ->setCancelUrl(URL::to('joinusstatus'));
+        
+            $presentation = new \PayPal\Api\Presentation();
+            $presentation->setLogoImage("https://phplaravel-368924-1151569.cloudwaysapps.com/media/logo/logo_paypal.svg")
+                ->setBrandName("airpp")
+                ->setLocaleCode("IT")
+                ->setReturnUrlLabel("Torna indietro")
+                ->setNoteToSellerLabel("Grazie");
+
+            $flowConfig = new \PayPal\Api\FlowConfig();
+            $flowConfig->setLandingPageType("Billing");
+            $flowConfig->setBankTxnPendingUrl("http://www.airpp.it/");
+            $flowConfig->setUserAction("commit");
+            $flowConfig->setReturnUriHttpMethod("GET");
+
+            $inputFields = new \PayPal\Api\InputFields();
+            $inputFields->setAllowNote(true)
+                ->setNoShipping(1)
+                ->setAddressOverride(0);
+
+            $webProfile = new \PayPal\Api\WebProfile();
+            $webProfile->setName("Airpp - Donazioni" . uniqid())
+                ->setFlowConfig($flowConfig)
+                ->setPresentation($presentation)
+                ->setInputFields($inputFields)
+                ->setTemporary(true);
+
+            $webProfileId = $webProfile->create($this->_api_context)->getId();
+
             $payment = new Payment();
-            $payment->setIntent('Sale')
+            $payment->setIntent("sale")
                 ->setPayer($payer)
                 ->setRedirectUrls($redirect_urls)
-                ->setTransactions(array($transaction));
+                ->setTransactions(array($transaction))
+                ->setExperienceProfileId($webProfileId);
+    
             try {
                 $payment->create($this->_api_context);
             } catch (\PayPal\Exception\PPConnectionException $ex) {
@@ -127,6 +174,7 @@
                     break;
                 }
             }
+
             Session::put('paypal_payment_id', $payment->getId());
             if (isset($redirect_url)) {
                 DB::table('iscrizioni')->insert(
@@ -139,6 +187,8 @@
                         'amount' => $request->amount,
                         'cf' => $request->cf,
                         'comune' => $request->comune,
+                        'provincia' => $request->provincia,
+                        'civico' => $request->civico,
                         'cap' => $request->cap,
                         'via' => $request->via,
                         'success' => false,

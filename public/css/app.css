@@ -966,6 +966,18 @@ a {
   text-align: left;
 }
 
+.form__label p {
+  padding-left: 1rem;
+  font-size: 1.4rem;
+  padding-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.form #dim {
+  display: none;
+}
+
 .form__input:placeholder-shown + .form__label {
   opacity: 0;
   visibility: hidden;
@@ -1399,7 +1411,8 @@ img {
 
 .presentation__p {
   margin-bottom: 0 !important;
-  text-transform: initial !important;
+  text-align: left;
+  font-style: italic;
 }
 
 .presentation .col-1-of-2 {

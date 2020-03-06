@@ -1,152 +1,5 @@
 @extends('templates.page')
 @section('content')
-<!--
-
-    Loader
-
-<div class="loader-wrapper">
-        <div class="loader-part"></div>
-        <img src="/media/logo/logo_white.svg" class="loader" alt="">
-        <div class="loader-part"></div>
-</div>
-<style>
-.loader-wrapper {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #242f3f;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 101;
-}
-.loader-part{
-    width:50%;
-    height: 100%;
-}
-.loader {
-  display: inline-block;
-  width: 300px;
-  height: 300px;
-  position: relative;
-    -webkit-animation: bounce-in-top 1.1s both;
-	animation: bounce-in-top 1.1s both;
-}
-@-webkit-keyframes bounce-in-top {
-  0% {
-    -webkit-transform: translateY(-500px);
-            transform: translateY(-500px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: translateY(-65px);
-            transform: translateY(-65px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: translateY(-28px);
-            transform: translateY(-28px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  90% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
-@keyframes bounce-in-top {
-  0% {
-    -webkit-transform: translateY(-500px);
-            transform: translateY(-500px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-    opacity: 0;
-  }
-  38% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-    opacity: 1;
-  }
-  55% {
-    -webkit-transform: translateY(-65px);
-            transform: translateY(-65px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  72% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  81% {
-    -webkit-transform: translateY(-28px);
-            transform: translateY(-28px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  90% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-  95% {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
-    -webkit-animation-timing-function: ease-in;
-            animation-timing-function: ease-in;
-  }
-  100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-    -webkit-animation-timing-function: ease-out;
-            animation-timing-function: ease-out;
-  }
-}
-</style>
-<script>
-    $(window).on("load",function(){
-        setTimeout(function(){ 
-            $(".loader-wrapper").hide();
-        }, 100);
-    });
-</script>
--->
 <section class="presentation" id="presentation" style="background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url({{$data[0]->link}}); background-size: cover; background-position: center; background-attachment: fixed;">
     <header id="home_topbar">
         <div class="topbar__inner">
@@ -161,20 +14,20 @@
                             <a href="/" class="user-nav__link-home">Home</a>
                         </li>
                         <li class="user-nav__item user-nav__item-drop-home">
-                            <a href="#!" class="user-nav__link-home user-nav__link-main">Attivit&agrave;<i class="fas fa-chevron-down"></i></a>
-                            <ul class="user-nav__drop-home">
-                                <li><a href="/convegni" class="user-nav__link-home">Convegni</a></li>
-                                <li><a href="/premi" class="user-nav__link-home">Premi</a></li>
-                                <li><a href="/iniziative" class="user-nav__link-home">Iniziative</a></li>
-                            </ul>
-                        </li>
-                        <li class="user-nav__item user-nav__item-drop-home">
                             <a href="#!" class="user-nav__link-home user-nav__link-main">Associazione<i class="fas fa-chevron-down"></i></a>
                             <ul class="user-nav__drop-home">
                                 <li><a href="/donazioni" class="user-nav__link-home">Donazioni</a></li>
                                 <li><a href="/associarsi" class="user-nav__link-home">Associarsi</a></li>
                                 <li><a href="/statuto" class="user-nav__link-home">Statuto</a></li>
                                 <li><a href="/bilanci" class="user-nav__link-home">Bilanci</a></li>
+                            </ul>
+                        </li>
+                        <li class="user-nav__item user-nav__item-drop-home">
+                            <a href="#!" class="user-nav__link-home user-nav__link-main">Attivit&agrave;<i class="fas fa-chevron-down"></i></a>
+                            <ul class="user-nav__drop-home">
+                                <li><a href="/convegni" class="user-nav__link-home">Convegni</a></li>
+                                <li><a href="/premi" class="user-nav__link-home">Premi</a></li>
+                                <li><a href="/iniziative" class="user-nav__link-home">Iniziative</a></li>
                             </ul>
                         </li>
                         <li class="user-nav__item user-nav__item-drop-home">
