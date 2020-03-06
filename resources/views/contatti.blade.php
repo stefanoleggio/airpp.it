@@ -48,4 +48,75 @@
     </div>
     </section>
     @include('includes.privacymodal')
+    <div id="textus" class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
+        Link utili
+    </div>
+    <div class="row u-margin-top-huge u-margin-bottom-big u-padding-normal u-center-text">
+        <div class="col-1-of-4">
+            <a href="https://www.dctv.unipd.it/">
+                <img src="{{asset('/media/links_icons/primo.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari
+                </div>
+            </a>
+        </div>
+        <div class="col-1-of-4">
+            <a href="http://www.aopd.veneto.it/">
+                <img src="{{asset('/media/links_icons/secondo.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Azienda Ospedaliera Università di Padova
+                </div>
+            </a>
+        </div>
+        <div class="col-1-of-4">
+            <a href="https://www.aido.it/">
+                <img src="{{asset('/media/links_icons/terzo.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Associazione Italiana per la donazione di organi
+                </div>
+            </a>
+        </div>
+        <div class="col-1-of-4">
+            <a href="http://www.trapianti.salute.gov.it/trapianti/homeCnt.jsp">
+                <img src="{{asset('/media/links_icons/quarto.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Centro Nazionale Trapianti
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="row u-margin-top-huge u-margin-bottom-big u-padding-normal u-center-text">
+        <div class="col-1-of-4">
+            <a href="http://www.iss.it/">
+                <img src="{{asset('/media/links_icons/quinto.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Istituto Superiore di Sanità
+                </div>
+            </a>
+        </div>
+        <div class="col-1-of-4">
+            <a href="https://www.osservatoriomalattierare.it/">
+                <img src="{{asset('/media/links_icons/sesto.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    La prima testata giornalistica interamente dedicata alle malattie rare
+                </div>
+            </a>
+        </div>
+        <div class="col-1-of-4">
+            <a href="https://oltrelamalattia.it/">
+                <img src="{{asset('/media/links_icons/settimo.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Unione Trapiantati Polmone di Padova
+                </div>
+            </a>
+        </div>
+        <div class="col-1-of-4">
+            <a href="https://it.wikipedia.org/wiki/Fibrosi_polmonare_idiopatica">
+                <img src="{{asset('/media/links_icons/ottavo.JPG')}}" class="img_links" alt="" srcset="">
+                <div class="small u-padding-top-small">
+                    Fibrosi polmonare idiopatica
+                </div>
+            </a>
+        </div>
+    </div>
 @endsection

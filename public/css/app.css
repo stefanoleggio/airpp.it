@@ -288,6 +288,10 @@ a {
   padding-top: 5rem;
 }
 
+.u-padding-top-small {
+  padding-top: 1rem;
+}
+
 .u-padding-bottom-medium {
   padding-bottom: 5rem;
 }
@@ -1422,6 +1426,10 @@ img {
 .presentation .row [class^=col-]:not(:last-child) {
   margin-right: 0;
   margin-bottom: 3rem;
+}
+
+.img_links {
+  height: 10rem;
 }
 
 .albums__card {
