@@ -38,6 +38,9 @@
             Acconsento al trattamento dei miei dati personali secondo quanto scritto nella <a href="#myModal" data-toggle="modal">privacy policy</a> di airpp.it
         </div>
     </div>
+    <div class="form__group u-center-text">
+        @include('includes.captcha')
+    </div>
     @if ($errors->any())
         <div class="form__invalid form__group small u-margin-top-medium">
             <ul>

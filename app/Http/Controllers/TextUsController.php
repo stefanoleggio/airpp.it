@@ -14,6 +14,8 @@ use Illuminate\Http\Request;
 
 use Carbon\Carbon;
 
+use App\Rules\Captcha;
+
 use Redirect;
 
 class TextUsController extends Controller
@@ -25,7 +27,8 @@ class TextUsController extends Controller
                 'surname' => 'required',
                 'email' => 'required|email',
                 'msg' => 'required',
-                'privacy' => 'accepted'
+                'privacy' => 'accepted',
+                'g-recaptcha-response' => new Captcha()
             ],
             [
                 'name.required' => 'Devi inserire il nome',

@@ -19,6 +19,7 @@
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('js/modal.min.js') }}"></script>
 <script src="{{ asset('js/loader.js') }}"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link rel="stylesheet" href="{{ asset('/css/modal.min.css') }}"/>
 <title>{{ $title }}</title>
 <!-- Global site tag (gtag.js) - Google Analytics -->

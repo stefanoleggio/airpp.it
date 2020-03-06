@@ -114,6 +114,23 @@
             Acconsento al trattamento dei miei dati personali secondo quanto scritto nella <a href="#myModal" data-toggle="modal">privacy policy</a> di airpp.it
         </div>
     </div>
+    <div class="form__group">
+        <div class="form__label u-margin-bottom-small" style="padding-top: 2rem;">
+            Metodi di pagamento  
+        </div>
+        <div class="row" style="padding: 1rem;">
+            <style>
+                .pay_img{ width: 7rem;}
+            </style>
+            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/paypal.png')}}" alt=""></i></div>
+            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/visa.png')}}" alt=""></i></div>
+            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/mastercard.png')}}" alt=""></i></div>
+            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/postepay.png')}}" alt=""></i></div>
+        </div>
+    </div>
+    <div class="form__group u-center-text">
+        @include('includes.captcha')
+    </div>
     @if ($errors->any())
         <div class="form__invalid form__group small u-margin-top-medium">
             <ul>

@@ -7,6 +7,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('jquery/jquery.min.js') }}"></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/media/logo/favicon/apple-touch-icon.png')}}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/media/logo/favicon/favicon-32x32.png')}}">
@@ -74,6 +75,10 @@
                             <div class="col-md-6">
                                 <input id="code" type="password" class="form-control" name="code" required autocomplete="current-password">
                             </div>
+                        </div>
+
+                        <div class="form-group" style="text-align: center;">
+                            <div class="g-recaptcha" style="display: inline-block; padding: 2rem;" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
                         </div>
 
                         <div class="form-group row">

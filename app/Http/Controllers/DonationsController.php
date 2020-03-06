@@ -44,6 +44,8 @@
     use URL;
     
     use App\Rules\codicefiscale;
+
+    use App\Rules\Captcha;
     
     use CodiceFiscaleController;
 
@@ -80,7 +82,8 @@
                 'provincia' => 'required',
                 'comune' => 'required',
                 'privacy' => 'accepted',
-                'cf' => ['required', new codicefiscale]
+                'cf' => ['required', new codicefiscale],
+                'g-recaptcha-response' => new Captcha()
             ],
             [
                 'name.required' => 'Devi inserire il nome',
