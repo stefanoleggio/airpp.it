@@ -26,7 +26,7 @@
                     @include('includes.albumscard',[
                         'title' => $album->title,
                         'id' => $album->id,
-                        'thb_path' => $album->thb_path
+                        'thb_path' => $album->link
                     ])
                 </div>
             @endforeach

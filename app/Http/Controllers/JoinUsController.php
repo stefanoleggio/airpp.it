@@ -46,6 +46,8 @@
     use App\Rules\codicefiscale;
 
     use App\Rules\Captcha;
+
+    use App\Iscrizione;
     
     use CodiceFiscaleController;
 
@@ -103,8 +105,9 @@
             ]);
 
             $payer = new Payer();
-            $payer->setPaymentMethod("paypal");$item1 = new Item();
-            $item1->setName('Donazione')
+            $payer->setPaymentMethod("paypal");
+            $item1 = new Item();
+            $item1->setName('Iscrizione')
                 ->setCurrency('EUR')
                 ->setQuantity(1)
                 ->setPrice($request->amount);
@@ -119,7 +122,7 @@
     
             $transaction->setAmount($amount)
                 ->setItemList($itemList)
-                ->setDescription("Donazione")
+                ->setDescription("Iscrizione")
                 ->setInvoiceNumber(uniqid());
     
             $redirect_urls = new RedirectUrls();
@@ -145,7 +148,7 @@
                 ->setAddressOverride(0);
 
             $webProfile = new \PayPal\Api\WebProfile();
-            $webProfile->setName("Airpp - Donazioni" . uniqid())
+            $webProfile->setName("Airpp - Iscrizioni" . uniqid())
                 ->setFlowConfig($flowConfig)
                 ->setPresentation($presentation)
                 ->setInputFields($inputFields)
@@ -179,25 +182,24 @@
             }
 
             Session::put('paypal_payment_id', $payment->getId());
+            
             if (isset($redirect_url)) {
-                DB::table('iscrizioni')->insert(
-                    [
-                        'paymentID' => $payment->getId(),
-                        'name' => $request->name, 
-                        'surname' => $request->surname,
-                        'email' => $request->email,
-                        'telefono' => $request->telefono,
-                        'amount' => $request->amount,
-                        'cf' => $request->cf,
-                        'comune' => $request->comune,
-                        'provincia' => $request->provincia,
-                        'civico' => $request->civico,
-                        'cap' => $request->cap,
-                        'via' => $request->via,
-                        'success' => false,
-                        'date' => Carbon::now(),
-                    ]
-                );
+                $data = new Iscrizione;
+                $data->paymentID = $payment->getId();
+                $data->name = $request->name;
+                $data->surname = $request->surname;
+                $data->email = $request->email;
+                $data->amount = $request->amount;
+                $data->cf = $request->cf;
+                $data->civico = $request->civico;
+                $data->cap = $request->cap;
+                $data->comune = $request->comune;
+                $data->via = $request->via;
+                $data->provincia = $request->provincia;
+                $data->telefono = $request->telefono;
+                $data->date = Carbon::now();
+                $data->success = false;
+                $data->save();
                 return Redirect::away($redirect_url);
             }
             \Session::put('error', 'Si è verificato un errore, ci scusiamo');
@@ -217,15 +219,14 @@
             $execution->setPayerId(Input::get('PayerID'));
             $result = $payment->execute($execution, $this->_api_context);
             if ($result->getState() == 'approved') {
-                DB::table('iscrizioni')
-                    ->where('paymentID', $payment->getId())
-                    ->update(['success' => true]);
-                $data = DB::table('iscrizioni')->where('paymentID', $payment->getId())->get();
+                $data = Iscrizione::where('paymentID', $payment->getId())->first();
+                $data->success = true;
+                $data->save();
                 /*
-                    Invio email
-                */
+                $data = DB::table('iscrizioni')->where('paymentID', $payment->getId())->get();
+
                 Mail::to(env('MAIL_SEC'))->send(new IscrizioneSecEmail($data[0]));
-                //Mail::to($data->email)->send(new DonationEmail($data));
+                //Mail::to($data->email)->send(new DonationEmail($data));*/
                 \Session::put('success', 'Iscrizione effettuata con successo');
                 return Redirect::to('/associarsi');
             }

@@ -10,7 +10,7 @@
         <div class="slideshow-container">
             @foreach($photos as $photo)
             <div class="mySlides">
-                <img src="{{ $photo->img_path }}" alt="">
+                <img src="{{ $photo->link }}" alt="">
             </div>       
             @endforeach
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

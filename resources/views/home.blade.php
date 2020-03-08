@@ -105,7 +105,7 @@
             <div class="presentation__text u-center-text">
                 <div class="presentation__block">
                     <div class="presentation__p paragraph u-padding-bottom-medium">
-                        {{ $views[0]->description }}
+                        <pre>{{ $views[0]->description }}</pre>
                     </div>
                     <div class="row">
                         <div class="col-1-of-2 u-center-text">

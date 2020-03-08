@@ -91,11 +91,11 @@
         @if($data->dim)
         <div class="row">
             <div class="col-sm">Nome defunto</div>
-            <div class="col-sm">{{ $data->dname }} &euro;</div>
+            <div class="col-sm">{{ $data->dname }}</div>
         </div>
         <div class="row">
             <div class="col-sm">Cognome defunto</div>
-            <div class="col-sm">{{ $data->dsurname }} &euro;</div>
+            <div class="col-sm">{{ $data->dsurname }}</div>
         </div>
         @endif
         <div class="row">

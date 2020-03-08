@@ -49,6 +49,8 @@
     
     use CodiceFiscaleController;
 
+    use App\Donazione;
+
     class DonationsController extends Controller
     {
         private $_api_context;
@@ -192,26 +194,24 @@
             
             Session::put('paypal_payment_id', $payment->getId());
             if (isset($redirect_url)) {
-                DB::table('donazioni')->insert(
-                    [
-                        'paymentID' => $payment->getId(),
-                        'name' => $request->name, 
-                        'surname' => $request->surname,
-                        'email' => $request->email,
-                        'amount' => $request->amount,
-                        'cf' => $request->cf,
-                        'civico' => $request->civico,
-                        'cap' => $request->cap,
-                        'comune' => $request->comune,
-                        'via' => $request->via,
-                        'provincia' => $request->provincia,
-                        'success' => false,
-                        'dim' => $request->dcheck == "on",
-                        'dname' => $request->dname,
-                        'dsurname' => $request->dsurname,
-                        'date' => Carbon::now(),
-                    ]
-                );
+                $data = new Donazione;
+                $data->paymentID = $payment->getId();
+                $data->name = $request->name;
+                $data->surname = $request->surname;
+                $data->email = $request->email;
+                $data->amount = $request->amount;
+                $data->cf = $request->cf;
+                $data->civico = $request->civico;
+                $data->cap = $request->cap;
+                $data->comune = $request->comune;
+                $data->via = $request->via;
+                $data->provincia = $request->provincia;
+                $data->dim = $request->dcheck == "on";
+                $data->dname = $request->dname;
+                $data->dsurname = $request->dsurname;
+                $data->date = Carbon::now();
+                $data->success = false;
+                $data->save();
                 return Redirect::away($redirect_url);
             }
             \Session::put('error', 'Si è verificato un errore, ci scusiamo');
@@ -231,15 +231,15 @@
             $execution->setPayerId(Input::get('PayerID'));
             $result = $payment->execute($execution, $this->_api_context);
             if ($result->getState() == 'approved') {
-                DB::table('donazioni')
-                    ->where('paymentID', $payment->getId())
-                    ->update(['success' => true]);
-                $data = DB::table('donazioni')->where('paymentID', $payment->getId())->get();
+                $data = Donazione::where('paymentID', $payment->getId())->first();
+                $data->success = true;
+                $data->save();
                 /*
-                    Invio email
-                */
+                $data = DB::table('donazioni')->where('paymentID', $payment->getId())->get();
+ 
                 Mail::to(env('MAIL_SEC'))->send(new DonationSecEmail($data[0]));
                 //Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
+                */
                 \Session::put('success', 'Donazione effettuata con successo');
                 return Redirect::to('/donazioni');
             }

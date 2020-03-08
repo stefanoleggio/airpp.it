@@ -21,8 +21,8 @@ class UsersTableSeeder extends Seeder
                 'role' => 'master'
             ],
             [
-                'name' => 'veronica',
-                'email' => 'veronica@airpp.it',
+                'name' => 'segreteria',
+                'email' => 'segreteria@airpp.it',
                 'password' => bcrypt('1234'),
                 'code' => '1234',
                 'role' => 'user'

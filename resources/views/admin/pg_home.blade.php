@@ -15,14 +15,14 @@
                     Immagine di sfondo
                 </div>
                 <div class="col-sm text-center">
-                    <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $data->id }}">
+                    <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-doc-{{ $data->id }}">
                         Modifica
                     </button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="modal-for-card-{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modal-for-card-doc-{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">

@@ -19,7 +19,7 @@ class CreateIscrizioniTable extends Migration
             $table->string('name');
             $table->string('surname');
             $table->string('cf');
-            $table->integer('cap');
+            $table->string('cap');
             $table->string('comune');
             $table->string('via');
             $table->string('civico');
