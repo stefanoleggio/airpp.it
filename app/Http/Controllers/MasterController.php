@@ -41,7 +41,7 @@ class MasterController extends Controller
         return view('admin.logs',
             [
 
-                'logs' => log::all()
+                'logs' => log::orderBy('id', 'desc')->get()
             ]
         );
     }

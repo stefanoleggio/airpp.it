@@ -24,6 +24,66 @@
 </tr>
 <tr>
     <td class="form_group form_main" style="padding-top: 2rem;">
+        Codice fiscale
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->cf}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Via
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->via}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Civico
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->civico}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Cap
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->cap}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Comune
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->comune}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Provincia
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->provincia}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
         Email
     </td>
 </tr>
@@ -34,12 +94,22 @@
 </tr>
 <tr>
     <td class="form_group form_main" style="padding-top: 2rem;">
-        Messaggio
+        Telefono
     </td>
 </tr>
 <tr>
     <td class="form_group">
-        {{$request->msg}}
+        {{$request->telefono}}
+    </td>
+</tr>
+<tr>
+    <td class="form_group form_main" style="padding-top: 2rem;">
+        Importo
+    </td>
+</tr>
+<tr>
+    <td class="form_group">
+        {{$request->amount}}
     </td>
 </tr>
 <tr>

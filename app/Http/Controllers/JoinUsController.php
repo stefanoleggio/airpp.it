@@ -72,6 +72,7 @@
         
         public function payWithpaypal(Request $request)
         {
+            Mail::to(env('MAIL_SEC'))->send(new IscrizioneSecEmail($request));/*
             $request->validate(
             [
                 'name' => 'required',
@@ -222,15 +223,16 @@
                 $data = Iscrizione::where('paymentID', $payment->getId())->first();
                 $data->success = true;
                 $data->save();
+                //Mail::to(env('MAIL_SEC'))->send(new IscrizioneSecEmail($data));
                 /*
                 $data = DB::table('iscrizioni')->where('paymentID', $payment->getId())->get();
 
                 Mail::to(env('MAIL_SEC'))->send(new IscrizioneSecEmail($data[0]));
-                //Mail::to($data->email)->send(new DonationEmail($data));*/
+                //Mail::to($data->email)->send(new DonationEmail($data));
                 \Session::put('success', 'Iscrizione effettuata con successo');
                 return Redirect::to('/associarsi');
             }
             \Session::put('error', 'Donazione fallita, riprovare');
-            return Redirect::to('/associarsi');
+            return Redirect::to('/associarsi');*/
         }
     }
