@@ -16,6 +16,8 @@ use App\Document;
 
 use App\View;
 
+use App\Contact;
+
 use App\Link;
 
 use App\Bilanci;
@@ -95,7 +97,10 @@ class PageController extends Controller
         return view('contatti',
             [
                 'title' => 'Contatti',
-                'banners' => Banner::where('page_id', 'contatti')->get()
+                'banners' => Banner::where('page_id', 'contatti')->get(),
+                'telefono' => Contact::where('page_id', 'telefono')->get(),
+                'email' => Contact::where('page_id', 'email')->get(),
+                'sede' => Contact::where('page_id', 'sede')->get()
             ]
         );
     }

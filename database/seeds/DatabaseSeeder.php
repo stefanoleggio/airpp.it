@@ -16,9 +16,8 @@ class DatabaseSeeder extends Seeder
         $this->call(MsgsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(TeamTableSeeder::class);
-        //$this->call(AlbumsTableSeeder::class);
-        //$this->call(PhotosTableSeeder::class);
         $this->call(DocumentsTableSeeder::class);
         $this->call(LinksTableSeeder::class);
+        $this->call(ContactsTableSeeder::class);
     }
 }

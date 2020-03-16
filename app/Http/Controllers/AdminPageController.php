@@ -18,6 +18,8 @@ use App\Document;
 
 use App\Link;
 
+use App\Contact;
+
 use App\Bilanci;
 
 use App\Articolo;
@@ -140,7 +142,8 @@ class AdminPageController extends Controller
     public function pg_contatti(){
         return view('admin.pg_contatti',
             [
-                'banners' => Banner::where('page_id', 'contatti')->get()
+                'banners' => Banner::where('page_id', 'contatti')->get(),
+                'contacts' => Contact::all()
             ]
         );
     }

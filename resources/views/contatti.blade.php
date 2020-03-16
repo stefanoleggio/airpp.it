@@ -18,7 +18,7 @@
                 Email <i class="fas fa-envelope"></i>
             </div>
             <div class="u-color-black normal">
-                airpp.onlus@gmail.com 
+                {{$email[0]->description}}
             </div>
         </div>
         <div class="col-1-of-3">
@@ -26,7 +26,7 @@
                 Telefono <i class="fas fa-phone"></i>
             </div>
             <div class="u-color-black normal">
-                +39 049 8212237 
+                {{$telefono[0]->description}}
             </div>
         </div>
         <div class="col-1-of-3">
@@ -34,7 +34,7 @@
                 Indirizzo <i class="fas fa-map-marker-alt"></i>
             </div>
             <div class="u-color-black normal">
-                Corso Milano, 43 - 35139 PADOVA (Italy) 
+                {{$sede[0]->description}}
             </div>
         </div>
     </div>

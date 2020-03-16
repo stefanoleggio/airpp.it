@@ -2,7 +2,7 @@
 @section('content')
     @include('includes.admincard', 
         [
-            'title' => 'Pagina Home',
+            'title' => 'Pagina Donazioni',
             'description' => 'Di seguito la lista di cosa si può modificare'
         ]
     )
