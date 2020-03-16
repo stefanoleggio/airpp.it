@@ -38,53 +38,21 @@
             </div>
         </div>
     </div>
-    <!--
-    <div class="u-padding-normal">
-        <div class="row u-margin-none">
-            <div class="col-1-of-3 normal u-font-weight-bold u-padding-small">
-                    Consiglio direttivo
-            </div>
+    <iframe alt="caricamento" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11203.974361699893!2d11.87137680281973!3d45.40946882598799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda459370d589%3A0x954d48fd3847a813!2sCorso+Milano%2C+43%2C+35139+Padova+PD!5e0!3m2!1sit!2sit!4v1562608642895!5m2!1sit!2sit" width="100%" height="500rem" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
+        I nostri social
+    </div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v6.0&appId=2347508062196957&autoLogAppEvents=1"></script>
+    <div class="row u-padding-normal u-center-text">
+        <div class="col-1-of-2">
+            <div class="fb-page" data-href="https://www.facebook.com/AIRPPonlus/" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>
         </div>
-        <div class="row u-margin-none u-padding-small normal">
-            <div class="col-1-of-3">
-                Fiorella Calabrese
-            </div>
-            <div class="col-1-of-3">
-                Presidente
-            </div>
-            <div class="col-1-of-3">
-                fiorella.calabrese@unipd.it
-            </div>
-        </div>
-        <div class="row u-margin-none u-padding-small normal">
-            <div class="col-1-of-3">
-                Fiorella Calabrese
-            </div>
-            <div class="col-1-of-3">
-                Presidente
-            </div>
-            <div class="col-1-of-3">
-                fiorella.calabrese@unipd.it
-            </div>
-        </div>
-        <div class="row u-margin-none">
-            <div class="col-1-of-3 normal u-font-weight-bold u-padding-small">
-                    Comitato scientifico
-            </div>
-        </div>
-        <div class="row u-margin-none">
-            <div class="col-1-of-3 normal u-font-weight-bold u-padding-small">
-                    Segreteria scientifica
-            </div>
-        </div>
-        <div class="row u-margin-none">
-            <div class="col-1-of-3 normal u-font-weight-bold u-padding-small">
-                    Segreteria amministrativa
+        <div class="col-1-of-2">
+            <div class="heading-secondary">
+                <a href="https://www.instagram.com/airpp.onlus/" id="instagram-link" class="btn__link" target="blank" ><i class="fab fa-instagram" style="font-size: 10rem;"></i></a>
             </div>
         </div>
     </div>
-    -->
-    <iframe alt="caricamento" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11203.974361699893!2d11.87137680281973!3d45.40946882598799!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477eda459370d589%3A0x954d48fd3847a813!2sCorso+Milano%2C+43%2C+35139+Padova+PD!5e0!3m2!1sit!2sit!4v1562608642895!5m2!1sit!2sit" width="100%" height="500rem" frameborder="0" style="border:0" allowfullscreen></iframe>
     <section class="textus u-bgcolor-color-grey">
     <div id="textus" class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
         Domande? Scrivici!
