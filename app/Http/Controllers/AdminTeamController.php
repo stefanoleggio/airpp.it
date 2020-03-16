@@ -70,16 +70,21 @@ class AdminTeamController extends Controller
                 'name.required' => 'Il nome è richiesto',
                 'surname.required' => 'Il cognome è richiesto'
             ]);
+
+        $team_id_trimmed = strtolower($request->team_id);
         
-        switch($request->team_id){
+        switch($team_id_trimmed){
             case "consiglio direttivo":
                 $team_id = "consiglio direttivo";
                 break;
-            case "segreteria amministrativa":
-                $team_id = "segreteria amministrativa";
+            case "segreteria scientifica e amministrativa":
+                $team_id = "segreteria scientifica e amministrativa";
                 break;
-            case "segreteria scientifica":
-                $team_id = "segreteria scientifica";
+            case "comitato etico":
+                $team_id = "comitato etico";
+                break;
+            case "comitato eventi":
+                $team_id = "comitato eventi";
                 break;
             case "comitato scientifico":
                 $team_id = "comitato scientifico";

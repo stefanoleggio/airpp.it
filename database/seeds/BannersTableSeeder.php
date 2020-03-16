@@ -65,63 +65,63 @@ class BannersTableSeeder extends Seeder
                     'img' => "/media/svg/associazione_awholeyear.svg"
                 ],
                 [
-                    'id' => 7,
+                    'id' => 8,
                     'page_id' => "associarsi",
                     'title' => "Associarsi",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/associazione_agreement.svg"
                 ],
                 [
-                    'id' => 8,
+                    'id' => 9,
                     'page_id' => "statuto",
                     'title' => "Statuto",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/associazione_reading_list.svg"
                 ],
                 [
-                    'id' => 9,
+                    'id' => 10,
                     'page_id' => "contatti",
                     'title' => "Contatti",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/contatti_mail_box.svg"
                 ],
                 [
-                    'id' => 10,
+                    'id' => 11,
                     'page_id' => "galleria",
                     'title' => "Galleria",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/gallery_camera.svg"
                 ],
                 [
-                    'id' => 10,
+                    'id' => 12,
                     'page_id' => "bilanci",
                     'title' => "Bilanci",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/bilanci.svg"
                 ],
                 [
-                    'id' => 11,
+                    'id' => 13,
                     'page_id' => "biobanca",
                     'title' => "Biobanca",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/biobanca.svg"
                 ],
                 [
-                    'id' => 12,
+                    'id' => 14,
                     'page_id' => "parlanodinoi",
                     'title' => "Parlano di noi",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/parlanodinoi.svg"
                 ],
                 [
-                    'id' => 13,
+                    'id' => 15,
                     'page_id' => "articoli",
                     'title' => "Articoli",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/articoli.svg"
                 ],
                 [
-                    'id' => 13,
+                    'id' => 16,
                     'page_id' => "cookie",
                     'title' => "Cookie",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",

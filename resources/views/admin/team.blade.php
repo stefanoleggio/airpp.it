@@ -23,6 +23,9 @@
                 <div class="col-sm text-center pt-2 text-capitalize">
                     {{ $data->name." ".$data->surname }} 
                 </div>
+                <div class="col-sm text-center pt-2 text-capitalize">
+                    {{ $data->team_id }} 
+                </div>
                 <div class="col-sm text-center">
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $data->id }}">
                         Modifica
@@ -45,6 +48,10 @@
                 <div class="modal-body">
                 <form method="POST" action="/admin/edit_team" enctype="multipart/form-data">
                     {{ csrf_field() }}
+                    <div class="form-group text-capitalize">
+                        <label for="name">Team identificativo</label>
+                        <div>{{ $data->team_id}}</div>
+                    </div>
                     <div class="form-group text-capitalize">
                         <label for="name">Nome</label>
                         <input type="input" class="form-control" id="name" name="name" value="{{ $data->name}}">
@@ -113,8 +120,9 @@
                         <ul>
                             <li>consiglio direttivo</li>
                             <li>comitato scientifico</li>
-                            <li>segreteria amministrativa</li>
-                            <li>segreteria scientifico</li>
+                            <li>segreteria scientifica e amministrativa</li>
+                            <li>comitato eventi</li>
+                            <li>comitato etico</li>
                         </ul>
                         <input type="input" class="form-control" id="team_id" name="team_id">
                     </div>

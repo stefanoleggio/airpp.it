@@ -42,6 +42,13 @@ class TeamTableSeeder extends Seeder
                     'description' => 'Professore Ordinario in Chirurgia Toracica presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari, Università degli Studi di Padova.',
                 ],
                 [
+                    'team_id' => 'consiglio direttivo',
+                    'name' => 'Carmelo',
+                    'surname' => 'Carmelo Leggio',
+                    'role' => 'consigliere',
+                    'description' => 'Ingegnere, Direttore Generale di Arcelor Mittal CLN Distribuzione Italia.',
+                ],
+                [
                     'team_id' => 'comitato scientifico',
                     'name' => '	elisabetta',
                     'surname' => 'balestro',
@@ -54,18 +61,6 @@ class TeamTableSeeder extends Seeder
                     'surname' => 'baraldo',
                     'description' => 'Ricercatore Universitario presso il Dipartimento di Scienze Cardiologiche, Toraciche e Vascolari dell’Università degli Studi di Padova.',
                     'role' => null
-                ],
-            ]
-    );
-
-        DB::table('team')->insert(
-            [
-                [
-                    'team_id' => 'consiglio direttivo',
-                    'name' => 'carmelo',
-                    'surname' => 'leggio',
-                    'role' => 'consigliere',
-                    'description' => 'Direttore Generale di Arcelor Mittal CLN Distribuzione Italia.',
                 ],
                 [
                     'team_id' => 'comitato scientifico',
@@ -103,21 +98,41 @@ class TeamTableSeeder extends Seeder
                     'description' => 'Lavora nel settore R&D Product Development dell\'Azienda Ompi S.r.l., Piombino Dese (PD).',
                 ],
                 [
-                    'team_id' => 'segreteria scientifica',
-                    'name' => 'sergio',
-                    'surname' => 'de iacovo',
+                    'team_id' => 'segreteria scientifica e amministrativa',
+                    'name' => 'francesca',
+                    'surname' => 'lunardi',
                     'role' => null,
-                    'description' => 'Lavora presso il dipartimento di Scienze Cardiologiche, Toraciche e Vascolari (UOC di Chirurgia Toracica). lavora presso il dipartimento di Scienze Cardiologiche, Toraciche e Vascolari (UOC di Chirurgia Toracica).',
+                    'description' => 'medico-chirurgo e biologa sanitaria, Ricercatore in Anatomia Patologica presso il Dipartimento di Scienze Cardio-Toraco-Vascolari e Sanità Pubblica, Università degli Studi di Padova.',
                 ],
                 [
-                    'team_id' => 'segreteria amministrativa',
-                    'name' => 'ivana',
-                    'surname' => 'piovan',
+                    'team_id' => 'comitato eventi',
+                    'name' => 'francesca',
+                    'surname' => 'lunardi',
+                    'role' => null,
+                    'description' => 'medico-chirurgo e biologa sanitaria, Ricercatore in Anatomia Patologica presso il Dipartimento di Scienze Cardio-Toraco-Vascolari e Sanità Pubblica, Università degli Studi di Padova.',
+                ],
+                [
+                    'team_id' => 'comitato eventi',
+                    'name' => 'gigliola',
+                    'surname' => 'lodovichetti',
+                    'role' => null,
+                    'description' => 'Responsabile del Laboratorio Pennelli Snc, specializzato in istopatologia e citologia diagnostica.',
+                ],
+                [
+                    'team_id' => 'comitato etico',
+                    'name' => 'manlio',
+                    'surname' => 'dagostini',
                     'role' => null,
                     'description' => null
                 ],
-
+                [
+                    'team_id' => 'comitato etico',
+                    'name' => 'elena',
+                    'surname' => 'ballarin',
+                    'role' => null,
+                    'description' => null
+                ],
             ]
         );
-        }
+    }
 }

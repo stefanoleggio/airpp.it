@@ -31,8 +31,9 @@ class PageController extends Controller
                 'data' => Document::where('page_id', 'home')->get(),
                 'users_cd' => Team::where('team_id', 'consiglio direttivo')->get(),
                 'users_cs' => Team::where('team_id', 'comitato scientifico')->get(),
-                'users_ss' => Team::where('team_id', 'segreteria scientifica')->get(),
-                'users_sa' => Team::where('team_id', 'segreteria amministrativa')->get()
+                'users_ssea' => Team::where('team_id', 'segreteria scientifica e amministrativa')->get(),
+                'users_cev' => Team::where('team_id', 'comitato eventi')->get(),
+                'users_cet' => Team::where('team_id', 'comitato etico')->get()
             ]
         );
     }
