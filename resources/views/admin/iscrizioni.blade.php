@@ -24,7 +24,7 @@
                         &euro;
                     </div>
                     <div class="col-sm text-center pt-2">
-                        {{ $data->date }}
+                        {{ date('d-m-Y', strtotime($data->date)) }}
                     </div>
 
                     <div class="col-sm text-center">
@@ -93,7 +93,7 @@
             </div>
             <div class="row">
                 <div class="col-sm">Data e ora</div>
-                <div class="col-sm">{{ $data->date }}</div>
+                <div class="col-sm">{{ date('d-m-Y', strtotime($data->date)) }}</div>
             </div>
         </div>
         <div class="modal-footer">
