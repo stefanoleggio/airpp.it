@@ -20,7 +20,7 @@
         </div>
         <div class="newstab__info heading-tertiary u-right-text">
                 {{$newstab__place}}
-                {{$newstab__date}}
+                {{date('d-m-Y', strtotime($newstab__date))}}
         </div>
     </div>
 </div>

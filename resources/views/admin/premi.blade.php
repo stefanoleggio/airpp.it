@@ -35,7 +35,7 @@
                     {{ $data->place }}
                 </div>
                 <div class="col-sm text-center pt-2">
-                    {{ $data->date }}
+                    {{ date('d-m-Y', strtotime($data->date)) }}
                 </div>
                 <div class="col-sm text-center">
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $data->id }}">
