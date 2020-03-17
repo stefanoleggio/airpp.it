@@ -41,13 +41,13 @@
                 <div class="form__label">
                     Civico
                 </div>
-                <input type="text" value="{{ old('street_number') }}" id="street_number" class="form__input @if ($errors->has('civico')) form__input-invalid @endif" name="civico" placeholder="Inserisci il tuo civico">
+                <input type="text" value="{{ old('civico') }}" id="street_number" class="form__input @if ($errors->has('civico')) form__input-invalid @endif" name="civico" placeholder="Inserisci il tuo civico">
             </div>
             <div class="col-1-of-2">
                 <div class="form__label">
                     Cap
                 </div>
-                <input type="text" value="{{ old('civico') }}" id="postal_code" class="form__input @if ($errors->has('cap')) form__input-invalid @endif" name="cap" placeholder="Inserisci il tuo cap">
+                <input type="text" value="{{ old('cap') }}" id="postal_code" class="form__input @if ($errors->has('cap')) form__input-invalid @endif" name="cap" placeholder="Inserisci il tuo cap">
             </div>
         </div>
     </div>
