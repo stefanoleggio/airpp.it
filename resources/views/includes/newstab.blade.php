@@ -5,7 +5,7 @@
             <i class="fas fa-thumbtack"></i>
         </div>
         @endif
-        <div class="newstab__title heading-secondary u-container-fullwidth u-left-text">
+        <div class="newstab__title heading-secondary-bis u-container-fullwidth u-left-text">
             {{$newstab__title}}
         </div>
         <div class="newstab__text paragraph paragraph--smaller u-margin-top-small">
