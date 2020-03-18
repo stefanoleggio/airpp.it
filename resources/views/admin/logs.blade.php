@@ -17,7 +17,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm text-center pt-2">
-                        {{ date('d-m-Y', strtotime($log->login_at)) }} 
+                        {{date('d-m-Y H:i:s', strtotime($log->login_at))}} 
                     </div>
                     <div class="col-sm text-center pt-2">
                         {{ $log->user }} 

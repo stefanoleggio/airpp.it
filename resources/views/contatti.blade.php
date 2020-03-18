@@ -45,11 +45,11 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v6.0&appId=2347508062196957&autoLogAppEvents=1"></script>
     <div class="row u-padding-normal u-center-text">
         <div class="col-1-of-2">
-            <div class="fb-page" data-href="https://www.facebook.com/AIRPPonlus/" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>
+            <div class="fb-page" data-href="{{env('FACEBOOK_URL')}}" data-width="380" data-hide-cover="false" data-show-facepile="false"></div>
         </div>
         <div class="col-1-of-2">
             <div class="heading-secondary">
-                <a href="https://www.instagram.com/airpp.onlus/" id="instagram-link" class="btn__link" target="blank" ><i class="fab fa-instagram" style="font-size: 10rem;"></i></a>
+                <a href="{{env('INSTAGRAM_URL')}}" id="instagram-link" class="btn__link" target="blank" ><i class="fab fa-instagram" style="font-size: 10rem;"></i></a>
             </div>
         </div>
     </div>

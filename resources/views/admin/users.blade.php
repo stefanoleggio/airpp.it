@@ -63,7 +63,7 @@
                         </div>
                         <div class="form-group">
                             <label for="title">Ultimo accesso</label>
-                            <div>{{ date('d-m-Y', strtotime($user->last_login_at)) }}</div>
+                            <div>{{ date('d-m-Y H:i:s', strtotime($user->last_login_at)) }}</div>
                         </div>
                         <div class="form-group">
                             <label for="title">Ultimo ip</label>

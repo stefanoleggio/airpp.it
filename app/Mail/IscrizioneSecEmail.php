@@ -20,7 +20,6 @@ class IscrizioneSecEmail extends Mailable
     public function __construct(Object $request)
     {
         $this->request = $request;
-        $request->date = Carbon::now();
     }
 
     /**

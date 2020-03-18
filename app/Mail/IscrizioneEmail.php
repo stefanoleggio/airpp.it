@@ -3,9 +3,14 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+
 use Illuminate\Mail\Mailable;
+
 use Illuminate\Queue\SerializesModels;
+
 use Illuminate\Contracts\Queue\ShouldQueue;
+
+use App\Email;
 
 class IscrizioneEmail extends Mailable
 {
@@ -18,7 +23,8 @@ class IscrizioneEmail extends Mailable
      */
     public function __construct()
     {
-        //
+        $this->request = $request;
+        $this->email = Email::where('page_id', 'iscrizione')->get();
     }
 
     /**
@@ -28,6 +34,6 @@ class IscrizioneEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->subject('Iscrizione airpp')->view('mails.joinus');
     }
 }

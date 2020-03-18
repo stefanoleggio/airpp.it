@@ -3,10 +3,16 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+
 use Illuminate\Mail\Mailable;
+
 use Illuminate\Queue\SerializesModels;
+
 use Illuminate\Contracts\Queue\ShouldQueue;
+
 use Illuminate\Support\Facades\DB;
+
+use App\Email;
 
 class DonationEmail extends Mailable
 {
@@ -21,7 +27,7 @@ class DonationEmail extends Mailable
     public function __construct(Object $request)
     {
         $this->request = $request;
-        $this->email = DB::table('views')->where('page_id', 'email_donazioni')->get();
+        $this->email = Email::where('page_id', 'donazione')->get();
     }
 
     /**
@@ -31,6 +37,6 @@ class DonationEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.donation');
+        return $this->subject('Donazione airpp')->view('mails.donation');
     }
 }

@@ -46,4 +46,4 @@
     }
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfQQaI4qGPzCxhXEDKWUKNqekLiijKAaY&libraries=places&callback=initAutocomplete" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key={{env('GMAPS_KEY')}}&libraries=places&callback=initAutocomplete" async defer></script>

@@ -126,6 +126,13 @@ class BannersTableSeeder extends Seeder
                     'title' => "Cookie",
                     'description' => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis, aliquam voluptate rerum, quibusdam vero cumque doloribus dolores, ullam voluptates eligendi adipisci minima quo obcaecati labore ex ad est illum.",
                     'img' => "/media/svg/cookies.svg"
+                ],
+                [
+                    'id' => 17,
+                    'page_id' => "costruction",
+                    'title' => "Pagina in costruzione",
+                    'description' => "La pagina non è al momento disponibile, ci stiamo lavorando!",
+                    'img' => "/media/svg/costruction.svg"
                 ]
             ]
         );

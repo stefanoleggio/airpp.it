@@ -3,8 +3,8 @@
     <div>
         <div class="row">
             <div class="col-1-of-2 u-center-text footer__fonts">
-                <a href="https://www.facebook.com/AIRPPonlus/" target="blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/airpp.onlus/" target="blank"><i class="fab fa-instagram"></i></a>
+                <a href="{{env('FACEBOOK_URL')}}" target="blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="{{env('INSTAGRAM_URL')}}" target="blank"><i class="fab fa-instagram"></i></a>
                 <a href="/contatti#textus"><i class="fas fa-envelope"></i></a>
             </div>
             <div class="col-1-of-2 u-center-text footer__links">

@@ -51,8 +51,65 @@
 
     use App\Donazione;
 
+    use App\Banner;
+
     class DonationsController extends Controller
     {
+        public function payment(Request $request){
+            $request->validate(
+                [
+                    'name' => 'required',
+                    'surname' => 'required',
+                    'email' => 'required|email',
+                    'amount' => 'required|integer|min:5',
+                    'via' => 'required',
+                    'civico' => 'required',
+                    'cap' => 'required',
+                    'provincia' => 'required',
+                    'comune' => 'required',
+                    'privacy' => 'accepted',
+                    'cf' => ['required', new codicefiscale],
+                    'g-recaptcha-response' => new Captcha()
+                ],
+                [
+                    'name.required' => 'Devi inserire il nome',
+                    'surname.required' => 'Devi inserire il cognome',
+                    'email.required' => 'Devi inserire l\'email',
+                    'amount.required' => 'Devi inserire l\'importo',
+                    'email.email' => 'Devi inserire una email valida',
+                    'amount.integer' => 'L\'importo deve essere un numero intero',
+                    'via.required' => 'Devi inserire la tua via',
+                    'civico.required' => 'Devi inserire il tuo civico',
+                    'cap.required' => 'Devi inserire il cap',
+                    'comune.required' => 'Devi inserire il comune',
+                    'provincia.required' => 'Devi inserire la provincia',
+                    'cf.required' => 'Devi inserire il codice fiscale',
+                    'privacy.accepted' => 'Devi accettare la privacy policy',
+                    'amount.min' => 'La donazione minima è di 5 Euro'
+                ]);
+
+            if($request->dcheck == "on"){
+                $request->validate(
+                    [
+                        'dname' => 'required',
+                        'dsurname' => 'required',
+                    ],
+                    [
+                        'dname.required' => 'Devi inserire il nome del defunto',
+                        'dsurname.required' => 'Devi inserire il cognome cognome del defunto',
+                    ]);
+            }
+
+            /* Debug */
+            return view('costruction',
+                [
+                    'title' => 'Pagina in costruzione',
+                    'banners' => Banner::where('page_id', 'costruction')->get(),
+                ]
+            );
+        }
+
+
         private $_api_context;
         /**
          * Create a new controller instance.
@@ -72,49 +129,9 @@
         
         public function payWithpaypal(Request $request)
         {
-            $request->validate(
-            [
-                'name' => 'required',
-                'surname' => 'required',
-                'email' => 'required|email',
-                'amount' => 'required|integer|min:5',
-                'via' => 'required',
-                'civico' => 'required',
-                'cap' => 'required',
-                'provincia' => 'required',
-                'comune' => 'required',
-                'privacy' => 'accepted',
-                'cf' => ['required', new codicefiscale],
-                'g-recaptcha-response' => new Captcha()
-            ],
-            [
-                'name.required' => 'Devi inserire il nome',
-                'surname.required' => 'Devi inserire il cognome',
-                'email.required' => 'Devi inserire l\'email',
-                'amount.required' => 'Devi inserire l\'importo',
-                'email.email' => 'Devi inserire una email valida',
-                'amount.integer' => 'L\'importo deve essere un numero intero',
-                'via.required' => 'Devi inserire la tua via',
-                'civico.required' => 'Devi inserire il tuo civico',
-                'cap.required' => 'Devi inserire il cap',
-                'comune.required' => 'Devi inserire il comune',
-                'provincia.required' => 'Devi inserire la provincia',
-                'cf.required' => 'Devi inserire il codice fiscale',
-                'privacy.accepted' => 'Devi accettare la privacy policy',
-                'amount.min' => 'La donazione minima è di 5 Euro'
-            ]);
 
-            if($request->dcheck == "on"){
-                $request->validate(
-                    [
-                        'dname' => 'required',
-                        'dsurname' => 'required',
-                    ],
-                    [
-                        'dname.required' => 'Devi inserire il nome del defunto',
-                        'dsurname.required' => 'Devi inserire il cognome cognome del defunto',
-                    ]);
-            }
+
+
 
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");$item1 = new Item();
@@ -176,15 +193,16 @@
 
             try {
                 $payment->create($this->_api_context);
-            } catch (\PayPal\Exception\PPConnectionException $ex) {
+            }catch (\PayPal\Exception\PPConnectionException $ex){
                 if (\Config::get('app.debug')) {
-                    \Session::put('error', 'Connessione scaduta');
-                    return Redirect::to('/donazioni');
+                    \Session::put('error', 'Connection timeout');
+                    return Redirect::route('/donazioni');
                 } else {
-                    \Session::put('error', 'Si è verificato un errore, ci scusiamo');
-                    return Redirect::to('/donazioni');
+                    \Session::put('error', 'Some error occur, sorry for inconvenient');
+                    return Redirect::route('/donazioni');
                 }
             }
+
             foreach ($payment->getLinks() as $link) {
                 if ($link->getRel() == 'approval_url') {
                     $redirect_url = $link->getHref();
@@ -193,6 +211,7 @@
             }
             
             Session::put('paypal_payment_id', $payment->getId());
+            
             if (isset($redirect_url)) {
                 $data = new Donazione;
                 $data->paymentID = $payment->getId();
@@ -234,12 +253,8 @@
                 $data = Donazione::where('paymentID', $payment->getId())->first();
                 $data->success = true;
                 $data->save();
-                /*
-                $data = DB::table('donazioni')->where('paymentID', $payment->getId())->get();
- 
-                Mail::to(env('MAIL_SEC'))->send(new DonationSecEmail($data[0]));
-                //Mail::to($data[0]->email)->send(new DonationEmail($data[0]));
-                */
+                Mail::to(env('MAIL_SEC'))->send(new DonationSecEmail($data));
+                Mail::to($data->email)->send(new DonationEmail($data));
                 \Session::put('success', 'Donazione effettuata con successo');
                 return Redirect::to('/donazioni');
             }

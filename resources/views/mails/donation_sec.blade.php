@@ -1,95 +1,123 @@
 @extends('templates.mail', [
-    'title' => "Donazione"
+    'title' => "Nuova donazione"
 ])
 @section('content')
 <tr>
-    <td class="form_group form_main">
+    <td>
         Nome
     </td>
-</tr>
-<tr>
-    <td class="form_group">
+    <td>
         {{$request->name}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
+    <td>
         Cognome
     </td>
-</tr>
-<tr>
-    <td class="form_group">
+    <td>
         {{$request->surname}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
+    <td>
         Codice fiscale
     </td>
-</tr>
-<tr>
-    <td class="form_group">
+    <td>
         {{$request->cf}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
-        Via e civico
+    <td>
+        Via
     </td>
-</tr>
-<tr>
-    <td class="form_group">
+    <td>
         {{$request->via}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
-        Cap
+    <td>
+        Civico
+    </td>
+    <td>
+        {{$request->civico}}
     </td>
 </tr>
 <tr>
-    <td class="form_group">
+    <td>
+        Cap
+    </td>
+    <td>
         {{$request->cap}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
+    <td>
         Comune
     </td>
-</tr>
-<tr>
-    <td class="form_group">
+    <td>
         {{$request->comune}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
-        Email
+    <td>
+        Provincia
+    </td>
+    <td>
+        {{$request->provincia}}
     </td>
 </tr>
 <tr>
-    <td class="form_group">
+    <td>
+        Email
+    </td>
+    <td>
         {{$request->email}}
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
+    <td>
+        Tipo
+    </td>
+    <td>
+        @if($request->dim)
+        {{'Donazione in memoria'}}
+        @else
+        {{'Donazione standard'}}
+        @endif
+    </td>
+</tr>
+@if($request->dim)
+<tr>
+    <td>
+        Nome defunto
+    </td>
+    <td>
+        {{$request->dname}}
+    </td>
+</tr>
+<tr>
+    <td>
+        Cognome defunto
+    </td>
+    <td>
+        {{$request->dsurname}}
+    </td>
+</tr>
+@endif
+<tr>
+    <td>
         Importo
     </td>
-</tr>
-<tr>
-    <td class="form_group">
-        {{$request->amount}}
+    <td>
+        {{$request->amount}} &euro;
     </td>
 </tr>
 <tr>
-    <td class="form_group form_main" style="padding-top: 2rem;">
+    <td>
         Data e ora
     </td>
-</tr>
-<tr>
-    <td class="form_group">
-        {{$request->date}}
+    <td>
+        {{date('d-m-Y H:i:s', strtotime($request->date))}}
     </td>
 </tr>
 @endsection

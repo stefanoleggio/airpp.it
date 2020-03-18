@@ -1,4 +1,4 @@
-<form method="POST" class="form u-padding-normal u-display-inline-block" action="{!! URL::to('donationspaypal') !!}">
+<form method="POST" class="form u-padding-normal u-display-inline-block" action="{!! URL::to('donationsPayment') !!}">
     {{ csrf_field() }}
     <div class="form__group">
         <div class="row">
