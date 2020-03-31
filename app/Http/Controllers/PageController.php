@@ -78,7 +78,7 @@ class PageController extends Controller
             [
                 'title' => 'Parlano di noi',
                 'banners' => Banner::where('page_id', 'parlanodinoi')->get(),
-                'links' => Link::where('page_id', 'parlanodinoi')->get()
+                'links' => Link::where('page_id', 'parlanodinoi')->paginate(10)
             ]
         );
     }
@@ -88,7 +88,7 @@ class PageController extends Controller
             [
                 'title' => 'Articoli',
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'posts' => Articolo::all()
+                'posts' => Articolo::orderBy('id', 'DESC')->paginate(3)
             ]
         );
     }
@@ -100,7 +100,13 @@ class PageController extends Controller
                 'banners' => Banner::where('page_id', 'contatti')->get(),
                 'telefono' => Contact::where('page_id', 'telefono')->get(),
                 'email' => Contact::where('page_id', 'email')->get(),
-                'sede' => Contact::where('page_id', 'sede')->get()
+                'sede' => Contact::where('page_id', 'sede')->get(),
+                'contacts_cd' => Contact::where('page_id', 'contacts_cd')->get(),
+                'contacts_cs' => Contact::where('page_id', 'contacts_cs')->get(),
+                'contacts_ssea' => Contact::where('page_id', 'contacts_ssea')->get(),
+                'contacts_cev' => Contact::where('page_id', 'contacts_cev')->get(),
+                'contacts_cet' => Contact::where('page_id', 'contacts_cet')->get(),
+                'contacts_sl' => Contact::where('page_id', 'contacts_sl')->get(),
             ]
         );
     }
@@ -120,7 +126,7 @@ class PageController extends Controller
             [
                 'title' => 'Bilanci',
                 'banners' => Banner::where('page_id', 'bilanci')->get(),
-                'posts' => Bilanci::orderBy('id', 'desc')->get()
+                'posts' => Bilanci::orderBy('id', 'desc')->paginate(3)
             ]
         );
     }

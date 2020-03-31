@@ -81,7 +81,7 @@ class AdminPageController extends Controller
         return view('admin.pg_bilanci',
             [
                 'banners' => Banner::where('page_id', 'bilanci')->get(),
-                'datas' => Bilanci::orderBy('id', 'desc')->get()
+                'datas' => Bilanci::orderBy('id', 'desc')->paginate(10)
             ]
         );
     }
@@ -99,7 +99,7 @@ class AdminPageController extends Controller
         return view('admin.pg_parlanodinoi',
             [
                 'banners' => Banner::where('page_id', 'parlanodinoi')->get(),
-                'links' => Link::where('page_id', 'parlanodinoi')->get()
+                'links' => Link::where('page_id', 'parlanodinoi')->paginate(10)
             ]
         );
     }
@@ -108,7 +108,7 @@ class AdminPageController extends Controller
         return view('admin.pg_articoli',
             [
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'datas' => Articolo::orderBy('id', 'desc')->get()
+                'datas' => Articolo::orderBy('id', 'desc')->paginate(10)
             ]
         );
     }

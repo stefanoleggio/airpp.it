@@ -11,8 +11,8 @@
     <div class="u-center-text u-margin-bottom-big">
         @foreach($posts as $post)
         <div class="newstab__container u-container-fullwidth">
-            <div class="newstab u-margin-top-big u-display-inline-block">
-                <div class="newstab__title heading-secondary u-container-fullwidth u-left-text">
+            <div class="newstab u-margin-top-medium u-display-inline-block">
+                <div class="newstab__title heading-secondary-bis u-container-fullwidth u-left-text">
                     {{$post->title}}
                 </div>
                 <div class="newstab__text paragraph paragraph--smaller u-margin-top-small">
@@ -26,5 +26,8 @@
             </div>
         </div>
         @endforeach
+        <div class="u-margin-top-medium small u-center-text">
+            <?php echo $posts->links(); ?>
+        </div>
     </div>
 @endsection

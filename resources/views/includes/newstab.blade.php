@@ -1,5 +1,5 @@
 <div class="newstab__container u-container-fullwidth">
-    <div class="newstab u-margin-top-big u-display-inline-block">
+    <div class="newstab u-margin-top-medium u-display-inline-block">
         @if($newstab__state == '1')
         <div class="newstab__state" title="in corso">
             <i class="fas fa-thumbtack"></i>

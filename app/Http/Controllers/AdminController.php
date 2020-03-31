@@ -20,6 +20,14 @@ use App\User;
 
 use App\Team;
 
+use App\Donazione;
+
+use App\Iscrizione;
+
+use App\View;
+
+use App\Messaggio;
+
 class AdminController extends Controller
 {
     /**
@@ -93,7 +101,7 @@ class AdminController extends Controller
         return view('admin.donazioni',
             [
 
-                'datas' => DB::table('donazioni')->where('success', '1')->orderby('id', 'DESC')->get()
+                'datas' => Donazione::where('success', '1')->orderby('id', 'DESC')->paginate(10)
             ]
         );
     }
@@ -103,7 +111,7 @@ class AdminController extends Controller
         return view('admin.iscrizioni',
 
             [
-                'datas' => DB::table('iscrizioni')->where('success', '1')->orderby('id', 'DESC')->get()
+                'datas' => Iscrizione::where('success', '1')->orderby('id', 'DESC')->paginate(10)
             ]
         );
     }
@@ -113,7 +121,7 @@ class AdminController extends Controller
         return view('admin.messaggi',
             [
 
-                'datas' => DB::table('emails')->get()
+                'datas' => Messaggio::paginate(10)
             ]
         );
     }
@@ -123,7 +131,7 @@ class AdminController extends Controller
         return view('admin.email',
             [
 
-                'datas' => DB::table('views')->where('page_id', 'email_iscrizioni')->orWhere('page_id', 'email_donazioni')->get()
+                'datas' => View::where('page_id', 'email_iscrizioni')->orWhere('page_id', 'email_donazioni')->get()
             ]
         );
     }

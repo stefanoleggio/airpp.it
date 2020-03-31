@@ -1302,6 +1302,39 @@ img {
   }
 }
 
+.pagination {
+  display: inline-flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 0.25rem;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #00a5c8;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #00a5c8;
+  border-color: #00a5c8;
+}
+
+.page-link:hover {
+  z-index: 2;
+  color: #153d8a;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
 .row {
   max-width: 100%;
   margin: 0 auto;
@@ -1447,6 +1480,19 @@ img {
 
 .img_links {
   height: 10rem;
+}
+
+.contacts_tab {
+  padding-left: 20rem !important;
+  padding-right: 20rem !important;
+  text-align: center;
+  padding: 4rem;
+  margin-bottom: 10rem;
+  margin-top: 5rem;
+}
+
+.contacts_tab .row {
+  margin-bottom: 3rem;
 }
 
 .albums__card {

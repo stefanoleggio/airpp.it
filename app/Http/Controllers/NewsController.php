@@ -22,7 +22,7 @@ class NewsController extends Controller
             [
                 'title' => 'Convegni',
                 'banners' => Banner::where('page_id', 'convegni')->get(),
-                'posts' => Convegni::orderby('id', 'DESC')->get()
+                'posts' => Convegni::orderby('id', 'DESC')->paginate(3)
             ]
         );
     }
@@ -32,7 +32,7 @@ class NewsController extends Controller
             [
                 'title' => 'Premi',
                 'banners' => Banner::where('page_id', 'premi')->get(),
-                'posts' => Premi::orderBy('id', 'DESC')->get()
+                'posts' => Premi::orderBy('id', 'DESC')->paginate(3)
             ]
         );
     }
@@ -42,7 +42,7 @@ class NewsController extends Controller
             [
                 'title' => 'Iniziative',
                 'banners' => Banner::where('page_id', 'iniziative')->get(),
-                'posts' => Iniziative::orderBy('id', 'DESC')->get()
+                'posts' => Iniziative::orderBy('id', 'DESC')->paginate(3)
             ]
         );
     }

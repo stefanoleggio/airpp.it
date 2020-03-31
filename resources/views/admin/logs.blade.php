@@ -29,5 +29,8 @@
             </div>
         </div>
     @endforeach
+        <div class="d-flex justify-content-center pt-5">
+                <?php echo $logs->links(); ?>
+        </div>
     </div>
 @endsection

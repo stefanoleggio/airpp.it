@@ -23,7 +23,7 @@ class AdminNewsController extends Controller
         return view('admin.premi',
             [
         
-                'datas' => Premi::orderBy('id', 'desc')->get()
+                'datas' => Premi::orderBy('id', 'desc')->paginate(10)
             ]
         );
     }
@@ -33,7 +33,7 @@ class AdminNewsController extends Controller
         return view('admin.convegni',
             [
         
-                'datas' => Convegni::orderBy('id', 'desc')->get()
+                'datas' => Convegni::orderBy('id', 'desc')->paginate(10)
             ]
         );
     }
@@ -43,7 +43,7 @@ class AdminNewsController extends Controller
         return view('admin.iniziative',
             [
         
-                'datas' => Iniziative::orderBy('id', 'desc')->get()
+                'datas' => Iniziative::orderBy('id', 'desc')->paginate(10)
             ]
         );
     }

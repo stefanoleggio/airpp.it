@@ -31,6 +31,9 @@
                 </div>
             @endforeach
         </div>
+        <div class="u-margin-top-medium small u-center-text">
+            <?php echo $albums->links(); ?>
+        </div>
     </div>
-    
+
 @endsection

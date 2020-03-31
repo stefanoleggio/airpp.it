@@ -57,5 +57,8 @@
     @foreach($links as $link)
         @include('includes.adminlinks')
     @endforeach
+    <div class="d-flex justify-content-center pt-5">
+        <?php echo $links->links(); ?>
+    </div>
     </div>
 @endsection

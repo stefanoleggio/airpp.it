@@ -15,7 +15,6 @@
                 Articoli dalla rete
             </div>
     <div class="textcontainer">
-
             <div class="u-center-text">
                 <div class="paragraph">
                     <ul style="list-style-type: disc;">
@@ -27,7 +26,10 @@
                         ])
                         </li>
                     @endforeach
-                        </ul>
+                    </ul>
+                </div>
+                <div class="u-margin-top-medium small u-center-text">
+                    <?php echo $links->links(); ?>
                 </div>
             </div>
         </div>

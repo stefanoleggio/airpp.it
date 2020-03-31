@@ -21,7 +21,7 @@ class AdminGalleryController extends Controller
         return view('admin.galleria',
             [
 
-                'albums' => Album::all()
+                'albums' => Album::paginate(5)
             ]
         );
     }
@@ -31,7 +31,7 @@ class AdminGalleryController extends Controller
         return view('admin.photos',
             [
                 'album' => Album::where('id', $id)->get(),
-                'photos' => Photo::where('album_id', $id)->get()
+                'photos' => Photo::where('album_id', $id)->paginate(9)
             ]
         );
     }

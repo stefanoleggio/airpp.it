@@ -41,18 +41,13 @@ class MasterController extends Controller
         return view('admin.logs',
             [
 
-                'logs' => log::orderBy('id', 'desc')->get()
+                'logs' => log::orderBy('id', 'desc')->paginate(10)
             ]
         );
     }
 
     public function clear_logs(){
         $logs = Log::all();
-        if($logs->count()>20){
-            for($k = 19; $k < $logs->count(); $k++){
-                $logs[$k]->delete();
-            }
-        }
     }
 
     public function edit_users(Request $request)

@@ -103,5 +103,8 @@
     </div>
     </div>
     @endforeach
+        <div class="d-flex justify-content-center pt-5">
+                <?php echo $datas->links(); ?>
+        </div>
     </div>
 @endsection

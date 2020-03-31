@@ -26,6 +26,26 @@ class ContactsTableSeeder extends Seeder
                 'page_id' => 'sede',
                 'title' => 'Indirizzo',
                 'description' => 'Corso Milano, 43 - 35139 PADOVA (Italy)'
+            ],
+            [
+                'page_id' => 'contacts_cd',
+                'title' => 'Fiorella calabrese',
+                'description' => 'fiorella.calabrese@unipd.it'
+            ],
+            [
+                'page_id' => 'contacts_cd',
+                'title' => 'Fiorella calabrese',
+                'description' => 'fiorella.calabrese@unipd.it'
+            ],
+            [
+                'page_id' => 'contacts_cd',
+                'title' => 'Fiorella calabrese',
+                'description' => 'fiorella.calabrese@unipd.it'
+            ],
+            [
+                'page_id' => 'contacts_cs',
+                'title' => 'Prova',
+                'description' => 'email'
             ]
         ]);
     }

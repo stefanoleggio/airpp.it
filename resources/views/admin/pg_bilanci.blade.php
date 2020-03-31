@@ -85,6 +85,9 @@
         </div>
     </div>
     @endforeach
+    <div class="d-flex justify-content-center pt-5">
+        <?php echo $datas->links(); ?>
+    </div>
 </div>
 <div class="modal fade" id="modal-for-new-card" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">

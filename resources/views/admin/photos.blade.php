@@ -63,6 +63,10 @@
     ?>
     @endforeach
     </div>
+    <div class="d-flex justify-content-center pt-5">
+                <?php echo $photos->links(); ?>
+    </div>
+    </div>
     <div class="modal fade" id="modal-for-card-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">

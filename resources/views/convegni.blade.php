@@ -20,5 +20,8 @@
                 'newstab__link' => $post->link
             ])
         @endforeach
+        <div class="u-margin-top-medium small">
+            <?php echo $posts->links(); ?>
+        </div>
     </div>
 @endsection

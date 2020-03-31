@@ -18,7 +18,7 @@ class AdminTeamController extends Controller
         return view('admin.team',
             [
 
-                'datas' => Team::all()
+                'datas' => Team::paginate(10)
             ]
         );
     }
