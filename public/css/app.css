@@ -590,7 +590,7 @@ a {
 }
 
 .btn {
-  border-radius: 6px;
+  border-radius: 100px;
   color: white;
   font-weight: 700;
   text-align: center;
@@ -659,11 +659,11 @@ a {
 
 .btn__link {
   text-transform: lowercase;
+  text-decoration: underline;
 }
 
 .btn__link:hover {
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .btn__burger {
@@ -1445,6 +1445,7 @@ img {
 @media only screen and (max-width: 37.5em) {
   .presentation__block {
     width: 70%;
+    font-size: 1.7rem;
   }
 }
 
@@ -1455,7 +1456,7 @@ img {
 @media only screen and (max-width: 56.25em) {
   .presentation__block .btn {
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
 

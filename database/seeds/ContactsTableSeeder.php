@@ -13,39 +13,25 @@ class ContactsTableSeeder extends Seeder
     {
         DB::table('contacts')->insert([
             [
-                'page_id' => 'telefono',
-                'title' => 'Telefono',
-                'description' => '+39 049 8212237 '
+                'page_id' => 'segreteria',
+                'name' => 'segreteria',
+                'email' => 'airpp.onlus@gmail.com',
+                'telefono' => '+39 049 8212237 ',
+                'sede' => 'Corso Milano, 43 - 35139 PADOVA (Italy)',
             ],
             [
-                'page_id' => 'email',
-                'title' => 'Email',
-                'description' => 'airpp.onlus@gmail.com '
+                'page_id' => 'segreteria-scientifica',
+                'name' => 'segreteria scientifica',
+                'email' => 'airpp.onlus@gmail.com',
+                'telefono' => '+39 049 8212237 ',
+                'sede' => 'Corso Milano, 43 - 35139 PADOVA (Italy)',
             ],
             [
-                'page_id' => 'sede',
-                'title' => 'Indirizzo',
-                'description' => 'Corso Milano, 43 - 35139 PADOVA (Italy)'
-            ],
-            [
-                'page_id' => 'contacts_cd',
-                'title' => 'Fiorella calabrese',
-                'description' => 'fiorella.calabrese@unipd.it'
-            ],
-            [
-                'page_id' => 'contacts_cd',
-                'title' => 'Fiorella calabrese',
-                'description' => 'fiorella.calabrese@unipd.it'
-            ],
-            [
-                'page_id' => 'contacts_cd',
-                'title' => 'Fiorella calabrese',
-                'description' => 'fiorella.calabrese@unipd.it'
-            ],
-            [
-                'page_id' => 'contacts_cs',
-                'title' => 'Prova',
-                'description' => 'email'
+                'page_id' => 'sede-legale',
+                'name' => 'sede legale',
+                'email' => 'airpp.onlus@gmail.com',
+                'telefono' => '+39 049 8212237 ',
+                'sede' => 'Corso Milano, 43 - 35139 PADOVA (Italy)',
             ]
         ]);
     }

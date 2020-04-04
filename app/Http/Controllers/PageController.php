@@ -30,12 +30,7 @@ class PageController extends Controller
                 'title' => 'Home',
                 'banners' => Banner::where('page_id', 'home')->get(),
                 'views' => View::where('page_id', 'home')->get(),
-                'data' => Document::where('page_id', 'home')->get(),
-                'users_cd' => Team::where('team_id', 'consiglio direttivo')->get(),
-                'users_cs' => Team::where('team_id', 'comitato scientifico')->get(),
-                'users_ssea' => Team::where('team_id', 'segreteria scientifica e amministrativa')->get(),
-                'users_cev' => Team::where('team_id', 'comitato eventi')->get(),
-                'users_cet' => Team::where('team_id', 'comitato etico')->get()
+                'data' => Document::where('page_id', 'home')->get()
             ]
         );
     }
@@ -59,6 +54,20 @@ class PageController extends Controller
                 'datas' => View::where('page_id', 'associarsi')->get(),
                 'msgs' => DB::table('msgs')->where('scope_id', 'iscrizione__info')->get(),
                 'docs' => Document::where('page_id', 'associarsi')->get()
+            ]
+        );
+    }
+
+    public function organisociali(){
+        return view('organisociali',
+            [
+                'title' => 'Organi sociali',
+                'banners' => Banner::where('page_id', 'organisociali')->get(),
+                'users_cd' => Team::where('team_id', 'consiglio direttivo')->get(),
+                'users_cs' => Team::where('team_id', 'comitato scientifico')->get(),
+                'users_ssea' => Team::where('team_id', 'segreteria scientifica e amministrativa')->get(),
+                'users_cev' => Team::where('team_id', 'comitato eventi')->get(),
+                'users_cet' => Team::where('team_id', 'comitato etico')->get()
             ]
         );
     }
@@ -98,15 +107,9 @@ class PageController extends Controller
             [
                 'title' => 'Contatti',
                 'banners' => Banner::where('page_id', 'contatti')->get(),
-                'telefono' => Contact::where('page_id', 'telefono')->get(),
-                'email' => Contact::where('page_id', 'email')->get(),
-                'sede' => Contact::where('page_id', 'sede')->get(),
-                'contacts_cd' => Contact::where('page_id', 'contacts_cd')->get(),
-                'contacts_cs' => Contact::where('page_id', 'contacts_cs')->get(),
-                'contacts_ssea' => Contact::where('page_id', 'contacts_ssea')->get(),
-                'contacts_cev' => Contact::where('page_id', 'contacts_cev')->get(),
-                'contacts_cet' => Contact::where('page_id', 'contacts_cet')->get(),
-                'contacts_sl' => Contact::where('page_id', 'contacts_sl')->get(),
+                'segreteria' => Contact::where('page_id', 'segreteria')->get(),
+                'segreteria_scientifica' => Contact::where('page_id', 'segreteria-scientifica')->get(),
+                'sede_legale' => Contact::where('page_id', 'sede-legale')->get()
             ]
         );
     }

@@ -133,6 +133,13 @@ class BannersTableSeeder extends Seeder
                     'title' => "Pagina in costruzione",
                     'description' => "La pagina non è al momento disponibile, ci stiamo lavorando!",
                     'img' => "/media/svg/costruction.svg"
+                ],
+                [
+                    'id' => 18,
+                    'page_id' => "organisociali",
+                    'title' => "Organi sociali",
+                    'description' => "descrizione",
+                    'img' => "/media/svg/organisociali.svg"
                 ]
             ]
         );

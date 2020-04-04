@@ -8,6 +8,9 @@
             'img' => $banner->img
         ])
     @endforeach
+    <div class="u-padding-normal-unique">
+        <hr>
+    </div>
     <div class="u-center-text u-margin-bottom-big">
         @foreach($posts as $post)
         <div class="newstab__container u-container-fullwidth">

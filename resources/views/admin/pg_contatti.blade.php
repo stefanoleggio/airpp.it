@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-sm text-center pt-2">
-                    {{$contact->title}}
+                    {{$contact->name}}
                 </div>
                 <div class="col-sm text-center">
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-contact-{{ $contact->id }}">
@@ -39,16 +39,20 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="/admin/edit_pages" enctype="multipart/form-data">
+                <form method="POST" action="/admin/edit_contacts" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <div class="form-group mt-2">
                     <div class="form-group">
-                        <label for="title">Titolo</label>
-                        <input type="input" class="form-control" id="title" name="title" value="{{ $contact->title }}">
+                        <label for="email">Email</label>
+                        <input type="input" class="form-control" id="email" name="email" value="{{ $contact->email }}">
                     </div>
                     <div class="form-group">
-                        <label for="description">Descrizione</label>
-                        <input type="input" class="form-control" id="description" name="description" value="{{ $contact->description }}">
+                        <label for="email">Telefono</label>
+                        <input type="input" class="form-control" id="telefono" name="telefono" value="{{ $contact->telefono }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Indirizzo</label>
+                        <input type="input" class="form-control" id="sede" name="sede" value="{{ $contact->sede }}">
                     </div>
                     </div>
                     <input type="hidden" name="id" value="{{ $contact->id }}">

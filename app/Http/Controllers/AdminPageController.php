@@ -95,6 +95,15 @@ class AdminPageController extends Controller
         );
     }
 
+    
+    public function pg_organisociali(){
+        return view('admin.pg_organisociali',
+            [
+                'banners' => Banner::where('page_id', 'organisociali')->get()
+            ]
+        );
+    }
+
     public function pg_parlanodinoi(){
         return view('admin.pg_parlanodinoi',
             [
@@ -147,6 +156,27 @@ class AdminPageController extends Controller
             ]
         );
     }
+
+    public function edit_contacts(Request $request){
+        $request->validate(
+            [
+                'email' => 'required',
+                'telefono' => 'required',
+                'sede' => 'required',
+            ],
+            [
+                'email.required' => 'La email è richiesta',
+                'telefono.required' => 'Il telefono è richiesto',
+                'sede.required' => 'L\'indirizzo è richiesto'
+            ]);
+            $data = Contact::find($request->id);
+            $data->email = $request->email;
+            $data->telefono = $request->telefono;
+            $data->sede = $request->sede;
+            $data->save();
+            \Session::put('success', 'Modifica effettuata con successo');
+            return Redirect::to('admin/pg_contatti');
+        }
 
     public function edit_pages(Request $request){
     $request->validate(

@@ -31,6 +31,8 @@ Route::get('/biobanca', 'PageController@biobanca');
 
 Route::get('/parlanodinoi', 'PageController@parlanodinoi');
 
+Route::get('/organisociali', 'PageController@organisociali');
+
 Route::get('/articoli', 'PageController@articoli');
 
 Route::get('/cookie', 'PageController@cookie');
@@ -128,6 +130,8 @@ Route::get('/admin/pg_associarsi', 'AdminPageController@pg_associarsi');
 
 Route::get('/admin/pg_contatti', 'AdminPageController@pg_contatti');
 
+Route::get('/admin/pg_organisociali', 'AdminPageController@pg_organisociali');
+
 Route::get('/admin/pg_statuto', 'AdminPageController@pg_statuto');
 
 Route::get('/admin/pg_attivita', 'AdminPageController@pg_attivita');
@@ -151,6 +155,8 @@ Route::get('/admin/pg_cookie', 'AdminPageController@pg_cookie');
 Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');
 
 Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');
+
+Route::post('/admin/edit_contacts', 'AdminPageController@edit_contacts');
 
 Route::post('/admin/edit_pages', 'AdminPageController@edit_pages');
 

@@ -1,6 +1,6 @@
 .btn{
     &{
-        border-radius: 6px;
+        border-radius: 100px;
         color: white;
         font-weight: 700;
         text-align: center;
@@ -57,11 +57,12 @@
 
     &__link{
         text-transform: lowercase;
+        text-decoration: underline;
         &:hover{
             cursor: pointer;
-            text-decoration: underline;
         }
     }
+    
 
     &__burger{
         &-home{

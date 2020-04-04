@@ -27,6 +27,7 @@
                         <ul class="user-nav__drop">
                             <li><a href="/donazioni" class="user-nav__link">Donazioni</a></li>
                             <li><a href="/associarsi" class="user-nav__link">Associarsi</a></li>
+                            <li><a href="/organisociali" class="user-nav__link">Organi sociali</a></li>
                             <li><a href="/statuto" class="user-nav__link">Statuto</a></li>
                             <li><a href="/bilanci" class="user-nav__link">Bilanci</a></li>
                         </ul>
@@ -79,6 +80,9 @@
                         </li>
                         <li class="responsive-nav__subitem">
                                 <a href="/associarsi" class="responsive-nav__link">Associarsi</a>
+                        </li>
+                        <li class="responsive-nav__subitem">
+                                <a href="/organisociali" class="responsive-nav__link">Organi sociali</a>
                         </li>
                         <li class="responsive-nav__subitem">
                                 <a href="/statuto" class="responsive-nav__link">Statuto</a>
@@ -138,7 +142,6 @@
     @if (Request::path() == '/')
         var prevScrollpos = window.pageYOffset;
         window.onload = function() {
-            teamView();
             document.getElementById("topbar").style.top = "-15rem"; 
         }
         window.onscroll = function() {

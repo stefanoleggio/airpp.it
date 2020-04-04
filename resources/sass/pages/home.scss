@@ -27,12 +27,13 @@
         transform: translate(-50%, -50%);
         @include respond(phone) {
             width: 70%;
+            font-size: 1.7rem;
         }
         .btn{
             display: inline-block;
             @include respond(tab-port) {
                 width: 100%;
-                font-size: 2rem;
+                font-size: 1.7rem;
             }
         }
         .col-1-of-2{
