@@ -3,10 +3,8 @@
 
 <h2>Finalità del trattamento</h2>
 <p>I Vs. dati personali, liberamente comunicati e da noi acquisiti in ragione dell’attività svolta da:</p>
-<p>airpp onlus</p>
-
-<p>Partita IVA: </p>
-<p>Codice Fiscale: </p>
+<p>Associazione Italiana Ricerca Patologie Polmonari - ONLUS</p>
+<p>Codice Fiscale: 92241580288</p>
 
 <p>saranno trattati in modo lecito e secondo correttezza per le seguenti finalità: </p>
 
@@ -27,13 +25,13 @@
 <p>I Vs. dati personali saranno trattati dal Titolare del trattamento, dai Responsabili del trattamento da lui nominati e dagli incaricati del trattamento strettamente autorizzati.  I Vs. dati personali non sono oggetto di diffusione.</p>
 
 <h2>Tempi di conservazione</h2>
-<p>I Vs. dati personali saranno conservati per nr. 10 anni, dalla cessazione del rapporto di erogazione del servizio/di fornitura del prodotto presso gli archivi informatici di proprietà di airpp onlus. </p>
+<p>I Vs. dati personali saranno conservati per nr. 10 anni, dalla cessazione del rapporto di erogazione del servizio/di fornitura del prodotto presso gli archivi informatici di proprietà della Associazione Italiana Ricerca Patologie Polmonari - ONLUS. </p>
 
 <h2>Intenzione del Titolare del trattamento dati personali</h2>
 <p>Il Titolare del trattamento non trasferirà i Vs. dati personali ad un paese terzo o ad una organizzazione internazionale.</p>
 
 <h2>Titolare e Responsabile del trattamento</h2>
-<p>Titolare del trattamento dei dati è la airpp onlus. Dati contatti del Titolare del trattamento, mail : </p>
+<p>Titolare del trattamento dei dati è la Associazione Italiana Ricerca Patologie Polmonari - ONLUS. Dati contatti del Titolare del trattamento, mail : airpp.onlus@gmail.com</p>
 
 <p>L’interessato potrà in qualsiasi momento esercitare i diritti a Lui riservati, sanciti dall’art. 7 di cui si riporta il testo integrale: art. 7 D.Lgs. 196/2003 e art. 15 Regolamento UE 679/2016 - Diritto di accesso ai dati personali ed altri diritti – “L’interessato ha diritto di ottenere la conferma dell’esistenza o meno di dati personali che lo riguardano, anche se non ancora registrati, e la loro</p>
 <p>comunicazione in forma intelligibile. L’interessato ha diritto di ottenere l’indicazione: dell’origine dei dati personali; delle finalità e modalità del trattamento; della logica applicata in caso di trattamento effettuato con l’ausilio di strumenti elettronici; degli estremi identificativi del titolare del trattamento, del responsabile e del rappresentante designato ai sensi dell’art. 5 comma 2; dei soggetti o delle categorie di soggetti ai quali i dati personali possono essere comunicati o che possono venirne a conoscenza in qualità di rappresentante designato nel territorio dello Stato, di responsabili o incaricati. L’interessato ha  diritto di ottenere: l’aggiornamento, la rettificazione, ovvero, quando vi è interesse, l’integrazione dei dati; la cancellazione, la trasformazione in forma anonima o il blocco dei dati trattati in violazione di legge, compresi quelli di cui non è necessaria la conservazione in relazione agli scopi per i quali i dati sono stati raccolti o successivamente trattati; l’attestazione che le operazioni di cui alla lettera a. e b. sono state portate a conoscenza, anche per quanto riguarda il loro contenuto, di coloro ai quali i dati sono stati comunicati o diffusi, eccettuato il caso in cui tale adempimento si rileva impossibile o comporta un impiego di mezzi manifestamente sproporzionato rispetto al diritto tutelato. L’interessato ha diritto di opporsi in tutto o in parte: per motivi legittimi al trattamento dei dati personali che lo riguardano, ancorché pertinenti allo scopo della raccolta; al trattamento dei dati personali che lo riguardano a fini di invio di materiale  pubblicitario o di vendita diretta o per il compimento di ricerche di mercato o di comunicazione commerciale”. In particolare l’interessato può in qualsiasi momento chiedere al Titolare del trattamento l’accesso ai dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento che lo riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilità dei dati. L’interessato ha il diritto di revocare il consenso in qualsiasi momento senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca e ha il diritto di proporre reclamo a un’autorità di controllo. L’esercizio dei diritti può essere esercitato scrivendo all’indirizzo di posta elettronica .</p>
