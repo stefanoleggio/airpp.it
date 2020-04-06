@@ -38,7 +38,7 @@ class TextUsController extends Controller
                 'msg.required' => 'Devi inserire il messaggio',
                 'privacy.accepted' => 'Devi accettare la privacy policy'
             ]);
-            DB::table('emails')->insert(
+            DB::table('messaggi')->insert(
                 [
                     'name' => $request->name, 
                     'surname' => $request->surname,

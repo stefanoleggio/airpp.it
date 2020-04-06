@@ -596,7 +596,6 @@ a {
   text-align: center;
   display: block;
   transition: 0.5s;
-  text-transform: capitalize;
   border: none !important;
 }
 
@@ -1465,6 +1464,7 @@ img {
 }
 
 .presentation__p {
+  font-size: 1.8rem !important;
   margin-bottom: 0 !important;
   text-align: left;
   font-style: italic;

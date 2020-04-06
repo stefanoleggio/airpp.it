@@ -110,10 +110,10 @@
                     </div>
                     <div class="row">
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/associarsi">diventa socio</a>
+                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/associarsi">Diventa socio</a>
                         </div>
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/donazioni">dona ora</a>
+                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/donazioni">Dona</a>
                         </div>
                     </div>
                 </div>

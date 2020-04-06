@@ -121,7 +121,7 @@ class AdminController extends Controller
         return view('admin.messaggi',
             [
 
-                'datas' => Messaggio::paginate(10)
+                'datas' => Messaggio::orderby('id', 'DESC')->paginate(10)
             ]
         );
     }

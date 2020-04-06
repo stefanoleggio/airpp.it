@@ -60,8 +60,8 @@
         </div>
         <div class="row">
             <div class="col-sm">Messaggio</div>
-            <div class="col-sm"><pre>{{$data->msg}}</pre></div>
         </div>
+        <div class="w-100 p-3"><pre>{{$data->msg}}</pre></div>
         <div class="row">
             <div class="col-sm">Data e ora</div>
             <div class="col-sm">{{ $data->date }}</div>
