@@ -3,11 +3,18 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+
 use Carbon\Carbon;
+
 use Auth;
+
 use App\Log;
+
+use App\Rules\Captcha;
 
 class LoginController extends Controller
 {
@@ -71,7 +78,8 @@ class LoginController extends Controller
         $this->validate($request, [
             'email' => 'required', 
             'password' => 'required',
-            'code' => 'required'
+            'code' => 'required',
+            'g-recaptcha-response' => new Captcha()
         ]);
     }
 
