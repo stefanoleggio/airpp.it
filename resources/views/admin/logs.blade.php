@@ -9,6 +9,9 @@
     </div>
     <div class="card-body">
         Lista degli ultimi accessi
+        @include('includes.adminclearbtn',[
+            'value' => 'logs'
+        ])
     </div>
 </div>
     <div class="container">

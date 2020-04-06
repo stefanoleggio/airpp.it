@@ -118,6 +118,14 @@ Route::post('/admin/delete_users', 'MasterController@delete_users');
 
 Route::get('/admin/logs', 'MasterController@logs');
 
+Route::get('/admin/clear_logs', 'MasterController@clear_logs');
+
+Route::get('/admin/clear_donazioni', 'MasterController@clear_donazioni');
+
+Route::get('/admin/clear_iscrizioni', 'MasterController@clear_iscrizioni');
+
+Route::get('/admin/clear_messaggi', 'MasterController@clear_messaggi');
+
 /* 
     AdminPagesController
 */

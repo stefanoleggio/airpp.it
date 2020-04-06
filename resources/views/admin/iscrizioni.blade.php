@@ -8,6 +8,9 @@
         </div>
         <div class="card-body">
             Elenco delle iscrizioni effettuate con successo
+            @include('includes.adminclearbtn',[
+                'value' => 'iscrizioni'
+            ])
         </div>
     </div>
     <div class="container">

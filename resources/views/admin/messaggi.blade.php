@@ -8,6 +8,9 @@
     </div>
     <div class="card-body">
         Elenco dei messaggi ricevuti
+        @include('includes.adminclearbtn',[
+            'value' => 'messaggi'
+        ])
     </div>
 </div>
 <div class="container">

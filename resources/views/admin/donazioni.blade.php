@@ -8,6 +8,9 @@
     </div>
     <div class="card-body">
         Elenco delle donazioni effettuate con successo
+        @include('includes.adminclearbtn',[
+            'value' => 'donazioni'
+        ])
     </div>
 </div>
 <div class="container">

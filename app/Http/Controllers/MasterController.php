@@ -12,6 +12,12 @@ use Redirect;
 
 use App\Log;
 
+use App\Iscrizione;
+
+use App\Donazione;
+
+use App\Messaggio;
+
 class MasterController extends Controller
 {
     /**
@@ -37,7 +43,6 @@ class MasterController extends Controller
 
     public function logs()
     {
-        $this->clear_logs();
         return view('admin.logs',
             [
 
@@ -47,7 +52,27 @@ class MasterController extends Controller
     }
 
     public function clear_logs(){
-        $logs = Log::all();
+        Log::truncate();
+        \Session::put('success', 'Pulizia completata con successo');
+        return Redirect::to('admin/logs');
+    }
+
+    public function clear_iscrizioni(){
+        Iscrizione::truncate();
+        \Session::put('success', 'Pulizia completata con successo');
+        return Redirect::to('admin/iscrizioni');
+    }
+
+    public function clear_donazioni(){
+        Donazione::truncate();
+        \Session::put('success', 'Pulizia completata con successo');
+        return Redirect::to('admin/donazioni');
+    }
+
+    public function clear_messaggi(){
+        Messaggio::truncate();
+        \Session::put('success', 'Pulizia completata con successo');
+        return Redirect::to('admin/messaggi');
     }
 
     public function edit_users(Request $request)
