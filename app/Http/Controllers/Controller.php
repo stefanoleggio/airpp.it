@@ -19,10 +19,10 @@ class Controller extends BaseController
     public function load_file($file, &$data, $db, $dir){
         if(!$file->isValid()){
             return redirect('admin/pg_'.$db)->with('errore', 'Errore, riprovare');
-        }/*
+        }
         $filename = str_replace('storage/','', $data->link);
-        Storage::delete($filename);*/
-        //$fileName = $file->storeAs(env($dir),$db.'_'.$data->id.'.'.$file->extension());
-        $data->link = '/storage/'.$file->store(env($dir));
+        Storage::delete($filename);
+        $fileName = $file->storeAs(env($dir),$db.'_'.$data->id.'.'.$file->extension());
+        $data->link = env('STORAGE_DIR').$fileName;
     }
 }
