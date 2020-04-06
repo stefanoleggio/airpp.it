@@ -23,11 +23,12 @@
 <link rel="stylesheet" href="{{ asset('/css/modal.min.css') }}"/>
 <title>{{ $title }}</title>
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id={{env('ANALYTICS_ID')}}"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162865597-1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', env('ANALYTICS_ID'));
+  gtag('config', 'UA-162865597-1');
 </script>

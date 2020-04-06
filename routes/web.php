@@ -17,6 +17,8 @@
 
 Route::get('/', 'PageController@home');
 
+Route::get('/home', 'PageController@home');
+
 Route::get('/donazioni', 'PageController@donazioni');
 
 Route::get('/associarsi', 'PageController@associarsi');
