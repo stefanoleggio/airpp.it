@@ -29,7 +29,7 @@
         */
         gapi.analytics.auth.authorize({
           container: 'embed-api-auth-container',
-          clientid: "{{env('ANALYTICS_ID')}}'
+          clientid: "{{env('ANALYTICS_ID')}}"
         });
 
 
