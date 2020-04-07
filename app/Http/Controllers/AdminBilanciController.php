@@ -10,6 +10,11 @@ use App\Bilanci;
 
 class AdminBilanciController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function edit_bilanci(Request $request)
     {
         $request->validate(

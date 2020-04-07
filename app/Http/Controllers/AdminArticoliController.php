@@ -10,6 +10,11 @@ use App\Articolo;
 
 class AdminArticoliController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function edit_articoli(Request $request)
     {
         $request->validate(

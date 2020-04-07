@@ -16,6 +16,11 @@ use App\Photo;
 
 class AdminGalleryController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function galleria()
     {
         return view('admin.galleria',

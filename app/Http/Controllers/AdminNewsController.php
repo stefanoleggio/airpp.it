@@ -18,6 +18,11 @@ use App\Iniziative;
 
 class AdminNewsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function premi()
     {
         return view('admin.premi',

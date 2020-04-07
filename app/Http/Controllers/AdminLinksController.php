@@ -10,6 +10,11 @@ use App\Link;
 
 class AdminLinksController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function edit_links(Request $request){
         $request->validate(
             [
