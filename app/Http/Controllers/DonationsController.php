@@ -55,6 +55,7 @@
 
     class DonationsController extends Controller
     {
+
         private $_api_context;
         /**
          * Create a new controller instance.
@@ -74,6 +75,39 @@
         
         public function payWithpaypal(Request $request)
         {
+
+            $request->validate(
+                [
+                    'name' => 'required',
+                    'surname' => 'required',
+                    'email' => 'required|email',
+                    'amount' => 'required|integer|min:5',
+                    'via' => 'required',
+                    'civico' => 'required',
+                    'cap' => 'required',
+                    'provincia' => 'required',
+                    'comune' => 'required',
+                    'privacy' => 'accepted',
+                    'cf' => ['required', new codicefiscale],
+                    'g-recaptcha-response' => new Captcha()
+                ],
+                [
+                    'name.required' => 'Devi inserire il nome',
+                    'surname.required' => 'Devi inserire il cognome',
+                    'email.required' => 'Devi inserire l\'email',
+                    'amount.required' => 'Devi inserire l\'importo',
+                    'email.email' => 'Devi inserire una email valida',
+                    'amount.integer' => 'L\'importo deve essere un numero intero',
+                    'via.required' => 'Devi inserire la tua via',
+                    'civico.required' => 'Devi inserire il tuo civico',
+                    'cap.required' => 'Devi inserire il cap',
+                    'comune.required' => 'Devi inserire il comune',
+                    'provincia.required' => 'Devi inserire la provincia',
+                    'cf.required' => 'Devi inserire il codice fiscale',
+                    'privacy.accepted' => 'Devi accettare la privacy policy',
+                    'amount.min' => 'La donazione minima è di 5 Euro'
+                ]);
+
 
         $payer = new Payer();
         $payer->setPaymentMethod("paypal");$item1 = new Item();
