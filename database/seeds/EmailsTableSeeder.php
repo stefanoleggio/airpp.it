@@ -21,6 +21,11 @@ class EmailsTableSeeder extends Seeder
                 'page_id' => 'donazione',
                 'title' => 'Grazie per la tua donazione',
                 'description' => 'A breve verrai contattato per essere ringraziato'
+            ],
+            [
+                'page_id' => 'messaggio',
+                'title' => 'Grazie per averci scritto',
+                'description' => 'Ti contatteremo per risponderti'
             ]
         ]);
     }

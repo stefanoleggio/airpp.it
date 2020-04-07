@@ -2,122 +2,46 @@
     'title' => "Nuova donazione"
 ])
 @section('content')
-<tr>
-    <td>
-        Nome
-    </td>
-    <td>
-        {{$request->name}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Cognome
-    </td>
-    <td>
-        {{$request->surname}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Codice fiscale
-    </td>
-    <td>
-        {{$request->cf}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Via
-    </td>
-    <td>
-        {{$request->via}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Civico
-    </td>
-    <td>
-        {{$request->civico}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Cap
-    </td>
-    <td>
-        {{$request->cap}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Comune
-    </td>
-    <td>
-        {{$request->comune}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Provincia
-    </td>
-    <td>
-        {{$request->provincia}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Email
-    </td>
-    <td>
-        {{$request->email}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Tipo
-    </td>
-    <td>
-        @if($request->dim)
-        {{'Donazione in memoria'}}
-        @else
-        {{'Donazione standard'}}
-        @endif
-    </td>
-</tr>
+<div>
+<b>Nome: </b>{{$request->name}}
+</div>
+<div>
+<b>Cognome: </b>{{$request->surname}}
+</div>
+<div>
+<b>Codice fiscale: </b>{{$request->cf}}
+</div>
+<div>
+<b>Via: </b>{{$request->via}}
+</div>
+<div>
+<b>Civico: </b>{{$request->civico}}
+</div>
+<div>
+<b>Cap: </b>{{$request->cap}}
+</div>
+<div>
+<b>Comune: </b>{{$request->comune}}
+</div>
+<div>
+<b>Provincia: </b>{{$request->provincia}}
+</div>
+<div>
+<b>Email: </b>{{$request->email}}
+</div>
+<div>
+<b>Tipo</b>@if($request->dim) Donazione in memoria @else Donazione standard @endif
+</div>
 @if($request->dim)
-<tr>
-    <td>
-        Nome defunto
-    </td>
-    <td>
-        {{$request->dname}}
-    </td>
-</tr>
-<tr>
-    <td>
-        Cognome defunto
-    </td>
-    <td>
-        {{$request->dsurname}}
-    </td>
-</tr>
+<div>
+<b>Nome defunto</b>{{$request->name}}
+<b>Cognome defunto</b>{{$request->dsurname}}
+</div>
 @endif
-<tr>
-    <td>
-        Importo
-    </td>
-    <td>
-        {{$request->amount}} &euro;
-    </td>
-</tr>
-<tr>
-    <td>
-        Data e ora
-    </td>
-    <td>
-        {{date('d-m-Y H:i:s', strtotime($request->date))}}
-    </td>
-</tr>
+<div>
+<b>Importo: </b>{{$request->amount}} &euro;
+</div>
+<div>
+<b>Data e ora: </b>{{date('d-m-Y H:i:s', strtotime($request->date))}}
+</div>
 @endsection

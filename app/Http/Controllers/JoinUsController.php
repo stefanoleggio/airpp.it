@@ -55,47 +55,6 @@
 
     class JoinUsController extends Controller
     {
-        public function payment(Request $request){
-            $request->validate(
-                [
-                    'name' => 'required',
-                    'surname' => 'required',
-                    'email' => 'required|email',
-                    'telefono' => 'required',
-                    'amount' => 'required|integer|min:15',
-                    'cap' => 'required',
-                    'civico' => 'required',
-                    'provincia' => 'required',
-                    'comune' => 'required',
-                    'via' => 'required',
-                    'cf' => ['required', new codicefiscale],
-                    'g-recaptcha-response' => new Captcha()
-                ],
-                [
-                    'name.required' => 'Devi inserire il nome',
-                    'surname.required' => 'Devi inserire il cognome',
-                    'email.required' => 'Devi inserire l\'email',
-                    'telefono.required' => 'Devi inserire il telefono',
-                    'amount.required' => 'Devi inserire l\'importo',
-                    'email.email' => 'Devi inserire una email valida',
-                    'civico.required' => 'Devi inserire il tuo civico',
-                    'provincia.required' => 'Devi inserire la provincia',
-                    'amount.integer' => 'L\'importo deve essere un numero intero',
-                    'cap.required' => 'Devi inserire il cap',
-                    'comune.required' => 'Devi inserire il comune',
-                    'via.required' => 'Devi inserire la tua via',
-                    'cf.required' => 'Devi inserire il codice fiscale',
-                    'amount.min' => 'La quota di iscrizione minima è di 15 Euro'
-                ]);
-
-            /* Debug */
-            return view('costruction',
-                [
-                    'title' => 'Pagina in costruzione',
-                    'banners' => Banner::where('page_id', 'costruction')->get(),
-                ]
-            );
-        }
         private $_api_context;
         /**
          * Create a new controller instance.
@@ -173,7 +132,7 @@
                 ->setCancelUrl(URL::to('joinusstatus'));
         
             $presentation = new \PayPal\Api\Presentation();
-            $presentation->setLogoImage("https://phplaravel-368924-1151569.cloudwaysapps.com/media/logo/logo_paypal.svg")
+            $presentation->setLogoImage("http://157.230.126.155//media/logo/logo_paypal.svg")
                 ->setBrandName("airpp")
                 ->setLocaleCode("IT")
                 ->setReturnUrlLabel("Torna indietro")

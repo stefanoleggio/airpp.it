@@ -15,13 +15,14 @@ use App\Email;
 class IscrizioneEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public $request;
+    public $email;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Object $request)
     {
         $this->request = $request;
         $this->email = Email::where('page_id', 'iscrizione')->get();
@@ -34,6 +35,6 @@ class IscrizioneEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Iscrizione airpp')->view('mails.joinus');
+        return  $this->subject('Iscrizione airpp')->view('mails.joinus');
     }
 }

@@ -24,7 +24,7 @@ use App\Donazione;
 
 use App\Iscrizione;
 
-use App\View;
+use App\Email;
 
 use App\Messaggio;
 
@@ -131,7 +131,7 @@ class AdminController extends Controller
         return view('admin.email',
             [
 
-                'datas' => View::where('page_id', 'email_iscrizioni')->orWhere('page_id', 'email_donazioni')->get()
+                'datas' => Email::all()
             ]
         );
     }

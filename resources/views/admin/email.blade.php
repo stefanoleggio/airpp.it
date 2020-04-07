@@ -12,7 +12,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-sm text-center pt-2">
-                    {{ $data->title }} 
+                    {{ $data->page_id }} 
                 </div>
                 <div class="col-sm text-center">
                     <button class="btn btn-primary d-inline-block" data-toggle="modal" data-target="#modal-for-card-{{ $data->id }}">
@@ -45,7 +45,7 @@
                         <textarea class="form-control" id="description" name="description">{{ $data->description }}</textarea>
                     </div>
                     <input type="hidden" name="id" value="{{ $data->id }}">
-                    <input type="hidden" name="db" value="views">
+                    <input type="hidden" name="db" value="emails">
                     <input type="hidden" name="pg_name" value="{{ $data->page_id }}">
                     <button type="submit" class="btn btn-primary w_classic">Salva</button>
                 </form>

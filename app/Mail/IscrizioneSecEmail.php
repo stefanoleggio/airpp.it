@@ -29,6 +29,6 @@ class IscrizioneSecEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Nuova iscrizione')->view('mails.joinus_sec');
+        return $this->subject('Iscrizione'." di ".ucfirst($this->request->name)." ".ucfirst($this->request->surname))->view('mails.joinus_sec');
     }
 }

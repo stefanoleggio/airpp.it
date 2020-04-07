@@ -61,7 +61,7 @@ Route::get('galleria/{id}', 'GalleryController@getPhotos');
     DonationsController
 */
 
-Route::post('donationsPayment', 'DonationsController@payment');
+Route::post('donationsPayment', 'DonationsController@payWithpaypal');
 
 Route::get('donationsstatus', 'DonationsController@getPaymentStatus');
 
@@ -69,7 +69,7 @@ Route::get('donationsstatus', 'DonationsController@getPaymentStatus');
     JoinUsController
 */
 
-Route::post('joinusPayment', 'JoinUsController@payment');
+Route::post('joinusPayment', 'JoinUsController@payWithpaypal');
 
 Route::get('joinusstatus', 'JoinUsController@getPaymentStatus');
 

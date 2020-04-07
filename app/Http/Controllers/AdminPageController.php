@@ -197,7 +197,7 @@ class AdminPageController extends Controller
                 ]
             );
             \Session::put('success', 'Modifica effettuata con successo');
-            if($request->pg_name == "email_iscrizioni" | $request->pg_name == "email_donazioni"){
+            if($request->pg_name == "iscrizione" | $request->pg_name == "donazione" | $request->pg_name == "messaggio"){
                 return Redirect::to('admin/email');
             }
             return Redirect::to('admin/pg_'.$request->pg_name);
