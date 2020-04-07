@@ -132,7 +132,7 @@
                 ->setCancelUrl(URL::to('joinusstatus'));
         
             $presentation = new \PayPal\Api\Presentation();
-            $presentation->setLogoImage("http://157.230.126.155//media/logo/logo_paypal.svg")
+            $presentation->setLogoImage("http://157.230.126.155/media/logo/logo_paypal.svg")
                 ->setBrandName("airpp")
                 ->setLocaleCode("IT")
                 ->setReturnUrlLabel("Torna indietro")

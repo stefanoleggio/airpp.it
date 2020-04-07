@@ -100,7 +100,7 @@
                 ->setCancelUrl(URL::to('donationsstatus'));
        
             $presentation = new \PayPal\Api\Presentation();
-            $presentation->setLogoImage("http://157.230.126.155//media/logo/logo_paypal.svg")
+            $presentation->setLogoImage("http://157.230.126.155/media/logo/logo_paypal.svg")
                 ->setBrandName("airpp")
                 ->setLocaleCode("IT")
                 ->setReturnUrlLabel("Torna indietro")
@@ -195,7 +195,7 @@
                 $data = Donazione::where('paymentID', $payment->getId())->first();
                 $data->success = true;
                 $data->save();
-                Mail::to(env('MAIL_SEC'))->subject('Donazione'." ".$request->name." ".$request->surname)->send(new DonationSecEmail($data));
+                Mail::to(env('MAIL_SEC'))->send(new DonationSecEmail($data));
                 Mail::to($data->email)->send(new DonationEmail($data));
                 \Session::put('success', 'Donazione effettuata con successo');
                 return Redirect::to('/donazioni');
