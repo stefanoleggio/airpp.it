@@ -80,7 +80,7 @@
                 'surname' => 'required',
                 'email' => 'required|email',
                 'telefono' => 'required',
-                'amount' => 'required|integer|min:15',
+                'amount' => 'required',
                 'cap' => 'required',
                 'civico' => 'required',
                 'provincia' => 'required',
