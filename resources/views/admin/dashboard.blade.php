@@ -26,11 +26,11 @@
         <div class="d-flex justify-content-center pt-5">
         <nav aria-label="Page navigation example">
           <ul class="pagination">
-            <li class="page-item"><a class="page-link" id="link_1" href="javascript:showPage(1)">1</a></li>
-            <li class="page-item"><a class="page-link" id="link_2" href="javascript:showPage(2)">2</a></li>
-            <li class="page-item"><a class="page-link" id="link_3" href="javascript:showPage(3)">3</a></li>
-            <li class="page-item"><a class="page-link" id="link_4" href="javascript:showPage(4)">4</a></li>
-            <li class="page-item"><a class="page-link" id="link_5" href="javascript:showPage(5)">5</a></li>
+            <li class="page-item" id="link_1"><a class="page-link" href="javascript:showPage(1)">1</a></li>
+            <li class="page-item" id="link_2"><a class="page-link" href="javascript:showPage(2)">2</a></li>
+            <li class="page-item" id="link_3"><a class="page-link" href="javascript:showPage(3)">3</a></li>
+            <li class="page-item" id="link_4"><a class="page-link" href="javascript:showPage(4)">4</a></li>
+            <li class="page-item" id="link_5"><a class="page-link" href="javascript:showPage(5)">5</a></li>
           </ul>
         </nav>
         </div>
@@ -39,17 +39,20 @@
       function showPage(page){
         for(var i = 1; i < 6; i++){
           document.getElementById(i).style.display = "none"; 
+          document.getElementById("link_" + i).classList.remove("active");
         }
         document.getElementById(page).style.display = "block"; 
+        document.getElementById("link_" + page).classList.add("active");
       }
 
       function initPage(){
+        document.getElementById("link_1").classList.add("active");
         for(var i = 2; i < 6; i++){
           document.getElementById(i).style.display = "none"; 
         }
       }
       window.onload = function() {
-        setTimeout(function(){ initPage(); }, 100);
+        setTimeout(function(){ initPage(); }, 200);
       };
     </script>
 @endsection
