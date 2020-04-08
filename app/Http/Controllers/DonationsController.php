@@ -81,7 +81,7 @@
                     'name' => 'required',
                     'surname' => 'required',
                     'email' => 'required|email',
-                    'amount' => 'required|integer|min:5',
+                    'amount' => 'required',
                     'via' => 'required',
                     'civico' => 'required',
                     'cap' => 'required',
