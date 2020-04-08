@@ -85,7 +85,7 @@
             Importo
             <i class="fas fa-euro-sign"></i>
         </div>
-        <input type="number" min="15" value="15" class="form__input @if ($errors->has('amount')) form__input-invalid @endif" name="amount" placeholder="Quanto vuoi donare?">
+        <input type="number" class="form__input @if ($errors->has('amount')) form__input-invalid @endif" name="amount" placeholder="Quanto vuoi donare?">
     </div>
     <div class="form__group">
         <div class="form__label u-margin-bottom-small">
