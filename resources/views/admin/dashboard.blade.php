@@ -12,16 +12,19 @@
       <div class="text-center" id="1">
         <iframe width="600" height="371" class="embed-responsive-item" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=1194469025&amp;format=interactive"></iframe>
       </div>
-      <div class="text-center mt-5" id="2">
+      <div class="text-center" id="2">
+        <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=678246377&amp;format=interactive"></iframe>
+      </div>
+      <div class="text-center mt-5" id="3">
         <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=1072739423&amp;format=interactive"></iframe>
           </div>
-      <div class="text-center mt-5" id="3">
+      <div class="text-center mt-5" id="4">
         <iframe width="600" height="371" class="embed-responsive-item" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=1742141464&amp;format=interactive"></iframe>
       </div>
-      <div class="text-center mt-5" id="4">
+      <div class="text-center mt-5" id="5">
         <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=66749362&amp;format=interactive"></iframe>
       </div>
-      <div class="text-center mt-5" id ="5">
+      <div class="text-center mt-5" id ="6">
       <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=37859&amp;format=interactive"></iframe>
         </div>
         <div class="d-flex justify-content-center pt-5">
@@ -32,6 +35,7 @@
             <li class="page-item" id="link_3"><a class="page-link" href="javascript:showPage(3)">3</a></li>
             <li class="page-item" id="link_4"><a class="page-link" href="javascript:showPage(4)">4</a></li>
             <li class="page-item" id="link_5"><a class="page-link" href="javascript:showPage(5)">5</a></li>
+            <li class="page-item" id="link_6"><a class="page-link" href="javascript:showPage(6)">6</a></li>
           </ul>
         </nav>
         </div>
@@ -39,7 +43,7 @@
     </div>
     <script type="text/javascript">
       function showPage(page){
-        for(var i = 1; i < 6; i++){
+        for(var i = 1; i < 7; i++){
           document.getElementById(i).style.display = "none"; 
           document.getElementById("link_" + i).classList.remove("active");
         }
@@ -49,7 +53,7 @@
 
       function initPage(){
         document.getElementById("link_1").classList.add("active");
-        for(var i = 2; i < 6; i++){
+        for(var i = 2; i < 7; i++){
           document.getElementById(i).style.display = "none"; 
         }
       }
