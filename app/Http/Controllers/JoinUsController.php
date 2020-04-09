@@ -80,7 +80,7 @@
                 'surname' => 'required',
                 'email' => 'required|email',
                 'telefono' => 'required',
-                'amount' => 'required',
+                'amount' => 'required|integer|min:15',
                 'cap' => 'required',
                 'civico' => 'required',
                 'provincia' => 'required',
@@ -213,7 +213,7 @@
             $payment_id = Session::get('paypal_payment_id');
             Session::forget('paypal_payment_id');
             if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
-                \Session::put('error', 'Donazione fallita, riprovare');
+                \Session::put('error', 'Iscrizione fallita, riprovare');
                 return Redirect::to('/associarsi');
             }
             $payment = Payment::get($payment_id, $this->_api_context);
@@ -229,7 +229,7 @@
                 \Session::put('success', 'Iscrizione effettuata con successo');
                 return Redirect::to('/associarsi');
             }
-            \Session::put('error', 'Donazione fallita, riprovare');
+            \Session::put('error', 'Iscrizione fallita, riprovare');
             return Redirect::to('/associarsi');
         }
     }

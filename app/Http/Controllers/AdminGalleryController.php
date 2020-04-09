@@ -26,7 +26,7 @@ class AdminGalleryController extends Controller
         return view('admin.galleria',
             [
 
-                'albums' => Album::paginate(5)
+                'albums' => Album::orderby('id', 'DESC')->paginate(5)
             ]
         );
     }

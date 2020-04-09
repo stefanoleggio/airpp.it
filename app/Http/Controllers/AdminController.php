@@ -98,6 +98,14 @@ class AdminController extends Controller
 
     public function donazioni()
     {
+        if(Auth::user()->role == 'master'){
+            return view('admin.donazioni',
+                [
+
+                    'datas' => Donazione::orderby('id', 'DESC')->paginate(10)
+                ]
+            );
+        }
         return view('admin.donazioni',
             [
 
@@ -108,6 +116,14 @@ class AdminController extends Controller
 
     public function iscrizioni()
     {
+        if(Auth::user()->role == 'master'){
+            return view('admin.iscrizioni',
+                [
+
+                    'datas' => Iscrizione::orderby('id', 'DESC')->paginate(10)
+                ]
+            );
+        }
         return view('admin.iscrizioni',
 
             [

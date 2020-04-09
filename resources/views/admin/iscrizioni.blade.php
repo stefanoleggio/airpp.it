@@ -26,6 +26,15 @@
                         {{ $data->amount }}
                         &euro;
                     </div>
+                    @if(Auth::user()->role == 'master')
+                        <div class="col-sm text-center pt-2">
+                            @if(!$data->success)
+                                <span class="text-danger">Fallita</span>
+                            @else
+                                <span class="text-success">Successo</span>
+                            @endif
+                        </div>
+                    @endif
                     <div class="col-sm text-center pt-2">
                         {{ date('d-m-Y H:i:s', strtotime($data->date)) }}
                     </div>

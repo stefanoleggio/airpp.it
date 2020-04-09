@@ -110,7 +110,8 @@
 
 
         $payer = new Payer();
-        $payer->setPaymentMethod("paypal");$item1 = new Item();
+        $payer->setPaymentMethod("paypal");
+        $item1 = new Item();
         $item1->setName('Donazione')
             ->setCurrency('EUR')
             ->setQuantity(1)
@@ -171,10 +172,10 @@
                 $payment->create($this->_api_context);
             }catch (\PayPal\Exception\PPConnectionException $ex){
                 if (\Config::get('app.debug')) {
-                    \Session::put('error', 'Connection timeout');
+                    \Session::put('error', 'Connessione scaduta');
                     return Redirect::route('/donazioni');
                 } else {
-                    \Session::put('error', 'Some error occur, sorry for inconvenient');
+                    \Session::put('error', 'Si è verificato un errore, ci scusiamo');
                     return Redirect::route('/donazioni');
                 }
             }

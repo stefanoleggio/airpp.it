@@ -19,7 +19,7 @@ class GalleryController extends Controller
             [
                 'title' => 'Galleria',
                 'banners' => Banner::where('page_id', 'galleria')->get(),
-                'albums' => Album::paginate(6)
+                'albums' => Album::orderby('id', 'DESC')->paginate(6)
             ]
         );
     }
