@@ -25,7 +25,7 @@
                         {{ $user->name }} 
                     </div>
                     <div class="col-sm text-center pt-2">
-                        @if($user->active)<span class="text-success">online</span>@else<span class="text-danger">offline</span>@endif
+                        @if($user->isOnline())<span class="text-success">online</span>@else<span class="text-danger">offline</span>@endif
                     </div>
                     <div class="col-sm text-center pt-2">
                         {{ $user->role }} 

@@ -67,8 +67,6 @@ class LoginController extends Controller
             $data->ip = $request->getClientIp();
             $data->login_at = Carbon::now()->toDateTimeString();
             $data->save();
-            Auth::user()->active = true;
-            Auth::user()->save();
             return redirect('/admin');
         }
 
@@ -95,8 +93,6 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        Auth::user()->active = false;
-        Auth::user()->save();
         $this->performLogout($request);
         return redirect('/admin');
     }

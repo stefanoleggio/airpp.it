@@ -18,6 +18,8 @@ use App\Donazione;
 
 use App\Messaggio;
 
+use App\User;
+
 class MasterController extends Controller
 {
     /**
@@ -36,7 +38,7 @@ class MasterController extends Controller
         return view('admin.users',
             [
 
-                'users' => DB::table('users')->get()
+                'users' => User::all()
             ]
         );
     }
