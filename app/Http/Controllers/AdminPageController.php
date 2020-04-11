@@ -140,14 +140,6 @@ class AdminPageController extends Controller
         );
     }
 
-    public function pg_segnalazioni(){
-        return view('admin.pg_segnalazioni',
-            [
-                'banners' => Banner::where('page_id', 'segnalazioni')->get()
-            ]
-        );
-    }
-
     public function pg_contatti(){
         return view('admin.pg_contatti',
             [

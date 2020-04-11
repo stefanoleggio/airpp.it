@@ -162,8 +162,6 @@ Route::get('/admin/pg_articoli', 'AdminPageController@pg_articoli');
 
 Route::get('/admin/pg_cookie', 'AdminPageController@pg_cookie');
 
-Route::get('/admin/pg_segnalazioni', 'AdminPageController@pg_segnalazioni');
-
 Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');
 
 Route::post('/admin/edit_contacts', 'AdminPageController@edit_contacts');

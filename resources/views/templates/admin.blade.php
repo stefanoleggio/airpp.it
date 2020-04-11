@@ -21,7 +21,7 @@
   <div class="d-flex" id="wrapper">
     <div class="bg-light border-right" id="sidebar-wrapper">
       <div class="sidebar-heading list-group-item list-group-item-action active">{{ config('app.name', 'Laravel') }}</div>
-      <div class="list-group list-group-flush">
+      <div class="list-group list-group-flush mb-5">
       <a href="/admin" class="list-group-item list-group-item-action bg-light">Dashboard</a>
       @if (Auth::user()->role == "master")
         <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Utenti</a>
@@ -51,7 +51,6 @@
           <a href="/admin/pg_parlanodinoi" class="list-group-item list-group-item-action bg-secondary text-white">Parlano di noi</a>
           <a href="/admin/pg_organisociali" class="list-group-item list-group-item-action bg-secondary text-white">Organi sociali</a>
           <a href="/admin/pg_articoli" class="list-group-item list-group-item-action bg-secondary text-white">Articoli</a>
-          <a href="/admin/pg_segnalazioni" class="list-group-item list-group-item-action bg-secondary text-white">Segnalazioni</a>
           <a href="/admin/pg_cookie" class="list-group-item list-group-item-action bg-secondary text-white">Cookie</a>
         </div>
         <a href="#drop__cmp" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Componenti</a>
