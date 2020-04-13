@@ -8,11 +8,15 @@
                 <a href="/contatti#textus"><i class="fas fa-envelope"></i></a>
             </div>
             <div class="col-1-of-2 u-center-text footer__links">
-                <a href="/contatti#textus" >segnalazioni</a>
-                <a>&#124;</a>
-                <a href="/statuto">statuto</a>
-                <a>&#124;</a>
-                <a href="/cookie">cookie</a>
+                <table class="u-display-inline-block">
+                    <tr>
+                        <td><a href="/contatti#textus" >segnalazioni</a></td>
+                        <td><a>&#124;</a></td>
+                        <td><a href="/statuto">statuto</a></td>
+                        <td><a>&#124;</a></td>
+                        <td><a href="/cookie">cookie</a></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>

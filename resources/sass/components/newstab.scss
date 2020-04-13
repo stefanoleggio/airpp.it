@@ -11,6 +11,7 @@
     @include respond(phone){
         width: -moz-available;
         width: -webkit-fill-available;
+        margin: 1rem;
     }
     &__info{
         text-transform: capitalize;

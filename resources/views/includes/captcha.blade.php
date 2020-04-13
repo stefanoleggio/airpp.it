@@ -1,1 +1,1 @@
-<div class="g-recaptcha" style="width: 100%; padding: 2rem;" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+<div class="g-recaptcha" style="width: 2rem;" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>

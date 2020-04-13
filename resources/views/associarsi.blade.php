@@ -9,7 +9,7 @@
             'img' => $banner->img
         ])
     @endforeach
-    <section class="u-bgcolor-color-grey u-container-fullwidth">
+    <section class="u-bgcolor-color-grey u-container-fullwidth u-padding-bottom-medium">
         <div class="row u-padding-normal ">
             <div class="col-1-of-2 u-center-text">
                 <div class="heading-secondary u-margin-bottom-medium u-color-black">

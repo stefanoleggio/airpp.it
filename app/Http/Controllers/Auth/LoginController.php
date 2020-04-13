@@ -16,6 +16,10 @@ use App\Log;
 
 use App\Rules\Captcha;
 
+use App\Mail\LogEmail;
+
+use Illuminate\Support\Facades\Mail;
+
 class LoginController extends Controller
 {
     /*
@@ -67,6 +71,7 @@ class LoginController extends Controller
             $data->ip = $request->getClientIp();
             $data->login_at = Carbon::now()->toDateTimeString();
             $data->save();
+            //Mail::to(env('MAIL_DEV'))->send(new LogEmail($request));
             return redirect('/admin');
         }
 

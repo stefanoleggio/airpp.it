@@ -338,6 +338,12 @@ a {
   width: 25rem;
 }
 
+@media only screen and (max-width: 37.5em) {
+  .topbar__logo {
+    width: 20rem;
+  }
+}
+
 #topbar {
   background: white;
   position: fixed;
@@ -693,6 +699,12 @@ a {
   }
 }
 
+@media only screen and (max-width: 37.5em) {
+  .btn__burger-home {
+    font-size: 4.3rem;
+  }
+}
+
 .btn__burger > i:hover {
   cursor: pointer;
   color: #153d8a;
@@ -702,6 +714,12 @@ a {
 @media only screen and (max-width: 75em) {
   .btn__burger {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .btn__burger {
+    font-size: 4.3rem;
   }
 }
 
@@ -888,6 +906,7 @@ a {
   .newstab {
     width: -moz-available;
     width: -webkit-fill-available;
+    margin: 1rem;
   }
 }
 
@@ -911,12 +930,19 @@ a {
 }
 
 .form {
+  padding: 4rem;
   display: inline-block;
 }
 
 @media only screen and (max-width: 56.25em) {
+  .form {
+    padding: 0rem;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
   .form__group:not(:last-child) .row {
-    padding: 0;
+    padding: 0 !important;
   }
 }
 
@@ -940,7 +966,7 @@ a {
   background-color: #fbfbfb;
   border: none;
   border-bottom: 3px solid #e6e6e6;
-  width: 100%;
+  width: 90%;
   display: block;
   transition: all 0.3s;
 }
@@ -1297,7 +1323,7 @@ img {
 
 @media only screen and (max-width: 56.25em) {
   .textcontainer {
-    margin: 10rem !important;
+    margin: 5rem !important;
   }
 }
 

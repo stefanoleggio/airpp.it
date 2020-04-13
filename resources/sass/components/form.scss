@@ -1,9 +1,13 @@
 .form {
+    padding: 4rem;
     display: inline-block;
+    @include respond(tab-port) {
+        padding: 0rem;
+    }
     &__group:not(:last-child) {
         .row{
             @include respond(tab-port) {
-                padding: 0;
+                padding: 0 !important;
             }
             .col-1-of-2{
                 @include respond(tab-port) {
@@ -27,7 +31,7 @@
         background-color: $color-grey;
         border: none;
         border-bottom: 3px solid $color-grey-light;
-        width: 100%;
+        width: 90%;
         display: block;
         transition: all .3s;
 

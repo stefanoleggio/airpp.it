@@ -146,7 +146,7 @@
             </div>
         </div>
     </div>
-    <section class="textus u-bgcolor-color-grey">
+    <section class="textus u-bgcolor-color-grey u-padding-bottom-medium">
     <div id="textus" class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
         Domande? Scrivici!
     </div>

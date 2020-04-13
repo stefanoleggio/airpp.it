@@ -9,6 +9,9 @@
 
 .topbar__logo{
     width: 25rem;
+    @include respond(phone){
+        width: 20rem;
+    }
 }
 
 

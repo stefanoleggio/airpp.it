@@ -99,18 +99,20 @@
         </div>
     </div>
     <div class="form__group">
-        <div class="form__label u-margin-bottom-small" style="padding-top: 2rem;">
+        <div class="form__label u-margin-bottom-small">
             Metodi di pagamento  
         </div>
-        <div class="row" style="padding: 1rem;">
-            <style>
-                .pay_img{ width: 7rem;}
-            </style>
-            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/paypal.png')}}" alt=""></i></div>
-            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/visa.png')}}" alt=""></i></div>
-            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/mastercard.png')}}" alt=""></i></div>
-            <div class="col-1-of-4"><img class="pay_img" src="{{asset('/media/pay_icons/postepay.png')}}" alt=""></i></div>
-        </div>
+        <style>
+            .pay_img{ width: 7rem;}
+        </style>
+        <table style="margin-left: 2rem;">
+            <tr>
+                <td><img class="pay_img" src="{{asset('/media/pay_icons/paypal.png')}}" alt=""></i></td>
+                <td><img class="pay_img" src="{{asset('/media/pay_icons/visa.png')}}" alt=""></i></td>
+                <td><img class="pay_img" src="{{asset('/media/pay_icons/mastercard.png')}}" alt=""></i></td>
+                <td><img class="pay_img" src="{{asset('/media/pay_icons/postepay.png')}}" alt=""></i></td>
+            </tr>
+        </table>
     </div>
     <div class="form__group u-center-text">
         @include('includes.captcha')
