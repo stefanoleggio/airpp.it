@@ -127,12 +127,12 @@
                         <input type="password" class="form-control" id="password" name="password">
                     </div>
                     <div class="form-group">
-                        <label for="title">Code</label>
-                        <input type="password" class="form-control" id="code" name="code">
+                        <label for="title">Conferma password</label>
+                        <input type="password" class="form-control" id="password_confirmation" name="password_confirmation">
                     </div>
                     <div class="form-group">
-                        <label for="title">Conferma password</label>
-                        <input type="password" class="form-control" id="password_c" name="password_c">
+                        <label for="title">Code</label>
+                        <input type="password" class="form-control" id="code" name="code">
                     </div>
                     <input type="hidden" name="db" value="users">
                     <button type="submit" class="btn btn-primary">Salva</button>

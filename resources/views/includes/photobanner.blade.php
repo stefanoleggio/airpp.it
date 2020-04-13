@@ -1,6 +1,6 @@
 <div class="row info__tab">
     <div class="col-1-of-2 u-center-text">
-        <div class="heading-secondary u-margin-bottom-medium u-color-black">
+        <div class="heading-secondary-bis u-margin-bottom-medium u-color-black">
             {{$title}}
         </div>
         <div class="paragraph">
