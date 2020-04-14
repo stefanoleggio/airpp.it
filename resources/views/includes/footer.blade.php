@@ -21,7 +21,7 @@
         </div>
     </div>
     <div class="u-center-text u-margin-top-big">
-        Copyright &#9400; 2020 Airpp onlus, All rights reserved. 
+        Copyright &#9400; 2020 Associazione Italiana Ricerca Patologie Polmonari, All rights reserved. 
     </div>
 </section>
 <!-- / -->

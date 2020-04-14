@@ -1,10 +1,9 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width">
-<meta name ="description" content="associazione italiana ricerca patologie polmonari"/>
-<meta name ="keywords" content="airpp, ricerca, patologie polmonari, onlus, medicina, malattia"/>
-<meta name="author" content="Stefano Leggio" />
-<meta name ="copyright" content="airpp onlus" />
-<meta name="robots" content="index"/>
+<meta name ="description" content="Associazione Italiana Ricerca Patologie Polmonari"/>
+<meta name ="keywords" content="airpp, ricerca, patologie polmonari, polmoni, onlus, medicina, malattia"/>
+<meta name="author" content="Associazione Italiana Ricerca Patologie Polmonari" />
+<meta name ="copyright" content="Associazione Italiana Ricerca Patologie Polmonari" />
 <meta http-equiv="cache-control" content="no-cache"/>
 <link rel="apple-touch-icon" sizes="180x180" href="{{asset('/media/logo/favicon/apple-touch-icon.png')}}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{asset('/media/logo/favicon/favicon-32x32.png')}}">
@@ -22,7 +21,6 @@
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link rel="stylesheet" href="{{ asset('/css/modal.min.css') }}"/>
 <title>{{ $title }}</title>
-<!-- Global site tag (gtag.js) - Google Analytics -->
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{env('ANALYTICS_ID')}}"></script>
 <script>
