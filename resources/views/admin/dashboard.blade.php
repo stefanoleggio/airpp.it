@@ -8,6 +8,9 @@
         ]
     )
     <div class="container">
+          <div class="loading text-center" style="padding-top: 5rem;" id="loading">
+              <img src="/media/gif/loading.gif" alt="">
+          </div>
         <div style="visibility: hidden;" id="main">
       <div class="text-center" id="1">
         <iframe width="600" height="371" class="embed-responsive-item" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOPTfMi_OMgWF-mh9mvyx9kmBdWwU5GVpuTgCfWOfDzQG7lZc18L5iSmcV0N9-sAjRBS58Xx8PtLNQ/pubchart?oid=1194469025&amp;format=interactive"></iframe>
@@ -53,6 +56,7 @@
 
       function initPage(){
         document.getElementById("link_1").classList.add("active");
+        document.getElementById("loading").style.display = "none"; 
         for(var i = 2; i < 7; i++){
           document.getElementById(i).style.display = "none"; 
         }
@@ -60,7 +64,7 @@
       window.onload = function() {
         setTimeout(function(){
           document.getElementById("main").style.visibility = "inherit";  
-          initPage(); }, 200);
+          initPage(); }, 1000);
       };
     </script>
 @endsection
