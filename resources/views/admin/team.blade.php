@@ -1,5 +1,12 @@
 @extends('templates.admin')
 @section('content')
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <h3 class="alert-heading">Attenzione</h3>
+        <p>Il caricamento di immagini di grandi dimensioni potrebbe essere lento.</br>Caricare un file alla volta e aspettare durante l'upload.</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
     <div class="card">
         <div class="card-header">
             <h3>
