@@ -12,6 +12,15 @@
 */
 
 /*
+    Sitemap
+*/
+
+Route::get('/sitemap', function()
+{
+    return redirect('sitemap.xml');
+});
+
+/*
     PageController
 */
 
