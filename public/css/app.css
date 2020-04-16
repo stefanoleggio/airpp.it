@@ -1440,6 +1440,7 @@ img {
 @media screen and (max-height: 750px) {
   #presentation {
     height: 750px;
+    background-attachment: inherit;
   }
 }
 

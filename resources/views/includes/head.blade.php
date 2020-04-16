@@ -1,6 +1,6 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width">
-<meta name ="description" content="Associazione Italiana Ricerca Patologie Polmonari"/>
+<meta name ="description" content="L’ A.I.R.P.P. nasce a Padova grazie ad un gruppo di ricercatori impegnati da anni nello studio delle patologie polmonari."/>
 <meta name ="keywords" content="airpp, ricerca, patologie polmonari, polmoni, onlus, medicina, malattia"/>
 <meta name="author" content="Associazione Italiana Ricerca Patologie Polmonari" />
 <meta name ="copyright" content="Associazione Italiana Ricerca Patologie Polmonari" />

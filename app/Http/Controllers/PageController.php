@@ -27,7 +27,7 @@ class PageController extends Controller
     public function home(){
         return view('home',
             [
-                'title' => 'Home',
+                'title' => 'Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'home')->get(),
                 'views' => View::where('page_id', 'home')->get(),
                 'data' => Document::where('page_id', 'home')->get()
