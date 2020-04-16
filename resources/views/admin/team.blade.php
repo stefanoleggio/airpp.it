@@ -27,6 +27,9 @@
     <div class="card mb-2">
         <div class="card-body">
             <div class="row">
+            <div class="col-sm text-center pt-2 text-capitalize">
+                <img src="{{asset($data->img_path)}}" style="height: 50px; width: 50px;" class="rounded-circle img-fluid img-thumbnail">
+                </div>
                 <div class="col-sm text-center pt-2 text-capitalize">
                     {{ $data->name." ".$data->surname }} 
                 </div>
