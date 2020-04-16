@@ -1439,7 +1439,7 @@ img {
 
 @media screen and (max-height: 750px) {
   #presentation {
-    height: 80rem;
+    height: 750px;
   }
 }
 
