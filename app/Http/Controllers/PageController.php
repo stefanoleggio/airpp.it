@@ -97,7 +97,7 @@ class PageController extends Controller
             [
                 'title' => 'Articoli',
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'posts' => Articolo::orderBy('id', 'DESC')->paginate(3)
+                'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', null)->paginate(3)
             ]
         );
     }
@@ -144,10 +144,10 @@ class PageController extends Controller
     }
 
     public function covid(){
-        return view('costruction',
+        return view('covid',
             [
                 'title' => 'Covid-19',
-                'banners' => Banner::where('page_id', 'costruction')->get()
+                'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', 'covid')->paginate(10)
             ]
         );
     }

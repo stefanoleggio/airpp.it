@@ -175,6 +175,8 @@ Route::get('/admin/pg_parlanodinoi', 'AdminPageController@pg_parlanodinoi');
 
 Route::get('/admin/pg_articoli', 'AdminPageController@pg_articoli');
 
+Route::get('/admin/covid', 'AdminPageController@covid');
+
 Route::get('/admin/pg_cookie', 'AdminPageController@pg_cookie');
 
 Route::get('/admin/pg_galleria', 'AdminPageController@pg_galleria');

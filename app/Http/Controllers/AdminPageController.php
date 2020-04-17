@@ -117,7 +117,15 @@ class AdminPageController extends Controller
         return view('admin.pg_articoli',
             [
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'datas' => Articolo::orderBy('id', 'desc')->paginate(10)
+                'datas' => Articolo::orderBy('id', 'desc')->where('page_id', 'covid')->paginate(10)
+            ]
+        );
+    }
+
+    public function covid(){
+        return view('admin.covid',
+            [
+                'datas' => Articolo::orderBy('id', 'desc')->where('page_id', 'covid')->paginate(10)
             ]
         );
     }

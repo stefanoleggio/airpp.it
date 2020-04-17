@@ -58,6 +58,7 @@
         <div id="drop__cmp" class="collapse">
           <a href="/admin/team" class="list-group-item list-group-item-action bg-secondary text-white">Team</a>
           <a href="/admin/email" class="list-group-item list-group-item-action bg-secondary text-white">Email</a>
+          <a href="/admin/covid" class="list-group-item list-group-item-action bg-secondary text-white">Covid</a>
         </div>
       </div>
     </div>

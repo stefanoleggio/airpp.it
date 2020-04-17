@@ -49,6 +49,9 @@ class AdminArticoliController extends Controller
                 'file.required' => 'Il file è richiesto'
             ]);
         $data  = new Articolo;
+        if($request->page_id != null){
+            $data->page_id = $request->page_id;
+        }
         $data->title = $request->title;
         $data->description = $request->description;
         if(!$request->hasFile('file')){
@@ -59,6 +62,9 @@ class AdminArticoliController extends Controller
         $file = $request->file('file');
         $this->load_file($file, $data, $request->db, "ARTICOLI_DIR");
         $data->save();
+        if($request->page_id == "covid"){
+            return redirect('admin/covid')->with('success', 'Elemento rimosso con successo');
+        }
         return redirect('admin/pg_articoli')->with('success', 'Elemento aggiunto con successo');
     }
 
@@ -69,6 +75,9 @@ class AdminArticoliController extends Controller
             Storage::delete($trimmed);
         }
         $data->delete();
+        if($request->page_id == "covid"){
+            return redirect('admin/covid')->with('success', 'Elemento rimosso con successo');
+        }
         return redirect('admin/pg_articoli')->with('success', 'Elemento rimosso con successo');
     }
 }

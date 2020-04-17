@@ -16,6 +16,7 @@ class CreateArticoliTable extends Migration
         Schema::create('articoli', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('page_id')->nullable();
             $table->string('link')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
