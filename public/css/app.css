@@ -108,6 +108,8 @@ hr {
 pre {
   white-space: pre-wrap;
   font-family: inherit;
+  font-size: inherit;
+  color: inherit;
 }
 
 body {
@@ -1375,13 +1377,6 @@ img {
   }
 }
 
-@media only screen and (max-width: 56.25em) {
-  .row {
-    max-width: 50rem;
-    padding: 0 3rem;
-  }
-}
-
 .row::after {
   content: "";
   display: table;
@@ -1568,6 +1563,17 @@ img {
 @media only screen and (max-width: 37.5em) {
   .img_svg {
     width: 200px;
+  }
+}
+
+.gallery {
+  padding: 4rem;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .gallery {
+    padding: 0rem;
+    padding-top: 2rem;
   }
 }
 

@@ -123,12 +123,38 @@
             </div>
         </section>
         <script>
+        $('.carousel').carousel()
             $('.btn__go').click(function (){
                 $('html, body').animate({
                 scrollTop: $(".info").offset().top
                 }, 1000)
             });
         </script>
+        <!-- News -->
+        <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
+                In evidenza
+        </div>
+        <div class="u-center-text u-margin-bottom-medium">
+            <div class="newstab__container u-container-fullwidth u-display-inline-block">
+                <div class="newstab u-margin-top-medium u-display-inline-block">
+                    <div class="newstab__title heading-secondary-bis u-container-fullwidth u-left-text">
+                        Emergenza Covid-19
+                    </div>
+                    <div class="newstab__text paragraph paragraph--smaller u-margin-top-small">
+                        <pre>Abbiamo creato una pagina dedicata per l'emergenza, 
+leggi gli articoli sul Covid-19 per tenerti informato!</pre>
+                    </div>
+                    <div class="newstab__links u-left-text">
+                    <a href="/covid" class="btn__link normal u-color-secondary" target="blank">
+                    pagina Covid-19</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="u-padding-normal-unique">
+            <hr>
+        </div>
+        <!-- -->
         <section class="info">
             <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 Che cosa facciamo?

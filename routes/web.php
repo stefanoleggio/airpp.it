@@ -49,6 +49,12 @@ Route::get('/articoli', 'PageController@articoli');
 Route::get('/cookie', 'PageController@cookie');
 
 /*
+    Temporanee
+*/
+
+Route::get('/covid', 'PageController@covid');
+
+/*
     NewsController
 */
 

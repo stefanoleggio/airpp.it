@@ -41,3 +41,11 @@
         width: 200px;
     }
 }
+
+.gallery{
+    padding: 4rem;
+    @include respond(tab-port){
+        padding: 0rem;
+        padding-top: 2rem;
+    }
+}

@@ -142,4 +142,13 @@ class PageController extends Controller
             ]
         );
     }
+
+    public function covid(){
+        return view('costruction',
+            [
+                'title' => 'Covid-19',
+                'banners' => Banner::where('page_id', 'costruction')->get()
+            ]
+        );
+    }
 }

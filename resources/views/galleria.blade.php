@@ -11,7 +11,7 @@
     <div class="u-padding-normal-unique">
         <hr>
     </div>
-    <div class="gallery u-padding-normal">
+    <div class="gallery">
         <div class="row">
             <?php
                 $i = 0;
