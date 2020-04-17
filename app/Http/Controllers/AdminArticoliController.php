@@ -49,9 +49,7 @@ class AdminArticoliController extends Controller
                 'file.required' => 'Il file è richiesto'
             ]);
         $data  = new Articolo;
-        if($request->page_id != null){
-            $data->page_id = $request->page_id;
-        }
+        $data->page_id = $request->page_id;
         $data->title = $request->title;
         $data->description = $request->description;
         if(!$request->hasFile('file')){

@@ -120,6 +120,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="db" value="articoli">
+                    <input type="hidden" name="page_id" value="gen">
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </form>
                 </div>

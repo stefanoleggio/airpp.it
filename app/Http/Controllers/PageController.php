@@ -97,7 +97,7 @@ class PageController extends Controller
             [
                 'title' => 'Articoli',
                 'banners' => Banner::where('page_id', 'articoli')->get(),
-                'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', null)->paginate(3)
+                'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', 'gen')->paginate(3)
             ]
         );
     }
