@@ -65,12 +65,14 @@
                     </div>
                     <input type="hidden" name="id" value="{{ $data->id }}">
                     <input type="hidden" name="db" value="articoli">
+                    <input type="hidden" name="page_id" value="covid">
                     <button type="submit" class="btn btn-primary w_classic">Salva</button>
                     </form>
                     <form method="POST" action="/admin/delete_articoli" class="pt-3">
                         {{ csrf_field() }}
                         <input type="hidden" name="id" value="{{ $data->id }}">
                         <input type="hidden" name="db" value="articoli">
+                        <input type="hidden" name="page_id" value="covid">
                         <button class="btn btn-danger w_classic" type="submit">Elimina</button>
                     </form>
                 </div>

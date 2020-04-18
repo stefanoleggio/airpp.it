@@ -20,11 +20,9 @@ class AdminArticoliController extends Controller
         $request->validate(
             [
                 'title' => 'required',
-                'file' => 'required|mimes:jpeg,bmp,png,gif,svg,pdf,jpg'
             ],
             [
                 'title.required' => 'il titolo è richiesta',
-                'file.required' => 'Il file è richiesto'
             ]);
         $data  = Articolo::find($request->id);
         $data->title = $request->title;
@@ -35,6 +33,9 @@ class AdminArticoliController extends Controller
             $this->load_file($file, $data, $request->db, "ARTICOLI_DIR");
         }
         $data->save();
+        if($request->page_id == "covid"){
+            return redirect('admin/covid')->with('success', 'Modifica effettuata con successo');
+        }
         return redirect('admin/pg_articoli')->with('success', 'Modifica effettuata con successo');
     }
 
@@ -61,7 +62,7 @@ class AdminArticoliController extends Controller
         $this->load_file($file, $data, $request->db, "ARTICOLI_DIR");
         $data->save();
         if($request->page_id == "covid"){
-            return redirect('admin/covid')->with('success', 'Elemento rimosso con successo');
+            return redirect('admin/covid')->with('success', 'Elemento aggiunto con successo');
         }
         return redirect('admin/pg_articoli')->with('success', 'Elemento aggiunto con successo');
     }
