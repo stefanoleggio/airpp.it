@@ -42,7 +42,7 @@
         </a>
         </div>
         <h1 class="font-weight-light">Emergenza covid-19</h1>
-        <p class="lead">Leggi gli articoli scinetifici per tenerti aggiornato</p>
+        <p class="lead">Leggi gli articoli scientifici per tenerti aggiornato</p>
       </div>
     </div>
   </div>
