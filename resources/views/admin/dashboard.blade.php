@@ -1,6 +1,13 @@
 @extends('templates.admin')
 
 @section('content')
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <h3 class="alert-heading">Emergenza Covid-19</h3>
+    <p>Si possono aggiungere articoli alla pagina per l'emergenza Covid-19 andando su:</br>Componenti > Covid</p>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
 @include('includes.admincard', 
         [
             'title' => 'Dashboard',
