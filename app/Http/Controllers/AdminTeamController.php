@@ -40,8 +40,8 @@ class AdminTeamController extends Controller
                 'surname.required' => 'Il cognome è richiesto'
             ]);
         $person = Team::find($request->id);
-        $person->name = strtolower($request->name);
-        $person->surname = strtolower($request->surname);
+        $person->name = $request->name;
+        $person->surname = $request->surname;
         $person->description = $request->description;
         $person->role = strtolower($request->role);
         $person->save();
