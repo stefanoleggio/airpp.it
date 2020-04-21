@@ -61,9 +61,11 @@ class AdminArticoliController extends Controller
         $file = $request->file('file');
         $this->load_file($file, $data, $request->db, "ARTICOLI_DIR");
         $data->save();
+        /*COVID*/
         if($request->page_id == "covid"){
             return redirect('admin/covid')->with('success', 'Elemento aggiunto con successo');
         }
+        /**/
         return redirect('admin/pg_articoli')->with('success', 'Elemento aggiunto con successo');
     }
 
@@ -74,9 +76,11 @@ class AdminArticoliController extends Controller
             Storage::delete($trimmed);
         }
         $data->delete();
+        /*COVID*/
         if($request->page_id == "covid"){
             return redirect('admin/covid')->with('success', 'Elemento rimosso con successo');
         }
+        /**/
         return redirect('admin/pg_articoli')->with('success', 'Elemento rimosso con successo');
     }
 }

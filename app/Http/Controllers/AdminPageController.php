@@ -122,6 +122,7 @@ class AdminPageController extends Controller
         );
     }
 
+    /* COVID */
     public function covid(){
         return view('admin.covid',
             [
@@ -129,6 +130,7 @@ class AdminPageController extends Controller
             ]
         );
     }
+    /**/
 
     public function pg_cookie(){
         return view('admin.pg_cookie',

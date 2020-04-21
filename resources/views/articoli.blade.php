@@ -8,8 +8,7 @@
             'img' => $banner->img
         ])
     @endforeach
-            <!-- -->
-
+<!-- COVID -->
             <div class="u-center-text u-container-fullwidth" id="msg__container">
     <div class="u-center-text">
     <div style="width: 70rem" class="u-display-inline-block tmp" >

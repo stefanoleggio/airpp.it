@@ -134,6 +134,7 @@
         <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 In evidenza
         </div>
+        <!-- COVID -->
         <div class="u-center-text u-margin-bottom-medium">
             <div class="newstab__container u-container-fullwidth u-display-inline-block">
                 <div class="newstab u-margin-top-medium u-display-inline-block">
@@ -151,6 +152,7 @@ leggi gli articoli sul Covid-19 per tenerti informato!</pre>
                 </div>
             </div>
         </div>
+        <!-- -->
         <div class="u-padding-normal-unique">
             <hr>
         </div>

@@ -52,7 +52,9 @@ Route::get('/cookie', 'PageController@cookie');
     Temporanee
 */
 
+/*COVID*/
 Route::get('/covid', 'PageController@covid');
+/**/
 
 /*
     NewsController
