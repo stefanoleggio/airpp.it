@@ -99,8 +99,8 @@ class AdminTeamController extends Controller
         }
         $person = new Team;
         $person->team_id = $team_id;
-        $person->name = strtolower($request->name);
-        $person->surname = strtolower($request->surname);
+        $person->name = $request->name;
+        $person->surname = $request->surname;
         $person->description = $request->description;
         $person->role = strtolower($request->role);
         $person->save();
