@@ -17,7 +17,7 @@ class GalleryController extends Controller
     public function index(){
         return view('galleria',
             [
-                'title' => 'Galleria',
+                'title' => 'Galleria - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'galleria')->get(),
                 'albums' => Album::orderby('id', 'DESC')->paginate(6)
             ]
@@ -27,7 +27,7 @@ class GalleryController extends Controller
     public function getPhotos($id){
         return view('photos',
         [
-            'title' => 'Galleria',
+            'title' => 'Galleria - Associazione Italiana Ricerca Patologie Polmonari',
             'album' => Album::where('id', $id)->get(),
             'photos' => Photo::where('album_id', $id)->get()
         ]

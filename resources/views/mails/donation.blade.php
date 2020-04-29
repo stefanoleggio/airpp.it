@@ -4,7 +4,7 @@
 @section('content')
 <tr>
     <td>
-        {{$email[0]->description}}
+        <pre style="font-family: inherit;">{{$email[0]->description}}</pre>
     </td>
 </tr>
 @endsection

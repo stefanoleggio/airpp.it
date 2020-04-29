@@ -20,7 +20,7 @@ class NewsController extends Controller
     public function convegni(){
         return view('convegni',
             [
-                'title' => 'Convegni',
+                'title' => 'Convegni - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'convegni')->get(),
                 'posts' => Convegni::orderby('id', 'DESC')->paginate(3)
             ]
@@ -30,7 +30,7 @@ class NewsController extends Controller
     public function premi(){
         return view('premi',
             [
-                'title' => 'Premi',
+                'title' => 'Premi - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'premi')->get(),
                 'posts' => Premi::orderBy('id', 'DESC')->paginate(3)
             ]
@@ -40,7 +40,7 @@ class NewsController extends Controller
     public function iniziative(){
         return view('iniziative',
             [
-                'title' => 'Iniziative',
+                'title' => 'Iniziative - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'iniziative')->get(),
                 'posts' => Iniziative::orderBy('id', 'DESC')->paginate(3)
             ]

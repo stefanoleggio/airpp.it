@@ -38,7 +38,7 @@ class PageController extends Controller
     public function donazioni(){
         return view('donazioni',
             [
-                'title' => 'Donazioni',
+                'title' => 'Donazioni - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'donazioni')->get(),
                 'datas' => View::where('page_id', 'donazioni')->get(),
                 'msgs' => DB::table('msgs')->where('scope_id', 'donation__info')->get()
@@ -49,7 +49,7 @@ class PageController extends Controller
     public function associarsi(){
         return view('associarsi',
             [
-                'title' => 'Associarsi',
+                'title' => 'Associarsi - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'associarsi')->get(),
                 'datas' => View::where('page_id', 'associarsi')->get(),
                 'msgs' => DB::table('msgs')->where('scope_id', 'iscrizione__info')->get(),
@@ -61,7 +61,7 @@ class PageController extends Controller
     public function organisociali(){
         return view('organisociali',
             [
-                'title' => 'Organi sociali',
+                'title' => 'Organi sociali - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'organisociali')->get(),
                 'users_cd' => Team::where('team_id', 'consiglio direttivo')->get(),
                 'users_cs' => Team::where('team_id', 'comitato scientifico')->get(),
@@ -75,7 +75,7 @@ class PageController extends Controller
     public function biobanca(){
         return view('biobanca',
             [
-                'title' => 'Biobanca',
+                'title' => 'Biobanca - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'biobanca')->get(),
                 'text' => View::where('page_id', 'biobanca')->get()
             ]
@@ -85,7 +85,7 @@ class PageController extends Controller
     public function parlanodinoi(){
         return view('parlanodinoi',
             [
-                'title' => 'Parlano di noi',
+                'title' => 'Parlano di noi - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'parlanodinoi')->get(),
                 'links' => Link::where('page_id', 'parlanodinoi')->paginate(10)
             ]
@@ -95,7 +95,7 @@ class PageController extends Controller
     public function articoli(){
         return view('articoli',
             [
-                'title' => 'Articoli',
+                'title' => 'Articoli - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'articoli')->get(),
                 'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', 'gen')->paginate(3)
             ]
@@ -105,7 +105,7 @@ class PageController extends Controller
     public function contatti(){
         return view('contatti',
             [
-                'title' => 'Contatti',
+                'title' => 'Contatti - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'contatti')->get(),
                 'segreteria' => Contact::where('page_id', 'segreteria')->get(),
                 'segreteria_scientifica' => Contact::where('page_id', 'segreteria-scientifica')->get(),
@@ -117,7 +117,7 @@ class PageController extends Controller
     public function statuto(){
         return view('statuto',
             [
-                'title' => 'Statuto',
+                'title' => 'Statuto - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'statuto')->get(),
                 'datas' => Document::where('page_id', 'statuto')->get()
             ]
@@ -127,7 +127,7 @@ class PageController extends Controller
     public function bilanci(){
         return view('bilanci',
             [
-                'title' => 'Bilanci',
+                'title' => 'Bilanci - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'bilanci')->get(),
                 'posts' => Bilanci::orderBy('id', 'desc')->paginate(3)
             ]
@@ -137,7 +137,7 @@ class PageController extends Controller
     public function cookie(){
         return view('cookie',
             [
-                'title' => 'Cookie',
+                'title' => 'Cookie - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'cookie')->get()
             ]
         );
@@ -146,7 +146,7 @@ class PageController extends Controller
     public function covid(){
         return view('covid',
             [
-                'title' => 'Covid-19',
+                'title' => 'Covid-19 - Associazione Italiana Ricerca Patologie Polmonari',
                 'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', 'covid')->paginate(10)
             ]
         );

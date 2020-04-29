@@ -1,7 +1,17 @@
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width">
+<!-- Google seo -->
+@if(Request::path() == 'organisociali')
+  <meta name ="keywords" content="airpp, ricerca, patologie polmonari, polmoni, onlus, medicina, malattia, organi sociali, calabrese, tambuscio, saetta, rea, leggio, balestro, baraldo, favaretto, lodovichetti, marulli, cozzi, paolucci, lunardi, d'agostina panebianco, ballarin"/>
+  <meta name ="description" content="Da chi è composta A.I.R.P.P.? ecco i nostri organi sociali"/>
+@elseif(Request::path() == 'galleria')
+  <meta name ="description" content="Le foto degli eventi di A.I.R.P.P."/>
+  <meta name ="keywords" content="airpp, ricerca, patologie polmonari, polmoni, onlus, medicina, malattia, galleria"/>
+@else
 <meta name ="description" content="L’ A.I.R.P.P. nasce a Padova grazie ad un gruppo di ricercatori impegnati da anni nello studio delle patologie polmonari."/>
 <meta name ="keywords" content="airpp, ricerca, patologie polmonari, polmoni, onlus, medicina, malattia"/>
+@endif
+<!-- -->
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width">
 <meta name="author" content="Associazione Italiana Ricerca Patologie Polmonari" />
 <meta name ="copyright" content="Associazione Italiana Ricerca Patologie Polmonari" />
 <meta http-equiv="cache-control" content="no-cache"/>

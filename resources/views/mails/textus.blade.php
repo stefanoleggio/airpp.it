@@ -3,7 +3,7 @@
 ])
 @section('content')
 <div>
-    {{$email[0]->description}}
+    <pre style="font-family: inherit;">{{$email[0]->description}}</pre>
 </div>
 @endsection
 

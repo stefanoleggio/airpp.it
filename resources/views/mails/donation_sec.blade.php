@@ -34,10 +34,10 @@
 </div>
 @if($request->dim)
 <div>
-<b>Nome defunto</b>{{$request->name}}
+<b>Nome defunto: </b>{{$request->name}}
 </div>
 <div>
-<b>Cognome defunto</b>{{$request->dsurname}}
+<b>Cognome defunto: </b>{{$request->dsurname}}
 </div>
 @endif
 <div>
