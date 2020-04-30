@@ -16,6 +16,64 @@
             'description' => 'Benvenuto nel pannello amministrativo di airpp.it'
         ]
     )
+    <div class="row mt-5">
+      <div class="col-xl-4 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+          <div class="card-body">
+            <div class="row no-gutters align-items-center">
+              <div class="col mr-2">
+                <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Entrate mensili</div>
+                <div class="h5 mb-0 font-weight-bold text-gray-800">
+                <?php $total = 0;
+              foreach($earn_last_month_donations as $rows){
+              $total += $rows->amount;
+            }
+            foreach($earn_last_month_joinus as $rows){
+              $total += $rows->amount;
+            }
+            echo $total;
+          ?> &euro;</div>
+              </div>
+              <div class="col-auto">
+                <i class="fas fa-euro-sign fa-2x text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+          </div>
+        <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Donazioni mensili</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo sizeof($total_donations)?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-heart fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-xl-4 col-md-6 mb-4">
+              <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Iscrizioni mensili</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo sizeof($total_joinus)?></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-users fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+
+    </div>
+    
     <div class="container">
           <div class="loading text-center" style="padding-top: 5rem;" id="loading">
               <img src="/media/gif/loading.gif" alt="">

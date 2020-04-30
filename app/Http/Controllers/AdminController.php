@@ -28,6 +28,8 @@ use App\Email;
 
 use App\Messaggio;
 
+use Carbon\Carbon;
+
 class AdminController extends Controller
 {
     /**
@@ -47,7 +49,14 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard');
+        return view('admin.dashboard',
+            [
+                'earn_last_month_donations' => Donazione::whereMonth('date', Carbon::now()->month)->where('success', true)->select('amount')->get(),
+                'earn_last_month_joinus' => Iscrizione::whereMonth('date', Carbon::now()->month)->where('success', true)->select('amount')->get(),
+                'total_donations' => Donazione::whereMonth('date', Carbon::now()->month)->where('success', true)->get(),
+                'total_joinus' => iscrizione::whereMonth('date', Carbon::now()->month)->where('success', true)->get()
+            ]
+        );
     }
 
     public function profilo()
