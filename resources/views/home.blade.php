@@ -105,6 +105,38 @@
     </header>
             <div class="presentation__text u-center-text">
                 <div class="presentation__block">
+                    <!-- COVID -->
+                        <div class="alert_container">
+                            <div class="alert">
+                                <div class="alert__head">Sostieni la ricerca per il Covid-19</div>
+                                <div class="alert__body">L'A.I.R.P.P è impegnata nell'emergenza sanitaria, aiutaci a combattere il virus!</div>
+                                <a class="alert__link" href="/donazioni">Sostienici</a>
+                            </div>
+                        </div>
+                        <style>
+                            .alert{
+                                padding: 1.5rem;
+                                border-radius: 7px;
+                                border: 2px solid rgba(255, 255, 255, 0.55);
+                                text-align: left;
+                                font-size: 1.5rem;
+                            }
+                            .alert_container{
+                                margin-bottom: 3rem;
+                                background: rgba(255, 255, 255, 0.15);
+                            }
+
+                            .alert__link{
+                                padding-top: .5rem;
+                                text-decoration: underline;
+                            }
+                            .alert__head {
+                                padding-bottom: 1rem;
+                                font-size: 1.7rem;
+                                font-weight: bold;
+                            }
+                        </style>
+                    <!-- -->
                     <div class="presentation__p paragraph u-padding-bottom-medium">
                         <pre>{{ $views[0]->description }}</pre>
                     </div>
@@ -130,11 +162,55 @@
                 }, 1000)
             });
         </script>
-        <!-- News -->
+        <!-- 
         <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 In evidenza
         </div>
-        <!-- COVID -->
+        <div class="u-padding-normal">
+        <div class="slideshow-container">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+    <style>
+        .slideshow_inner{
+
+        }
+
+        .slideshow-container{
+            max-width: none !important;
+            width: 100% !important;
+            height: 20rem;
+            background: red;
+        }
+    </style>
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slides[slideIndex-1].style.display = "block";  
+        }
+</script>
+        COVID -->
+        <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
+                In evidenza
+        </div>
         <div class="u-center-text u-margin-bottom-medium">
             <div class="newstab__container u-container-fullwidth u-display-inline-block">
                 <div class="newstab u-margin-top-medium u-display-inline-block">
