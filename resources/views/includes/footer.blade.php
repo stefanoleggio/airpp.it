@@ -21,7 +21,8 @@
         </div>
     </div>
     <div class="u-center-text u-margin-top-big">
-        Copyright &#9400; 2020 Associazione Italiana Ricerca Patologie Polmonari, All rights reserved. 
+        Copyright &#9400; 2020 Associazione Italiana Ricerca Patologie Polmonari, All rights reserved.</br>
+        Codice fiscale: 92241580288
     </div>
 </section>
 <!-- / -->
