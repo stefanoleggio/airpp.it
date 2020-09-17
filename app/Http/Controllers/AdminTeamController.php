@@ -93,6 +93,9 @@ class AdminTeamController extends Controller
             case "comitato scientifico":
                 $team_id = "comitato scientifico";
                 break;
+            case "collegio dei revisori dei conti":
+                $team_id = "collegio dei revisori dei conti";
+                break;
             default:
                 \Session::put('error', 'Devi inserire un identificativo valido');
                 return Redirect::to('admin/team');
@@ -111,7 +114,7 @@ class AdminTeamController extends Controller
             $person->img_path = env('STORAGE_DIR').'team/default.svg';
         }
         $person->save();
-        \Session::put('success', 'Modifica effettuata con successo');
+        \Session::put('success', 'Elemento aggiunto con successo');
         return Redirect::to('admin/team');
     }
 

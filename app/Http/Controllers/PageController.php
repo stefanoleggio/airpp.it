@@ -67,7 +67,8 @@ class PageController extends Controller
                 'users_cs' => Team::where('team_id', 'comitato scientifico')->get(),
                 'users_ssea' => Team::where('team_id', 'segreteria scientifica e amministrativa')->get(),
                 'users_cev' => Team::where('team_id', 'comitato eventi')->get(),
-                'users_cet' => Team::where('team_id', 'comitato etico')->get()
+                'users_cet' => Team::where('team_id', 'comitato etico')->get(),
+                'users_rc' => Team::where('team_id', 'collegio dei revisori dei conti')->get()
             ]
         );
     }

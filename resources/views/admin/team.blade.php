@@ -136,6 +136,7 @@
                             <li>segreteria scientifica e amministrativa</li>
                             <li>comitato eventi</li>
                             <li>comitato etico</li>
+                            <li>collegio dei revisori dei conti</li>
                         </ul>
                         <input type="input" class="form-control" id="team_id" name="team_id">
                     </div>

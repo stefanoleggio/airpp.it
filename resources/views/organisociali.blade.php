@@ -34,6 +34,10 @@
                         <input class="select-box__input" type="radio" id="4" value="5" name="Ben" onchange="teamView()"/>
                         <p class="select-box__input-text">Comitato etico</p>
                     </div>
+                    <div class="select-box__value">
+                        <input class="select-box__input" type="radio" id="5" value="6" name="Ben" onchange="teamView()"/>
+                        <p class="select-box__input-text">Collegio dei Revisori dei Conti</p>
+                    </div>
                     <img class="select-box__icon" src="{{ asset('/media/svg/select_arrow.svg') }}" alt="Arrow Icon" aria-hidden="true"/>
                 </div>
                 <ul class="select-box__list">
@@ -51,6 +55,9 @@
                     </li>
                     <li>
                         <label class="select-box__option" for="4" aria-hidden="aria-hidden">Comitato etico</label>
+                    </li>
+                    <li>
+                        <label class="select-box__option" for="5" aria-hidden="aria-hidden">Collegio dei Revisori dei Conti</label>
                     </li>
                 </ul>
             </div>
@@ -194,6 +201,36 @@
                     @endforeach
                 </div>
             </div>
+            <!-- COLLEGIO DEI REVISIORI DEI CONTI -->
+
+            <div id="team_revisori-conti">
+                <div class="row team-inner u-margin-top-huge">
+                    <?php
+                        $i = 0;
+                    ?>
+                    @foreach($users_rc as $user_rc)
+                    <?php
+                    $i++;
+                    if($i == 4)
+                    {
+                        $i = 1;
+                        echo '</div> <div class="row">';
+                    }
+                    ?>
+                    <div class="col-1-of-3 team-inner u-margin-bottom-small u-center-text">
+                        @include('includes.card', 
+                        [
+                            'name' => $user_rc->name,
+                            'surname' => $user_rc->surname,
+                            'img' => $user_rc->img_path,
+                            'role' => $user_rc->role,
+                            'description' => $user_rc->description
+                        ])
+                    </div>
+                    @endforeach
+                </div>
+            </div>
+
             </div>
         </section>
         <script>
@@ -206,16 +243,18 @@
             var ssea = document.getElementById('team_segreteria-scientifica-e-amministrativa');
             var cev = document.getElementById('team_comitato-eventi');
             var cet = document.getElementById('team_comitato-etico');
+            var rc = document.getElementById('team_revisori-conti');
             cd.style.display = "none";
             cs.style.display = "none";
             ssea.style.display = "none";
             cev.style.display = "none";
             cet.style.display = "none";
-            var team = [cd, cs, ssea, cev, cet];
+            rc.style.display = "none";
+            var team = [cd, cs, ssea, cev, cet, rc];
 
-            for (i = 0; i < 5; i++) {
+            for (i = 0; i < 6; i++) {
                 if (document.getElementById(i.toString()).checked) {
-                team[i].style.display = "block";
+                    team[i].style.display = "block";
                 }
             }
         }
