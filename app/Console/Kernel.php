@@ -13,7 +13,7 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        Commands\DailyUpdate::class
+        Commands\WeeklyUpdate::class
     ];
 
     /**

@@ -6,21 +6,21 @@ use Illuminate\Support\Facades\Mail;
 
 use Illuminate\Console\Command;
 
-class dailyUpdate extends Command
+class WeeklyUpdate extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'daily:update';
+    protected $signature = 'weekly:update';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Daily update of airpp.it status';
+    protected $description = 'Weekly update of airpp.it status';
 
     /**
      * Create a new command instance.
@@ -41,7 +41,7 @@ class dailyUpdate extends Command
     {
         Mail::raw('Airpp.it website is fine!', function($message)
         {
-            $message->subject("airpp.it daily update");
+            $message->subject("airpp.it weekly update");
             $message->from('airpp.website@gmail.com', 'Airpp');
             $message->to('airpp.website@gmail.com');
         });
