@@ -6,6 +6,8 @@ use App\Mail\TextUsSecEmail;
 
 use App\Mail\TextUsEmail;
 
+use App\Mail\DevEmail;
+
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Support\Facades\Mail;
@@ -40,6 +42,7 @@ class TextUsController extends Controller
             ]);
         
         if($request->why_you_do_this != null) {
+            Mail::to(env('MAIL_DEV'))->send(new DevEmail());
             \Session::put('success', 'Messaggio inviato con successo ;)');
             return Redirect::to('/contatti');
         }
