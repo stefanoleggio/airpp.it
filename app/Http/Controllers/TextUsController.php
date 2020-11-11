@@ -38,6 +38,12 @@ class TextUsController extends Controller
                 'msg.required' => 'Devi inserire il messaggio',
                 'privacy.accepted' => 'Devi accettare la privacy policy'
             ]);
+        
+        if($request->why_you_do_this != null) {
+            \Session::put('success', 'Messaggio inviato con successo ;)');
+            return Redirect::to('/contatti');
+        }
+
             DB::table('messaggi')->insert(
                 [
                     'name' => $request->name, 
