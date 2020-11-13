@@ -6,7 +6,7 @@ use App\Mail\TextUsSecEmail;
 
 use App\Mail\TextUsEmail;
 
-use App\Mail\DevEmail;
+use App\Mail\BotEmail;
 
 use Illuminate\Support\Facades\DB;
 
@@ -42,7 +42,9 @@ class TextUsController extends Controller
             ]);
         
         if($request->why_you_do_this != null) {
-            Mail::to(env('MAIL_DEV'))->send(new DevEmail());
+            $subject = "Bot detected";
+            $message = "Bot send contact us form";
+            Mail::to(env('MAIL_DEV'))->send(new BotEmail());
             \Session::put('success', 'Messaggio inviato con successo ;)');
             return Redirect::to('/contatti');
         }

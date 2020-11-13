@@ -18,10 +18,17 @@ use App\Rules\Captcha;
 
 use App\Mail\LogEmail;
 
+use App\Mail\SecurityEmail;
+
+use Session;
+
+use ThrottlesLogins;
+
 use Illuminate\Support\Facades\Mail;
 
 class LoginController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -54,9 +61,41 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-  
+    public function login(Request $request)
+    {
 
-    public function attemptLogin(Request $request)
+        $this->validateLogin($request);
+
+        if ($this->hasTooManyLoginAttempts($request)) {
+            Mail::to(env('MAIL_DEV'))->send(new SecurityEmail($request));
+            $this->clearLoginAttempts($request);
+        }
+
+        if($this->tryLogin($request)) {
+            $this->clearLoginAttempts($request);
+            return redirect('/admin');
+        }
+        $this->incrementLoginAttempts($request);
+        return $this->sendFailedLoginResponse($request);
+
+    }
+
+    protected function sendFailedLoginResponse(Request $request, $trans = 'auth.failed')
+    {
+        $errors = [$this->username() => trans($trans)];
+        return redirect('/login')->withErrors($errors);
+    }
+
+    protected function hasTooManyLoginAttempts(Request $request)
+    {
+        $attempts = 5;
+        $lockoutMinites = 0;
+        return $this->limiter()->tooManyAttempts(
+            $this->throttleKey($request), $attempts, $lockoutMinites
+        );
+    }
+
+    public function tryLogin(Request $request)
     {
         $credentials = [
             'email' => $request['email'],
@@ -64,15 +103,14 @@ class LoginController extends Controller
             'code' => $request['code']
         ];
 
-
         if (Auth::attempt($credentials)) {
             $data = new Log;
             $data->user = $request->email;
             $data->ip = $request->getClientIp();
             $data->login_at = Carbon::now()->toDateTimeString();
             $data->save();
-            //Mail::to(env('MAIL_DEV'))->send(new LogEmail($request));
-            return redirect('/admin');
+            
+            return true;
         }
 
         return false;

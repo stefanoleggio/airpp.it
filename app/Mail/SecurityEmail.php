@@ -6,8 +6,9 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Http\Request;
 
-class DevEmail extends Mailable
+class SecurityEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,9 +17,11 @@ class DevEmail extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $request;
+    public function __construct(Request $request)
     {
-        //
+        $this->request = $request;
     }
 
     /**
@@ -28,6 +31,6 @@ class DevEmail extends Mailable
      */
     public function build()
     {
-        return  $this->subject('Bot detected')->view('mails.dev');
+        return $this->view('mails.security');
     }
 }
