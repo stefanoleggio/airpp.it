@@ -41,25 +41,31 @@
             <img src="{{ asset('/media/logo/logo_white.svg') }}" style="width: 20rem">
         </a>
         </div>
-        <h1 class="font-weight-light">Emergenza covid-19</h1>
+        <h1 class="font-weight-light">Emergenza Covid19</h1>
         <p class="lead">Leggi gli articoli scientifici per tenerti aggiornato</p>
       </div>
     </div>
   </div>
 </header>
-
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Benvenuto</h1>
+    <p class="lead">Qui puoi scaricare i più importanti articoli scentifici sul Covid19</p>
+  </div>
+</div>
 <!-- Page Content -->
 <section class="py-5">
   <div class="container">
-  @foreach($posts as $post)
-  <div class="card mb-3">
-    <div class="card-body">
-        <h5 class="card-title">{{$post->title}}</h5>
-        <p class="card-text">{{$post->description}}</p>
-        <a href="{{$post->link}}" class="btn btn-primary">Scarica</a>
-    </div>
-    </div>
-    @endforeach
+  <table class="table table-bordered">
+        <tbody>
+        @foreach($posts as $post)
+                <tr>
+                    <td scope="col">{{$post->title}}</td>
+                    <td scope="col" class="utility" style="text-align:center"><a href="{{$post->link}}"><i class="fas fa-download"></i></a></td>
+                </tr>
+        @endforeach
+        </tbody>
+    </table>
     <?php echo $posts->links(); ?>
   </div>
 </section>

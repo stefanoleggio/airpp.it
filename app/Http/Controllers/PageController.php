@@ -58,6 +58,14 @@ class PageController extends Controller
         );
     }
 
+    public function rinnovo(){
+        return view('rinnovo', [
+            'title' => 'Rinnovo - Associazione Italiana Patologie Polmonari',
+            'banners' => Banner::where('page_id', 'rinnovo')->get(),
+            ]
+        );
+    }
+
     public function organisociali(){
         return view('organisociali',
             [
@@ -148,7 +156,7 @@ class PageController extends Controller
         return view('covid',
             [
                 'title' => 'Covid-19 - Associazione Italiana Ricerca Patologie Polmonari',
-                'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', 'covid')->paginate(10)
+                'posts' => Articolo::orderBy('id', 'DESC')->where('page_id', 'covid')->paginate(15)
             ]
         );
     }
