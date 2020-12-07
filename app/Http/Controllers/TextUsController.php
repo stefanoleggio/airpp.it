@@ -44,7 +44,7 @@ class TextUsController extends Controller
         if($request->why_you_do_this != null) {
             $subject = "Bot detected";
             $message = "Bot send contact us form";
-            Mail::to(env('MAIL_DEV'))->send(new BotEmail());
+            //Mail::to(env('MAIL_DEV'))->send(new BotEmail());
             \Session::put('success', 'Messaggio inviato con successo ;)');
             return Redirect::to('/contatti');
         }
