@@ -105,38 +105,7 @@
     </header>
             <div class="presentation__text u-center-text">
                 <div class="presentation__block">
-                    <!-- COVID -->
-                        <div class="alert_container">
-                            <div class="alert">
-                                <div class="alert__head">Sostieni la ricerca per il Covid-19</div>
-                                <div class="alert__body">L'A.I.R.P.P è impegnata nell'emergenza sanitaria, aiutaci a combattere il virus!</div>
-                                <a class="alert__link" href="/donazioni">Sostienici</a>
-                            </div>
-                        </div>
-                        <style>
-                            .alert{
-                                padding: 1.5rem;
-                                border-radius: 7px;
-                                border: 2px solid rgba(255, 255, 255, 0.55);
-                                text-align: left;
-                                font-size: 1.5rem;
-                            }
-                            .alert_container{
-                                margin-bottom: 3rem;
-                                background: rgba(255, 255, 255, 0.15);
-                            }
 
-                            .alert__link{
-                                padding-top: .5rem;
-                                text-decoration: underline;
-                            }
-                            .alert__head {
-                                padding-bottom: 1rem;
-                                font-size: 1.7rem;
-                                font-weight: bold;
-                            }
-                        </style>
-                    <!-- -->
                     <div class="presentation__p paragraph u-padding-bottom-medium">
                         <pre>{{ $views[0]->description }}</pre>
                     </div>

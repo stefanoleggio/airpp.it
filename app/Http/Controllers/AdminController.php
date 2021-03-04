@@ -22,6 +22,8 @@ use App\Team;
 
 use App\Donazione;
 
+use App\Socio;
+
 use App\Iscrizione;
 
 use App\Email;
@@ -121,6 +123,17 @@ class AdminController extends Controller
                 'datas' => Donazione::where('success', '1')->orderby('id', 'DESC')->paginate(10)
             ]
         );
+    }
+
+
+    public function soci()
+    {
+        return view('admin.archivio',
+        [
+
+            'datas' => Socio::orderby('id', 'DESC')->paginate(10)
+        ]
+    );
     }
 
     public function iscrizioni()

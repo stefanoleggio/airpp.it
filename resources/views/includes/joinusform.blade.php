@@ -128,7 +128,7 @@
     @endif
     <div class="form__group u-center-text u-margin-top-medium">
         <button class="btn btn__primary btn__big u-display-inline-block">
-            Dona
+            Iscriviti
         </button>
     </div>
 </form>

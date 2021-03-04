@@ -27,6 +27,7 @@
       @if (Auth::user()->role == "master")
         <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Utenti</a>
         <a href="/admin/logs" class="list-group-item list-group-item-action bg-light">Accessi</a>
+        <a href="/admin/archivio" class="list-group-item list-group-item-action bg-light">Archivio</a>
       @endif
         <a href="/admin/donazioni" class="list-group-item list-group-item-action bg-light">Donazioni</a>
         <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light">Iscrizioni</a>

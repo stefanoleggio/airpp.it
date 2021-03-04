@@ -18,12 +18,18 @@
                 <div class="paragraph">
                 {{ $datas[0]->description }}
                 </div>
-                @include('includes.msg', 
-                [
-                    'type' => 'info',
-                            'txt' => "Quota annua",
-                            'desc' => "Per diventare socio ordinario è richiesta una quota annua di 15€"
-                ])
+                <div class="u-center-text u-container-fullwidth" id="msg__container">
+                    <div class="msg msg__info u-display-inline-block">
+                        <span onclick="document.getElementById('msg__container').style.display='none'" class="msg__close u-font-weight-bold">&times;</span>                
+                        <div class="normal u-font-weight-bold">
+                                <i class="fa fa-info-circle"></i>
+                                Sei già socio e devi rinnovare?
+                        </div>
+                            <div class="msg__description small margin-top-small u-text-align-left">
+                            <pre>Se devi rinnovare la tua iscrizione clicca <a href="/rinnovo" class="u-underline"> qui</a></pre>
+                            </div>
+                    </div>
+                </div>
             </div>
             <div class="col-1-of-2 u-center-text">
                 @include('includes.joinusform')

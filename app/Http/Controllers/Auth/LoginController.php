@@ -29,6 +29,8 @@ use Illuminate\Support\Facades\Mail;
 class LoginController extends Controller
 {
 
+    public $maxattempts = 2;
+
     /*
     |--------------------------------------------------------------------------
     | Login Controller
@@ -67,6 +69,7 @@ class LoginController extends Controller
         $this->validateLogin($request);
 
         if ($this->hasTooManyLoginAttempts($request)) {
+            $this->maxattempts = $this->maxattempts * 2;
             Mail::to(env('MAIL_DEV'))->send(new SecurityEmail($request));
             $this->clearLoginAttempts($request);
         }
@@ -88,7 +91,7 @@ class LoginController extends Controller
 
     protected function hasTooManyLoginAttempts(Request $request)
     {
-        $attempts = 5;
+        $attempts = $this->maxattempts;
         $lockoutMinites = 0;
         return $this->limiter()->tooManyAttempts(
             $this->throttleKey($request), $attempts, $lockoutMinites

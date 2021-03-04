@@ -140,6 +140,13 @@ class BannersTableSeeder extends Seeder
                     'title' => "Organi sociali",
                     'description' => "descrizione",
                     'img' => "/media/svg/organisociali.svg"
+                ],
+                [
+                    'id' => 19,
+                    'page_id' => "rinnovo",
+                    'title' => "Rinnovo",
+                    'description' => "Qui puoi rinnovare la tua iscrizione",
+                    'img' => "/media/svg/rinnovo.svg"
                 ]
             ]
         );

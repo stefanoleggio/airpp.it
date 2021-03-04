@@ -30,6 +30,8 @@ Route::get('/donazioni', 'PageController@donazioni');
 
 Route::get('/associarsi', 'PageController@associarsi');
 
+Route::get('/rinnovo', 'PageController@rinnovo');
+
 Route::get('/contatti', 'PageController@contatti');
 
 Route::get('/statuto', 'PageController@statuto');
@@ -88,6 +90,14 @@ Route::post('joinusPayment', 'JoinUsController@payWithpaypal');
 
 Route::get('joinusstatus', 'JoinUsController@getPaymentStatus');
 
+/**
+ *  RinnovoController
+ */
+
+Route::post('rinnovoPayment', 'RinnovoController@payWithpaypal');
+
+Route::get('rinnovostatus', 'RinnovoController@getPaymentStatus');
+
 /*
     TextUsController
 */
@@ -134,6 +144,8 @@ Route::post('/admin/add_users', 'MasterController@add_users');
 Route::post('/admin/delete_users', 'MasterController@delete_users');
 
 Route::get('/admin/logs', 'MasterController@logs');
+
+Route::get('/admin/logs/fetch_logs', 'MasterController@fetch_logs');
 
 Route::get('/admin/clear_logs', 'MasterController@clear_logs');
 
@@ -266,3 +278,9 @@ Route::post('/admin/delete_album', 'AdminGalleryController@delete_album');
 Route::post('/admin/delete_photo', 'AdminGalleryController@delete_photo');
 
 Route::post('/admin/add_photo', 'AdminGalleryController@add_photo');
+
+/*
+    ArchivioController
+*/
+
+Route::get('/admin/archivio', 'ArchivioController@index');

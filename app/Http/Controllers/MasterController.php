@@ -43,14 +43,19 @@ class MasterController extends Controller
         );
     }
 
-    public function logs()
+    public function logs(Request $request)
     {
-        return view('admin.logs',
-            [
+        $data = Log::orderBy('id', 'desc')->paginate(10);
+        return view('admin.logs', ['logs' => $data]);
+    }
 
-                'logs' => log::orderBy('id', 'desc')->paginate(10)
-            ]
-        );
+    public function fetch_logs(Request $request)
+    {
+        if($request->ajax())
+        {
+            $data = Log::orderBy('id', 'desc')->paginate(10);
+            return view('admin.logs', ['logs' => $data])->render();
+        }
     }
 
     public function clear_logs(){
