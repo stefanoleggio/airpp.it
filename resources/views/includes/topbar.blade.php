@@ -43,7 +43,7 @@
                     <li class="user-nav__item user-nav__item-drop">
                             <a href="#!" class="user-nav__link user-nav__link-main">Ricerca<i class="fas fa-chevron-down"></i></a>
                             <ul class="user-nav__drop">
-                                <li><a href="/biobanca" class="user-nav__link">Biobanca</a></li>
+                                <li><a href="/progetti-di-ricerca" class="user-nav__link">Progetti di ricerca</a></li>
                                 <li><a href="/parlanodinoi" class="user-nav__link">Parlano di noi</a></li>
                                 <li><a href="/articoli" class="user-nav__link">Articoli</a></li>
                             </ul>
@@ -110,7 +110,7 @@
                     </li>
                     <ul id="ricerca" style="display:none;">
                         <li class="responsive-nav__subitem">
-                                <a href="/biobanca" class="responsive-nav__link">Biobanca</a>
+                                <a href="/progetti-di-ricerca" class="responsive-nav__link">Progetti di ricerca</a>
                         </li>
                         <li class="responsive-nav__subitem">
                                 <a href="/parlanodinoi" class="responsive-nav__link">Parlano di noi</a>

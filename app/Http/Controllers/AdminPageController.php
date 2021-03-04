@@ -86,11 +86,11 @@ class AdminPageController extends Controller
         );
     }
 
-    public function pg_biobanca(){
-        return view('admin.pg_biobanca',
+    public function pg_progetti(){
+        return view('admin.pg_progetti',
             [
-                'banners' => Banner::where('page_id', 'biobanca')->get(),
-                'views' => View::where('page_id', 'biobanca')->get()
+                'banners' => Banner::where('page_id', 'progetti')->get(),
+                'views' => View::where('page_id', 'progetti')->get()
             ]
         );
     }

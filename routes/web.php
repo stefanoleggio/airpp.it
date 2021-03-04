@@ -36,7 +36,7 @@ Route::get('/statuto', 'PageController@statuto');
 
 Route::get('/bilanci', 'PageController@bilanci');
 
-Route::get('/biobanca', 'PageController@biobanca');
+Route::get('/progetti-di-ricerca', 'PageController@progetti');
 
 Route::get('/parlanodinoi', 'PageController@parlanodinoi');
 
@@ -169,7 +169,7 @@ Route::get('/admin/pg_convegni', 'AdminPageController@pg_attivita');
 
 Route::get('/admin/pg_bilanci', 'AdminPageController@pg_bilanci');
 
-Route::get('/admin/pg_biobanca', 'AdminPageController@pg_biobanca');
+Route::get('/admin/pg_progetti', 'AdminPageController@pg_progetti');
 
 Route::get('/admin/pg_parlanodinoi', 'AdminPageController@pg_parlanodinoi');
 

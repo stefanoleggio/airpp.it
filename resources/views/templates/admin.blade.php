@@ -48,7 +48,7 @@
           <a href="/admin/pg_contatti" class="list-group-item list-group-item-action bg-secondary text-white">Contatti</a>
           <a href="/admin/pg_statuto" class="list-group-item list-group-item-action bg-secondary text-white">Statuto</a>
           <a href="/admin/pg_bilanci" class="list-group-item list-group-item-action bg-secondary text-white">Bilanci</a>
-          <a href="/admin/pg_biobanca" class="list-group-item list-group-item-action bg-secondary text-white">Biobanca</a>
+          <a href="/admin/pg_progetti" class="list-group-item list-group-item-action bg-secondary text-white">Progetti</a>
           <a href="/admin/pg_parlanodinoi" class="list-group-item list-group-item-action bg-secondary text-white">Parlano di noi</a>
           <a href="/admin/pg_organisociali" class="list-group-item list-group-item-action bg-secondary text-white">Organi sociali</a>
           <a href="/admin/pg_articoli" class="list-group-item list-group-item-action bg-secondary text-white">Articoli</a>

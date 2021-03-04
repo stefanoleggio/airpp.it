@@ -81,12 +81,12 @@ class PageController extends Controller
         );
     }
 
-    public function biobanca(){
-        return view('biobanca',
+    public function progetti(){
+        return view('progetti',
             [
-                'title' => 'Biobanca - Associazione Italiana Ricerca Patologie Polmonari',
-                'banners' => Banner::where('page_id', 'biobanca')->get(),
-                'text' => View::where('page_id', 'biobanca')->get()
+                'title' => 'Progetti di ricerca - Associazione Italiana Ricerca Patologie Polmonari',
+                'banners' => Banner::where('page_id', 'progetti')->get(),
+                'text' => View::where('page_id', 'progetti')->get()
             ]
         );
     }
