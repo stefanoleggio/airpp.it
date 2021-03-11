@@ -58,11 +58,17 @@ Route::get('/covid', 'PageController@covid');
     NewsController
 */
 
-Route::get('/convegni', 'NewsController@convegni');
+Route::get('/premi/fetch_data', 'NewsController@fetch_data')->name('premi');
 
-Route::get('/premi', 'NewsController@premi');
+Route::get('/premi', 'NewsController@index')->name('premi');
 
-Route::get('/iniziative', 'NewsController@iniziative');
+Route::get('/convegni/fetch_data', 'NewsController@fetch_data')->name('convegni');
+
+Route::get('/convegni', 'NewsController@index')->name('convegni');
+
+Route::get('/iniziative/fetch_data', 'NewsController@fetch_data')->name('iniziative');
+
+Route::get('/iniziative', 'NewsController@index')->name('iniziative');
 
 /*
     GalleryController

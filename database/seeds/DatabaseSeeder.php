@@ -22,5 +22,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EmailsTableSeeder::class);
         $this->call(LogsTableSeeder::class);
         $this->call(PremiTableSeeder::class);
+        $this->call(IniziativeTableSeeder::class);
+        $this->call(ConvegniTableSeeder::class);
     }
 }

@@ -4,7 +4,8 @@ use Illuminate\Database\Seeder;
 
 use Carbon\Carbon;
 
-class PremiTableSeeder extends Seeder
+
+class IniziativeTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +14,9 @@ class PremiTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('premi')->insert([
+        DB::table('iniziative')->insert([
             [
-                'title' => 'Premio1',
+                'title' => 'iniziative 1',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -23,7 +24,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio2',
+                'title' => 'iniziative 2',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -31,7 +32,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio3',
+                'title' => 'iniziative 3',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -39,7 +40,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio4',
+                'title' => 'iniziative 4',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -47,7 +48,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio5',
+                'title' => 'iniziative 5',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -55,7 +56,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio6',
+                'title' => 'iniziative 6',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -63,7 +64,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio7',
+                'title' => 'iniziative 7',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -71,7 +72,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio8',
+                'title' => 'iniziative 8',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),

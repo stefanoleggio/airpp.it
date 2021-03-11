@@ -14,36 +14,34 @@ use App\Iniziative;
 
 use App\Premi;
 
+use Illuminate\Support\Facades\Route;
+
 class NewsController extends Controller
 {
 
-    public function convegni(){
-        return view('convegni',
+    function index()
+    {
+        $uri = Route::currentRouteName();
+        return view('attivita',
             [
-                'title' => 'Convegni - Associazione Italiana Ricerca Patologie Polmonari',
-                'banners' => Banner::where('page_id', 'convegni')->get(),
-                'posts' => Convegni::orderby('id', 'DESC')->paginate(3)
+                'title' => ucfirst($uri).' - Associazione Italiana Ricerca Patologie Polmonari',
+                'banners' => Banner::where('page_id', $uri)->get(),
+                'data' => DB::table($uri)->paginate(3)
             ]
         );
     }
 
-    public function premi(){
-        return view('premi',
-            [
-                'title' => 'Premi - Associazione Italiana Ricerca Patologie Polmonari',
-                'banners' => Banner::where('page_id', 'premi')->get(),
-                'posts' => Premi::orderBy('id', 'DESC')->paginate(3)
-            ]
-        );
-    }
+    function fetch_data(Request $request)
+    {
+        $uri = Route::currentRouteName();
+        if($request->ajax())
+        {
+            return view('includes.newstab', 
+                [
+                    'data' => DB::table($uri)->paginate(3)
+                ]
+            )->render();
+        }
+    } 
 
-    public function iniziative(){
-        return view('iniziative',
-            [
-                'title' => 'Iniziative - Associazione Italiana Ricerca Patologie Polmonari',
-                'banners' => Banner::where('page_id', 'iniziative')->get(),
-                'posts' => Iniziative::orderBy('id', 'DESC')->paginate(3)
-            ]
-        );
-    }
 }

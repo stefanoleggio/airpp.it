@@ -4,7 +4,8 @@ use Illuminate\Database\Seeder;
 
 use Carbon\Carbon;
 
-class PremiTableSeeder extends Seeder
+
+class ConvegniTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,9 +14,9 @@ class PremiTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('premi')->insert([
+        DB::table('convegni')->insert([
             [
-                'title' => 'Premio1',
+                'title' => 'convegni 1',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -23,7 +24,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio2',
+                'title' => 'convegni 2',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -31,7 +32,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio3',
+                'title' => 'convegni 3',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -39,7 +40,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio4',
+                'title' => 'convegni 4',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -47,7 +48,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio5',
+                'title' => 'convegni 5',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -55,7 +56,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio6',
+                'title' => 'convegni 6',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -63,7 +64,7 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio7',
+                'title' => 'convegni 7',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
@@ -71,13 +72,12 @@ class PremiTableSeeder extends Seeder
                 'link' => null
             ],
             [
-                'title' => 'Premio8',
+                'title' => 'convegni 8',
                 'description' => 'description',
                 'place' => 'place',
                 'date' => Carbon::now(),
                 'active' => false,
                 'link' => null
             ],
-        ]);
-    }
+        ]);    }
 }

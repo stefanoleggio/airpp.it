@@ -105,7 +105,7 @@
     </header>
             <div class="presentation__text u-center-text">
                 <div class="presentation__block">
-                    <!-- COVID -->
+                    <!-- COVID
                         <div class="alert_container">
                             <div class="alert">
                                 <div class="alert__head">Sostieni la ricerca per il Covid-19</div>
@@ -136,7 +136,7 @@
                                 font-weight: bold;
                             }
                         </style>
-                    <!-- -->
+                     -->
                     <div class="presentation__p paragraph u-padding-bottom-medium">
                         <pre>{{ $views[0]->description }}</pre>
                     </div>
