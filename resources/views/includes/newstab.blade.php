@@ -13,8 +13,8 @@
                 <pre>{{$row->description}}</pre>
             </div>
             <div class="newstab__links u-left-text">
-                @if(isset($link))
-                <a href="{{$newstab__link}}" class="btn__link normal u-color-secondary" target="blank">
+                @if(isset($row->link))
+                <a href="{{$row->link}}" class="btn__link normal u-color-secondary" target="blank">
                     Locandina
                 </a>
                 @endif
