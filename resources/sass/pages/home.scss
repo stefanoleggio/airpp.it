@@ -1,5 +1,4 @@
 #presentation{
-
     height: 100vh;
     @media screen and (max-height: 750px) {
         height: 750px;
@@ -33,8 +32,8 @@
         .btn{
             display: inline-block;
             @include respond(tab-port) {
-                width: 100%;
-                font-size: 1.7rem;
+                width: 50%;
+                font-size: 1.4rem;
             }
         }
         .col-1-of-2{

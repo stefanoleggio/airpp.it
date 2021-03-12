@@ -142,10 +142,10 @@
                     </div>
                     <div class="row">
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/associarsi">Diventa socio</a>
+                            <a class="btn btn__medium btn__home u-display-inline-block" href="/associarsi">Diventa socio</a>
                         </div>
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__primary u-display-inline-block" href="/donazioni">Dona</a>
+                            <a class="btn btn__medium btn__home u-display-inline-block" href="/donazioni">Dona</a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +155,6 @@
             </div>
         </section>
         <script>
-        $('.carousel').carousel()
             $('.btn__go').click(function (){
                 $('html, body').animate({
                 scrollTop: $(".info").offset().top

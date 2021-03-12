@@ -6,10 +6,19 @@
         text-align: center;
         display: block;
         transition: 0.5s;
-        border: none !important;
+        border: none;
     }
     &:hover{
         cursor: pointer;
+    }
+    &__home{
+        background-color: none;
+        border: 2px solid white !important;
+    }
+    &__home:hover{
+        background-color: rgba(0, 0, 0, 0.2);
+        color: $color-black;
+        border: 2px solid $color-black !important;
     }
     &__primary{
         background-color: $color-primary;

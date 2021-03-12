@@ -10,7 +10,12 @@ $(document).ready(function(){
             url: window.location.pathname + "/fetch_data?page="+page,
             success:function(data){
                 $('#content').html(data);
+                $('html, body').animate({
+                    scrollTop: $("#content").offset().top
+                    },500, function(){
+                        hide();
+                    });
             }
-        })
+        });
     }
 })

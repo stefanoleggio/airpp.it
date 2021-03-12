@@ -129,6 +129,7 @@
             </div>
         </nav>
 </header>
+<script src="{{ asset('js/topbar.js') }}"></script>
 <script>
     $( "#news_btn" ).click(function() {
         $( "#news" ).slideToggle();
@@ -140,34 +141,12 @@
         $( "#ricerca" ).slideToggle();
     });
     @if (Request::path() == '/')
-        var prevScrollpos = window.pageYOffset;
         window.onload = function() {
-            document.getElementById("topbar").style.top = "-15rem"; 
+            hide();
         }
-        window.onscroll = function() {
-        var currentScrollPos = window.pageYOffset;
-        if(currentScrollPos== 0){
-            document.getElementById("topbar").style.top = "-15rem"; 
-        }else{
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("topbar").style.top = "0";
-            } else {
-                document.getElementById("topbar").style.top = "-15rem";
-            }
-            prevScrollpos = currentScrollPos;
-        }
-        }
+        topbar_home();
     @else
-        var prevScrollpos = window.pageYOffset;
-            window.onscroll = function() {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("topbar").style.top = "0";
-            } else {
-                document.getElementById("topbar").style.top = "-15rem";
-            }
-            prevScrollpos = currentScrollPos;
-            }
+        topbar_default();
     @endif
 
 </script>
