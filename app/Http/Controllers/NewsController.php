@@ -26,7 +26,7 @@ class NewsController extends Controller
             [
                 'title' => ucfirst($uri).' - Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', $uri)->get(),
-                'data' => DB::table($uri)->paginate(3)
+                'data' => DB::table($uri)->orderBy('id', 'DESC')->paginate(3)
             ]
         );
     }
@@ -38,7 +38,7 @@ class NewsController extends Controller
         {
             return view('includes.newstab', 
                 [
-                    'data' => DB::table($uri)->paginate(3)
+                    'data' => DB::table($uri)->orderBy('id', 'DESC')->paginate(3)
                 ]
             )->render();
         }
