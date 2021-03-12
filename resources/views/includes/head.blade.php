@@ -21,6 +21,7 @@
 <link rel="manifest" href="{{asset('/site.webmanifest')}}">
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}"/>
 <link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 @if(Request::path() == '/')
 <link rel="stylesheet" href="{{ asset('/css/loader.css') }}"/>
 @endif
