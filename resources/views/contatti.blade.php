@@ -12,34 +12,36 @@
     <div class="u-padding-normal-unique">
         <hr>
     </div>
-    <div class="select-box u-margin-top-medium">
-        <div class="select-box__current" tabindex="1">
-            <div class="select-box__value">
-                <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked" onchange="contactView()"/>
-                <p class="select-box__input-text">Segreteria</p>
-            </div>
-            <div class="select-box__value">
-                <input class="select-box__input" type="radio" id="1" value="2" name="Ben" onchange="contactView()"/>
-                <p class="select-box__input-text">Segreteria scientifica</p>
-            </div>
-            <div class="select-box__value">
-                <input class="select-box__input" type="radio" id="2" value="3" name="Ben" onchange="contactView()"/>
-                <p class="select-box__input-text">Sede legale</p>
-            </div>
+    <div class="u-padding-normal">
+        <div class="select-box u-margin-top-medium">
+            <div class="select-box__current" tabindex="1">
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked" onchange="contactView()"/>
+                    <p class="select-box__input-text">Segreteria</p>
+                </div>
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="1" value="2" name="Ben" onchange="contactView()"/>
+                    <p class="select-box__input-text">Segreteria scientifica</p>
+                </div>
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="2" value="3" name="Ben" onchange="contactView()"/>
+                    <p class="select-box__input-text">Sede legale</p>
+                </div>
 
-            <img class="select-box__icon" src="{{ asset('/media/svg/select_arrow.svg') }}" alt="Arrow Icon" aria-hidden="true"/>
+                <img class="select-box__icon" src="{{ asset('/media/svg/select_arrow.svg') }}" alt="Arrow Icon" aria-hidden="true"/>
+            </div>
+            <ul class="select-box__list">
+                <li>
+                    <label class="select-box__option" for="0" aria-hidden="aria-hidden">Segreteria</label>
+                </li>
+                <li>
+                    <label class="select-box__option" for="1" aria-hidden="aria-hidden">Segreteria scientifica</label>
+                </li>
+                <li>
+                    <label class="select-box__option" for="2" aria-hidden="aria-hidden">Sede legale</label>
+                </li>
+            </ul>
         </div>
-        <ul class="select-box__list">
-            <li>
-                <label class="select-box__option" for="0" aria-hidden="aria-hidden">Segreteria</label>
-            </li>
-            <li>
-                <label class="select-box__option" for="1" aria-hidden="aria-hidden">Segreteria scientifica</label>
-            </li>
-            <li>
-                <label class="select-box__option" for="2" aria-hidden="aria-hidden">Sede legale</label>
-            </li>
-        </ul>
     </div>
     <div id="contacts-segreteria">
         <div class="row u-margin-top-huge u-margin-bottom-big u-padding-normal u-center-text">
@@ -146,7 +148,7 @@
             </div>
         </div>
     </div>
-    <section class="textus u-bgcolor-color-grey u-padding-bottom-medium">
+    <section class="textus u-bgcolor-color-grey u-padding-bottom-medium u-padding-normal">
     <div id="textus" class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
         Domande? Scrivici!
     </div>
