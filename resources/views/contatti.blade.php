@@ -1,4 +1,4 @@
-@extends('templates.page', ['title' => 'Contatti'])
+@extends('templates.page')
 @section('content')
     @include('includes.sessionmsg')
     @foreach($banners as $banner)
