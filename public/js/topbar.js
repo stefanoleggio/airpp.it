@@ -13,7 +13,7 @@ var prevScrollpos = window.pageYOffset;
 function topbar_home() {
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
-        if(currentScrollPos== 0){
+        if(currentScrollPos < 100){
             hide();
         }else{
             if (prevScrollpos > currentScrollPos) {
@@ -29,7 +29,7 @@ function topbar_home() {
 function topbar_default() {
     window.onscroll = function() {
         var currentScrollPos = window.pageYOffset;
-        if(currentScrollPos== 0){
+        if(currentScrollPos < 100){
             show();
         }else{
             if (prevScrollpos > currentScrollPos) {

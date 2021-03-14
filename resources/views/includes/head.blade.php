@@ -22,9 +22,6 @@
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}"/>
 <link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-@if(Request::path() == '/')
-<link rel="stylesheet" href="{{ asset('/css/loader.css') }}"/>
-@endif
 <script src="{{ asset('/jquery/jquery.js') }}"></script>
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('js/modal.min.js') }}"></script>
