@@ -51,9 +51,9 @@ class TextUsController extends Controller
 
             DB::table('messaggi')->insert(
                 [
-                    'name' => $request->name, 
-                    'surname' => $request->surname,
-                    'email' => $request->email,
+                    'name' => mb_strtoupper($request->name), 
+                    'surname' => mb_strtoupper($request->surname),
+                    'email' => mb_strtoupper($request->email),
                     'msg' => $request->msg,
                     'date' => Carbon::now()
                 ]

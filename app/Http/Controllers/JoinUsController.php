@@ -188,16 +188,16 @@
             if (isset($redirect_url)) {
                 $data = new Iscrizione;
                 $data->paymentID = $payment->getId();
-                $data->name = $request->name;
-                $data->surname = $request->surname;
-                $data->email = $request->email;
-                $data->amount = $request->amount;
-                $data->cf = $request->cf;
-                $data->civico = $request->civico;
-                $data->cap = $request->cap;
-                $data->comune = $request->comune;
-                $data->via = $request->via;
-                $data->provincia = $request->provincia;
+                $data->name = mb_strtoupper($request->name);
+                $data->surname = mb_strtoupper($request->surname);
+                $data->email = mb_strtoupper($request->email);
+                $data->amount = mb_strtoupper($request->amount);
+                $data->cf = mb_strtoupper($request->cf);
+                $data->civico = mb_strtoupper($request->civico);
+                $data->cap = mb_strtoupper($request->cap);
+                $data->comune = mb_strtoupper($request->comune);
+                $data->via = mb_strtoupper($request->via);
+                $data->provincia = mb_strtoupper($request->provincia);
                 $data->telefono = $request->telefono;
                 $data->date = Carbon::now();
                 $data->success = false;

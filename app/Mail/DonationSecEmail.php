@@ -29,6 +29,6 @@ class DonationSecEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Donazione'." da ".ucfirst($this->request->name)." ".ucfirst($this->request->surname))->view('mails.donation_sec');
+        return $this->subject('Donazione'." da ".mb_strtoupper($this->request->name)." ".mb_strtoupper($this->request->surname))->view('mails.donation_sec');
     }
 }

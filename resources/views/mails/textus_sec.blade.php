@@ -3,13 +3,13 @@
 ])
 @section('content')
 <div>
-<b>Nome: </b>{{$request->name}}
+<b>Nome: </b>{{mb_strtoupper($request->name)}}
 </div>
 <div>
-<b>Cognome: </b>{{$request->surname}}
+<b>Cognome: </b>{{mb_strtoupper($request->surname)}}
 </div>
 <div>
-<b>Email: </b>{{$request->email}}
+<b>Email: </b>{{mb_strtoupper($request->email)}}
 </div>
 <div>
 <b>Messaggio: </b>

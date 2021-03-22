@@ -30,6 +30,6 @@ class TextUsSecEmail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Messaggio'." da ".ucfirst($this->request->name)." ".ucfirst($this->request->surname))->view('mails.textus_sec');
+        return $this->subject('Messaggio'." da ".mb_strtoupper($this->request->name)." ".mb_strtoupper($this->request->surname))->view('mails.textus_sec');
     }
 }
