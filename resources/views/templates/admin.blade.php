@@ -21,24 +21,25 @@
 
   <div class="d-flex" id="wrapper">
     <div class="bg-light border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading list-group-item list-group-item-action active">{{ config('app.name', 'Laravel') }}</div>
+      <div class="sidebar-heading list-group-item list-group-item-action active">airpp</div>
       <div class="list-group list-group-flush mb-5">
-      <a href="/admin" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+      <a href="/admin" class="list-group-item list-group-item-action bg-light"><i class="fas fa-chart-line"></i> Dashboard</a>
       @if (Auth::user()->role == "master")
-        <a href="/admin/users" class="list-group-item list-group-item-action bg-light">Utenti</a>
-        <a href="/admin/logs" class="list-group-item list-group-item-action bg-light">Accessi</a>
+        <a href="/admin/users" class="list-group-item list-group-item-action bg-light"><i class="fas fa-users"></i> Utenti</a>
+        <a href="/admin/logs" class="list-group-item list-group-item-action bg-light"><i class="fas fa-sign-in-alt"></i> Accessi</a>
+        <a href="/admin/archivio" class="list-group-item list-group-item-action bg-light"><i class="fas fa-archive"></i> Archivio</a>
       @endif
-        <a href="/admin/donazioni" class="list-group-item list-group-item-action bg-light">Donazioni</a>
-        <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light">Iscrizioni</a>
-        <a href="/admin/messaggi" class="list-group-item list-group-item-action bg-light">Messaggi</a>
-        <a href="/admin/galleria" class="list-group-item list-group-item-action bg-light">Galleria</a>
-        <a href="#drop__nw" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Attivit&agrave;</a>
+        <a href="/admin/donazioni" class="list-group-item list-group-item-action bg-light"><i class="fas fa-heart"></i> Donazioni</a>
+        <a href="/admin/iscrizioni" class="list-group-item list-group-item-action bg-light"><i class="fas fa-file-signature"></i> Iscrizioni</a>
+        <a href="/admin/messaggi" class="list-group-item list-group-item-action bg-light"><i class="fas fa-inbox"></i> Messaggi</a>
+        <a href="/admin/galleria" class="list-group-item list-group-item-action bg-light"><i class="fas fa-images"></i> Galleria</a>
+        <a href="#drop__nw" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown"><i class="fas fa-edit"></i> Attivit&agrave;</a>
         <div id="drop__nw" class="collapse">
           <a href="/admin/premi" class="list-group-item list-group-item-action bg-secondary text-white">Premi</a>
           <a href="/admin/iniziative" class="list-group-item list-group-item-action bg-secondary text-white">Iniziative</a>
           <a href="/admin/convegni" class="list-group-item list-group-item-action bg-secondary text-white">Convegni</a>
         </div>
-        <a href="#drop__pg" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Pagine</a>
+        <a href="#drop__pg" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown"><i class="fas fa-edit"></i> Pagine</a>
         <div id="drop__pg" class="collapse">
           <a href="/admin/pg_home" class="list-group-item list-group-item-action bg-secondary text-white">Home</a>
           <a href="/admin/pg_donazioni" class="list-group-item list-group-item-action bg-secondary text-white">Donazioni</a>
@@ -54,7 +55,7 @@
           <a href="/admin/pg_articoli" class="list-group-item list-group-item-action bg-secondary text-white">Articoli</a>
           <a href="/admin/pg_cookie" class="list-group-item list-group-item-action bg-secondary text-white">Cookie</a>
         </div>
-        <a href="#drop__cmp" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown">Componenti</a>
+        <a href="#drop__cmp" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown"><i class="fas fa-edit"></i> Componenti</a>
         <div id="drop__cmp" class="collapse">
           <a href="/admin/team" class="list-group-item list-group-item-action bg-secondary text-white">Team</a>
           <a href="/admin/email" class="list-group-item list-group-item-action bg-secondary text-white">Email</a>
