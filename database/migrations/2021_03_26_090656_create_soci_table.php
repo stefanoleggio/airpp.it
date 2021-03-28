@@ -29,8 +29,8 @@ class CreateSociTable extends Migration
             $table->string('email')->nullable();
             $table->string('cellulare')->nullable();
             $table->string('telefono')->nullable();
-            $table->string('anno_iscrizione')->nullable();
             $table->string('ultimo_anno_pagato')->nullable();
+            $table->boolean('escluso');
         });
     }
 

@@ -24,5 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call(PremiTableSeeder::class);
         $this->call(IniziativeTableSeeder::class);
         $this->call(ConvegniTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(SociTableSeeder::class);
     }
 }

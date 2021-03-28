@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Socio;
 
+use App\Role;
+
+use App\Category;
+
 class ArchivioController extends Controller
 {
     public function __construct()
@@ -18,7 +22,9 @@ class ArchivioController extends Controller
         return view('admin.archivio',
             [
 
-                'data' => Socio::paginate(10)
+                'data' => Socio::paginate(10),
+                'roles' => Role::all(),
+                'categories' => Category::all()
             ]
         );
     }

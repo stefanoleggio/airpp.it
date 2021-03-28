@@ -29,6 +29,7 @@
             <tr>
                 <th scope="col">Nome</th>
                 <th scope="col">Cognome</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +37,7 @@
                 <tr>
                     @if(isset($row->ultimo_anno_pagato) && strcmp($row->ultimo_anno_pagato, date("Y")) != 0 && $row->escluso == false)
                         <td scope="col" class="text-danger">{{$row->nome}}</td>
-                        <td scope="col" class="text-danger">{{$row->cognome}}</i></td>
+                        <td scope="col" class="text-danger">{{$row->cognome}}</td>
                     @else
                         <td scope="col">{{$row->nome}}</td>
                         <td scope="col">{{$row->cognome}}</td>
@@ -66,20 +67,40 @@
                                     <input type="input" class="form-control" id="cognome" name="cognome" value="{{ $row->cognome }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="place">Numero socio</label>
+                                    <label for="place">Numero progressivo socio</label>
                                     <input type="input" class="form-control" id="numero_socio" name="numero_socio" value="{{ $row->numero_socio }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="place">Ultimo anno pagato</label>
+                                    <label for="escluso">Escluso</label>
+                                    <input class="check" type="checkbox" name="active" id="escluso" @if($row->escluso == 1) {{"checked"}} @endif>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ultimo_anno_pagato">Ultimo anno pagato</label>
                                     <input type="input" class="form-control" id="ultimo_anno_pagato" name="ultimo_anno_pagato" value="{{ $row->ultimo_anno_pagato }}">
                                 </div>
                                 <div class="form-group">
-                                    <label for="place">Codice fiscale</label>
+                                    <label for="codice_fiscale">Codice fiscale</label>
                                     <input type="input" class="form-control" id="codice_fiscale" name="codice_fiscale" value="{{ $row->codice_fiscale }}">
                                 </div>
                                 <div class="form-group">
+                                    <label for="codice_fiscale">Ruolo</label>
+                                    <select class="form-control" aria-label="Default select example">
+                                    @foreach($roles as $role)
+                                            <option>{{ $role->name }}</option>
+                                    @endforeach
+                                    </select>                               
+                                </div>
+                                <div class="form-group">
+                                    <label for="codice_fiscale">Categoria</label>
+                                    <select class="form-control" aria-label="Default select example">
+                                    @foreach($categories as $category)
+                                            <option>{{ $category->name }}</option>
+                                    @endforeach
+                                    </select>                               
+                                </div>
+                                <div class="form-group">
                                     <a class="btn btn-link" data-toggle="collapse" href="#recapiti-{{ $row->id }}" role="button" aria-expanded="false" aria-controls="recapiti-{{ $row->id }}">
-                                        Recapiti
+                                    <i class="fas fa-plus"></i> Recapiti
                                     </a>
                                 </div>
                                 <div class="collapse" id="recapiti-{{ $row->id }}">
@@ -98,7 +119,7 @@
                                 </div>
                                 <div class="form-group">
                                     <a class="btn btn-link" data-toggle="collapse" href="#indirizzo-{{ $row->id }}" role="button" aria-expanded="false" aria-controls="indirizzo-{{ $row->id }}">
-                                        Indirizzo
+                                    <i class="fas fa-plus"></i> Indirizzo
                                     </a>
                                 </div>
                                 <div class="collapse" id="indirizzo-{{ $row->id }}">
