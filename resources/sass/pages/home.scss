@@ -27,7 +27,7 @@
         animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
     }
     &__block{
-        width: 50rem;
+        width: 60rem;
         margin: 0;
         position: absolute;
         top: 60%;
@@ -35,13 +35,12 @@
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         @include respond(phone) {
-            width: 70%;
+            width: 80%;
             font-size: 1.7rem;
         }
         .btn{
             display: inline-block;
             @include respond(tab-port) {
-                width: 50%;
                 font-size: 1.4rem;
             }
         }
@@ -53,7 +52,6 @@
         font-size: 1.8rem !important;
         margin-bottom: 0 !important;
         text-align: left;
-        font-style: italic;
     }
     .col-1-of-2{
         margin-bottom: 0;
@@ -61,5 +59,51 @@
     .row [class^="col-"]:not(:last-child) {
         margin-right: 0;
         margin-bottom: 3rem; 
+    }
+}
+
+.glide__bullets {
+    position: unset !important;
+    transform: unset !important;
+}
+
+.glide__slide {
+    height: 30rem !important;
+    @include respond(tab-port) {
+        height: unset !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;     
+    }
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;       
+}
+
+.glide__arrow {
+    position: absolute;
+    box-shadow: none !important;
+    top: 40% !important;
+    border: none !important;
+    font-size: 2rem;
+    padding: 0 !important;
+    @include respond(tab-port) {
+        display: none !important;
+    }
+}
+
+.glide__arrow--right {
+    right: 0em !important;
+}
+
+.glide__arrow--left {
+    left: 0em !important;
+}
+
+.slide{
+    width: 100%;
+    height: 100%;
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
+        display: block;
     }
 }

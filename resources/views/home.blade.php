@@ -104,56 +104,60 @@
                 </div>
             </nav>
     </header>
-            <div class="presentation__text u-center-text">
-                <div class="presentation__block">
-                    <!-- COVID
-                        <div class="alert_container">
-                            <div class="alert">
-                                <div class="alert__head">Sostieni la ricerca per il Covid-19</div>
-                                <div class="alert__body">L'A.I.R.P.P è impegnata nell'emergenza sanitaria, aiutaci a combattere il virus!</div>
-                                <a class="alert__link" href="/donazioni">Sostienici</a>
-                            </div>
-                        </div>
-                        <style>
-                            .alert{
-                                padding: 1.5rem;
-                                border-radius: 7px;
-                                border: 2px solid rgba(255, 255, 255, 0.55);
-                                text-align: left;
-                                font-size: 1.5rem;
-                            }
-                            .alert_container{
-                                margin-bottom: 3rem;
-                                background: rgba(255, 255, 255, 0.15);
-                            }
-
-                            .alert__link{
-                                padding-top: .5rem;
-                                text-decoration: underline;
-                            }
-                            .alert__head {
-                                padding-bottom: 1rem;
-                                font-size: 1.7rem;
-                                font-weight: bold;
-                            }
-                        </style>
-                     -->
-                    <div class="presentation__p paragraph u-padding-bottom-medium">
+    <div class="presentation__text u-center-text">
+    <div class="presentation__block">
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+                <li class="glide__slide">
+                <div class="presentation__p paragraph u-padding-bottom-medium">
                         <pre>{{ $views[0]->description }}</pre>
                     </div>
                     <div class="row">
                         <div class="col-1-of-2 u-center-text">
-                            <a class="btn btn__medium btn__home u-display-inline-block" href="/associarsi">Diventa socio</a>
+                            <a class="btn btn__medium btn__home u-display-inline-block" href="/associarsi">Associarsi</a>
                         </div>
                         <div class="col-1-of-2 u-center-text">
                             <a class="btn btn__medium btn__home u-display-inline-block" href="/donazioni">Dona</a>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="u-anchor-bottom">
-                <a class="btn__go"><i class="fas fa-chevron-down"></i></a>
-            </div>
+                </li>
+                <li class="glide__slide">
+                    <div class="slide">
+                        <a href="/covid" target="_blank">
+                            <img src="{{ asset('/media/tmp/covid-cop.jpg') }}" alt="" class="slide__img">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+    <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="glide__bullets u-padding-top-medium" data-glide-el="controls[nav]">
+        <button class="glide__bullet" data-glide-dir="=0"></button>
+        <button class="glide__bullet" data-glide-dir="=1"></button>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <script>
+
+    const config = {
+        type: 'carousel',
+        autoplay: 10000,
+        hoverpause: true,
+    }   
+        
+    new Glide('.glide', config).mount()
+</script>
+<style>
+
+
+
+</style>
+
         </section>
         <script>
             $('.btn__go').click(function (){
@@ -162,77 +166,6 @@
                 }, 1000)
             });
         </script>
-        <!-- 
-        <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
-                In evidenza
-        </div>
-        <div class="u-padding-normal">
-        <div class="slideshow-container">
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-    </div>
-    <style>
-        .slideshow_inner{
-
-        }
-
-        .slideshow-container{
-            max-width: none !important;
-            width: 100% !important;
-            height: 20rem;
-            background: red;
-        }
-    </style>
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-        showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-        showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        if (n > slides.length) {slideIndex = 1}    
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slides[slideIndex-1].style.display = "block";  
-        }
-</script>
-        COVID -->
-        <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
-                In evidenza
-        </div>
-        <div class="u-center-text u-margin-bottom-medium">
-            <div class="newstab__container u-container-fullwidth u-display-inline-block">
-                <div class="newstab u-margin-top-medium u-display-inline-block">
-                    <div class="newstab__title heading-secondary-bis u-container-fullwidth u-left-text">
-                        Emergenza Covid-19
-                    </div>
-                    <div class="newstab__text paragraph paragraph--smaller u-margin-top-small">
-                        <pre>Abbiamo creato una pagina dedicata per l'emergenza, 
-leggi gli articoli sul Covid-19 per tenerti informato!</pre>
-                    </div>
-                    <div class="newstab__links u-left-text">
-                    <a href="/covid" class="btn__link normal u-color-secondary" target="blank">
-                    pagina Covid-19</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- -->
-        <div class="u-padding-normal-unique">
-            <hr>
-        </div>
-        <!-- -->
         <section class="info">
             <div class="u-container-fullwidth heading-secondary u-center-text u-margin-top-big u-margin-bottom-medium u-color-black">
                 Che cosa facciamo?
