@@ -122,13 +122,33 @@
                         </div>
                     </div>
                 </li>
-                <li class="glide__slide">
-                    <div class="slide">
-                        <a href="/covid" target="_blank">
-                            <img src="{{ asset('/media/tmp/covid-cop.jpg') }}" alt="" class="slide__img">
-                        </a>
-                    </div>
-                </li>
+                @foreach($slides as $slide)
+                    @if($slide->tipo == 1)
+                    <li class="glide__slide">
+                        <div class="slide">
+                            <div class="heading-secondary u-left-text">
+                                {{$slide->titolo}}
+                            </div>
+                            <div class="presentation__p paragraph u-padding-bottom-medium newstab__text">
+                                <pre>{{$slide->descrizione}}</pre>
+                                <a href="{{$slide->link}}" target="_blank" class="btn__link">{{$slide->link_txt}}</a>
+                            </div>
+                        </div>
+                    </li>
+                    @else
+                    <li class="glide__slide">
+                        <div class="slide">
+                            @if($slide->link != null)
+                            <a href="{{$slide->link}}" target="_blank">
+                                <img src="{{ asset($slide->img) }}" alt="" class="slide__img">
+                            </a>
+                            @else
+                                <img src="{{ asset($slide->img) }}" alt="" class="slide__img">
+                            @endif
+                        </div>
+                    </li>
+                    @endif
+                @endforeach
             </ul>
     <div class="glide__arrows" data-glide-el="controls">
         <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fas fa-chevron-left"></i></button>
@@ -136,7 +156,12 @@
     </div>
     <div class="glide__bullets u-padding-top-medium" data-glide-el="controls[nav]">
         <button class="glide__bullet" data-glide-dir="=0"></button>
-        <button class="glide__bullet" data-glide-dir="=1"></button>
+        <?php
+            $i = 1;
+        ?>
+        @foreach($slides as $slide)
+            <button class="glide__bullet" data-glide-dir="={{$i++}}"></button>
+        @endforeach
     </div>
     </div>
     </div>

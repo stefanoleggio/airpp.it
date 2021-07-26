@@ -21,11 +21,17 @@
 <link rel="manifest" href="{{asset('/site.webmanifest')}}">
 <link rel="stylesheet" href="{{ asset('/css/app.css') }}"/>
 <link rel="stylesheet" href="{{ asset('/css/all.css') }}"/>
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="{{ asset('/jquery/jquery.js') }}"></script>
 <script src="{{ asset('/js/app.js') }}"></script>
 <script src="{{ asset('js/modal.min.js') }}"></script>
 <script src="{{ asset('js/loader.js') }}"></script>
+<!-- Glide -->
+<link rel="stylesheet" href="{{ asset('/css/glide.min.css') }}"/>
+<link rel="stylesheet" href="{{ asset('/css/glide.theme.css') }}"/>
+<script src="{{ asset('js/glide.min.js') }}"></script>
+<!-- aos -->
+<link rel="stylesheet" href="{{ asset('/css/aos.css') }}" />
+
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <link rel="stylesheet" href="{{ asset('/css/modal.min.css') }}"/>
 <title>{{ $title }}</title>

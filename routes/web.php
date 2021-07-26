@@ -239,6 +239,24 @@ Route::post('/admin/add_team', 'AdminTeamController@add');
 
 Route::post('/admin/delete_team', 'AdminTeamController@delete');
 
+/*
+    AdminSliderController
+*/
+
+Route::get('/admin/slider', 'AdminsliderController@index');
+
+Route::post('/admin/edit_slide', 'AdminsliderController@edit');
+
+Route::post('/admin/add_slide_img', 'AdminSliderController@add_img');
+
+Route::post('/admin/add_slide_txt', 'AdminSliderController@add_txt');
+
+Route::post('/admin/delete_slide', 'AdminSliderController@delete');
+
+Route::post('/admin/up_slide', 'AdminSliderController@up');
+
+Route::post('/admin/down_slide', 'AdminSliderController@down');
+
 /* 
     AdminNewsController
 */

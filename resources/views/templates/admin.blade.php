@@ -57,6 +57,7 @@
         </div>
         <a href="#drop__cmp" aria-expanded="false" role="button" data-toggle="collapse" class="list-group-item list-group-item-action bg-light dropdown"><i class="fas fa-edit"></i> Componenti</a>
         <div id="drop__cmp" class="collapse">
+          <a href="/admin/slider" class="list-group-item list-group-item-action bg-secondary text-white">Slider</a>
           <a href="/admin/team" class="list-group-item list-group-item-action bg-secondary text-white">Team</a>
           <a href="/admin/email" class="list-group-item list-group-item-action bg-secondary text-white">Email</a>
           <a href="/admin/covid" class="list-group-item list-group-item-action bg-secondary text-white">Covid</a>

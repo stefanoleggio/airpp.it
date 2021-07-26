@@ -22,6 +22,8 @@ use App\Link;
 
 use App\Bilanci;
 
+use App\Slide;
+
 class PageController extends Controller
 {
     public function home(){
@@ -30,6 +32,7 @@ class PageController extends Controller
                 'title' => 'Associazione Italiana Ricerca Patologie Polmonari',
                 'banners' => Banner::where('page_id', 'home')->get(),
                 'views' => View::where('page_id', 'home')->get(),
+                'slides' => Slide::orderBy('num')->get(),
                 'data' => Document::where('page_id', 'home')->get()
             ]
         );
