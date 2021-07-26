@@ -243,9 +243,9 @@ Route::post('/admin/delete_team', 'AdminTeamController@delete');
     AdminSliderController
 */
 
-Route::get('/admin/slider', 'AdminsliderController@index');
+Route::get('/admin/slider', 'AdminSliderController@index');
 
-Route::post('/admin/edit_slide', 'AdminsliderController@edit');
+Route::post('/admin/edit_slide', 'AdminSliderController@edit');
 
 Route::post('/admin/add_slide_img', 'AdminSliderController@add_img');
 
