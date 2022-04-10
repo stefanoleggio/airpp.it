@@ -34,19 +34,21 @@
                 <li>
                     <label class="select-box__option" for="0" aria-hidden="aria-hidden">Segreteria</label>
                 </li>
+                <!--
                 <li>
                     <label class="select-box__option" for="1" aria-hidden="aria-hidden">Segreteria scientifica</label>
                 </li>
                 <li>
                     <label class="select-box__option" for="2" aria-hidden="aria-hidden">Sede legale</label>
                 </li>
+                -->
             </ul>
         </div>
     </div>
     <div id="contacts-segreteria">
         <div class="row u-margin-top-huge u-margin-bottom-big u-padding-normal u-center-text">
         @foreach($segreteria as $row)
-            <div class="col-1-of-3">
+            <div class="col-1-of-2">
                 <div class="heading-secondary">
                     Email <i class="fas fa-envelope"></i>
                 </div>
@@ -54,15 +56,7 @@
                     {{$row->email}}
                 </div>
             </div>
-            <div class="col-1-of-3">
-                <div class="heading-secondary">
-                    Telefono <i class="fas fa-phone"></i>
-                </div>
-                <div class="u-color-black normal">
-                    {{$row->telefono}}
-                </div>
-            </div>
-            <div class="col-1-of-3">
+            <div class="col-1-of-2">
                 <div class="heading-secondary">
                     Indirizzo <i class="fas fa-map-marker-alt"></i>
                 </div>
