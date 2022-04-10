@@ -49,18 +49,27 @@ class TextUsController extends Controller
             return Redirect::to('/contatti');
         }
 
-            DB::table('messaggi')->insert(
-                [
-                    'name' => mb_strtoupper($request->name), 
-                    'surname' => mb_strtoupper($request->surname),
-                    'email' => mb_strtoupper($request->email),
-                    'msg' => $request->msg,
-                    'date' => Carbon::now()
-                ]
-            );
-            Mail::to(env('MAIL_SEC'))->send(new TextUsSecEmail($request));
-            Mail::to($request->email)->send(new TextUsEmail($request));
-            \Session::put('success', 'Messaggio inviato con successo');
-            return Redirect::to('/contatti');
+        $bl_records = DB::table('blacklist')->select('email')->get();
+
+        foreach ($bl_records as $bl_record) {
+            if(mb_strtoupper($bl_record->email) == mb_strtoupper($request->email)) {
+                \Session::put('success', 'Messaggio inviato con successo ;)');
+                return Redirect::to('/contatti');
+            }
+        }
+
+        DB::table('messaggi')->insert(
+            [
+                'name' => mb_strtoupper($request->name), 
+                'surname' => mb_strtoupper($request->surname),
+                'email' => mb_strtoupper($request->email),
+                'msg' => $request->msg,
+                'date' => Carbon::now()
+            ]
+        );
+        Mail::to(env('MAIL_SEC'))->send(new TextUsSecEmail($request));
+        Mail::to($request->email)->send(new TextUsEmail($request));
+        \Session::put('success', 'Messaggio inviato con successo');
+        return Redirect::to('/contatti');
     }
 }
