@@ -1,5 +1,15 @@
 @extends('templates.page')
 @section('content')
+<!-- Google Rich card -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "url": "https://www.airpp.it",
+    "logo": "https://www.airpp.it/media/logo/logo.svg"
+}
+</script>
+<!-- -->
 @include('includes.loader')
 <section class="presentation" id="presentation" style="background: linear-gradient(rgba(20,20,20, .6), rgba(20,20,20, .6)),url({{$data[0]->link}}); ">
     <header id="home_topbar">
