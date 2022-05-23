@@ -48,7 +48,7 @@
     <div id="contacts-segreteria">
         <div class="row u-margin-top-huge u-margin-bottom-big u-padding-normal u-center-text">
         @foreach($segreteria as $row)
-            <div class="col-1-of-2">
+            <div class="col-1-of-3">
                 <div class="heading-secondary">
                     Email <i class="fas fa-envelope"></i>
                 </div>
@@ -64,7 +64,7 @@
                     {{$row->telefono}}
                 </div>
             </div>
-            <div class="col-1-of-2">
+            <div class="col-1-of-3">
                 <div class="heading-secondary">
                     Indirizzo <i class="fas fa-map-marker-alt"></i>
                 </div>
